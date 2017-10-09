@@ -12,7 +12,6 @@ class Home extends Component {
         <NavigationBar />
         <MainBanner />
       </header>
-
     )
   }
 }
