@@ -4,7 +4,8 @@ import {
   MainBanner,
   Title,
   Button,
-  Row
+  Row,
+  Banner500
 } from '../../components'
 import './styles.css'
 
@@ -24,6 +25,9 @@ class Home extends Component {
             <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA EL INFORME EJECUTIVO</Button>
             <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA LA BASE DE DATOS</Button>
           </Row>
+        </section>
+        <section>
+          <Banner500 />
         </section>
       </div>
     )

@@ -3,11 +3,13 @@ import MainBanner from './main_banner'
 import Title from './title'
 import Button from './button'
 import Row from './row'
+import Banner500 from './banner500'
 
 export {
   NavigationBar,
   MainBanner,
   Title,
   Button,
-  Row
+  Row,
+  Banner500
 }
