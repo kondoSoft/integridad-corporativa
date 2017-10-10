@@ -4,6 +4,10 @@ import Title from './title'
 import Button from './button'
 import Row from './row'
 import Banner500 from './banner500'
+import CollapseBox from './collapse-box'
+import Col from './col'
+import Section from './section'
+import Subtitle from './subtitle'
 
 export {
   NavigationBar,
@@ -11,5 +15,9 @@ export {
   Title,
   Button,
   Row,
-  Banner500
+  Banner500,
+  CollapseBox,
+  Col,
+  Section,
+  Subtitle
 }

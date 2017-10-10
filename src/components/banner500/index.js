@@ -10,7 +10,6 @@ const Wrapper = styled.div`
   justify-content:space-around;
   align-items:center;
   padding:20px 0px 40px 0px;
-  margin-top:30px;
   height:150px;
 `
 const Button = styled.div`
@@ -65,7 +64,7 @@ const Banner500 = (props) => (
     <Title>SOY PARTE DE LAS <Span>500</Span></Title>
     <Column>
       <Button>
-        Actualiza aquí&nbsp;<i class='fa fa-chevron-right' aria-hidden='true'/>
+        Actualiza aquí&nbsp;<i className='fa fa-chevron-right' aria-hidden='true'/>
       </Button>
       <Description>tu información sobre integridad corporativa</Description>
     </Column>

@@ -67,18 +67,18 @@ const NavigationBar = (props) => (
             <i className='fa fa-facebook' aria-hidden='true' />
           </NavLink>
           <NavLink href='https://twitter.com' target='_blank'>
-            <i class='fa fa-twitter' aria-hidden='true' />
+            <i className='fa fa-twitter' aria-hidden='true' />
           </NavLink>
           <NavLink href='https://instagram.com' target='_blank'>
-            <i class='fa fa-instagram' aria-hidden='true' />
+            <i className='fa fa-instagram' aria-hidden='true' />
           </NavLink>
           <NavLink href='https://youtube.com' target='_blank'>
-            <i class='fa fa-youtube-play' aria-hidden='true' />
+            <i className='fa fa-youtube-play' aria-hidden='true' />
           </NavLink>
         </NavItem>
         <NavItem>
           <NavLink>
-            <i class='fa fa-search' aria-hidden='true' />
+            <i className='fa fa-search' aria-hidden='true' />
           </NavLink>
         </NavItem>
       </NavList>
