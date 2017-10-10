@@ -21,12 +21,12 @@ class Home extends Component {
       isOpen: {
         graphics: false,
         data: false,
-        wallNews: false
+        newsWall: false
       },
       rotate: {
         graphics: '',
         data: '',
-        wallNews: ''
+        newsWall: ''
       }
     }
 
@@ -78,6 +78,17 @@ class Home extends Component {
             <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' onClick={() => this.openBox('data')} />
           </Col>
         </Section>
+        <Section>
+          <Title color={(isOpen.newsWall) ? '#ED4630' : false}>MURO DE NOTICIAS</Title>
+          <Col>
+            <CollapseBox isOpen={isOpen.newsWall}>
+              <Row>
+                <img src='http://via.placeholder.com/800x600' alt='' />
+              </Row>
+            </CollapseBox>
+            <i className={`fa fa-caret-down fa-4x ${rotate.newsWall} icon`} aria-hidden='true' onClick={() => this.openBox('newsWall')} />
+          </Col>
+        </Section>
       </div>
     )
   }
@@ -106,12 +117,12 @@ class Home extends Component {
       }
       this.setState({isOpen, rotate})
     } else {
-      if (isOpen.wallNews) {
-        isOpen.wallNews = false
-        rotate.wallNews = 'rotateDown'
+      if (isOpen.newsWall) {
+        isOpen.newsWall = false
+        rotate.newsWall = 'rotateDown'
       } else {
-        isOpen.wallNews = true
-        rotate.wallNews = 'rotateUp'
+        isOpen.newsWall = true
+        rotate.newsWall = 'rotateUp'
       }
       this.setState({isOpen, rotate})
     }
