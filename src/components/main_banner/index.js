@@ -8,6 +8,7 @@ const Wrapper = styled.section`
   display:flex;
   flex-flow:column;
   justify-content:center;
+  background-position-x: center;
 `
 
 const Logo = styled.img`
@@ -59,7 +60,9 @@ const MainBanner = (props) => {
         <Logo src='assets/img/logo500.png' alt='logo 500' />
       </Row>
       <Row>
-        <SubTitle>El primer diagnóstico sobre políticas anticorrupción o de integridad de las 500 empresas más importantes de México.</SubTitle>
+        <SubTitle>
+          Compartir y replicar buenas prácticas anticorrupción refrenda el compromiso del sector privado en la lucha contra la corrupción y la impunidad, y mejora la rendición de cuentas hacia socios, accionistas y clientes. En alianza, Expansión, Transparencia Mexicana y Mexicanos Contra la Corrupción y la Impunidad, buscan sumar al sector privado a la lucha 
+        </SubTitle>
       </Row>
       <Hr />
       <Row center>

@@ -8,6 +8,8 @@ import CollapseBox from './collapse-box'
 import Col from './col'
 import Section from './section'
 import Subtitle from './subtitle'
+import Footer from './footer'
+import Dialog from './dialog'
 
 export {
   NavigationBar,
@@ -19,5 +21,7 @@ export {
   CollapseBox,
   Col,
   Section,
-  Subtitle
+  Subtitle,
+  Footer,
+  Dialog
 }

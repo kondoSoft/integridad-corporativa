@@ -9,7 +9,9 @@ import {
   CollapseBox,
   Col,
   Section,
-  Subtitle
+  Subtitle,
+  Footer,
+  Dialog
 } from '../../components'
 import './styles.css'
 
@@ -27,7 +29,8 @@ class Home extends Component {
         graphics: '',
         data: '',
         newsWall: ''
-      }
+      },
+      modalOpen: true,
     }
 
     this.openBox = this.openBox.bind(this)
@@ -35,7 +38,8 @@ class Home extends Component {
   render () {
     const {
       isOpen,
-      rotate
+      rotate,
+      modalOpen
     } = this.state
     return (
       <div>
@@ -56,7 +60,7 @@ class Home extends Component {
           <Banner500 />
         </section>
         <Section>
-          <Title color={(isOpen.graphics) ? '#ED4630' : false}>GRÁFICAS</Title>
+          <Title color={(isOpen.graphics) ? '#ED4630' : ''}>GRÁFICAS</Title>
           <Col>
             <CollapseBox isOpen={isOpen.graphics} >
               <Row>
@@ -67,7 +71,7 @@ class Home extends Component {
           </Col>
         </Section>
         <Section background='#F2F2F2'>
-          <Title color={(isOpen.data) ? '#ED4630' : false}>INFORMACIÓN ACTUALIZADA</Title>
+          <Title color={(isOpen.data) ? '#ED4630' : ''}>INFORMACIÓN ACTUALIZADA</Title>
           <Subtitle>DE LAS 500 FRENTE A LA CORRUPCIÓN</Subtitle>
           <Col>
             <CollapseBox isOpen={isOpen.data} >
@@ -79,7 +83,7 @@ class Home extends Component {
           </Col>
         </Section>
         <Section>
-          <Title color={(isOpen.newsWall) ? '#ED4630' : false}>MURO DE NOTICIAS</Title>
+          <Title color={(isOpen.newsWall) ? '#ED4630' : ''}>MURO DE NOTICIAS</Title>
           <Col>
             <CollapseBox isOpen={isOpen.newsWall}>
               <Row>
@@ -89,6 +93,8 @@ class Home extends Component {
             <i className={`fa fa-caret-down fa-4x ${rotate.newsWall} icon`} aria-hidden='true' onClick={() => this.openBox('newsWall')} />
           </Col>
         </Section>
+        <Footer />
+        <Dialog isVisible={modalOpen} onClickClose={() => this.setState({modalOpen: !modalOpen})}/>
       </div>
     )
   }
