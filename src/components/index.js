@@ -10,6 +10,9 @@ import Section from './section'
 import Subtitle from './subtitle'
 import Footer from './footer'
 import Dialog from './dialog'
+import SliderPrev from './slider_prev'
+import SliderNext from './slider_nex' 
+import GoToTop from './gototop'
 
 export {
   NavigationBar,
@@ -23,5 +26,8 @@ export {
   Section,
   Subtitle,
   Footer,
-  Dialog
+  Dialog,
+  SliderPrev,
+  SliderNext,
+  GoToTop
 }

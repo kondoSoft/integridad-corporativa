@@ -68,3 +68,7 @@
   cursor: pointer;
   color:#ED4630;
 }
+
+.slick-active{
+  display: flex !important;
+}

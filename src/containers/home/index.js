@@ -11,9 +11,24 @@ import {
   Section,
   Subtitle,
   Footer,
-  Dialog
+  Dialog,
+  SliderPrev,
+  SliderNext,
+  GoToTop
 } from '../../components'
 import './styles.css'
+import {
+  BarChart,
+  XAxis,
+  YAxis,
+  Bar,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  PieChart,
+  Pie
+} from 'recharts'
+import Slider from 'react-slick'
 
 class Home extends Component {
   constructor (props) {
@@ -31,18 +46,56 @@ class Home extends Component {
         newsWall: ''
       },
       modalOpen: true,
+      sliderIndex: 0,
+      goTo: null
     }
 
     this.openBox = this.openBox.bind(this)
+    this.changeSlider = this.changeSlider.bind(this)
+  }
+  componentWillMount() {
+    window.addEventListener('scroll', (e) => {
+      console.log(window)
+      if (window.scrollY >= 1000){
+        this.setState({goTo: <GoToTop onClick={e => window.scrollTo(0, 0)} />})
+      } else{
+        this.setState({goTo: null})
+      }
+
+    })
   }
   render () {
     const {
       isOpen,
       rotate,
-      modalOpen
+      modalOpen,
+      sliderIndex,
+      goTo
     } = this.state
+    const data = [
+      {name: 'Page A', uv: 4000, pv: 2400, amt: 2400},
+      {name: 'Page B', uv: 3000, pv: 1398, amt: 2210},
+      {name: 'Page C', uv: 2000, pv: 9800, amt: 2290},
+      {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
+      {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
+      {name: 'Page F', uv: 2390, pv: 3800, amt: 2500},
+      {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
+    ]
+    const data01 = [
+      {name: 'Group A', value: 400}, {name: 'Group B', value: 300},
+      {name: 'Group C', value: 300}, {name: 'Group D', value: 200},
+      {name: 'Group E', value: 278}, {name: 'Group F', value: 189}
+    ]
+    var settings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    }
     return (
       <div>
+
         <header>
           <NavigationBar />
           <MainBanner />
@@ -63,9 +116,48 @@ class Home extends Component {
           <Title color={(isOpen.graphics) ? '#ED4630' : ''}>GRÁFICAS</Title>
           <Col>
             <CollapseBox isOpen={isOpen.graphics} >
-              <Row>
-                <img src='http://via.placeholder.com/800x600' alt='' />
-              </Row>
+              <Slider {...settings} ref='slider'>
+                <Row>
+                  <BarChart
+                    width={800}
+                    height={600}
+                    data={data}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                  >
+                    <XAxis dataKey='name' />
+                    <YAxis />
+                    <CartesianGrid strokeDasharray='3 3' />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey='pv' fill='#8884d8' />
+                    <Bar dataKey='uv' fill='#427df4' />
+                  </BarChart>
+                </Row>
+                <Row>
+                  <BarChart
+                    width={800}
+                    height={600}
+                    data={data}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                  >
+                    <XAxis dataKey='name' />
+                    <YAxis />
+                    <CartesianGrid strokeDasharray='3 3' />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey='pv' fill='#8884d8' />
+                    <Bar dataKey='uv' fill='#82ca9d' />
+                  </BarChart>
+                </Row>
+                <Row>
+                  <PieChart width={800} height={600}>
+                    <Pie isAnimationActive={false} data={data01} cx={300} cy={300} outerRadius={80} fill='#8884d8' label />
+                    <Tooltip />
+                  </PieChart>
+                </Row>
+              </Slider>
+              <SliderPrev onClick={() => this.changeSlider(sliderIndex-1)}><i className="fa fa-chevron-left" aria-hidden="true"></i></SliderPrev>
+              <SliderNext onClick={() => this.changeSlider(sliderIndex+1)}><i className="fa fa-chevron-right" aria-hidden="true"></i></SliderNext>
             </CollapseBox>
             <i className={`fa fa-caret-down fa-4x ${rotate.graphics} icon`} aria-hidden='true' onClick={() => this.openBox('graphics')} />
           </Col>
@@ -94,7 +186,8 @@ class Home extends Component {
           </Col>
         </Section>
         <Footer />
-        <Dialog isVisible={modalOpen} onClickClose={() => this.setState({modalOpen: !modalOpen})}/>
+        {goTo}
+        <Dialog isVisible={modalOpen} onClickClose={() => this.setState({modalOpen: !modalOpen})} />
       </div>
     )
   }
@@ -132,6 +225,22 @@ class Home extends Component {
       }
       this.setState({isOpen, rotate})
     }
+  }
+  changeSlider (index) {
+    var i = index
+    if (i > 2) {
+      i = 0
+      this.setState({sliderIndex: i})
+      this.refs.slider.slickGoTo(i)
+    }
+    if (i < 0) {
+      i = 2
+      this.setState({sliderIndex: i})
+      this.refs.slider.slickGoTo(i)
+    }
+    this.setState({sliderIndex: i})
+    this.refs.slider.slickGoTo(i)
+
   }
 }
 
