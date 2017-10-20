@@ -14,7 +14,8 @@ import {
   Dialog,
   SliderPrev,
   SliderNext,
-  GoToTop
+  GoToTop,
+  TabsShowBy
 } from '../../components'
 import './styles.css'
 import {
@@ -53,15 +54,13 @@ class Home extends Component {
     this.openBox = this.openBox.bind(this)
     this.changeSlider = this.changeSlider.bind(this)
   }
-  componentWillMount() {
+  componentWillMount () {
     window.addEventListener('scroll', (e) => {
-      console.log(window)
-      if (window.scrollY >= 1000){
+      if (window.scrollY >= 1000) {
         this.setState({goTo: <GoToTop onClick={e => window.scrollTo(0, 0)} />})
-      } else{
+      } else {
         this.setState({goTo: null})
       }
-
     })
   }
   render () {
@@ -79,7 +78,7 @@ class Home extends Component {
       {name: 'Page D', uv: 2780, pv: 3908, amt: 2000},
       {name: 'Page E', uv: 1890, pv: 4800, amt: 2181},
       {name: 'Page F', uv: 2390, pv: 3800, amt: 2500},
-      {name: 'Page G', uv: 3490, pv: 4300, amt: 2100},
+      {name: 'Page G', uv: 3490, pv: 4300, amt: 2100}
     ]
     const data01 = [
       {name: 'Group A', value: 400}, {name: 'Group B', value: 300},
@@ -95,7 +94,6 @@ class Home extends Component {
     }
     return (
       <div>
-
         <header>
           <NavigationBar />
           <MainBanner />
@@ -167,8 +165,15 @@ class Home extends Component {
           <Subtitle>DE LAS 500 FRENTE A LA CORRUPCIÓN</Subtitle>
           <Col>
             <CollapseBox isOpen={isOpen.data} >
+              <Row noMargin>
+                <TabsShowBy />
+              </Row>
               <Row>
-                <img src='http://via.placeholder.com/800x600' alt='' />
+                <BarChart width={800} height={600} data={data}>
+                  <XAxis dataKey='name' />
+                  <YAxis />
+                  <Bar dataKey='pv' fill='#000' barSize={10} />
+                </BarChart>
               </Row>
             </CollapseBox>
             <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' onClick={() => this.openBox('data')} />
@@ -240,7 +245,6 @@ class Home extends Component {
     }
     this.setState({sliderIndex: i})
     this.refs.slider.slickGoTo(i)
-
   }
 }
 
