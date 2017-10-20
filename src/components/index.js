@@ -11,8 +11,9 @@ import Subtitle from './subtitle'
 import Footer from './footer'
 import Dialog from './dialog'
 import SliderPrev from './slider_prev'
-import SliderNext from './slider_nex' 
+import SliderNext from './slider_nex'
 import GoToTop from './gototop'
+import TabsShowBy from './tabs_show_by'
 
 export {
   NavigationBar,
@@ -29,5 +30,6 @@ export {
   Dialog,
   SliderPrev,
   SliderNext,
-  GoToTop
+  GoToTop,
+  TabsShowBy
 }

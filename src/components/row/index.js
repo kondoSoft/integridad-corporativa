@@ -6,7 +6,7 @@ const Row = styled.div`
   align-items:center;
   flex-wrap:wrap;
   flex-flow:row;
-  margin:40px 0px;
+  margin: ${ props => props.noMargin ? '0px' : '40px 0px'};
 `
 
 export default Row

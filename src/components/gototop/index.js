@@ -1,5 +1,14 @@
-import styled from 'styled-components'
+import styled, {keyframes} from 'styled-components'
 import React from 'react'
+
+const fadeIn = keyframes`
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 0.6;
+  }
+`
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,6 +25,8 @@ const Wrapper = styled.div`
   transition: 0.3s;
   cursor: pointer;
   opacity: 0.6;
+  animation-name: ${fadeIn};
+  animation-duration: 0.3s;
   &:hover{
     opacity: 1;
     
