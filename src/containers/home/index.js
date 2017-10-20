@@ -15,7 +15,9 @@ import {
   SliderPrev,
   SliderNext,
   GoToTop,
-  TabsShowBy
+  TabsShowBy,
+  GraphicDescription,
+  Disclaimer
 } from '../../components'
 import './styles.css'
 import {
@@ -113,7 +115,7 @@ class Home extends Component {
         <Section>
           <Title color={(isOpen.graphics) ? '#ED4630' : ''}>GRÁFICAS</Title>
           <Col>
-            <CollapseBox isOpen={isOpen.graphics} >
+            <CollapseBox isOpen={isOpen.graphics} height='800px'>
               <Slider {...settings} ref='slider'>
                 <Row>
                   <BarChart
@@ -164,7 +166,7 @@ class Home extends Component {
           <Title color={(isOpen.data) ? '#ED4630' : ''}>INFORMACIÓN ACTUALIZADA</Title>
           <Subtitle>DE LAS 500 FRENTE A LA CORRUPCIÓN</Subtitle>
           <Col>
-            <CollapseBox isOpen={isOpen.data} >
+            <CollapseBox isOpen={isOpen.data} height='1050px'>
               <Row noMargin>
                 <TabsShowBy />
               </Row>
@@ -175,6 +177,16 @@ class Home extends Component {
                   <Bar dataKey='pv' fill='#000' barSize={10} />
                 </BarChart>
               </Row>
+              <Row>
+                <GraphicDescription>500 Frente a la Corrupción, Integridad Corporaiva, permite analizar patrones y diferencias relevantes entre empresas de didstintos sectores.
+                 Bajo esta óptica, destacan algunos casos positivos como el caso de la minería, un sector en el que, a pesar  de estar expuesto a altos riesgos de corrupción,
+                 las 13 empresas evaluadas obtienen un puntaje promedio de 60.6, destacando Pan Amarican Silver  Corp con 82.4 puntos.
+                  Otros ejemplos positivo es el de las dos empresas de la endustria aeroespacial, Honeywell Aerospace de México y Bombardier,
+                   ambas con altas calificaciones que les permiten obtener casi 80 puntos en promedio.</GraphicDescription>
+              </Row>
+              <Row background='#E1E1E1' style={{width: '131%', position: 'relative', left: '-15.8%'}}>
+                <Disclaimer></Disclaimer>
+              </Row>
             </CollapseBox>
             <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' onClick={() => this.openBox('data')} />
           </Col>
@@ -182,7 +194,7 @@ class Home extends Component {
         <Section>
           <Title color={(isOpen.newsWall) ? '#ED4630' : ''}>MURO DE NOTICIAS</Title>
           <Col>
-            <CollapseBox isOpen={isOpen.newsWall}>
+            <CollapseBox isOpen={isOpen.newsWall} height='800px'>
               <Row>
                 <img src='http://via.placeholder.com/800x600' alt='' />
               </Row>
