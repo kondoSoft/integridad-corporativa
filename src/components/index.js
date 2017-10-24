@@ -17,7 +17,7 @@ import TabsShowBy from './tabs_show_by'
 import GraphicDescription from './graphic-description'
 import Disclaimer from './disclamer'
 import NewsWall from './news_wall'
-
+import View from './slideview'
 export {
   NavigationBar,
   MainBanner,
@@ -37,5 +37,6 @@ export {
   TabsShowBy,
   GraphicDescription,
   Disclaimer,
-  NewsWall
+  NewsWall,
+  View,
 }

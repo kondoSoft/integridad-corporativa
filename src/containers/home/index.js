@@ -18,7 +18,8 @@ import {
   TabsShowBy,
   GraphicDescription,
   Disclaimer,
-  NewsWall
+  NewsWall,
+  View
 } from '../../components'
 import './styles.css'
 import {
@@ -73,11 +74,16 @@ class Home extends Component {
             image: 'assets/img/blog2_example.jpg'
           }
         ]
-      }
+      },
+      View:{
+        click:false
+      },
+
     }
 
     this.openBox = this.openBox.bind(this)
     this.changeSlider = this.changeSlider.bind(this)
+    this.clickView = this.clickView.bind(this)
   }
   componentWillMount () {
     window.addEventListener('scroll', (e) => {
@@ -139,9 +145,9 @@ class Home extends Component {
           <Title color={(isOpen.graphics) ? '#ED4630' : ''}>GRÁFICAS</Title>
           <Col>
             <CollapseBox isOpen={isOpen.graphics} height='800px'>
+              <View click={this.state.View} slide={this.clickView}/>
               <Slider {...settings} ref='slider'>
-                <Col>
-                  <h1>Grafica 1</h1>
+                <Col center='center'>
                   <ComposedChart width={800} height={600} data={data}>
                     <XAxis dataKey='name' />
                     <YAxis />
@@ -380,6 +386,17 @@ class Home extends Component {
     this.setState({sliderIndex: i})
     this.refs.slider.slickGoTo(i)
   }
+  clickView(){
+    var state = this.state.View
+    if (state.click) {
+      state.click = false
+    }
+    else {
+      state.click = true
+    }
+    this.setState(state)
+    }
+
 }
 
 export default Home
