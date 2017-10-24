@@ -87,6 +87,7 @@ const Title = styled.h3`
   margin-bottom:10px;
   text-align:center;
   font-size:24px;
+  color: #F00;
 `
 
 const P = styled.p`
@@ -97,9 +98,9 @@ const P = styled.p`
 const Dialog = (props) => (
   <Wrapper isVisible={props.isVisible}>
     <Card isVisible={props.isVisible} >
-      <Icon className="fa fa-times" aria-hidden="true" onClick={props.onClickClose}/>
+      <Icon className='fa fa-times' aria-hidden='true' onClick={props.onClickClose} />
       <Title>¡ADVERTENCIA!</Title>
-      <P>500 Frente A la Corrupción no es un índice sobre la corrupción en las empresas más importantes del país. Es una evaluación de los compromisos públicos en favor de las políticas de integridad. No de su cumplimiento</P>
+      <P>500 Frente a la Corrupción: Integridad Corporativa (IC500) no es un índice sobre la corrupción en las empresas. Es una evaluación de los compromisos públicos de las empresas más importantes del país en favor de las políticas de  integridad, NO de su cumplimiento.</P>
     </Card>
   </Wrapper>
 )

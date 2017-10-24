@@ -16,6 +16,7 @@ import GoToTop from './gototop'
 import TabsShowBy from './tabs_show_by'
 import GraphicDescription from './graphic-description'
 import Disclaimer from './disclamer'
+import NewsWall from './news_wall'
 
 export {
   NavigationBar,
@@ -35,5 +36,6 @@ export {
   GoToTop,
   TabsShowBy,
   GraphicDescription,
-  Disclaimer
+  Disclaimer,
+  NewsWall
 }
