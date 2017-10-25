@@ -17,6 +17,8 @@ import TabsShowBy from './tabs_show_by'
 import {GraphicDescription, CustomizedAxisTick} from './graphic-description'
 import Disclaimer from './disclamer'
 import NewsWall from './news_wall'
+import SectionBanner from './glosarioBanner'
+import {Main, Route, Edition, Topic} from './main'
 
 export {
   NavigationBar,
@@ -38,5 +40,10 @@ export {
   GraphicDescription,
   Disclaimer,
   NewsWall,
-  CustomizedAxisTick
+  CustomizedAxisTick,
+  SectionBanner,
+  Main,
+  Route,
+  Edition,
+  Topic
 }
