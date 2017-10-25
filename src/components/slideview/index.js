@@ -10,13 +10,13 @@ const Container = styled.div`
 const Vmore = styled.a`
   color: black;
   font-weight: bolder;
-  display: ${props => props.click ? 'none': 'display'};
+  display: ${props => props.click ? 'none': 'initial'};
   text-decoration: underline;
 `
 const Vless = styled.a`
   color: black;
   font-weight: bolder;
-  display: ${props => props.click ? 'display': 'none'};
+  display: ${props => props.click ? 'initial': 'none'};
   text-decoration: underline;
 `
 const TextUp = styled.p`
@@ -24,7 +24,7 @@ const TextUp = styled.p`
   text-decoration: none !important;
 `
 const TextDown = styled.p`
-  display: none;
+text-decoration: none !important;
 `
 const ContainerUp = styled.div`
   width: 100%;
@@ -43,8 +43,6 @@ function View (props){
           <TextUp> {props.textUp} </TextUp>
           <Vmore onClick={props.slide} click={props.click}> Ver mas </Vmore>
         </ContainerUp>
-        <br/>
-        <br/>
         <ContainerDown click={props.click}>
           <TextDown > {props.textDown} </TextDown>
           <br/>
