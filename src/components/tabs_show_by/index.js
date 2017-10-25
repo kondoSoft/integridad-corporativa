@@ -1,6 +1,33 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 
+class TabsShowBy extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      isPressed: '1'
+    }
+    this.onClicked = this.onClicked.bind(this)
+  }
+  onClicked (n) {
+    this.setState({
+      activated: true,
+      isPressed: n
+    })
+    this.props.Graphics(n)
+  }
+  render () {
+    const { isPressed } = this.state
+    return (
+      <Wrapper>
+        <Tab active={(isPressed === '1')} onClick={() => this.onClicked('1')} >POR SECTOR</Tab>
+        <Tab active={(isPressed === '2')} onClick={() => this.onClicked('2')} >POR PAÍS</Tab>
+        <Tab active={(isPressed === '3')} onClick={() => this.onClicked('3')} >POR REGIÓN</Tab>
+        <Tab active={(isPressed === '4')} onClick={() => this.onClicked('4')} >POR AÑO</Tab>
+      </Wrapper>
+    )
+  }
+}
 const Wrapper = styled.ul`
   list-style: none;
 `
@@ -8,7 +35,7 @@ const Wrapper = styled.ul`
 const Tab = styled.li`
   ${props => {
     if (props.active) {
-      return(
+      return (
        `background: #ED4630;
         color: #FFF; 
         font-weight: bold;
@@ -16,6 +43,7 @@ const Tab = styled.li`
       )
     }
   }}
+  
   display: inline-block;
   padding: 10px 20px;
   border-right: 2px solid #ED4630;
@@ -44,13 +72,13 @@ const Tab = styled.li`
   // }
 `
 
-const TabsShowBy = (props) => (
-  <Wrapper>
-    <Tab active>POR SECTOR</Tab>
-    <Tab>POR PAÍS</Tab>
-    <Tab>POR REGIÓN</Tab>
-    <Tab>POR AÑO</Tab>
-  </Wrapper>
-)
+// const TabsShowBy = (props) => (
+//   <Wrapper>
+//     <Tab onPress={props.onPress} active={(props.isPressed === 1) ? props.active : false}>POR SECTOR</Tab>
+//     <Tab onPress={props.onPress} active={(props.isPressed === 2) ? props.active : false}>POR PAÍS</Tab>
+//     <Tab onPress={props.onPress} active={(props.isPressed === 3) ? props.active : false}>POR REGIÓN</Tab>
+//     <Tab onPress={props.onPress} active={(props.isPressed === 4) ? props.active : false}>POR AÑO</Tab>
+//   </Wrapper>
+// )
 
 export default TabsShowBy

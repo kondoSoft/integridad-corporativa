@@ -14,7 +14,7 @@ import SliderPrev from './slider_prev'
 import SliderNext from './slider_nex'
 import GoToTop from './gototop'
 import TabsShowBy from './tabs_show_by'
-import GraphicDescription from './graphic-description'
+import {GraphicDescription, CustomizedAxisTick} from './graphic-description'
 import Disclaimer from './disclamer'
 import NewsWall from './news_wall'
 
@@ -37,5 +37,6 @@ export {
   TabsShowBy,
   GraphicDescription,
   Disclaimer,
-  NewsWall
+  NewsWall,
+  CustomizedAxisTick
 }
