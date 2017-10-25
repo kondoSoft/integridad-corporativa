@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import {
-  Row
+  Row,
+  Player,
 } from '../index'
 
 const Wrapper = styled.div`
@@ -21,6 +22,7 @@ const Description = styled.div`
   padding: 20px 10px;
   box-sizing: border-box;
   bottom: 2px;
+  z-index: 100;
 `
 
 const Image = styled.img`
@@ -34,6 +36,22 @@ const CalendarEvents = styled.div`
   background: red;
   color: #FFF;
   text-transform: uppercase;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+`
+const TextCalendar = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+`
+const IconCalendar = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 `
 
 const Col = styled.div`
@@ -50,6 +68,7 @@ const Col = styled.div`
           max-width: 250px;
           margin: 0px 0px 0px 0px;
           box-sizing: border-box;
+          padding: 0  2.5px;
         `
       )
     }
@@ -62,23 +81,28 @@ const NewsWall = (props) => (
       <Col>
         <VideoContainer>
           {props.data.video.tag}
-          {/* <Description>
-            Esta es la descripcion
-          </Description> */}
         </VideoContainer>
       </Col>
       <Col>
         <Row noMargin>
           <Col Ext>
             <Image src={props.data.articles[0].image} />
+            <Description>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+            </Description>
           </Col>
           <Col Ext>
             <Image src={props.data.articles[1].image} />
           </Col>
         </Row>
-        <Row noMargin width='100%'>
+        <Row noMargin width='100%' padding='10px'>
           <CalendarEvents>
-            Calendario de Publicaciones y eventos
+            <TextCalendar>
+              <p>Calendario de Publicaciones </p> <br/><p> y eventos</p>
+            </TextCalendar>
+            <IconCalendar>
+              <i className='fa fa-calendar fa-4x' aria-hidden='true' />
+            </IconCalendar>
           </CalendarEvents>
         </Row>
       </Col>
