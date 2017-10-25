@@ -2,42 +2,54 @@ import styled from 'styled-components';
 import React from 'react'
 
 const Container = styled.div`
-  width:80%;
-  height: ${props => props.click.click ? '250px': '20px'};
-  overflow:hidden;
+  width: 80%;
+  overflow: hidden;
   margin: auto;
-   text-align : justify;
+  text-align : justify;
   `
-const text1 = styled.a`
-  color:black;
-  font-weight: bolder;
-`
 const Vmore = styled.a`
-  color:black;
+  color: black;
   font-weight: bolder;
-  display: ${props => props.click.click ? 'none': 'display'};
+  display: ${props => props.click ? 'none': 'display'};
+  text-decoration: underline;
 `
 const Vless = styled.a`
-  color:black;
+  color: black;
   font-weight: bolder;
-  display: ${props => props.click.click ? 'display': 'none'};
+  display: ${props => props.click ? 'display': 'none'};
+  text-decoration: underline;
 `
-const text2 = styled.p`
+const TextUp = styled.p`
+  color: black;
+  text-decoration: none !important;
+`
+const TextDown = styled.p`
   display: none;
 `
-
+const ContainerUp = styled.div`
+  width: 100%;
+  height: auto;
+  display: ${props => props.click ? 'none': 'initial'};
+`
+const ContainerDown = styled.div`
+  width:100%;
+  height: auto;
+  display: ${props => props.click ? 'initial': 'none'};
+`
 function View (props){
     return(
-      <Container click={props.click}>
-        <Vmore onClick={props.slide} click={props.click}>El sector privado es una pieza central en cualquier estrategia anticorrupción..... Ver mas</Vmore>
+      <Container>
+        <ContainerUp click={props.click} >
+          <TextUp> {props.textUp} </TextUp>
+          <Vmore onClick={props.slide} click={props.click}> Ver mas </Vmore>
+        </ContainerUp>
         <br/>
         <br/>
-        <text2>El primer paso consiste en establecer e implementar políticas de integridad que muestren su compromiso anticorrupción, el cual sólo se hace efectivo al hacerlo público y accesible para su consulta, al capacitar a directivos y empleados para su implementación, y al socializarlo entre socios y clientes. La señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, y que facilitan y premian la denuncia, constituyen el primer eslabón en la lucha contra la corrupción.
-Sin embargo, la distribución de las 500 empresas refleja el estado embrionario en la adopción de políticas de integridad en el sector privado en México. Ninguna empresa obtuvo 100 puntos y sólo 13 empresas obtuvieron más de 80 puntos. Además, El 61.8% de las organizaciones obtuvieron menos de 50 puntos y apenas 2 por encima de los 90 puntos (0.4%).
-</text2>
-<br/>
-  <Vless onClick={props.slide} click={props.click}>Ver menos</Vless>
-
+        <ContainerDown click={props.click}>
+          <TextDown > {props.textDown} </TextDown>
+          <br/>
+          <Vless onClick={props.slide} click={props.click}>Ver menos</Vless>
+        </ContainerDown>
       </Container>
     );
 }
