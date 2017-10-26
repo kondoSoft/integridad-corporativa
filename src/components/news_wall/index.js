@@ -143,7 +143,7 @@ const NewsWall = (props) => {
           <Row noMargin width='100%' padding='10px'>
             <CalendarEvents href='#'>
               <TextCalendar>
-                <p>Calendario de Publicaciones </p> <br/><p> y eventos</p>
+                <p>Calendario de Publicaciones </p> <br /><p> y eventos</p>
               </TextCalendar>
               <IconCalendar>
                 <i className='fa fa-calendar fa-4x' aria-hidden='true' />

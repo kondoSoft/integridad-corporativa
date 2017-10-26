@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {
-  NavigationBar,
   MainBanner,
   Title,
   Button,
@@ -167,7 +166,6 @@ class Home extends Component {
     return (
       <div>
         <header>
-          <NavigationBar />
           <MainBanner />
         </header>
         <section className='download'>

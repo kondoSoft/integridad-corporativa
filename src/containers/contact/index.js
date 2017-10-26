@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {
-  NavigationBar,
   SectionBanner,
   Footer,
   ContactForm
@@ -11,7 +10,6 @@ class Contact extends Component {
     return (
       <div>
         <header>
-          <NavigationBar />
           <SectionBanner title='CONTACTO' withBar/>
         </header>
         <ContactForm />
