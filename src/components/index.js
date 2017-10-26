@@ -19,6 +19,7 @@ import Disclaimer from './disclamer'
 import NewsWall from './news_wall'
 import SectionBanner from './glosarioBanner'
 import {Main, Route, Edition, Topic, Sources, News, Container} from './main'
+import {ContentText, Content, MainSection, BottomBanner, BackBannerContent} from './quienes_somos'
 
 export {
   NavigationBar,
@@ -48,5 +49,10 @@ export {
   Topic,
   Sources,
   News,
-  Container
+  Container,
+  ContentText,
+  Content,
+  MainSection,
+  BottomBanner,
+  BackBannerContent
 }
