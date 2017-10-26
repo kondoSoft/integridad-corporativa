@@ -20,7 +20,7 @@ import NewsWall from './news_wall'
 import SectionBanner from './glosarioBanner'
 import {Main, Route, Edition, Topic} from './main'
 import ContactForm from './ContactForm'
-
+import View from './slideview'
 export {
   NavigationBar,
   MainBanner,
@@ -47,5 +47,6 @@ export {
   Route,
   Edition,
   Topic,
-  ContactForm
+  ContactForm,
+  View
 }
