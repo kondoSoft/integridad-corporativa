@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import './App.css'
 import {
   Home,
-  Glossary
+  Glossary,
+  Contact
 } from './containers'
 import {
   BrowserRouter as Router,
@@ -16,7 +17,7 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Glossary />
+        <Contact />
       </div>
     )
   }

@@ -19,6 +19,7 @@ import Disclaimer from './disclamer'
 import NewsWall from './news_wall'
 import SectionBanner from './glosarioBanner'
 import {Main, Route, Edition, Topic} from './main'
+import ContactForm from './ContactForm'
 
 export {
   NavigationBar,
@@ -45,5 +46,6 @@ export {
   Main,
   Route,
   Edition,
-  Topic
+  Topic,
+  ContactForm
 }
