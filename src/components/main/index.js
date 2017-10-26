@@ -2,20 +2,26 @@ import styled from 'styled-components'
 import React from 'react'
 
 export const Main = styled.main`
+    width: 100%;
+    display: flex;
+`
+export const Container = styled.div`
     display: flex;
     flex-direction: ${props => props.row ? 'row' : 'column'};
     margin-top: 60px;
+    margin-bottom: 60px;
     padding: 0px 90px;
     border-right: 2px solid lightgrey;
     width: 60%;
 `
 export const Route = styled.p`
-    font-size: 20px;
+    font-size: 16px;
     color: red;
     margin-bottom: 50px;
+    font-weight: 200;
 `
 export const Edition = styled.p`
-    font-size: 14px;
+    font-size: 12px;
     color: lightgrey;
     margin-bottom: 40px;
 `
@@ -23,22 +29,198 @@ const Box = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 `
-const BoxTitle = styled.h3`
-    font-size: 26px;
+const BoxTitle = styled.a`
+    font-size: ${props => props.big ? '24px' : '18px'};
+    font-weight: ${props => props.big ? 800 : 200};
+    text-transform: ${props => props.big ? 'uppercase' : 'none'};
     margin-bottom: 15px;
+    color: #72030e;
 `
 const BoxDescription = styled.p`
-    font-size: 16px;
-    margin-bottom: 30px;
+    font-size: 15px;
+    margin-bottom: 20px;
 `
+const SourceDetail = styled.div`
+    display: flex;
+    padding-top: 30px;
+    flex-direction: column;
+`
+const BoldTitle = styled.b`
+    display: flex;
+    font-weight: 600;
+    font-size: 14px;
+    padding-left: 5px;
+    width: 100%;
+`
+const SourceBook = styled.p`
+    font-size: 14px;
+    font-weight: 200;
+`
+const SourceLink = styled.a`
+    font-size: 14px;
+    color: orange;
+    padding-left: 25px;
+    width: 90%;
+`
+export const SourceBox = styled.div`
+    width: 100%;
+    border-top: 2px solid lightgrey;
+    padding-top: 20px;
+    padding-left: 25px;
+`
+export const Sources = (props) => {
+  return (
+    <SourceBox>
+      <BoxTitle big >Fuentes y referencias generales</BoxTitle>
+      {
+        props.data.map((source, i) => {
+          return (
+            <SourceDetail>
+              <BoldTitle>
+                <i className='fa fa-chevron-right' aria-hidden='true' style={{color: 'orange', marginRight: 10}} />
+                <p>{source.title}</p>
+                <SourceBook>{source.book}</SourceBook>
+              </BoldTitle>
+              <SourceLink>{source.url}</SourceLink>
+            </SourceDetail>
+          )
+        })
+      }
+    </SourceBox>
+  )
+}
+const SideBar = styled.div`
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 40%;
+    padding-top: 150px;
+    padding-left: 20px;
+    padding-right: 20px;
+`
+const SideBarContent = styled.div`
+    padding-top: 10px;
+    display: flex;
+    margin-bottom: 10px;
+    flex-direction: column;
+    flex: 1;
+`
+const SideBarTitle = styled.p`
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Druk Text Web';
+`
+const Thumbnail = styled.img`
+    width: ${props => props.large ? '100%' : '46%'};
+`
+const ThumbnailDescription = styled.a`
+    width: ${props => props.large ? '100%' : '47%'};
+    text-align: ${props => props.large ? 'center' : 'none'};
+    display: flex;
+    flex-direction: column;
+    justify-content: ${props => props.large ? 'center' : 'flex-start'}; 
+    background-color: ${props => props.large ? 'darkred' : 'red'};
+    padding: 5px;
+    padding-left: 15px;
+    padding-top: 10px;
+    cursor: pointer;
+`
+const ThumbnailLink = styled.a`
+    width: ${props => props.large ? '100%' : '47%'};
+    text-align: ${props => props.large ? 'center' : 'none'};
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: ${props => props.large ? 'center' : 'flex-start'}; 
+    background-color: ${props => props.large ? 'darkred' : 'red'};
+    padding: 5px;
+    padding-left: 15px;
+    padding-top: 10px;
+    cursor: pointer;
+`
+const SideBarNews = styled.div`
+    width: 100%;
+    display: flex;
+    flex: 0.3;
+    flex-direction: column;
+    justify-content: space-around;
+`
+const SideBarThumb = styled.div`
+    width: 100%;
+    display: flex;
+    flex: ${props => props.outSide ? 0.1 : 1};
+    margin: ${props => props.middle ? '20px 0px' : '0px'};
+`
+const Text = styled.p`
+    font-size: ${props => props.date ? '12px' : '14px'};
+    color: ${props => props.date ? 'lightgrey' : 'black'};
+    padding-bottom: ${props => props.date ? '5px' : '0px'};
+`
+export const News = (props) => {
+  return (
+    <SideBar>
+      <SideBarTitle>ENTRADAS RECIENTES</SideBarTitle>
+      <hr style={{borderColor: 'red', width: '100%'}} />
+      <SideBarContent>
+        <SideBarNews>
+          <SideBarThumb>
+            <Thumbnail src={'http://via.placeholder.com/80x80'} />
+            <ThumbnailDescription>
+              <Text date>fecha</Text>
+              <Text>datos</Text>
+            </ThumbnailDescription>
+          </SideBarThumb>
+          <hr style={{borderColor: 'lightgrey', width: '90%'}} />
+          <SideBarThumb>
+            <Thumbnail src={'http://via.placeholder.com/80x80'} />
+            <ThumbnailDescription>
+              <Text date>fecha</Text>
+              <Text>datos</Text>
+            </ThumbnailDescription>
+          </SideBarThumb>
+          <hr style={{borderColor: 'lightgrey', width: '90%'}} />
+          <SideBarThumb>
+            <Thumbnail src={'http://via.placeholder.com/80x80'} />
+            <ThumbnailDescription>
+              <Text date>fecha</Text>
+              <Text>datos</Text>
+            </ThumbnailDescription>
+          </SideBarThumb>
+        </SideBarNews>
+        <hr style={{borderColor: 'lightgrey', width: '90%'}} />
+        <SideBarThumb outSide middle>
+          <ThumbnailLink large>
+            <i className='fa fa-calendar' aria-hidden='true' style={{color: '#FFF', padding: 5, fontSize: 40 }} />
+            <p style={{width: '100%', fontSize: 22, color: '#FFF'}}>Calendario de actividades y eventos</p>
+          </ThumbnailLink>
+        </SideBarThumb>
+        <hr style={{borderColor: 'lightgrey', width: '90%'}} />
+        <SideBarThumb outSide middle>
+          <Thumbnail height={70} large src={'assets/img/logo_expansion.jpg'} />
+        </SideBarThumb>
+        <SideBarThumb outSide middle>
+          <Thumbnail height={70} large src={'http://via.placeholder.com/80x80'} />
+        </SideBarThumb>
+        <SideBarThumb outSide middle>
+          <Thumbnail height={70} large src={'assets/img/transparencia_mexicana.png'} />
+        </SideBarThumb>
+      </SideBarContent>
+    </SideBar>
+  )
+}
 export const Topic = (props) => {
   return (
-    <Box>
-      <BoxTitle>Titulo de la caja</BoxTitle>
-      <BoxDescription>
-        Descripcion de la caja
-      </BoxDescription>
-    </Box>
+    props.data.map((topic, i) => {
+      return (
+        <Box>
+          <BoxTitle>{topic.title}</BoxTitle>
+          <BoxDescription>
+            {topic.description}
+          </BoxDescription>
+        </Box>
+      )
+    })
   )
 }
