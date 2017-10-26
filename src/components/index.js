@@ -18,7 +18,7 @@ import {GraphicDescription, CustomizedAxisTick} from './graphic-description'
 import Disclaimer from './disclamer'
 import NewsWall from './news_wall'
 import SectionBanner from './glosarioBanner'
-import {Main, Route, Edition, Topic} from './main'
+import {Main, Route, Edition, Topic, Sources, News, Container} from './main'
 import ContactForm from './ContactForm'
 
 export {
@@ -47,5 +47,8 @@ export {
   Route,
   Edition,
   Topic,
+  Sources,
+  News,
+  Container,
   ContactForm
 }
