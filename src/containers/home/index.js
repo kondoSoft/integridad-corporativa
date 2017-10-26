@@ -18,7 +18,8 @@ import {
   TabsShowBy,
   GraphicDescription,
   Disclaimer,
-  NewsWall
+  NewsWall,
+  CustomizedAxisTick
 } from '../../components'
 import './styles.css'
 import {
@@ -42,6 +43,43 @@ class Home extends Component {
     super(props)
 
     this.state = {
+      dataActualizada: [
+                          {name: 'A', uv: 10, pv: 100, amt: 100},
+                          {name: 'B', uv: 10, pv: 95, amt: 95},
+                          {name: 'C', uv: 10, pv: 90, amt: 90},
+                          {name: 'D', uv: 10, pv: 80, amt: 80},
+                          {name: 'E', uv: 10, pv: 85, amt: 85},
+                          {name: 'F', uv: 10, pv: 80, amt: 80},
+                          {name: 'A', uv: 10, pv: 75, amt: 75},
+                          {name: 'B', uv: 10, pv: 70, amt: 70},
+                          {name: 'C', uv: 10, pv: 65, amt: 65},
+                          {name: 'D', uv: 10, pv: 60, amt: 60},
+                          {name: 'E', uv: 10, pv: 55, amt: 55},
+                          {name: 'F', uv: 10, pv: 50, amt: 50},
+                          {name: 'A', uv: 10, pv: 45, amt: 45},
+                          {name: 'B', uv: 10, pv: 40, amt: 40},
+                          {name: 'C', uv: 10, pv: 35, amt: 35},
+                          {name: 'D', uv: 10, pv: 30, amt: 30},
+                          {name: 'E', uv: 10, pv: 25, amt: 25},
+                          {name: 'B', uv: 10, pv: 70, amt: 70},
+                          {name: 'C', uv: 10, pv: 65, amt: 65},
+                          {name: 'D', uv: 10, pv: 60, amt: 60},
+                          {name: 'E', uv: 10, pv: 55, amt: 55},
+                          {name: 'F', uv: 10, pv: 50, amt: 50},
+                          {name: 'A', uv: 10, pv: 45, amt: 45},
+                          {name: 'B', uv: 10, pv: 40, amt: 40},
+                          {name: 'C', uv: 10, pv: 35, amt: 35},
+                          {name: 'D', uv: 10, pv: 30, amt: 30},
+                          {name: 'E', uv: 10, pv: 25, amt: 25},
+                          {name: 'F', uv: 10, pv: 20, amt: 20},
+                          {name: 'A', uv: 10, pv: 50, amt: 10},
+                          {name: 'B', uv: 10, pv: 60, amt: 10},
+                          {name: 'C', uv: 10, pv: 30, amt: 10},
+                          {name: 'D', uv: 10, pv: 80, amt: 10},
+                          {name: 'E', uv: 10, pv: 90, amt: 10},
+                          {name: 'F', uv: 10, pv: 40, amt: 10},
+                          {name: 'G', uv: 10, pv: 65, amt: 10}
+      ],
       isOpen: {
         graphics: false,
         data: false,
@@ -57,7 +95,7 @@ class Home extends Component {
       goTo: null,
       data: {
         video: {
-          tag: <iframe width='560' height='315' src='https://www.youtube.com/embed/xcJtL7QggTI?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen></iframe>,
+          tag: <iframe width='560' height='315' src='https://www.youtube.com/embed/xcJtL7QggTI?rel=0&amp;showinfo=0' frameborder='0' allowfullscreen />,
           title: 'Videos',
           description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
         },
@@ -78,6 +116,7 @@ class Home extends Component {
 
     this.openBox = this.openBox.bind(this)
     this.changeSlider = this.changeSlider.bind(this)
+    this.changeGraphics = this.changeGraphics.bind(this)
   }
   componentWillMount () {
     window.addEventListener('scroll', (e) => {
@@ -88,8 +127,103 @@ class Home extends Component {
       }
     })
   }
+  changeGraphics (n) {
+    console.log('n', n)
+    if (n === '1') {
+      this.setState({
+        dataActualizada: [
+                            {name: 'A', uv: 10, pv: 100, amt: 100},
+                            {name: 'B', uv: 10, pv: 95, amt: 95},
+                            {name: 'C', uv: 10, pv: 90, amt: 90},
+                            {name: 'D', uv: 10, pv: 80, amt: 80},
+                            {name: 'E', uv: 10, pv: 85, amt: 85},
+                            {name: 'F', uv: 10, pv: 80, amt: 80},
+                            {name: 'A', uv: 10, pv: 75, amt: 75},
+                            {name: 'B', uv: 10, pv: 70, amt: 70},
+                            {name: 'C', uv: 10, pv: 65, amt: 65},
+                            {name: 'D', uv: 10, pv: 60, amt: 60},
+                            {name: 'E', uv: 10, pv: 55, amt: 55},
+                            {name: 'F', uv: 10, pv: 50, amt: 50},
+                            {name: 'A', uv: 10, pv: 45, amt: 45},
+                            {name: 'B', uv: 10, pv: 40, amt: 40},
+                            {name: 'C', uv: 10, pv: 35, amt: 35},
+                            {name: 'D', uv: 10, pv: 30, amt: 30},
+                            {name: 'E', uv: 10, pv: 25, amt: 25},
+                            {name: 'B', uv: 10, pv: 70, amt: 70},
+                            {name: 'C', uv: 10, pv: 65, amt: 65},
+                            {name: 'D', uv: 10, pv: 60, amt: 60},
+                            {name: 'E', uv: 10, pv: 55, amt: 55},
+                            {name: 'F', uv: 10, pv: 50, amt: 50},
+                            {name: 'A', uv: 10, pv: 45, amt: 45},
+                            {name: 'B', uv: 10, pv: 40, amt: 40},
+                            {name: 'C', uv: 10, pv: 35, amt: 35},
+                            {name: 'D', uv: 10, pv: 30, amt: 30},
+                            {name: 'E', uv: 10, pv: 25, amt: 25},
+                            {name: 'F', uv: 10, pv: 20, amt: 20},
+                            {name: 'A', uv: 10, pv: 50, amt: 10},
+                            {name: 'B', uv: 10, pv: 60, amt: 10},
+                            {name: 'C', uv: 10, pv: 30, amt: 10},
+                            {name: 'D', uv: 10, pv: 80, amt: 10},
+                            {name: 'E', uv: 10, pv: 90, amt: 10},
+                            {name: 'F', uv: 10, pv: 40, amt: 10},
+                            {name: 'G', uv: 10, pv: 65, amt: 10}
+        ]
+      })
+    } else if (n === '2') {
+      this.setState({
+        dataActualizada: [
+                          {name: 'A', uv: 10, pv: 100, amt: 100},
+                          {name: 'B', uv: 10, pv: 95, amt: 95},
+                          {name: 'C', uv: 10, pv: 90, amt: 90},
+                          {name: 'D', uv: 10, pv: 80, amt: 80},
+                          {name: 'E', uv: 10, pv: 85, amt: 85},
+                          {name: 'F', uv: 10, pv: 80, amt: 80},
+                          {name: 'A', uv: 10, pv: 75, amt: 75},
+                          {name: 'B', uv: 10, pv: 70, amt: 70},
+                          {name: 'C', uv: 10, pv: 65, amt: 65},
+                          {name: 'D', uv: 10, pv: 60, amt: 60},
+                          {name: 'E', uv: 10, pv: 55, amt: 55},
+                          {name: 'F', uv: 10, pv: 50, amt: 50},
+                          {name: 'A', uv: 10, pv: 45, amt: 45},
+                          {name: 'B', uv: 10, pv: 40, amt: 40},
+                          {name: 'C', uv: 10, pv: 35, amt: 35},
+                          {name: 'D', uv: 10, pv: 30, amt: 30},
+                          {name: 'E', uv: 10, pv: 25, amt: 25}
+        ]
+      })
+    } else if (n === '3') {
+      this.setState({
+        dataActualizada: [
+                          {name: 'A', uv: 10, pv: 100, amt: 100},
+                          {name: 'B', uv: 10, pv: 95, amt: 95},
+                          {name: 'C', uv: 10, pv: 90, amt: 90},
+                          {name: 'D', uv: 10, pv: 80, amt: 80},
+                          {name: 'E', uv: 10, pv: 85, amt: 85},
+                          {name: 'F', uv: 10, pv: 80, amt: 80},
+                          {name: 'A', uv: 10, pv: 75, amt: 75},
+                          {name: 'B', uv: 10, pv: 70, amt: 70}
+        ]
+      })
+    } else if (n === '4') {
+      this.setState({
+        dataActualizada: [
+                          {name: 'A', uv: 10, pv: 100, amt: 100},
+                          {name: 'B', uv: 10, pv: 95, amt: 95},
+                          {name: 'C', uv: 10, pv: 90, amt: 90},
+                          {name: 'D', uv: 10, pv: 80, amt: 80},
+                          {name: 'A', uv: 10, pv: 75, amt: 75},
+                          {name: 'B', uv: 10, pv: 70, amt: 70},
+                          {name: 'A', uv: 10, pv: 100, amt: 100},
+                          {name: 'B', uv: 10, pv: 95, amt: 95},
+                          {name: 'C', uv: 10, pv: 90, amt: 90}
+        ]
+      })
+    }
+  }
   render () {
     const {
+      isPressed,
+      active,
       isOpen,
       rotate,
       modalOpen,
@@ -97,13 +231,13 @@ class Home extends Component {
       goTo
     } = this.state
     const data = [
-      {name: 'Page A', uv: 10, pv: 40, amt: 50},
-      {name: 'Page B', uv: 10, pv: 40, amt: 50},
-      {name: 'Page C', uv: 10, pv: 40, amt: 50},
-      {name: 'Page D', uv: 10, pv: 40, amt: 50},
-      {name: 'Page E', uv: 10, pv: 40, amt: 50},
-      {name: 'Page F', uv: 10, pv: 40, amt: 50},
-      {name: 'Page G', uv: 10, pv: 40, amt: 50}
+      {name: 'A', uv: 10, pv: 40, amt: 50},
+      {name: 'B', uv: 10, pv: 40, amt: 50},
+      {name: 'C', uv: 10, pv: 40, amt: 50},
+      {name: 'D', uv: 10, pv: 40, amt: 50},
+      {name: 'E', uv: 10, pv: 40, amt: 50},
+      {name: 'F', uv: 10, pv: 40, amt: 50},
+      {name: 'G', uv: 10, pv: 40, amt: 50}
     ]
     const data01 = [
       {name: 'Group A', value: 400}, {name: 'Group B', value: 300},
@@ -280,8 +414,8 @@ class Home extends Component {
                   </BarChart>
                 </Col>
               </Slider>
-              <SliderPrev onClick={() => this.changeSlider(sliderIndex-1)}><i className='fa fa-chevron-left' aria-hidden='true'></i></SliderPrev>
-              <SliderNext onClick={() => this.changeSlider(sliderIndex+1)}><i className='fa fa-chevron-right' aria-hidden='true'></i></SliderNext>
+              <SliderPrev onClick={() => this.changeSlider(sliderIndex - 1)}><i className='fa fa-chevron-left' aria-hidden='true' /></SliderPrev>
+              <SliderNext onClick={() => this.changeSlider(sliderIndex + 1)}><i className='fa fa-chevron-right' aria-hidden='true' /></SliderNext>
             </CollapseBox>
             <i className={`fa fa-caret-down fa-4x ${rotate.graphics} icon`} aria-hidden='true' onClick={() => this.openBox('graphics')} />
           </Col>
@@ -292,13 +426,13 @@ class Home extends Component {
           <Col>
             <CollapseBox isOpen={isOpen.data} height='1050px'>
               <Row noMargin>
-                <TabsShowBy />
+                <TabsShowBy Graphics={this.changeGraphics} />
               </Row>
               <Row>
-                <BarChart width={800} height={600} data={data}>
-                  <XAxis dataKey='name' />
+                <BarChart width={1200} height={600} data={this.state.dataActualizada}>
+                  <XAxis dataKey='name' height={50} tick={<CustomizedAxisTick />} />
                   <YAxis />
-                  <Bar dataKey='pv' fill='#000' barSize={10} />
+                  <Bar dataKey='pv' barSize={20} />
                 </BarChart>
               </Row>
               <Row>
@@ -309,7 +443,7 @@ class Home extends Component {
                    ambas con altas calificaciones que les permiten obtener casi 80 puntos en promedio.</GraphicDescription>
               </Row>
               <Row background='#E1E1E1' style={{width: '131%', position: 'relative', left: '-15.8%'}}>
-                <Disclaimer></Disclaimer>
+                <Disclaimer />
               </Row>
             </CollapseBox>
             <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' onClick={() => this.openBox('data')} />

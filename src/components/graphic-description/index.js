@@ -1,7 +1,16 @@
 import styled from 'styled-components'
+import React from 'react'
 
-const GraphicDescription = styled.p`
+export const GraphicDescription = styled.p`
   text-align: center;
   margin: auto 10%;
 `
-export default GraphicDescription
+export const CustomizedAxisTick = (props) => {
+  const {x, y, stroke, payload} = props
+
+  return (
+    <g transform={`translate(${x},${y})`}>
+      <text x={-10} y={-10} dy={16} textAnchor='end' fill='#666' transform='rotate(-90)'>{payload.value}</text>
+    </g>
+  )
+}
