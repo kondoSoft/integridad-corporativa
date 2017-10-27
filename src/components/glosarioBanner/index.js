@@ -5,6 +5,7 @@ const WrapperBanner = styled.div`
   background-image: url(${props => props.image ? props.image : 'http://via.placeholder.com/2560x355'});
   background-size: cover;
   background-repeat:no-repeat;
+  background-position: center;
   width: 100%;
   height: 200px;
   display: flex;

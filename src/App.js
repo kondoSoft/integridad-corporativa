@@ -3,7 +3,8 @@ import './App.css'
 import {
   Home as HomePage,
   Glossary as GlossaryPage,
-  Contact as ContactPage
+  Contact as ContactPage,
+  Methodology as MethodologyPage
 } from './containers'
 import {
   NavigationBar
@@ -22,6 +23,7 @@ class App extends Component {
           <Route exact path='/' component={HomePage} />
           <Route path='/glosario' component={GlossaryPage} />
           <Route path='/contacto' component={ContactPage} />
+          <Route path='/metodologia' component={MethodologyPage} />
         </div>
       </Router>
     )

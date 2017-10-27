@@ -59,7 +59,7 @@ const NavigationBar = (props) => (
           </Link>
         </NavItem>
         <NavItem>
-          <Link to='/'>
+          <Link to='/metodologia'>
             <NavLink>METODOLOGÍA</NavLink>
           </Link>
         </NavItem>
