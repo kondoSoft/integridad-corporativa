@@ -21,6 +21,7 @@ import {
 import Disclaimer from './disclamer'
 import NewsWall from './news_wall'
 import SectionBanner from './glosarioBanner'
+import { News, Articles } from './articulo'
 import {
   Main,
   Route,
@@ -79,6 +80,10 @@ export {
   BackBannerContent,
   ContactForm,
   View,
+  Box,
+  BoxTitle,
+  BoxDescription,
+  Articles,
   RankingInfo,
   StudyInfo,
   AxisInfo,

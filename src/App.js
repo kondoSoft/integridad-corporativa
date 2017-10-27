@@ -4,6 +4,7 @@ import {
   Home as HomePage,
   Glossary as GlossaryPage,
   Contact as ContactPage,
+  Article as ArticlePage,
   Methodology as MethodologyPage,
   AboutUs as AboutUsPage
 } from './containers'
@@ -24,6 +25,7 @@ class App extends Component {
           <Route exact path='/' component={HomePage} />
           <Route path='/glosario' component={GlossaryPage} />
           <Route path='/contacto' component={ContactPage} />
+          <Route path='/articulo' component={ArticlePage} />
           <Route path='/metodologia' component={MethodologyPage} />
           <Route path='/quienes-somos' component={AboutUsPage} />
         </div>

@@ -11,7 +11,7 @@ export const Container = styled.div`
     flex-direction: ${props => props.row ? 'row' : 'column'};
     margin-top: 60px;
     margin-bottom: 60px;
-    padding: 0px 90px;
+    padding: 0px 90px 0px 60px;
     border-right: 2px solid lightgrey;
     width: 60%;
 `
@@ -26,20 +26,20 @@ export const Edition = styled.p`
     color: lightgrey;
     margin-bottom: 40px;
 `
-const Box = styled.div`
+export const Box = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 `
-const BoxTitle = styled.a`
+export const BoxTitle = styled.a`
     font-size: ${props => props.big ? '24px' : '18px'};
     font-weight: ${props => props.big ? 800 : 200};
     text-transform: ${props => props.big ? 'uppercase' : 'none'};
     margin-bottom: 15px;
     color: #72030e;
 `
-const BoxDescription = styled.p`
+export const BoxDescription = styled.p`
     font-size: 15px;
     margin-bottom: 20px;
 `
@@ -74,7 +74,6 @@ export const SourceBox = styled.div`
     width: 100%;
     border-top: 2px solid lightgrey;
     padding-top: 20px;
-    padding-left: 25px;
 `
 export const Sources = (props) => {
   return (
@@ -111,7 +110,7 @@ const SideBarContent = styled.div`
     display: flex;
     margin-bottom: 10px;
     flex-direction: column;
-    flex: 1;
+    flex: ${props => props.isLittle ? '0.4' : '1'};
 `
 const SideBarTitle = styled.p`
     font-size: 20px;
@@ -169,7 +168,7 @@ export const News = (props) => {
     <SideBar>
       <SideBarTitle>ENTRADAS RECIENTES</SideBarTitle>
       <hr style={{borderColor: 'red', width: '100%'}} />
-      <SideBarContent>
+      <SideBarContent isLittle={props.isLittle}>
         <SideBarNews>
           <SideBarThumb>
             <Thumbnail src={'http://via.placeholder.com/80x80'} />
