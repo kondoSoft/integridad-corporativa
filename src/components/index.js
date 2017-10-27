@@ -21,6 +21,11 @@ import SectionBanner from './glosarioBanner'
 import {Main, Route, Edition, Topic, Sources, News, Container} from './main'
 import ContactForm from './ContactForm'
 import View from './slideview'
+import RankingInfo from './rankingInfo'
+import StudyInfo from './studyInfo'
+import AxisInfo from './axis_info'
+import ScoreInfo from './score_info'
+
 export {
   NavigationBar,
   MainBanner,
@@ -51,5 +56,9 @@ export {
   News,
   Container,
   ContactForm,
-  View
+  View,
+  RankingInfo,
+  StudyInfo,
+  AxisInfo,
+  ScoreInfo
 }

@@ -60,9 +60,14 @@ const SourceBook = styled.p`
 `
 const SourceLink = styled.a`
     font-size: 14px;
-    color: orange;
+    color: #ED4630;
     padding-left: 25px;
     width: 90%;
+    text-decoration: none;
+    transition: 0.3s;
+    &:hover{
+      color: #000;
+    }
 `
 export const SourceBox = styled.div`
     width: 100%;
@@ -83,7 +88,7 @@ export const Sources = (props) => {
                 <p>{source.title}</p>
                 <SourceBook>{source.book}</SourceBook>
               </BoldTitle>
-              <SourceLink>{source.url}</SourceLink>
+              <SourceLink href={source.url} target='_blank'>{source.url}</SourceLink>
             </SourceDetail>
           )
         })
