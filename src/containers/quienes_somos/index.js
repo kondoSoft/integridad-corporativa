@@ -9,7 +9,8 @@ import {
     MainSection,
     BottomBanner,
     BackBannerContent,
-    Button
+    Button,
+    Banner500
 } from '../../components'
 import './styles.css'
 
@@ -70,20 +71,21 @@ export default class AboutUs extends Component {
               <img width='400px' height='300px' src='assets/img/quienessomos_logo.jpg' alt='' />
             </Content>
           </MainSection>
-          <BottomBanner isBig>
+          <Banner500 margin='100px 0px'/>
+          {/*<BottomBanner isBig>
             <BackBannerContent image={'assets/img/quienessomos_soyparte.jpg'} center className='backBanner'>
               <Content className='backBannerContentLeft'>
                 <p className='backBannerContentLeftText'>SOY PARTE DE LAS&nbsp;<p style={{fontSize: 60}}>&nbsp;500</p></p>
               </Content>
-              <Content center column className='backBannerContentRigth'>
+               <Content center column className='backBannerContentRigth'>
                 <Button className='button'>
                   <p style={{fontSize: 26, paddingRight: 10}}>Actualiza aquí</p>
                   <i style={{fontSize: 26, paddingTop: 3}} className='fa fa-chevron-right' aria-hidden='true' />
                 </Button>
                 <ContentText className='bottomButton'>tu información sobre integridad corporativa</ContentText>
-              </Content>
+              </Content> 
             </BackBannerContent>
-          </BottomBanner>
+          </BottomBanner>*/}
         </Main>
         <Footer />
       </div>
