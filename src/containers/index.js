@@ -1,13 +1,14 @@
 import Home from './home'
 import SignIn from './blank_page'
 import Glossary from './glosario'
+import AboutUs from './quienes_somos'
 import Contact from './contact'
 import Methodology from './methodology'
-
 export {
   Home,
   SignIn,
   Glossary,
+  AboutUs,
   Contact,
   Methodology
 }

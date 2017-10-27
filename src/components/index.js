@@ -14,18 +14,35 @@ import SliderPrev from './slider_prev'
 import SliderNext from './slider_nex'
 import GoToTop from './gototop'
 import TabsShowBy from './tabs_show_by'
-import {GraphicDescription, CustomizedAxisTick} from './graphic-description'
+import {
+  GraphicDescription,
+  CustomizedAxisTick
+} from './graphic-description'
 import Disclaimer from './disclamer'
 import NewsWall from './news_wall'
 import SectionBanner from './glosarioBanner'
-import {Main, Route, Edition, Topic, Sources, News, Container} from './main'
+import {
+  Main,
+  Route,
+  Edition,
+  Topic,
+  Sources,
+  News,
+  Container
+} from './main'
+import {
+  ContentText,
+  Content,
+  MainSection,
+  BottomBanner,
+  BackBannerContent
+} from './quienes_somos'
 import ContactForm from './ContactForm'
 import View from './slideview'
 import RankingInfo from './rankingInfo'
 import StudyInfo from './studyInfo'
 import AxisInfo from './axis_info'
 import ScoreInfo from './score_info'
-
 export {
   NavigationBar,
   MainBanner,
@@ -55,6 +72,11 @@ export {
   Sources,
   News,
   Container,
+  ContentText,
+  Content,
+  MainSection,
+  BottomBanner,
+  BackBannerContent,
   ContactForm,
   View,
   RankingInfo,

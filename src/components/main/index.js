@@ -4,6 +4,7 @@ import React from 'react'
 export const Main = styled.main`
     width: 100%;
     display: flex;
+    flex-direction: ${props => props.column ? 'column' : 'row'};
 `
 export const Container = styled.div`
     display: flex;
