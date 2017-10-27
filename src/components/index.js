@@ -18,9 +18,11 @@ import {GraphicDescription, CustomizedAxisTick} from './graphic-description'
 import Disclaimer from './disclamer'
 import NewsWall from './news_wall'
 import SectionBanner from './glosarioBanner'
-import {Main, Route, Edition, Topic, Sources, News, Container} from './main'
+import {Main, Route, Edition, Topic, Sources, Container, Box, BoxTitle, BoxDescription} from './main'
 import ContactForm from './ContactForm'
 import View from './slideview'
+import { News, Articles } from './articulo'
+
 export {
   NavigationBar,
   MainBanner,
@@ -51,5 +53,9 @@ export {
   News,
   Container,
   ContactForm,
-  View
+  View,
+  Box,
+  BoxTitle,
+  BoxDescription,
+  Articles
 }
