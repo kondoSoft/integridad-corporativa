@@ -10,7 +10,7 @@ class Contact extends Component {
     return (
       <div>
         <header>
-          <SectionBanner title='CONTACTO' withBar/>
+          <SectionBanner title='CONTACTO' withBar />
         </header>
         <ContactForm />
         <Footer />

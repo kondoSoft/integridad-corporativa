@@ -11,6 +11,7 @@ const Wrapper = styled.div`
   align-items:center;
   padding:20px 0px 40px 0px;
   height:150px;
+  margin: ${props => props.margin ? props.margin : null};
 `
 const Button = styled.div`
   cursor:pointer;
@@ -60,7 +61,7 @@ const Column = styled.div`
 `
 
 const Banner500 = (props) => (
-  <Wrapper>
+  <Wrapper margin={props.margin}>
     <Title>SOY PARTE DE LAS <Span>500</Span></Title>
     <Column>
       <Button>
