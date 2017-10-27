@@ -16,6 +16,7 @@ import {
     News,
     Articles
 } from '../../components'
+import {dataArticulo} from '../../data'
 
 export default class Article extends Component {
   render () {
@@ -27,7 +28,7 @@ export default class Article extends Component {
         <Main>
           <Container style={{width: '70%'}}>
             <Route>HOME > NOTICIAS > EXPANSION INDICE 500</Route>
-            <Articles />
+            <Articles data={dataArticulo} />
           </Container>
           <News />
         </Main>
