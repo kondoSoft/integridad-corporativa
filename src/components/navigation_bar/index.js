@@ -46,6 +46,11 @@ const NavigationBar = (props) => (
     <NavBar>
       <NavList>
         <NavItem>
+          <Link to='/'>
+            <NavLink>INICIO</NavLink>
+          </Link>
+        </NavItem>
+        <NavItem>
           <Link to='/quienes-somos'>
             <NavLink>QUIÉNES SOMOS</NavLink>
           </Link>

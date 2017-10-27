@@ -43,6 +43,7 @@ import RankingInfo from './rankingInfo'
 import StudyInfo from './studyInfo'
 import AxisInfo from './axis_info'
 import ScoreInfo from './score_info'
+import Anchor from './anchor'
 export {
   NavigationBar,
   MainBanner,
@@ -82,5 +83,6 @@ export {
   RankingInfo,
   StudyInfo,
   AxisInfo,
-  ScoreInfo
+  ScoreInfo,
+  Anchor
 }
