@@ -7,7 +7,6 @@ export const GraphicDescription = styled.p`
 `
 export const CustomizedAxisTick = (props) => {
   const {x, y, stroke, payload} = props
-
   return (
     <g transform={`translate(${x},${y})`}>
       <text x={-10} y={-10} dy={16} textAnchor='end' fill='#666' transform='rotate(-90)'>{payload.value}</text>

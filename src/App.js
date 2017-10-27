@@ -1,24 +1,31 @@
 import React, { Component } from 'react'
 import './App.css'
 import {
-  Home,
-  Glossary,
-  AboutUs
+  Home as HomePage,
+  Glossary as GlossaryPage,
+  Contact as ContactPage,
+  Methodology as MethodologyPage
 } from './containers'
 import {
+  NavigationBar
+} from './components'
+import {
   BrowserRouter as Router,
-  Route,
-  Link
+  Route
 } from 'react-router-dom'
-
-const HomePage = <Home />
 
 class App extends Component {
   render () {
     return (
-      <div>
-        <AboutUs />
-      </div>
+      <Router>
+        <div>
+          <NavigationBar />
+          <Route exact path='/' component={HomePage} />
+          <Route path='/glosario' component={GlossaryPage} />
+          <Route path='/contacto' component={ContactPage} />
+          <Route path='/metodologia' component={MethodologyPage} />
+        </div>
+      </Router>
     )
   }
 }

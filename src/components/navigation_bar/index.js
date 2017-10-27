@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import {
+  Link
+} from 'react-router-dom'
 
 const NavBar = styled.nav`
   width:100%;
@@ -43,19 +46,27 @@ const NavigationBar = (props) => (
     <NavBar>
       <NavList>
         <NavItem>
-          <NavLink href='#'>QUIÉNES SOMOS</NavLink>
+          <Link to='/'>
+            <NavLink>QUIÉNES SOMOS</NavLink>
+          </Link>
         </NavItem>
         <NavItem>
-          <NavLink href='#'>NOTICIAS</NavLink>
+          <NavLink>NOTICIAS</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href='#'>GLOSARIO</NavLink>
+          <Link to='/glosario'>
+            <NavLink>GLOSARIO</NavLink>
+          </Link>
         </NavItem>
         <NavItem>
-          <NavLink href='#'>METODOLOGÍA</NavLink>
+          <Link to='/metodologia'>
+            <NavLink>METODOLOGÍA</NavLink>
+          </Link>
         </NavItem>
         <NavItem>
-          <NavLink href='#'>CONTACTO</NavLink>
+          <Link to='/contacto'>
+            <NavLink href='#'>CONTACTO</NavLink>
+          </Link>
         </NavItem>
         <NavItem>
           <NavLink href='#'>SOY PARTE DE LAS 500</NavLink>

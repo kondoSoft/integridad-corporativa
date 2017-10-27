@@ -37,7 +37,12 @@ import {
   BottomBanner,
   BackBannerContent
 } from './quienes_somos'
-
+import ContactForm from './ContactForm'
+import View from './slideview'
+import RankingInfo from './rankingInfo'
+import StudyInfo from './studyInfo'
+import AxisInfo from './axis_info'
+import ScoreInfo from './score_info'
 export {
   NavigationBar,
   MainBanner,
@@ -71,5 +76,11 @@ export {
   Content,
   MainSection,
   BottomBanner,
-  BackBannerContent
+  BackBannerContent,
+  ContactForm,
+  View,
+  RankingInfo,
+  StudyInfo,
+  AxisInfo,
+  ScoreInfo
 }
