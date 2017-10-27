@@ -4,7 +4,8 @@ import {
   Home as HomePage,
   Glossary as GlossaryPage,
   Contact as ContactPage,
-  Methodology as MethodologyPage
+  Methodology as MethodologyPage,
+  AboutUs as AboutUsPage
 } from './containers'
 import {
   NavigationBar
@@ -24,6 +25,7 @@ class App extends Component {
           <Route path='/glosario' component={GlossaryPage} />
           <Route path='/contacto' component={ContactPage} />
           <Route path='/metodologia' component={MethodologyPage} />
+          <Route path='/quienes-somos' component={AboutUsPage} />
         </div>
       </Router>
     )
