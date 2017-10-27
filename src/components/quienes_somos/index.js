@@ -25,7 +25,7 @@ export const BackBannerContent = styled.div`
 `
 export const ContentText = styled.p`
     font-size: ${props => props.isBig ? '30px' : '22px'};
-    color: ${props => props.isBig ? 'darkred' : 'black'};
+    color: ${props => props.isBig ? '#8B0000' : '#000'};
     padding: ${props => props.isBig ? '15px 0px' : '0px'};
     font-weight: 200;
     font-family: 'Druk Text Web';
