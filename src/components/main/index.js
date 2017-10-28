@@ -45,7 +45,7 @@ export const BoxDescription = styled.p`
 `
 const SourceDetail = styled.div`
     display: flex;
-    padding-top: 30px;
+    padding-top: 20px;
     flex-direction: column;
 `
 const BoldTitle = styled.b`
@@ -75,6 +75,11 @@ export const SourceBox = styled.div`
     border-top: 2px solid lightgrey;
     padding-top: 20px;
 `
+const HyperLikn = styled.a`
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+`
 export const Sources = (props) => {
   return (
     <SourceBox>
@@ -85,10 +90,11 @@ export const Sources = (props) => {
             <SourceDetail>
               <BoldTitle>
                 <i className='fa fa-chevron-right' aria-hidden='true' style={{color: 'orange', marginRight: 10}} />
-                <p>{source.title}</p>
+                <HyperLikn href={source.url}>
+                  {source.title}
+                </HyperLikn>
                 <SourceBook>{source.book}</SourceBook>
               </BoldTitle>
-              <SourceLink href={source.url} target='_blank'>{source.url}</SourceLink>
             </SourceDetail>
           )
         })
