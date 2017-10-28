@@ -7,6 +7,8 @@ const Col = styled.div`
   align-items:center;
   Width: ${props => props.width ? props.width : null};
   margin: ${props => props.margin ? props.margin : null};
+  background: ${props => props.background ? props.background : null};
+  padding: ${props => props.padding ? props.padding : null};
 `
 
 export default Col

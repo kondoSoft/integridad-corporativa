@@ -7,11 +7,9 @@ import {
     ContentText,
     Content,
     MainSection,
-    BottomBanner,
-    BackBannerContent,
-    Button,
     Banner500,
-    Anchor
+    Anchor,
+    MiddleBanner
 } from '../../components'
 import './styles.css'
 
@@ -20,15 +18,15 @@ export default class AboutUs extends Component {
     return (
       <div>
         <header>
-          <SectionBanner image={'assets/img/glosario_background.jpg'} title={'¿QUIÉNES SOMOS?'} subtitle={''} withBar />
+          <SectionBanner image={'assets/img/quienessomos_background.jpg'} title={'¿QUIÉNES SOMOS?'} subtitle={''} withBar />
         </header>
         <Main column>
           <MainSection isBig>
             <Content center column>
               <ContentText isBig>500 Frente a la Corrupción: Integridad Corporativa (IC500)</ContentText>
-              <ContentText>Es una metrica de la publicidad de las políticas de integridad y anticorrupción de las 500 empresas</ContentText>
-              <ContentText>mas grandes del país, asi como una plataforma digital para darle seguimiento al compromiso y</ContentText>
-              <ContentText>cumplimiento de estas empresas.</ContentText>
+              <ContentText normal>Es una metrica de la publicidad de las políticas de integridad y anticorrupción de las 500 empresas</ContentText>
+              <ContentText normal>mas grandes del país, asi como una plataforma digital para darle seguimiento al compromiso y</ContentText>
+              <ContentText normal>cumplimiento de estas empresas.</ContentText>
             </Content>
           </MainSection>
           <MainSection className='middleSection'>
@@ -73,21 +71,19 @@ export default class AboutUs extends Component {
               <img width='400px' height='300px' src='assets/img/quienessomos_logo.jpg' alt='' />
             </Content>
           </MainSection>
-          <Banner500 margin='100px 0px'/>
-          {/*<BottomBanner isBig>
-            <BackBannerContent image={'assets/img/quienessomos_soyparte.jpg'} center className='backBanner'>
-              <Content className='backBannerContentLeft'>
-                <p className='backBannerContentLeftText'>SOY PARTE DE LAS&nbsp;<p style={{fontSize: 60}}>&nbsp;500</p></p>
-              </Content>
-               <Content center column className='backBannerContentRigth'>
-                <Button className='button'>
-                  <p style={{fontSize: 26, paddingRight: 10}}>Actualiza aquí</p>
-                  <i style={{fontSize: 26, paddingTop: 3}} className='fa fa-chevron-right' aria-hidden='true' />
-                </Button>
-                <ContentText className='bottomButton'>tu información sobre integridad corporativa</ContentText>
-              </Content> 
-            </BackBannerContent>
-          </BottomBanner>*/}
+          <MainSection isBig>
+            <Content center column>
+              <ContentText isBig>Plataforma Digital IC500</ContentText>
+              <ContentText normal>La Plataforma Digital IC500 nace como una herramienta dinámica para que cada vez</ContentText>
+              <ContentText normal>más empresas se unan a la lucha contra la corrupción en la práctica.</ContentText>
+            </Content>
+          </MainSection>
+          <MainSection>
+            <Content>
+              <MiddleBanner />
+            </Content>
+          </MainSection>
+          <Banner500 margin='100px 0px' image='assets/img/quienessomos_soyparte.jpg' />
         </Main>
         <Footer />
       </div>

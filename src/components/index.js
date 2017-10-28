@@ -28,15 +28,13 @@ import {
   Edition,
   Topic,
   Sources,
-  News,
   Container
 } from './main'
 import {
   ContentText,
   Content,
   MainSection,
-  BottomBanner,
-  BackBannerContent
+  MiddleBanner
 } from './quienes_somos'
 import ContactForm from './ContactForm'
 import View from './slideview'
@@ -77,13 +75,12 @@ export {
   ContentText,
   Content,
   MainSection,
-  BottomBanner,
-  BackBannerContent,
+  MiddleBanner,
   ContactForm,
   View,
-  Box,
-  BoxTitle,
-  BoxDescription,
+  // Box,
+  // BoxTitle,
+  // BoxDescription,
   Articles,
   RankingInfo,
   StudyInfo,
