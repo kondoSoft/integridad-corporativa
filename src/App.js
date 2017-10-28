@@ -30,6 +30,7 @@ class App extends Component {
           <Route path='/metodologia' component={MethodologyPage} />
           <Route path='/quienes-somos' component={AboutUsPage} />
           <Route path='/noticias' component={NewsPage} />
+          <Route path='/articulo' component={ArticlePage} />
         </div>
       </Router>
     )
