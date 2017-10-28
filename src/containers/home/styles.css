@@ -9,14 +9,15 @@
 .title{
   border-bottom: 3px solid #ED4630;
   width: 400px;
-  padding-bottom: 10px
+  padding-bottom: 10px;
+  position: relative;
 }
 @media screen and (min-width: 1200px){
   .title:after{
     content:'a';
     position: absolute;
-    top:800px;
-    left: 41.5%;
+    top: 130%;
+    left: 19%;
     display: inline-block;
     width: 250px;
     height: 3px;
