@@ -13,11 +13,12 @@ const Row = styled.div`
   }}
   align-items: ${props => props.flexStart ? 'flex-start' : 'center'};
   flex-wrap: ${props => props.noWrap ? 'nowrap' : 'wrap'};
-  flex-direction: row;
-  margin: ${props => props.noMargin ? '0px' : '40px 0px'};
+  flex-direction: ${props => props.invert ? 'row-reverse' : 'row'};
+  margin: ${props => props.noMargin ? '0px' : props.margin ? props.margin : '40px 0px'};
   background: ${props => props.background ? props.background : null};
   width: ${props => props.width ? props.width : null};
   padding: ${props => props.padding ? props.padding : null};
+  box-sizing: border-box;
 `
 
 export default Row

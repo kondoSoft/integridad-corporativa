@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  background-image: url('assets/img/soyparte_background.jpg');
+  background-image: ${props => props.image ? `url('${props.image}')` : "url('assets/img/soyparte_background.jpg')"};
   background-size: cover;
   background-repeat:no-repeat;
   display:flex;
@@ -61,7 +61,7 @@ const Column = styled.div`
 `
 
 const Banner500 = (props) => (
-  <Wrapper margin={props.margin}>
+  <Wrapper margin={props.margin} image={props.image}>
     <Title>SOY PARTE DE LAS <Span>500</Span></Title>
     <Column>
       <Button>
