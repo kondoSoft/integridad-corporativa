@@ -28,7 +28,6 @@ import {
   Edition,
   Topic,
   Sources,
-  News,
   Container
 } from './main'
 import {
@@ -45,6 +44,9 @@ import StudyInfo from './studyInfo'
 import AxisInfo from './axis_info'
 import ScoreInfo from './score_info'
 import Anchor from './anchor'
+import {
+  NewsContainer
+} from './news'
 export {
   NavigationBar,
   MainBanner,
@@ -81,13 +83,14 @@ export {
   BackBannerContent,
   ContactForm,
   View,
-  Box,
-  BoxTitle,
-  BoxDescription,
+  // Box,
+  // BoxTitle,
+  // BoxDescription,
   Articles,
   RankingInfo,
   StudyInfo,
   AxisInfo,
   ScoreInfo,
-  Anchor
+  Anchor,
+  NewsContainer
 }
