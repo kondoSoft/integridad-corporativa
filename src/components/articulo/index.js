@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import React from 'react'
+import {
+  Link
+} from 'react-router-dom'
 
 const ArticleBox = styled.div`
   width: 100%;
@@ -140,6 +143,7 @@ const ArticleDescription = styled.div`
   background-color: #FFF;
   padding-left: 120px;
   padding-top: 40px;
+  padding-bottom: 20px;
   display: ${props => props.disabled ? 'none' : null};
 `
 const InformationLeft = styled.div`
@@ -310,7 +314,9 @@ export const Article = (props) => {
                 <MiniDescription>
                   Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa
                 </MiniDescription>
-                <SeeMoreButton>Leer más</SeeMoreButton>
+                <Link to='/articulo'>
+                  <SeeMoreButton>Leer más</SeeMoreButton>
+                </Link>
               </RightColBottomWithButton>
             </InformationRigth>
           </ArticleInformation>
@@ -335,7 +341,7 @@ export const Article = (props) => {
             </LeftDate>
           </InformationLeft>
           <InformationRigth>
-            <RightColTop>
+            <RightColTop style={{marginBottom: 20}}>
               <TitleArticle>
                 {data.titulo}
               </TitleArticle>
@@ -354,26 +360,6 @@ export const Article = (props) => {
                 }
               </Rigth>
             </RightColBottom>
-            <RightColBottomWithButton column={props.column} isArticle={props.isArticle}>
-              <MiniInfo>
-                <Left>
-                  <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
-                  <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
-                </Left>
-                <Rigth>
-                  <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
-                  {
-                    data.categorias.map((categoria, i) => {
-                      return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
-                    })
-                  }
-                </Rigth>
-              </MiniInfo>
-              <MiniDescription>
-                Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa
-              </MiniDescription>
-              <SeeMoreButton>Leer más</SeeMoreButton>
-            </RightColBottomWithButton>
           </InformationRigth>
         </ArticleInformation>
         <ArticleDescription disabled={props.disabled}>
