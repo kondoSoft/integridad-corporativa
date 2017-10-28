@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Row = styled.div`
-  display: flex;
+  display: ${props => props.disabled ? 'none' : 'flex'};
   ${props => {
     if (props.flexEnd) {
       return 'justify-content: flex-end;'

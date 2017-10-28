@@ -29,7 +29,7 @@ const Suggested = styled.div`
   width: 30%;
 `
 const NewsWrapper = styled.div`
-    padding-right: 60px;
+    padding-right: ${props => props.noPadding ? '0px' : '60px'};
     width: 30%;
     display: flex;
     flex-direction: column;
@@ -37,7 +37,7 @@ const NewsWrapper = styled.div`
     margin-top: 60px;
 `
 const Container = styled.div`
-    flex: ${props => props.bottom ? 1 : 4};
+    flex: ${props => props.bottom ? 0 : 4};
     background-color: #FFF;
     display: flex;
     flex-direction: column;
@@ -133,18 +133,19 @@ const ArticleInformation = styled.div`
   width: 100%;
   display: flex;
   padding-top: 15px;
-  height: 100px;
+  height: ${props => props.expanded ? '170px' : '100px'};
 `
 const ArticleDescription = styled.div`
   width: 84%;
   background-color: #FFF;
   padding-left: 120px;
   padding-top: 40px;
+  display: ${props => props.disabled ? 'none' : null};
 `
 const InformationLeft = styled.div`
   width: 15%; 
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   padding: 10px 10px 10px 0px;
 `
@@ -165,13 +166,19 @@ const LeftDate = styled.div`
 `
 const RightColTop = styled.div`
   width: 100%;
-  flex: 1;
 `
 const RightColBottom = styled.div`
   width: 100%;
-  flex: 1;
-  display: flex;
+  display: ${props => props.disabled ? 'none' : 'flex'};
   align-items: flex-end;
+  flex-direction: ${props => props.column ? 'column' : 'row'};
+`
+const RightColBottomWithButton = styled.div`
+  width: 100%;
+  display: ${props => props.isArticle ? 'none' : 'flex'};
+  align-items: flex-end;
+  flex-direction: ${props => props.column ? 'column' : 'row'};
+  margin-top: 10px;
 `
 const TitleArticle = styled.p`
   font-size: 24px;
@@ -205,91 +212,181 @@ const LeftDateText = styled.p`
   color: #FFF;
   font-family: 'Druk Text Web';
 `
-const Article = (props) => {
+const SearchBox = styled.div`
+  width: 100%;
+  display: ${props => props.withSearch ? 'flex' : 'none'};
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+`
+const SearchInput = styled.input`
+  width: 80%;
+  height: 31px;
+`
+const Icon = styled.i`
+  width: 100%;
+`
+const IconButton = styled.button`
+  width: 20%;
+  background-color: #FF0000;
+  text-align: center;
+  color: #FFF;
+  font-size: 27px;
+  padding: 3px;
+  cursor: pointer;
+  border: 'none';
+  border-width: 0px;
+`
+const MiniDescription = styled.p`
+  width: 100%;
+  font-size: 14px;
+`
+const SeeMoreButton = styled.button`
+  width: 90px;
+  border: none;
+  padding: 6px;
+  background-color: #FF0000;
+  color: #FFF;
+  cursor: pointer;
+`
+const MiniInfo = styled.div`
+  width: 100%;
+  display: ${props => props.disabled ? 'none' : 'flex'};
+  align-items: flex-end;
+  flex-direction: ${props => props.column ? 'column' : 'row'};
+  padding-bottom: 15px;
+`
+export const Article = (props) => {
   const {data} = props
-  return (
-    <ArticleContainer>
-      <ArticleImg>
-        <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
-      </ArticleImg>
-      <ArticleInformation>
-        <InformationLeft>
-          <LeftDate>
-            <LeftDateText isDay>5</LeftDateText>
-            <LeftDateText>Nov</LeftDateText>
-          </LeftDate>
-        </InformationLeft>
-        <InformationRigth>
-          <RightColTop>
-            <TitleArticle>
-              {data.titulo}
-            </TitleArticle>
-          </RightColTop>
-          <RightColBottom>
-            <Left>
-              <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
-              <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
-            </Left>
-            <Rigth>
-              <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
-              {
-                data.categorias.map((categoria, i) => {
-                  return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
-                })
-              }
-            </Rigth>
-          </RightColBottom>
-        </InformationRigth>
-      </ArticleInformation>
-      <ArticleDescription>
-        {/* <p style={{letterSpacing: 1, fontSize: 14, fontWeight: 400, fontFamily: 'arial'}}>
-          Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista
-          Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa, el primer diagnostico
-          sobre politicas anticorrupcion o de integridad de las 500 empresas mas importantes de México.
-          En años recientes, grandes escandalos internacionales de corrupcion corporativa han girado los
-          reflectores de la lucha anticorrupcion hacia el sector privado. Desde el punto de vista punitivo, se
-          se han sentado precedentes importantes a traves de sanciones economicas como la que recibio
-          Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias
-          penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo
-          de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los
-          mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de
-          corrupción en su interacción con ciudadanía, sector privado y/o gobierno. <br /> <br />
-
-          Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista
-          Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa, el primer diagnostico
-          sobre politicas anticorrupcion o de integridad de las 500 empresas mas importantes de México.
-          En años recientes, grandes escandalos internacionales de corrupcion corporativa han girado los
-          reflectores de la lucha anticorrupcion hacia el sector privado. Desde el punto de vista punitivo, se
-          se han sentado precedentes importantes a traves de sanciones economicas como la que recibio
-          Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias
-          penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo
-          de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los
-          mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de
-          corrupción en su interacción con ciudadanía, sector privado y/o gobierno. <br /> <br />
-
-          se han sentado precedentes importantes a traves de sanciones economicas como la que recibio
-          Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias
-          penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo
-          de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los
-          mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de
-          corrupción en su interacción con ciudadanía, sector privado y/o gobierno. <br /> <br />
-
-          se han sentado precedentes importantes a traves de sanciones economicas como la que recibio
-          Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias
-          penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo
-          de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los
-          mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de
-          corrupción en su interacción con ciudadanía, sector privado y/o gobierno. <br /> <br />
-        </p> */}
-        <p style={{letterSpacing: 1, fontSize: 14, fontWeight: 400, fontFamily: 'arial'}}>{data.descripcion}</p>
-      </ArticleDescription>
-    </ArticleContainer>
-  )
+  if (Array.isArray(data)) {
+    return data.map((data, i) => {
+      return (
+        <ArticleContainer>
+          <ArticleImg>
+            <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
+          </ArticleImg>
+          <ArticleInformation expanded={props.expanded}>
+            <InformationLeft>
+              <LeftDate>
+                <LeftDateText isDay>5</LeftDateText>
+                <LeftDateText>Nov</LeftDateText>
+              </LeftDate>
+            </InformationLeft>
+            <InformationRigth>
+              <RightColTop>
+                <TitleArticle>
+                  {data.titulo}
+                </TitleArticle>
+              </RightColTop>
+              <RightColBottom disabled={props.disabled}>
+                <Left>
+                  <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
+                  <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
+                </Left>
+                <Rigth>
+                  <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
+                  {
+                    data.categorias.map((categoria, i) => {
+                      return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
+                    })
+                  }
+                </Rigth>
+              </RightColBottom>
+              <RightColBottomWithButton column={props.column} isArticle={props.isArticle}>
+                <MiniInfo>
+                  <Left>
+                    <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
+                    <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
+                  </Left>
+                  <Rigth>
+                    <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
+                    {
+                      data.categorias.map((categoria, i) => {
+                        return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
+                      })
+                    }
+                  </Rigth>
+                </MiniInfo>
+                <MiniDescription>
+                  Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa
+                </MiniDescription>
+                <SeeMoreButton>Leer más</SeeMoreButton>
+              </RightColBottomWithButton>
+            </InformationRigth>
+          </ArticleInformation>
+          <ArticleDescription disabled={props.disabled}>
+            <p style={{letterSpacing: 1, fontSize: 14, fontWeight: 400, fontFamily: 'arial'}}>{data.descripcion}</p>
+          </ArticleDescription>
+          <hr style={{borderColor: '#E4E5E4', width: '100%', marginTop: 20, marginBottom: 20}} />
+        </ArticleContainer>
+      )
+    })
+  } else {
+    return (
+      <ArticleContainer>
+        <ArticleImg>
+          <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
+        </ArticleImg>
+        <ArticleInformation expanded={props.expanded}>
+          <InformationLeft>
+            <LeftDate>
+              <LeftDateText isDay>5</LeftDateText>
+              <LeftDateText>Nov</LeftDateText>
+            </LeftDate>
+          </InformationLeft>
+          <InformationRigth>
+            <RightColTop>
+              <TitleArticle>
+                {data.titulo}
+              </TitleArticle>
+            </RightColTop>
+            <RightColBottom disabled={props.disabled}>
+              <Left>
+                <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
+                <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
+              </Left>
+              <Rigth>
+                <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
+                {
+                  data.categorias.map((categoria, i) => {
+                    return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
+                  })
+                }
+              </Rigth>
+            </RightColBottom>
+            <RightColBottomWithButton column={props.column} isArticle={props.isArticle}>
+              <MiniInfo>
+                <Left>
+                  <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
+                  <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
+                </Left>
+                <Rigth>
+                  <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
+                  {
+                    data.categorias.map((categoria, i) => {
+                      return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
+                    })
+                  }
+                </Rigth>
+              </MiniInfo>
+              <MiniDescription>
+                Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa
+              </MiniDescription>
+              <SeeMoreButton>Leer más</SeeMoreButton>
+            </RightColBottomWithButton>
+          </InformationRigth>
+        </ArticleInformation>
+        <ArticleDescription disabled={props.disabled}>
+          <p style={{letterSpacing: 1, fontSize: 14, fontWeight: 400, fontFamily: 'arial'}}>{data.descripcion}</p>
+        </ArticleDescription>
+      </ArticleContainer>
+    )
+  }
 }
 export const Articles = (props) => {
   return (
     <ArticleBox>
-      <Article data={props.data} />
+      <Article disabled={props.disabled} data={props.data} expanded={props.expanded} column={props.column} isArticle={props.isArticle} />
       <hr style={{borderColor: '#E4E5E4', width: '100%'}} />
       <ShareBox>
         <SocialsTitle>
@@ -372,7 +469,13 @@ const NewsBlog = (props) => {
 }
 export const News = (props) => {
   return (
-    <NewsWrapper>
+    <NewsWrapper noPadding={props.noPadding}>
+      <SearchBox withSearch={props.withSearch}>
+        <SearchInput />
+        <IconButton>
+          <Icon className='fa fa-search' aria-hidden='true' />
+        </IconButton>
+      </SearchBox>
       <NewEntries>ENTRADAS RECIENTES</NewEntries>
       <hr style={{borderColor: 'red', width: '80%'}} />
       <Container>

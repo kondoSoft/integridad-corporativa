@@ -56,7 +56,7 @@ const NavigationBar = (props) => (
           </Link>
         </NavItem>
         <NavItem>
-          <Link to='/articulo'>
+          <Link to='/noticias'>
             <NavLink>NOTICIAS</NavLink>
           </Link>
         </NavItem>
