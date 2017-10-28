@@ -114,7 +114,101 @@ class Home extends Component {
       View: {
         click: false
       },
-      isPlaying: false
+      isPlaying: false,
+      charts: {
+        '01': [
+          { name: 'A', 'Frecuencia Acumulada': 1, 'Frecuencia': 1 },
+          { name: 'A', 'Frecuencia Acumulada': 3, 'Frecuencia': 2 },
+          { name: 'A', 'Frecuencia Acumulada': 4, 'Frecuencia': 1 },
+          { name: 'A', 'Frecuencia Acumulada': 6, 'Frecuencia': 2 },
+          { name: 'A', 'Frecuencia Acumulada': 7, 'Frecuencia': 1 },
+          { name: 'A', 'Frecuencia Acumulada': 9, 'Frecuencia': 2 },
+          { name: 'A', 'Frecuencia Acumulada': 16, 'Frecuencia': 7 },
+          { name: 'A', 'Frecuencia Acumulada': 19, 'Frecuencia': 3 },
+          { name: 'A', 'Frecuencia Acumulada': 27, 'Frecuencia': 8 },
+          { name: 'A', 'Frecuencia Acumulada': 31, 'Frecuencia': 4 },
+          { name: 'A', 'Frecuencia Acumulada': 40, 'Frecuencia': 9 },
+          { name: 'A', 'Frecuencia Acumulada': 56, 'Frecuencia': 16 },
+          { name: 'A', 'Frecuencia Acumulada': 81, 'Frecuencia': 25 },
+          { name: 'A', 'Frecuencia Acumulada': 91, 'Frecuencia': 10 },
+          { name: 'A', 'Frecuencia Acumulada': 112, 'Frecuencia': 21 },
+          { name: 'A', 'Frecuencia Acumulada': 123, 'Frecuencia': 11 },
+          { name: 'A', 'Frecuencia Acumulada': 134, 'Frecuencia': 11 },
+          { name: 'A', 'Frecuencia Acumulada': 146, 'Frecuencia': 12 },
+          { name: 'A', 'Frecuencia Acumulada': 157, 'Frecuencia': 11 },
+          { name: 'A', 'Frecuencia Acumulada': 174, 'Frecuencia': 17 },
+          { name: 'A', 'Frecuencia Acumulada': 186, 'Frecuencia': 12 },
+          { name: 'A', 'Frecuencia Acumulada': 199, 'Frecuencia': 13 },
+          { name: 'A', 'Frecuencia Acumulada': 208, 'Frecuencia': 9 },
+          { name: 'A', 'Frecuencia Acumulada': 222, 'Frecuencia': 14 },
+          { name: 'A', 'Frecuencia Acumulada': 230, 'Frecuencia': 8 },
+          { name: 'A', 'Frecuencia Acumulada': 239, 'Frecuencia': 9 },
+          { name: 'A', 'Frecuencia Acumulada': 244, 'Frecuencia': 5 },
+          { name: 'A', 'Frecuencia Acumulada': 250, 'Frecuencia': 6 },
+          { name: 'A', 'Frecuencia Acumulada': 256, 'Frecuencia': 6 },
+          { name: 'A', 'Frecuencia Acumulada': 263, 'Frecuencia': 7 },
+          { name: 'A', 'Frecuencia Acumulada': 267, 'Frecuencia': 4 },
+          { name: 'A', 'Frecuencia Acumulada': 275, 'Frecuencia': 8 },
+          { name: 'A', 'Frecuencia Acumulada': 282, 'Frecuencia': 7 },
+          { name: 'A', 'Frecuencia Acumulada': 292, 'Frecuencia': 10 }
+        ],
+        '02': [
+          { name: 'A', 'Porcentaje Promedio': 79.4 },
+          { name: 'A', 'Porcentaje Promedio': 70.6 },
+          { name: 'A', 'Porcentaje Promedio': 66.7 },
+          { name: 'A', 'Porcentaje Promedio': 63.2 },
+          { name: 'A', 'Porcentaje Promedio': 63.2 },
+          { name: 'A', 'Porcentaje Promedio': 62.7 },
+          { name: 'A', 'Porcentaje Promedio': 60.6 },
+          { name: 'A', 'Porcentaje Promedio': 60.1 },
+          { name: 'A', 'Porcentaje Promedio': 56.2 },
+          { name: 'A', 'Porcentaje Promedio': 55.6 },
+          { name: 'A', 'Porcentaje Promedio': 53.9 },
+          { name: 'A', 'Porcentaje Promedio': 52.9 },
+          { name: 'A', 'Porcentaje Promedio': 52.3 },
+          { name: 'A', 'Porcentaje Promedio': 51.6 },
+          { name: 'A', 'Porcentaje Promedio': 51.6 },
+          { name: 'A', 'Porcentaje Promedio': 51.3 },
+          { name: 'A', 'Porcentaje Promedio': 50.3 },
+          { name: 'A', 'Porcentaje Promedio': 49.3 },
+          { name: 'A', 'Porcentaje Promedio': 46.8 },
+          { name: 'A', 'Porcentaje Promedio': 42.8 },
+          { name: 'A', 'Porcentaje Promedio': 40.3 },
+          { name: 'A', 'Porcentaje Promedio': 39.2 },
+          { name: 'A', 'Porcentaje Promedio': 39.2 },
+          { name: 'A', 'Porcentaje Promedio': 37.6 },
+          { name: 'A', 'Porcentaje Promedio': 37.5 },
+          { name: 'A', 'Porcentaje Promedio': 35.8 },
+          { name: 'A', 'Porcentaje Promedio': 35.8 },
+          { name: 'A', 'Porcentaje Promedio': 35.7 },
+          { name: 'A', 'Porcentaje Promedio': 35.3 },
+          { name: 'A', 'Porcentaje Promedio': 35.1 },
+          { name: 'A', 'Porcentaje Promedio': 34.6 },
+          { name: 'A', 'Porcentaje Promedio': 34.2 },
+          { name: 'A', 'Porcentaje Promedio': 33.3 },
+          { name: 'A', 'Porcentaje Promedio': 33.3 },
+          { name: 'A', 'Porcentaje Promedio': 32.2 },
+          { name: 'A', 'Porcentaje Promedio': 31.2 },
+          { name: 'A', 'Porcentaje Promedio': 30.3 },
+          { name: 'A', 'Porcentaje Promedio': 29.9 },
+          { name: 'A', 'Porcentaje Promedio': 28.8 },
+          { name: 'A', 'Porcentaje Promedio': 27.5 },
+          { name: 'A', 'Porcentaje Promedio': 27.1 },
+          { name: 'A', 'Porcentaje Promedio': 26.9 },
+          { name: 'A', 'Porcentaje Promedio': 26.4 },
+          { name: 'A', 'Porcentaje Promedio': 25.5 },
+          { name: 'A', 'Porcentaje Promedio': 24.2 },
+          { name: 'A', 'Porcentaje Promedio': 24.1 },
+          { name: 'A', 'Porcentaje Promedio': 21 },
+          { name: 'A', 'Porcentaje Promedio': 20.4 },
+          { name: 'A', 'Porcentaje Promedio': 19.6 },
+          { name: 'A', 'Porcentaje Promedio': 13.5 },
+          { name: 'A', 'Porcentaje Promedio': 12.4 },
+          { name: 'A', 'Porcentaje Promedio': 9.8 },
+          { name: 'A', 'Porcentaje Promedio': 9.8 },
+          { name: 'A', 'Porcentaje Promedio': 9.8 }
+        ]
+      }
     }
 
     this.openBox = this.openBox.bind(this)
@@ -140,7 +234,8 @@ class Home extends Component {
       sliderIndex,
       goTo,
       dataNewsWall,
-      isPlaying
+      isPlaying,
+      charts
     } = this.state
     const data = [
       {name: 'A', uv: 10, pv: 40, amt: 50},
@@ -187,15 +282,15 @@ class Home extends Component {
               <Slider {...settings} ref='slider'>
                 <Col center='center'>
                   <View click={this.state.View.click} slide={this.clickView} textUp='El sector privado es una pieza central en cualquier estrategia anticorrupción.....' textDown='El primer paso consiste en establecer e implementar políticas de integridad que muestren su compromiso anticorrupción, el cual sólo se hace efectivo al hacerlo público y accesible para su consulta, al capacitar a directivos y empleados para su implementación, y al socializarlo entre socios y clientes. La señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, y que facilitan y premian la denuncia, constituyen el primer eslabón en la lucha contra la corrupción. Sin embargo, la distribución de las 500 empresas refleja el estado embrionario en la adopción de políticas de integridad en el sector privado en México. Ninguna empresa obtuvo 100 puntos y sólo 13 empresas obtuvieron más de 80 puntos. Además, El 61.8% de las organizaciones obtuvieron menos de 50 puntos y apenas 2 por encima de los 90 puntos (0.4%). '/>
-                  <ComposedChart width={800} height={600} data={data}>
+                  <ComposedChart width={800} height={600} data={charts['01']}>
                     <XAxis dataKey='name' />
                     <YAxis />
                     <Tooltip />
                     <Legend />
                     <CartesianGrid stroke='#f5f5f5' />
-                    <Bar dataKey='pv' barSize={20} fill='#413ea0' />
-                    <View click={this.state.View} slide={this.clickView}/>
-                    <Line type='monotone' dataKey='uv' stroke='#ff7300' />
+                    <Bar dataKey='Frecuencia' barSize={20} fill='#413ea0' />
+                    <View click={this.state.View} slide={this.clickView} />
+                    <Line type='monotone' dataKey='Frecuencia Acumulada' stroke='#ff7300' />
                   </ComposedChart>
                 </Col>
                 <Col>
@@ -203,7 +298,7 @@ class Home extends Component {
                   <BarChart
                     width={800}
                     height={600}
-                    data={data}
+                    data={charts['02']}
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
@@ -212,8 +307,7 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey='pv' fill='#55c153' stackId='a' />
-                    <Bar dataKey='uv' fill='#427df4' stackId='a' />
+                    <Bar dataKey='Porcentaje Promedio' fill='#ED7D31' />
                   </BarChart>
                 </Col>
                 <Col>
