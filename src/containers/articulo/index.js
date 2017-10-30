@@ -23,7 +23,7 @@ export default class Article extends Component {
     return (
       <div>
         <header>
-          <SectionBanner image={'assets/img/glosario_background.jpg'} title={'NOTICIAS'} subtitle={''} withBar />
+          <SectionBanner image={'assets/img/noticias_background.jpg'} title={'ARTICULO'} subtitle={''} withBar />
         </header>
         <Main>
           <Container style={{width: '70%'}}>
