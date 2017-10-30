@@ -81,7 +81,7 @@ class Home extends Component {
         {name: 'G', uv: 10, pv: 65, amt: 10}
       ],
       isOpen: {
-        graphics: false,
+        graphics: true,
         data: false,
         newsWall: false
       },
@@ -231,17 +231,55 @@ class Home extends Component {
           { name: 'Servicios básicos', 'Puntaje promedio': 9.8 }
         ],
         '03': [
-          { name: 'Código de etica', Si: 59.6, No: 40.4 },
-          { name: 'Politica de regalos', Si: 51, No: 49 },
-          { name: 'Prohibición sobornos', Si: 47.2, No: 52.8 },
-          { name: 'Política anticorrupción', Si: 43.8, No: 56.2 },
-          { name: 'Política de donaciones', Si: 28.4, No: 71.6 },
-          { name: 'compromiso anticorrupción', Si: 27.6, No: 72.4 },
-          { name: 'Prevención lavado de dinero', Si: 20.6, No: 79.4 },
-          { name: 'Prevención fraudes', Si: 19.8, No: 80.2 },
-          { name: 'Contribuciones sociales', Si: 12.6, No: 87.4 },
-          { name: 'Política de viáticos', Si: 6.6, No: 93.4 }
-        ],
+          {
+            name: 'Política de hospitalidad y viáticos',
+            Si: 6.6,
+            No: 93.4
+          },
+          {
+            name: 'Política de donaciones y/o contribuciones sociales',
+            Si: 12.6,
+            No: 87.4
+          },
+          {
+            name: 'Políticas específicas para prevenir fraudes internos',
+            Si: 19.8,
+            No: 80.2
+          },
+          {
+            name: 'Políticas específicas para prevenir lavado de dinero',
+            Si: 20.6,
+            No: 79.4
+          },
+          {
+            name: 'Declaración o compromiso anticorrupción / cero tolerancia a la corrupción',
+            Si: 27.6,
+            No: 72.4
+          },
+          {
+            name: 'Política de donaciones y/o contribuciones políticas',
+            Si: 28.4,
+            No: 71.6
+          },
+          { name: 'Política anticorrupción / integridad',
+            Si: 43.8,
+            No: 56.2 },
+          {
+            name: 'Prohibición explícita de sobornos y pagos facilitadores',
+            Si: 47.2,
+            No: 52.8
+          },
+          {
+            name: 'Política de regalos y agradecimientos',
+            Si: 51,
+            No: 49
+          },
+          {
+            name: 'Código de ética o de conducta para empleados',
+            Si: 59.6,
+            No: 40.4
+          }
+        ].reverse(),
         '04': [
           { name: 'Política anticorrupción', 'Si': 219, 'No': 281 },
           { name: 'Código de ética', 'Si': 298, 'No': 202 },
@@ -252,7 +290,129 @@ class Home extends Component {
           { name: 'Prevención fraudes', 'Si': 99, 'No': 401 },
           { name: 'Prevención lavado de dinero', 'Si': 103, 'No': 397 },
           { name: 'Contribuciones políticas', 'Si': 142, 'No': 358 },
-          { name: 'Contribuciones sociales', 'Si': 63, 'No': 437 }
+          { name: 'Contribuciones sociales', 'Si': 63, 'No': 437 },
+          {name: 'Compromiso con la legalidad y el respeto a las leyes nacionales e internacionales', 'Si': 190, 'Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO': 255, 'No': 55}
+        ],
+        '05': [
+          {name: 'Si', value: 38, fill: '#3A8D91'},
+          {name: 'No', value: 62, fill: '#CFCECE'}
+        ],
+        '06': [
+          {name: 'Información no disponible', value: 40, fill: '#E18442'},
+          {name: 'Empleados', value: 28, fill: '#6FAD47'},
+          {name: 'Empleados y Directivos', value: 32, fill: '#957319'}
+        ],
+        '07': [
+          {name: 'Si', value: 19, fill: '#F8BF32'},
+          {name: 'No', value: 81, fill: '#6FAD47'}
+        ],
+        '08': [
+          {name: 'Información no disponible', value: 77, fill: '#B78C22'},
+          {name: 'No, pero los socios comerciales están sujetos al programa anticorrupción de la empresa', value: 11, fill: '#ECB62F'},
+          {name: 'Hay un programa específico para socios comerciales', value: 12, fill: '#FAD599'}
+        ],
+        '09': {
+          left: [
+            {name: 'Si', value: 43, fill: '#3A8D91'},
+            {name: 'No', value: 57, fill: '#CFCECE'}
+          ],
+          right: [
+            {name: 'Si', value: 14, fill: '#3A8D91'},
+            {name: 'No', value: 86, fill: '#CFCECE'}
+          ]
+        },
+        '10': [
+          {name: 'Si', value: 13, fill: '#7EA548'},
+          {name: 'No', value: 87, fill: '#E28542'}
+        ],
+        '11': [
+          {name: 'Información no disponible', value: 92, fill: '#BB8B23'},
+          {name: 'Empleados', value: 7, fill: '#F3B730'},
+          {name: 'Empleados y Directivos', value: 1, fill: '#FAD594'}
+        ],
+        '12': [
+          {
+            name: '¿Existe un sistema de denuncia?',
+            Si: 55,
+            No: 45
+          },
+          {
+            name: '¿Existe un correo electrónico para hacer una denuncia?',
+            Si: 34,
+            No: 66
+          },
+          {
+            name: '¿Existe un número telefónico para hacer una denuncia?',
+            Si: 34,
+            No: 66
+          },
+          {
+            name: '¿En esta línea de denuncia ¿Se mantiene la confidencialidad o anonimidad del denunciante?',
+            Si: 47,
+            No: 53
+          },
+          {
+            name: '¿Se prohiben expresamente las represalias a los denunciantes?',
+            Si: 34,
+            No: 66
+          },
+          {
+            name: '¿Existen sanciones o penalizaciones por incumplimiento al código de ética, código de conducta o cualquiera de los componentes de la política anticorrupción?',
+            'No se mencionan sanciones': 49,
+            'Se menciona que existen sanciones pero no se especifica de qué tipo': 35,
+            'Sí, existen sanciones claras y detalladas': 16
+          }
+        ],
+        '13': [
+          {name: 'Más de 5 (o información encontrada con un buscador)', value: 35, fill: '#BB8B23'},
+          {name: 'Información no disponible', value: 9, fill: '#F3B730'},
+          {name: '4 o 5', value: 29, fill: '#FAD594'},
+          {name: '3 o menos', value: 27, fill: '#999A99'}
+        ],
+        '14': [
+          {name: 'En otro idioma en sitio global ', value: 17, fill: '#D5DCE5'},
+          {name: 'En español en sitio global ', value: 11, fill: '#D9E2F3'},
+          {name: 'En otro idioma en sitio para México', value: 3, fill: '#8EA9DB'},
+          {name: 'En español en sitio para México', value: 69, fill: '#2F5496'}
+        ],
+        '15': [
+          {name: 'Singapur', 'Puntaje promedio': 90.2},
+          {name: 'Colombia', 'Puntaje promedio': 88.2},
+          {name: 'Irlanda', 'Puntaje promedio': 67.6},
+          {name: 'Austria', 'Puntaje promedio': 66.7},
+          {name: 'Estados Unidos / Reino Unido', 'Puntaje promedio': 66.7},
+          {name: 'Reino Unido / Holanda', 'Puntaje promedio': 66.7},
+          {name: 'Holanda', 'Puntaje promedio': 62.7},
+          {name: 'Suiza / Suecia', 'Puntaje promedio': 60.8},
+          {name: 'Reino Unido', 'Puntaje promedio': 57.2},
+          {name: 'España', 'Puntaje promedio': 57},
+          {name: 'Chile', 'Puntaje promedio': 55.9},
+          {name: 'Canadá', 'Puntaje promedio': 55.6},
+          {name: 'Suecia', 'Puntaje promedio': 53.7},
+          {name: 'México / Brasil', 'Puntaje promedio': 51},
+          {name: 'Francia', 'Puntaje promedio': 49.8},
+          {name: 'Bélgica', 'Puntaje promedio': 47.7},
+          {name: 'Estados Unidos', 'Puntaje promedio': 45.8},
+          {name: 'Italia / Argentina', 'Puntaje promedio': 44.4},
+          {name: 'Brasil', 'Puntaje promedio': 43.1},
+          {name: 'Alemania', 'Puntaje promedio': 43.1},
+          {name: 'Siuiza', 'Puntaje promedio': 42.2},
+          {name: 'Promedio 500 empresas', 'Puntaje promedio': 37, fill: '#C13724'},
+          {name: 'Argentina', 'Puntaje promedio': 31.4},
+          {name: 'Italia / España', 'Puntaje promedio': 31.4},
+          {name: 'México', 'Puntaje promedio': 30, fill: '#F7BF32'},
+          {name: 'Italia', 'Puntaje promedio': 29.4},
+          {name: 'Corea', 'Puntaje promedio': 25.1},
+          {name: 'México / Estados Unidos', 'Puntaje promedio': 25},
+          {name: 'China', 'Puntaje promedio': 21.6},
+          {name: 'Finlandia', 'Puntaje promedio': 17.6},
+          {name: 'Rusia', 'Puntaje promedio': 15.7},
+          {name: 'Luxemburgo', 'Puntaje promedio': 14.7},
+          {name: 'Japón', 'Puntaje promedio': 14.5},
+          {name: 'Portugal', 'Puntaje promedio': 9.8},
+          {name: 'Taiwan', 'Puntaje promedio': 9.8},
+          {name: 'China / Francia', 'Puntaje promedio': 7.8},
+          {name: 'India', 'Puntaje promedio': 5.9}
         ]
       }
     }
@@ -302,7 +462,8 @@ class Home extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      initialSlide: 16
     }
     return (
       <div>
@@ -409,6 +570,7 @@ class Home extends Component {
                   </ComposedChart>
                 </Col>
                 <Col>
+                  {/* Tabla 2*/}
                   <View isMore click={this.state.View.click} slide={this.clickView} textUp='Predicar con el ejemplo y mandar la señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, así como que facilitan y premian la denuncia, son elementos iniciales en la lucha contra la corrupción...' textDown='De acuerdo con el IC500, 13 empresas obtuvieron más de 80 puntos. Entre las cinco empresas mejor evaluadas destaca, en primer lugar, Honeywell Aerospace de México, representando a la industria aeroespacial, seguida por Flextronics Manufacturing Mexico, de la industria electrónica; Grupo Sura (en dos posiciones) en la esfera de las Afores, y Autoliv México, de la industria automotriz. Importante destacar que ninguna de estas cinco tiene su matriz en México. En total, de las empresas que alcanzaron 80 puntos o más hay 3 de origen nacional: IEnova (Sempra), Bio PAPPEL y Grupo Bimbo. En tanto, dentro de las 13 empresas más de 80 puntos en IC500, cuatro cuentan con capital estadounidense; tres, mexicano y dos, colombiano.' />
                   <table style={{marginTop: 30}}>
                     <thead className='tHead'>
@@ -516,7 +678,8 @@ class Home extends Component {
                   </table>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Existen amplias oportunidades para generar mayor compromiso entre las 500 empresas.....' textDown='La calificación promedio en IC500 es de 37 sobre 100. Apenas 13 empresas obtuvieron un puntaje igual o mayor a 80 puntos y sólo 4 de cada 10 empresas se colocaron por encima de los 50 puntos. Además, la mitad de las empresas (265 de 500) alcanzaron apenas 40 puntos o menos; y una de cada tres (168 de 500) obtuvo 10 puntos o menos.En la distribución general de empresas por puntaje, destacan dos grupos: el primero son 178 empresas (36% de las 500) con resultados relativamente satisfactorios (entre 60 y 80 puntos de 100); el segundo grupo tiene muchas oportunidades de mejorar pues 168 empresas  (34% de las 500) tienen menos de 10 puntos. ' />
+                  {/* GRAFICA 3 */}
+                  <View click={this.state.View.click} slide={this.clickView} textUp='El sector aeroespacial es el mejor evaluado, está conformado únicamente por dos empresas...' textDown='Para evaluar a las 500 empresas, se diseñó un cuestionario basado en el componente de la existencia, calidad y publicidad de las políticas anticorrupción del estudio Transparencia de la Información Corporativa (TRAC). La valoración de la empresa se hizo a partir de la información disponible en el portal de internet de cada empresa y se clasificó en cuatro ejes: Publicidad de los elementos básicos de una política anticorrupción integral. Alcance y socialización de la política anticorrupción de la empresa, tanto al interior como al exterior. Sistema de monitoreo, denuncia y sanciones. Accesibilidad de la información. La escala de puntuación es de 0 a 100. El puntaje más alto posible es de 100, pero ninguna empresa obtuvo esa calificación.' />
                   <BarChart
                     width={800}
                     height={600}
@@ -524,16 +687,22 @@ class Home extends Component {
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' />
-                    <YAxis type='category' dataKey='name' />
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
+                    <YAxis type='category' dataKey='name' width={200} />
                     <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                     <Legend />
                     <Bar dataKey='Puntaje promedio' fill='#ED7D31' />
                   </BarChart>
                 </Col>
                 <Col>
-                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Predicar con el ejemplo y mandar la señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, así como que facilitan y premian la denuncia, son elementos iniciales en la lucha contra la corrupción.....' textDown='De acuerdo con el IC500, 13 empresas obtuvieron más de 80 puntos. Entre las cinco empresas mejor evaluadas destaca, en primer lugar, Honeywell Aerospace de México, representando a la industria aeroespacial, seguida por Flextronics Manufacturing Mexico, de la industria electrónica; Grupo Sura (en dos posiciones) en la esfera de las Afores, y Autoliv México, de la industria automotriz. Importante destacar que ninguna de estas cinco tiene su matriz en México. En total, de las empresas que alcanzaron 80 puntos o más hay 3 de origen nacional: IEnova (Sempra), Bio PAPPEL y Grupo Bimbo. En tanto, dentro de las 13 empresas más de 80 puntos en IC500, cuatro cuentan con capital estadounidense; tres, mexicano y dos, colombiano.' />
+                  {/* Figura 2 */}
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Elementos de evaluación de una política anticorrupción...' textDown='El sector mejor evaluado es el aeroespacial (79.4%), conformado únicamente por dos empresas. El segundo sitio es ocupado por el sector de servicios educativos (70.6%) representado por una sola empresa. Los ocho sectores con un puntaje por encima de los 60 puntos del ranking suman 36 empresas (7.2%)' />
+                  <img src='assets/img/figura2.png' alt='Figura 2' width='35%' />
+                </Col>
+                <Col>
+                  {/* Grafica 4 */}
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='La publicidad de una política anticorrupción es uno de los cuatro ejes —además del alcance y socialización de dicha política, del sistema de monitoreo, denuncia y sanción, así como de la accesibilidad de la información— considerados en IC500...' textDown='IC500 encontró que 3 de cada 5 empresas tienen publicado un código de ética, conducta o integridad en su página de internet, pero sólo la mitad de las 500 empresas cuenta con una política de regalos y agradecimientos, y en apenas una de cada 5 empresas se encontró una política específica para prevenir el lavado de dinero en el sitio web. La principal oportunidad de mejora de las empresas se encuentra en la posibilidad de publicitar su política de integridad.' />
                   <BarChart
                     width={800}
                     height={600}
@@ -565,7 +734,8 @@ class Home extends Component {
                   </BarChart> */}
                 </Col>
                 <Col>
-                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Las 500 empresas más importantes en México son las que determinan el estándar anticorrupción dentro de sus sectores y, con ello, tienen la capacidad de inducir cambios en su cadena de producción, así como en las prácticas de sus socios comerciales, proveedores y distribuidores......' textDown='IC500 muestra que los servicios financieros concentran la mayor parte de las 191 empresas con 50 puntos o más (9.4%), seguido por el sector automotriz y autopartes (7.3%), química y petroquímica (6.3%), los sectores de alimentos, minería y seguros y fianzas (cada uno con 5.8%). Estos seis sectores (de 15 considerados) concentran al 40% de las 191 empresas mejor evaluadas. Los sectores que tienen una mejor representación entre las 191 empresas mejor evaluadas son aquellos en los que la barra naranja es mayor que la barra azul (que indica la representación del sector en el universo de las 500 empresas más grandes en México). Tal es el caso del sector de química farmacéutica, bebidas y cervezas, productos de consumo, minería química y petroquímica, además del automotriz y autopartes, química y petroquímica, alimentos y minería.' />
+                  {/* Grafica 5 */}
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Para que el sector privado haga efectivo su compromiso en la lucha contra la corrupción este tiene que ser público y accesible para su consulta...' textDown='De acuerdo con IC500, 298 de las 500 empresas publicaron un código de ética o un código de conducta en su página web; éste fue el documento publicado con mayor frecuencia por las empresas. En segundo lugar, poco más de la mitad de las empresas (255) publicaron también una política de regalos y agradecimientos. El tercer documento publicado con mayor frecuencia es la prohibición explícita de sobornos y pagos facilitadores (236 empresas, 47.2% de las 500). Los documentos que fueron encontrados con menor frecuencia en los portales de internet de las 500 empresas fueron la política de hospitalidad y viáticos (33 empresas, 6.6%) y la política de donaciones o contribuciones sociales (63 empresas, 12.6%). Si bien sólo 190 empresas hacen explícito su compromiso con la legalidad y 55 empresas NO expresan públicamente un compromiso con la legalidad, 255 confirman únicamente la protección de datos personales (medida intermedia entre los dos primeros grupos).' />
                   <BarChart
                     width={800}
                     height={600}
@@ -579,87 +749,125 @@ class Home extends Component {
                     <Tooltip />
                     <Legend />
                     <Bar dataKey='Si' fill='#64ADB1' stackId='a' barSize={40} />
+                    <Bar dataKey='Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO' fill='#FDE391' stackId='a' barSize={40} />
                     <Bar dataKey='No' fill='#DDDDDD' stackId='a' barSize={40} />
                   </BarChart>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='El sector aeroespacial es el mejor evaluado, está conformado únicamente por dos empresas......' text2='El sector mejor evaluado es el aeroespacial (79.4%), conformado únicamente por dos empresas. El segundo sitio es ocupado por el sector de servicios educativos (70.6%) representado por una sola empresa. Los ocho sectores con un puntaje por encima de los 60 puntos del ranking suman 36 empresas (7.2%)' />
-                  <BarChart
-                    width={800}
-                    height={600}
-                    data={data}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
-                  >
-                    <XAxis type='number' />
-                    <YAxis type='category' dataKey='name' />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey='pv' fill='#55c153' stackId='a' />
-                    <Bar dataKey='uv' fill='#427df4' stackId='a' />
-                  </BarChart>
-                </Col>
-                <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Elementos de evaluación de una política anticorrupción…' textDown='Para evaluar a las 500 empresas, se diseñó un cuestionario basado en el componente de la existencia, calidad y publicidad de las políticas anticorrupción del estudio Transparencia de la Información Corporativa (TRAC). La valoración de la empresa se hizo a partir de la información disponible en el portal de internet de cada empresa y se clasificó en cuatro ejes:Publicidad de los elementos básicos de una política anticorrupción integral.Alcance y socialización de la política anticorrupción de la empresa, tanto al interior como al exterior.Sistema de monitoreo, denuncia y sanciones.Accesibilidad de la información.La escala de puntuación es de 0 a 100. El puntaje más alto posible es de 100, pero ninguna empresa obtuvo esa calificación.' />
+                  {/* Grafica 6 */}
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Los directivos marcan la pauta para sus empleados, socios, proveedores y clientes; por eso es esencial que respalden de manera activa las políticas anticorrupción o de integridad...' textDown='Por ello es crucial que los líderes de las empresas demuestren su respaldo a la política y transmitan su importancia al resto de los empleados. De acuerdo con el Ranking IC500, 188 empresas (32%) publicaron mensajes que expresan el nivel de prioridad y compromiso de este tipo de acciones dentro de la empresa por parte de sus líderes o directores.' />
                   <PieChart width={800} height={600}>
-                    <Pie isAnimationActive={false} data={data01} cx='50%' cy='50%' outerRadius={200} fill='#A58638' label />
+                    <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label />
                     <Tooltip />
                   </PieChart>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Elementos de evaluación de una política anticorrupción…' textDown='Para evaluar a las 500 empresas, se diseñó un cuestionario basado en el componente de la existencia, calidad y publicidad de las políticas anticorrupción del estudio Transparencia de la Información Corporativa (TRAC). La valoración de la empresa se hizo a partir de la información disponible en el portal de internet de cada empresa y se clasificó en cuatro ejes:Publicidad de los elementos básicos de una política anticorrupción integral.Alcance y socialización de la política anticorrupción de la empresa, tanto al interior como al exterior.Sistema de monitoreo, denuncia y sanciones.Accesibilidad de la información.La escala de puntuación es de 0 a 100. El puntaje más alto posible es de 100, pero ninguna empresa obtuvo esa calificación.' />
+                  {/* Grafica 7 */}
+                  <h1>Grafica 7</h1>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque demuestra que nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Además, al no ser selectiva, ofrece certeza ante denuncias por violaciones al código de ética por parte de empleados, socios y proveedores, y permite a la empresa demostrar que ha tomado medidas anticorrupción comprehensivas ante una investigación de la autoridad. El análisis del segundo eje de IC500 “Alcance y socialización de la política anticorrupción” arroja que sólo una tercera parte de las empresas especifican públicamente que su política anticorrupción abarca tanto a los directivos como a los empleados. Estas proporciones se explican como sigue: en dos de cada cinco empresas (202 de 500) no fue posible determinar quién está sujeto a la política de la integridad debido a que no cuentan con ésta o con un código de ética o conducta. De las empresas que sí publicaron ya sea una política anticorrupción o un código de ética o conducta, poco más de la mitad (159) consideraron que empleados y directivos son sujetos de este documento. Es decir, prácticamente sólo una tercera parte de las empresas está enviando la señal de que la política anticorrupción no es selectiva y aplica para todos.' />
+                  <PieChart width={800} height={600}>
+                    <Pie data={charts['06']} cx='50%' cy='50%' outerRadius={200} label />
+                    <Tooltip />
+                  </PieChart>
+                </Col>
+                <Col>
+                  {/* Grafica 8 */}
+                  <h1>Grafica 8</h1>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual...' textDown='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual se concretan las prácticas anticorrupción y, en este sentido, es sumamente importante que estén sujetos a dichas políticas. Las empresas deben asegurarse de que los empleados y otros intermediarios que actúan en representación suya estén sujetos a las políticas anticorrupción, y de que reciban el asesoramiento y la capacitación adecuados.' />
+                  <PieChart width={800} height={600}>
+                    <Pie data={charts['07']} cx='50%' cy='50%' outerRadius={200} label />
+                    <Tooltip />
+                  </PieChart>
+                </Col>
+                <Col>
+                  {/* Grafica 9 */}
+                  <h1>Grafica 9</h1>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Dado que las 500 empresas más grandes de México son líderes en sus respectivos sectores tienen el potencial de influir directamente en las prácticas de integridad de sus socios comerciales...' textDown='Es por ello que los resultados que IC500 arroja sobre una mención expresa acerca de los socios comerciales en la política de integridad de la empresa son particularmente relevantes, pues entre las 500 empresas más grandes en México solamente 2 de cada 10 (115 de 500 empresas) incorporan menciones a sus socios comerciales -proveedores y contratistas, por ejemplo-. De éstas, una de cada 10 (59 de 500 empresas) publica una política específica para socios, mientras que la otra mitad (56) alude a sus socios como sujetos de su política general.' />
+                  <PieChart width={800} height={600}>
+                    <Pie data={charts['08']} cx='50%' cy='50%' outerRadius={200} label />
+                    <Tooltip />
+                  </PieChart>
+                </Col>
+                <Col>
+                  {/* Grafica 10 */}
+                  <h1>Grafica 10</h1>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Es sumamente importante que las políticas anticorrupción sean claras y precisas para que sean aplicables y tengan un mayor impacto...' textDown='De acuerdo con la información en sus páginas de internet, dos de cada cinco empresas (218 de 500 empresas) divulgan una definición de conflicto de interés; mientras que 14% (69 de 500 empresas) incluyen otras definiciones como soborno, pago facilitador o tráfico de influencia. De las 69 empresas que consideran otras definiciones de actos de corrupción, 61 definen el concepto de conflicto de intereses.' />
+                  <PieChart width={800} height={600}>
+                    <Pie data={charts['09'].left} cx='25%' cy='50%' outerRadius={120} label />
+                    <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label />
+                    <Tooltip />
+                  </PieChart>
+                </Col>
+                <Col>
+                  {/* Grafica 11 */}
+                  <h1>Grafica 11</h1>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Capacitar a sus empleados y directivos, así como adoptar prácticas comerciales éticas que contribuyan a detectar y prevenir la corrupción, permite a las 500 compañías más grandes en México sumarse a la lucha anticorrupción...' textDown='Debido a su alcance, conexiones y poder económico, éstas pueden actuar como agentes de cambio positivo, y desempeñar una función central en la lucha contra la corrupción. Sin embargo, únicamente 64 de 500 empresas publican en sus páginas web que cuentan con un programa de capacitación, lo cual indica que hay mucho trabajo por hacer en la socialización y entrenamiento de integridad.' />
+                  <PieChart width={800} height={600}>
+                    <Pie data={charts['10']} cx='50%' cy='50%' outerRadius={200} label />
+                  </PieChart>
+                </Col>
+                <Col>
+                  {/* Grafica 12 */}
+                  <h1>Grafica 12</h1>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque muestra nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Para que directivos y empleados puedan dar cumplimiento a la política de integridad, deben recibir igualmente entrenamiento. IC500 arroja que, a pesar de los beneficios que conlleva la capacitación, el entrenamiento anticorrupción únicamente se menciona en 8% de los casos, de los cuales únicamente un punto porcentual corresponde a la mención de que el entrenamiento incluye a los directivos.' />
+                  <PieChart width={800} height={600}>
+                    <Pie data={charts['11']} cx='50%' cy='50%' outerRadius={200} label />
+                  </PieChart>
+                </Col>
+                <Col>
+                  {/* Grafica 13 */}
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Para que el sector privado haga efectivo su compromiso en la lucha contra la corrupción este tiene que ser público y accesible para su consulta...' textDown='De acuerdo con IC500, 298 de las 500 empresas publicaron un código de ética o un código de conducta en su página web; éste fue el documento publicado con mayor frecuencia por las empresas. En segundo lugar, poco más de la mitad de las empresas (255) publicaron también una política de regalos y agradecimientos. El tercer documento publicado con mayor frecuencia es la prohibición explícita de sobornos y pagos facilitadores (236 empresas, 47.2% de las 500). Los documentos que fueron encontrados con menor frecuencia en los portales de internet de las 500 empresas fueron la política de hospitalidad y viáticos (33 empresas, 6.6%) y la política de donaciones o contribuciones sociales (63 empresas, 12.6%). Si bien sólo 190 empresas hacen explícito su compromiso con la legalidad y 55 empresas NO expresan públicamente un compromiso con la legalidad, 255 confirman únicamente la protección de datos personales (medida intermedia entre los dos primeros grupos).' />
                   <BarChart
                     width={800}
                     height={600}
-                    data={data}
+                    data={charts['12']}
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' />
-                    <YAxis type='category' dataKey='name' />
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'} />
+                    <YAxis type='category' dataKey='name' width={250} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey='pv' fill='#5cd15c' barSize={30} />
-                    <Bar dataKey='uv' fill='#ff7200' barSize={30} />
+                    <Bar dataKey='Si' fill='#91CF4F' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
+                    <Bar dataKey='No' fill='#ED7D31' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
+                    <Bar dataKey='Sí, existen sanciones claras y detalladas' fill='#558336' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
+                    <Bar dataKey='Se menciona que existen sanciones pero no se especifica de qué tipo' fill='#F8C032' stackId='a' barSize={40} formatter={val => val.toString() +' %'} />
+                    <Bar dataKey='No se mencionan sanciones' fill='#BE652B' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
                   </BarChart>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} text1='Eje 1: Publicidad de los elementos básicos de una política anticorrupción integral.La publicidad de una política anticorrupción es uno de los cuatro ejes —además del alcance y socialización de dicha política, del sistema de monitoreo, denuncia y sanción, así como de la accesibilidad de la información— considerados en IC500....' textDown='IC500 encontró que 3 de cada 5 empresas tienen publicado un código de ética, conducta o integridad en su página de internet, pero sólo la mitad de las 500 empresas cuenta con una política de regalos y agradecimientos, y en apenas una de cada 5 empresas se encontró una política específica para prevenir el lavado de dinero en el sitio web.La principal oportunidad de mejora de las empresas se encuentra en la posibilidad de publicitar su política de integridad.' />
-                  <BarChart
-                    width={800}
-                    height={600}
-                    data={data}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
-                  >
-                    <XAxis type='number' />
-                    <YAxis type='category' dataKey='name' />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey='pv' fill='#55c153' stackId='a' />
-                    <Bar dataKey='uv' fill='#427df4' stackId='a' />
-                  </BarChart>
+                  {/* Grafica 14 */}
+                  <h1>Grafica 14</h1>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='La efectividad de la política anticorrupción o de integridad depende de que sea fácil acceder a ella...' textDown='Cuando la información de integridad se encuentra muy resguardada en la arquitectura de un sitio de internet, su impacto es similar a la de las empresas que no la publicitan pues es difícil conocer su contenido. Es decir, si es difícil acceder a la información, prácticamente se está mermando su publicidad y alcance y, por tanto, su efectividad. IC500 utilizó el número de clics necesarios para acceder a la información anticorrupción como una medida de accesibilidad, con los siguientes resultados: En una cuarta parte de los casos (134 de 500) la información anticorrupción o de integridad es de fácil acceso, pues se necesitan tres clics o menos para llegar a ella. En casi una tercera parte de las empresas (145 de 500 empresas) son necesarios entre 4 o 5 clics para encontrar la información, lo cual implica que la información está poco disponible pues requiere tiempo y esfuerzo por parte del usuario. Llama la atención que en 9% de las veces (45 de 500 empresas) la política anticorrupción está disponible a más de 5 clics o fue encontrada usando un buscador (no directamente en la página); adicionalmente, en 35% de las empresas (176 de 500 empresas) no es posible encontrar códigos de conducta en sus sitios de internet, ni siquiera usando un buscador. Por lo que podemos asegurar que en casi 9 de cada 20 empresas (44%) la información está tan poco accesible que es como si no estuviera pública. La suma de estos dos rubros indica que en 44% de las empresas la información está poco accesible dentro del sitio de la compañía, ya sea porque requiere 5 clics o más para encontrarla, porque no está en el sitio y fue necesario usar un buscador o porque no cuentan con ésta (221 de 500 empresas).' />
+                  <PieChart width={800} height={600}>
+                    <Pie data={charts['13']} cx='50%' cy='50%' outerRadius={200} label />
+                  </PieChart>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Eje 1: Publicidad de los elementos básicos de una política anticorrupción integral.Para que el sector privado haga efectivo su compromiso en la lucha contra la corrupción este tiene que ser público y accesible para su consulta....' textDown='De acuerdo con IC500, 298 de las 500 empresas publicaron un código de ética o un código de conducta en su página web; éste fue el documento publicado con mayor frecuencia por las empresas. En segundo lugar, poco más de la mitad de las empresas (255) publicaron también una política de regalos y agradecimientos. El tercer documento publicado con mayor frecuencia es la prohibición explícita de sobornos y pagos facilitadores (236 empresas, 47.2% de las 500).Los documentos que fueron encontrados con menor frecuencia en los portales de internet de las 500 empresas fueron la política de hospitalidad y viáticos (33 empresas, 6.6%) y la política de donaciones o contribuciones sociales (63 empresas, 12.6%).Si bien sólo 190 empresas hacen explícito su compromiso con la legalidad y 55 empresas NO expresan públicamente un compromiso con la legalidad, 255 confirman únicamente la protección de datos personales (medida intermedia entre los dos primeros grupos).' />
+                  {/* Grafica 15 */}
+                  <h1>Grafica 15</h1>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='El compromiso público de las empresas contra la corrupción y la divulgación de políticas relevantes refuerzan la integridad entre los empleados y...' textDown='El compromiso público de las empresas contra la corrupción y la divulgación de políticas relevantes refuerzan la integridad entre los empleados y los socios comerciales, fomentan tendencias positivas y marcan el ejemplo en las sociedades en las cuales tienen presencia Para que las políticas de integridad empresarial y anticorrupción tengan todos los efectos deseados, estas tienen que ser públicas, accesibles y explicitamente para México. Es por esto que, en la metodología se toma en cuenta el idioma de la información y la ubicación de la información en conjunto. Al considerar a las 500 empresas, se observa que el 68% publica, en efecto, en un sitio para México y en español. Otro 11% tiene disponible su información en español pero en un sitio global o para Latinoamérica, 3% de las empresas tiene su información en un sitio para México pero esta se encuentra al menos parcialmente en otro idioma, y finalmente,  17% publica parte o toda su información en un idioma distinto al español y en un sitio global. ' />
+                  <PieChart width={800} height={600}>
+                    <Pie data={charts['14']} cx='50%' cy='50%' outerRadius={200} label />
+                  </PieChart>
+                </Col>
+                <Col>
+                  {/* GRAFICA 16 */}
+                  <View click={this.state.View.click} slide={this.clickView} textUp='El sector aeroespacial es el mejor evaluado, está conformado únicamente por dos empresas...' textDown='Para evaluar a las 500 empresas, se diseñó un cuestionario basado en el componente de la existencia, calidad y publicidad de las políticas anticorrupción del estudio Transparencia de la Información Corporativa (TRAC). La valoración de la empresa se hizo a partir de la información disponible en el portal de internet de cada empresa y se clasificó en cuatro ejes: Publicidad de los elementos básicos de una política anticorrupción integral. Alcance y socialización de la política anticorrupción de la empresa, tanto al interior como al exterior. Sistema de monitoreo, denuncia y sanciones. Accesibilidad de la información. La escala de puntuación es de 0 a 100. El puntaje más alto posible es de 100, pero ninguna empresa obtuvo esa calificación.' />
                   <BarChart
                     width={800}
                     height={600}
-                    data={data}
+                    data={charts['15']}
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' />
-                    <YAxis type='category' dataKey='name' />
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
+                    <YAxis type='category' dataKey='name' width={200} />
                     <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                     <Legend />
-                    <Bar dataKey='pv' fill='#1f8469' stackId='a' />
-                    <Bar dataKey='uv' fill='#1f6b84' stackId='a' />
-                    <Bar dataKey='amt' fill='#38bc99' stackId='a' />
+                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
                   </BarChart>
                 </Col>
               </Slider>
@@ -750,13 +958,13 @@ class Home extends Component {
   }
   changeSlider (index) {
     var i = index
-    if (i > 8) {
+    if (i > 18) {
       i = 0
       this.setState({sliderIndex: i})
       this.refs.slider.slickGoTo(i)
     }
     if (i < 0) {
-      i = 8
+      i = 18
       this.setState({sliderIndex: i})
       this.refs.slider.slickGoTo(i)
     }
