@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Col from '../col'
+import {LogoLink} from '../'
 
 const Wrapper = styled.footer`
   background: #7D7D7D;
@@ -66,7 +67,7 @@ const Footer = props => (
   <Wrapper>
     <Row>
       <Col>
-        <Logo src='assets/img/logo500_footer.png' alt='Logo 500' />
+        <Logo src='assets/img/logofooter.png' alt='Logo 500' />
       </Col>
       <Col>
         <Paragraph>
@@ -96,9 +97,21 @@ const Footer = props => (
     </Row>
     <Hr />
     <Row>
-      <Col><Image src='assets/img/transparencia_mexicana_footer.png' alt='' /></Col>
-      <Col><Image src='assets/img/expansion_footer.png' alt='' /></Col>
-      <Col><Image src='assets/img/mcci_footer.png' alt='' /></Col>
+      <Col>
+        <LogoLink href='https://www.tm.org.mx/' target='blank'>
+          <Image src='assets/img/transparencia_mexicana_footer.png' alt='' />
+        </LogoLink>
+      </Col>
+      <Col>
+        <LogoLink href='http://expansion.mx/' target='blank'>
+          <Image src='assets/img/expansion_footer.png' alt='' />
+        </LogoLink>
+      </Col>
+      <Col>
+        <LogoLink href='https://contralacorrupcion.mx/' target='blank'>
+          <Image src='assets/img/mcci_footer.png' alt='' />
+        </LogoLink>
+      </Col>
     </Row>
     <SubFooter>
       <Row>
