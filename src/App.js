@@ -7,7 +7,8 @@ import {
   Article as ArticlePage,
   Methodology as MethodologyPage,
   AboutUs as AboutUsPage,
-  News as NewsPage
+  News as NewsPage,
+  Events as EventsPage
 } from './containers'
 import {
   NavigationBar
@@ -31,6 +32,7 @@ class App extends Component {
           <Route path='/quienes-somos' component={AboutUsPage} />
           <Route path='/noticias' component={NewsPage} />
           <Route path='/articulo' component={ArticlePage} />
+          <Route path='/eventos' component={EventsPage} />
         </div>
       </Router>
     )

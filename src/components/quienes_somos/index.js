@@ -4,6 +4,7 @@ import {
   Row,
   Col
 } from '../index'
+import {LogoLink} from '../'
 
 export const MainSection = styled.div`
   flex: 1;
@@ -24,7 +25,7 @@ export const ContentText = styled.p`
   color: ${props => props.isBig ? '#7A1F14' : '#000'};
   padding: ${props => props.isBig ? '15px 0px' : '0px'};
   font-weight: 200;
-  font-family: ${props => props.normal ? 'sans-serif' : "'Druk Text Web'" };
+  font-family: ${props => props.normal ? 'sans-serif' : "'Druk Text Web'"};
   margin: 3px 0px;
 `
 
@@ -34,7 +35,7 @@ const Image = styled.img`
 
 const Title = styled.h3`
   text-transform: ${props => props.red ? 'none' : 'uppercase'};
-  font-family: ${props => props.normal ? 'sans-serif' : "'Druk Text Web'" };
+  font-family: ${props => props.normal ? 'sans-serif' : "'Druk Text Web'"};
   font-size: ${props => props.red ? '1.5em' : '2em'}; 
   margin-bottom: 10px; 
   color: ${props => props.red ? '#ED462F' : '#000'};
@@ -62,6 +63,7 @@ export const MiddleBanner = props => (
     </Row>
     <Row padding='0px 100px' margin='100px 0px'>
       <Col width='50%' >
+
         <a href='https://contralacorrupcion.mx/' target='_blank'>
           <Image src='assets/img/mcci.png' width='50%' />
         </a>

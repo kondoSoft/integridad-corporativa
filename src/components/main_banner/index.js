@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import {LogoLink} from '../'
 
 const Wrapper = styled.section`
-  background-image: url('assets/img/header_background.jpg');
+  background-image: url('assets/img/bg_home.jpg');
   background-size: cover;
   background-repeat:no-repeat;
   display:flex;
@@ -57,7 +58,7 @@ const MainBanner = (props) => {
   return (
     <Wrapper>
       <Row>
-        <Logo src='assets/img/logo500.png' alt='logo 500' />
+        <Logo src='assets/img/newLogo.png' alt='logo 500' />
       </Row>
       <Row>
         <SubTitle>

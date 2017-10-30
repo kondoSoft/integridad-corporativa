@@ -6,6 +6,7 @@ import Contact from './contact'
 import Article from './articulo'
 import Methodology from './methodology'
 import News from './news'
+import Events from './eventos'
 export {
   Home,
   SignIn,
@@ -14,5 +15,6 @@ export {
   Article,
   AboutUs,
   Methodology,
-  News
+  News,
+  Events
 }
