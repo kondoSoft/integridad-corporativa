@@ -43,6 +43,7 @@ import StudyInfo from './studyInfo'
 import AxisInfo from './axis_info'
 import ScoreInfo from './score_info'
 import Anchor from './anchor'
+import {LogoLink} from './logoLink'
 import {
   NewsContainer
 } from './news'
@@ -90,5 +91,6 @@ export {
   AxisInfo,
   ScoreInfo,
   Anchor,
-  NewsContainer
+  NewsContainer,
+  LogoLink
 }

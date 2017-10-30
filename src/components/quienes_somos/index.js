@@ -4,6 +4,7 @@ import {
   Row,
   Col
 } from '../index'
+import {LogoLink} from '../'
 
 export const MainSection = styled.div`
   flex: 1;
@@ -24,7 +25,7 @@ export const ContentText = styled.p`
   color: ${props => props.isBig ? '#7A1F14' : '#000'};
   padding: ${props => props.isBig ? '15px 0px' : '0px'};
   font-weight: 200;
-  font-family: ${props => props.normal ? 'sans-serif' : "'Druk Text Web'" };
+  font-family: ${props => props.normal ? 'sans-serif' : "'Druk Text Web'"};
   margin: 3px 0px;
 `
 
@@ -34,7 +35,7 @@ const Image = styled.img`
 
 const Title = styled.h3`
   text-transform: ${props => props.red ? 'none' : 'uppercase'};
-  font-family: ${props => props.normal ? 'sans-serif' : "'Druk Text Web'" };
+  font-family: ${props => props.normal ? 'sans-serif' : "'Druk Text Web'"};
   font-size: ${props => props.red ? '1.5em' : '2em'}; 
   margin-bottom: 10px; 
   color: ${props => props.red ? '#ED462F' : '#000'};
@@ -47,7 +48,7 @@ export const MiddleBanner = props => (
         <Image src='assets/img/quienessomos_banner.png' />
       </Col>
       <Col width='50%' >
-        <Title>Apartir del 1º de noviembre 2017,</Title>
+        <Title>Apartir del 15º de noviembre 2017,</Title>
         <ContentText normal>las empresas podrán actualizar la información sobre sus políticas</ContentText>
         <ContentText normal>anticorrupción a través de este sitio para futuras evaluaciones de</ContentText>
         <ContentText normal>las 500 Frente a la Corrupción.</ContentText>
@@ -62,7 +63,9 @@ export const MiddleBanner = props => (
     </Row>
     <Row padding='0px 100px' margin='100px 0px'>
       <Col width='50%' >
-        <Image src='assets/img/mcci.png' width='50%' />
+        <LogoLink href='https://contralacorrupcion.mx/' target='blank' style={{width: '100%'}}>
+          <Image src='assets/img/mcci.png' width='50%' />
+        </LogoLink>
       </Col>
       <Col width='50%' background='#F1F2F1' padding='30px 0px'>
         <Title red>Sobre Mexicanos Contra la Corrupción y la Impunidad</Title>
@@ -78,7 +81,9 @@ export const MiddleBanner = props => (
     </Row>
     <Row padding='0px 100px' margin='50px 0px' invert>
       <Col width='50%' >
-        <Image src='assets/img/quienessomos_tranparencia.jpg' width='80%' />
+        <LogoLink href='https://www.tm.org.mx/' target='blank'>
+          <Image src='assets/img/quienessomos_tranparencia.jpg' width='80%' />
+        </LogoLink>
       </Col>
       <Col width='50%' background='#F1F2F1' padding='30px 0px'>
         <Title red>Sobre Transparencia Mexicana</Title>
@@ -97,7 +102,9 @@ export const MiddleBanner = props => (
     </Row>
     <Row padding='0px 100px' margin='50px 0px'>
       <Col width='50%' >
-        <Image src='assets/img/logo_expansion.jpg' width='60%' />
+        <LogoLink href='http://expansion.mx/' target='blank'>
+          <Image src='assets/img/logo_expansion.jpg' width='60%' />
+        </LogoLink>
       </Col>
       <Col width='50%' background='#F1F2F1' padding='30px 0px'>
         <Title red>Sobre Expasión</Title>

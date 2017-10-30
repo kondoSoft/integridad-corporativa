@@ -123,7 +123,7 @@ export const dataSources = [
   }
 ]
 export const dataArticulo = {
-  imagen: 'assets/img/blog2_example.jpg',
+  imagen: 'assets/img/calendario_background.jpg',
   titulo: 'Expansion: indice 500 en 2017. Entre escandalos, publicidad y compliance.',
   descripcion: `Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista
   Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa, el primer diagnostico sobre politicas anticorrupcion o de integridad de las 500 empresas mas importantes de México. En años recientes, grandes escandalos internacionales de corrupcion corporativa han girado los reflectores de la lucha anticorrupcion hacia el sector privado. Desde el punto de vista punitivo, se se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 

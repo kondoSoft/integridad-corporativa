@@ -3,6 +3,7 @@ import React from 'react'
 import {
   Link
 } from 'react-router-dom'
+import {LogoLink} from '../'
 
 const ArticleBox = styled.div`
   width: 100%;
@@ -73,8 +74,8 @@ const NewsSponsors = styled.div`
 `
 const Sponsors = styled.img`
     background-color: #FFF;
-    width: 90%;
-    height: ${props => props.isMCCI ? '100px' : '80px'};
+    width: 80%;
+    height: ${props => props.isMCCI ? '100px' : '70px'};
 `
 const NewEntries = styled.p`
     font-size: 20px;
@@ -128,6 +129,7 @@ const EventsTitle = styled.p`
     width: 90%;
     font-size: 16px;
     color: #FFF;
+    text-align: center;
 `
 const ArticleImg = styled.div`
   width: 100%;
@@ -314,9 +316,7 @@ export const Article = (props) => {
                 <MiniDescription>
                   Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa
                 </MiniDescription>
-                <Link to='/articulo'>
-                  <SeeMoreButton>Leer más</SeeMoreButton>
-                </Link>
+                <SeeMoreButton>Leer más</SeeMoreButton>
               </RightColBottomWithButton>
             </InformationRigth>
           </ArticleInformation>
@@ -474,9 +474,15 @@ export const News = (props) => {
         </NewsEvents>
         <hr style={{borderColor: '#E4E5E4', width: '80%'}} />
         <NewsSponsors>
-          <Sponsors src={'assets/img/logo_expansion.jpg'} />
-          <Sponsors isMCCI src={'assets/img/mcci.png'} />
-          <Sponsors src={'assets/img/transparencia_mexicana.png'} />
+          <LogoLink href='http://expansion.mx/' target='blank'>
+            <Sponsors src={'assets/img/logo_expansion.jpg'} />
+          </LogoLink>
+          <LogoLink href='https://contralacorrupcion.mx/' target='blank'>
+            <Sponsors isMCCI src={'assets/img/mcci.png'} />
+          </LogoLink>
+          <LogoLink href='https://www.tm.org.mx/' target='blank'>
+            <Sponsors style={{width: '100%'}} src={'assets/img/transparencia_mexicana.png'} />
+          </LogoLink>
         </NewsSponsors>
         <hr style={{borderColor: '#E4E5E4', width: '80%'}} />
       </Container>

@@ -1,8 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import {LogoLink} from '../'
 
 const Wrapper = styled.section`
-  background-image: url('assets/img/header_background.jpg');
+  background-image: url('assets/img/bg_home.jpg');
   background-size: cover;
   background-repeat:no-repeat;
   display:flex;
@@ -57,23 +58,29 @@ const MainBanner = (props) => {
   return (
     <Wrapper>
       <Row>
-        <Logo src='assets/img/logo500.png' alt='logo 500' />
+        <Logo src='assets/img/newLogo.png' alt='logo 500' />
       </Row>
       <Row>
         <SubTitle>
-          Compartir y replicar buenas prácticas anticorrupción refrenda el compromiso del sector privado en la lucha contra la corrupción y la impunidad, y mejora la rendición de cuentas hacia socios, accionistas y clientes. En alianza, Expansión, Transparencia Mexicana y Mexicanos Contra la Corrupción y la Impunidad, buscan sumar al sector privado a la lucha 
+          Compartir y replicar buenas prácticas anticorrupción refrenda el compromiso del sector privado en la lucha contra la corrupción y la impunidad, y mejora la rendición de cuentas hacia socios, accionistas y clientes. En alianza, Expansión, Transparencia Mexicana y Mexicanos Contra la Corrupción y la Impunidad, buscan sumar al sector privado a la lucha
         </SubTitle>
       </Row>
       <Hr />
       <Row center>
         <Figure>
-          <Image src='assets/img/mcci_logo.png' alt='' />
+          <LogoLink href='https://contralacorrupcion.mx/' target='blank'>
+            <Image src='assets/img/mcci_logo.png' alt='' />
+          </LogoLink>
         </Figure>
         <Figure>
-          <Image src='assets/img/logo_expansion.jpg' alt='' />
+          <LogoLink href='http://expansion.mx/' target='blank'>
+            <Image src='assets/img/logo_expansion.jpg' alt='' />
+          </LogoLink>
         </Figure>
         <Figure>
-          <Image src='assets/img/transparencia_mexicana.png' alt='' />
+          <LogoLink href='https://www.tm.org.mx/' target='blank'>
+            <Image src='assets/img/transparencia_mexicana.png' alt='' />
+          </LogoLink>
         </Figure>
       </Row>
     </Wrapper>
