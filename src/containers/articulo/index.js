@@ -11,6 +11,15 @@ import {
 } from '../../components'
 import {dataArticulo} from '../../data'
 
+const Articulos = [
+  {
+    titulo: 'hello world'
+  },
+  {
+    titulo: 'hello world'
+  }
+]
+
 export default class Article extends Component {
   render () {
     return (
