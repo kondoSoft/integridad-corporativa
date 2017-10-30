@@ -117,96 +117,117 @@ class Home extends Component {
       isPlaying: false,
       charts: {
         '01': [
-          { name: 'A', 'Frecuencia Acumulada': 1, 'Frecuencia': 1 },
-          { name: 'A', 'Frecuencia Acumulada': 3, 'Frecuencia': 2 },
-          { name: 'A', 'Frecuencia Acumulada': 4, 'Frecuencia': 1 },
-          { name: 'A', 'Frecuencia Acumulada': 6, 'Frecuencia': 2 },
-          { name: 'A', 'Frecuencia Acumulada': 7, 'Frecuencia': 1 },
-          { name: 'A', 'Frecuencia Acumulada': 9, 'Frecuencia': 2 },
-          { name: 'A', 'Frecuencia Acumulada': 16, 'Frecuencia': 7 },
-          { name: 'A', 'Frecuencia Acumulada': 19, 'Frecuencia': 3 },
-          { name: 'A', 'Frecuencia Acumulada': 27, 'Frecuencia': 8 },
-          { name: 'A', 'Frecuencia Acumulada': 31, 'Frecuencia': 4 },
-          { name: 'A', 'Frecuencia Acumulada': 40, 'Frecuencia': 9 },
-          { name: 'A', 'Frecuencia Acumulada': 56, 'Frecuencia': 16 },
-          { name: 'A', 'Frecuencia Acumulada': 81, 'Frecuencia': 25 },
-          { name: 'A', 'Frecuencia Acumulada': 91, 'Frecuencia': 10 },
-          { name: 'A', 'Frecuencia Acumulada': 112, 'Frecuencia': 21 },
-          { name: 'A', 'Frecuencia Acumulada': 123, 'Frecuencia': 11 },
-          { name: 'A', 'Frecuencia Acumulada': 134, 'Frecuencia': 11 },
-          { name: 'A', 'Frecuencia Acumulada': 146, 'Frecuencia': 12 },
-          { name: 'A', 'Frecuencia Acumulada': 157, 'Frecuencia': 11 },
-          { name: 'A', 'Frecuencia Acumulada': 174, 'Frecuencia': 17 },
-          { name: 'A', 'Frecuencia Acumulada': 186, 'Frecuencia': 12 },
-          { name: 'A', 'Frecuencia Acumulada': 199, 'Frecuencia': 13 },
-          { name: 'A', 'Frecuencia Acumulada': 208, 'Frecuencia': 9 },
-          { name: 'A', 'Frecuencia Acumulada': 222, 'Frecuencia': 14 },
-          { name: 'A', 'Frecuencia Acumulada': 230, 'Frecuencia': 8 },
-          { name: 'A', 'Frecuencia Acumulada': 239, 'Frecuencia': 9 },
-          { name: 'A', 'Frecuencia Acumulada': 244, 'Frecuencia': 5 },
-          { name: 'A', 'Frecuencia Acumulada': 250, 'Frecuencia': 6 },
-          { name: 'A', 'Frecuencia Acumulada': 256, 'Frecuencia': 6 },
-          { name: 'A', 'Frecuencia Acumulada': 263, 'Frecuencia': 7 },
-          { name: 'A', 'Frecuencia Acumulada': 267, 'Frecuencia': 4 },
-          { name: 'A', 'Frecuencia Acumulada': 275, 'Frecuencia': 8 },
-          { name: 'A', 'Frecuencia Acumulada': 282, 'Frecuencia': 7 },
-          { name: 'A', 'Frecuencia Acumulada': 292, 'Frecuencia': 10 }
-        ],
+          {
+            name: '0-10',
+            'Número de empresas dentro del rango': 168,
+            'Porcentaje del total (sobre 500 empresas)': 34
+          },
+          {
+            name: '10-20',
+            'Número de empresas dentro del rango': 32,
+            'Porcentaje del total (sobre 500 empresas)': 6
+          },
+          {
+            name: '20-30',
+            'Número de empresas dentro del rango': 30,
+            'Porcentaje del total (sobre 500 empresas)': 6
+          },
+          {
+            name: '30-40',
+            'Número de empresas dentro del rango': 35,
+            'Porcentaje del total (sobre 500 empresas)': 7
+          },
+          {
+            name: '40-50',
+            'Número de empresas dentro del rango': 44,
+            'Porcentaje del total (sobre 500 empresas)': 9
+          },
+          {
+            name: '50-60',
+            'Número de empresas dentro del rango': 66,
+            'Porcentaje del total (sobre 500 empresas)': 13
+          },
+          {
+            name: '60-70',
+            'Número de empresas dentro del rango': 80,
+            'Porcentaje del total (sobre 500 empresas)': 16
+          },
+          {
+            name: '70-80',
+            'Número de empresas dentro del rango': 32,
+            'Porcentaje del total (sobre 500 empresas)': 6
+          },
+          {
+            name: '80-90',
+            'Número de empresas dentro del rango': 11,
+            'Porcentaje del total (sobre 500 empresas)': 2
+          },
+          {
+            name: '90-100',
+            'Número de empresas dentro del rango': 2,
+            'Porcentaje del total (sobre 500 empresas)': 0
+          },
+          {
+            name: '100',
+            'Número de empresas dentro del rango': 0,
+            'Porcentaje del total (sobre 500 empresas)': 0
+          }
+        ].reverse(),
         '02': [
-          { name: 'A', 'Porcentaje Promedio': 79.4 },
-          { name: 'A', 'Porcentaje Promedio': 70.6 },
-          { name: 'A', 'Porcentaje Promedio': 66.7 },
-          { name: 'A', 'Porcentaje Promedio': 63.2 },
-          { name: 'A', 'Porcentaje Promedio': 63.2 },
-          { name: 'A', 'Porcentaje Promedio': 62.7 },
-          { name: 'A', 'Porcentaje Promedio': 60.6 },
-          { name: 'A', 'Porcentaje Promedio': 60.1 },
-          { name: 'A', 'Porcentaje Promedio': 56.2 },
-          { name: 'A', 'Porcentaje Promedio': 55.6 },
-          { name: 'A', 'Porcentaje Promedio': 53.9 },
-          { name: 'A', 'Porcentaje Promedio': 52.9 },
-          { name: 'A', 'Porcentaje Promedio': 52.3 },
-          { name: 'A', 'Porcentaje Promedio': 51.6 },
-          { name: 'A', 'Porcentaje Promedio': 51.6 },
-          { name: 'A', 'Porcentaje Promedio': 51.3 },
-          { name: 'A', 'Porcentaje Promedio': 50.3 },
-          { name: 'A', 'Porcentaje Promedio': 49.3 },
-          { name: 'A', 'Porcentaje Promedio': 46.8 },
-          { name: 'A', 'Porcentaje Promedio': 42.8 },
-          { name: 'A', 'Porcentaje Promedio': 40.3 },
-          { name: 'A', 'Porcentaje Promedio': 39.2 },
-          { name: 'A', 'Porcentaje Promedio': 39.2 },
-          { name: 'A', 'Porcentaje Promedio': 37.6 },
-          { name: 'A', 'Porcentaje Promedio': 37.5 },
-          { name: 'A', 'Porcentaje Promedio': 35.8 },
-          { name: 'A', 'Porcentaje Promedio': 35.8 },
-          { name: 'A', 'Porcentaje Promedio': 35.7 },
-          { name: 'A', 'Porcentaje Promedio': 35.3 },
-          { name: 'A', 'Porcentaje Promedio': 35.1 },
-          { name: 'A', 'Porcentaje Promedio': 34.6 },
-          { name: 'A', 'Porcentaje Promedio': 34.2 },
-          { name: 'A', 'Porcentaje Promedio': 33.3 },
-          { name: 'A', 'Porcentaje Promedio': 33.3 },
-          { name: 'A', 'Porcentaje Promedio': 32.2 },
-          { name: 'A', 'Porcentaje Promedio': 31.2 },
-          { name: 'A', 'Porcentaje Promedio': 30.3 },
-          { name: 'A', 'Porcentaje Promedio': 29.9 },
-          { name: 'A', 'Porcentaje Promedio': 28.8 },
-          { name: 'A', 'Porcentaje Promedio': 27.5 },
-          { name: 'A', 'Porcentaje Promedio': 27.1 },
-          { name: 'A', 'Porcentaje Promedio': 26.9 },
-          { name: 'A', 'Porcentaje Promedio': 26.4 },
-          { name: 'A', 'Porcentaje Promedio': 25.5 },
-          { name: 'A', 'Porcentaje Promedio': 24.2 },
-          { name: 'A', 'Porcentaje Promedio': 24.1 },
-          { name: 'A', 'Porcentaje Promedio': 21 },
-          { name: 'A', 'Porcentaje Promedio': 20.4 },
-          { name: 'A', 'Porcentaje Promedio': 19.6 },
-          { name: 'A', 'Porcentaje Promedio': 13.5 },
-          { name: 'A', 'Porcentaje Promedio': 12.4 },
-          { name: 'A', 'Porcentaje Promedio': 9.8 },
-          { name: 'A', 'Porcentaje Promedio': 9.8 },
-          { name: 'A', 'Porcentaje Promedio': 9.8 }
+          { name: 'Aeroespacial', 'Puntaje promedio': 79.4 },
+          { name: 'Servicios educativos', 'Puntaje promedio': 70.6 },
+          { name: 'Tabaco', 'Puntaje promedio': 66.7 },
+          { name: 'Afore', 'Puntaje promedio': 63.2 },
+          { name: 'Electricidad', 'Puntaje promedio': 63.2 },
+          { name: 'Electrónica', 'Puntaje promedio': 62.7 },
+          { name: 'Minería', 'Puntaje promedio': 60.6 },
+          { name: 'Productos de consumo', 'Puntaje promedio': 60.1 },
+          { name: 'Papel y cartón', 'Puntaje promedio': 56.2 },
+          { name: 'Productos cerámicos', 'Puntaje promedio': 55.6 },
+          { name: 'Tecnología diversificada', 'Puntaje promedio': 53.9 },
+          { name: 'Infraestructura de Transportes', 'Puntaje promedio': 52.9 },
+          { name: 'Bebidas y cervezas', 'Puntaje promedio': 52.3 },
+          { name: 'Cemento y materiales', 'Puntaje promedio': 51.6 },
+          { name: 'Juegos y sorteos', 'Puntaje promedio': 51.6 },
+          { name: 'Química y petroquímica', 'Puntaje promedio': 51.3 },
+          { name: 'Materiales para la construcción', 'Puntaje promedio': 50.3 },
+          { name: 'Química farmacéutica', 'Puntaje promedio': 49.3 },
+          { name: 'Petróleo y gas', 'Puntaje promedio': 46.8 },
+          { name: 'Agroindustria', 'Puntaje promedio': 42.8 },
+          { name: 'Automotriz y autopartes', 'Puntaje promedio': 40.3 },
+          { name: 'Servicios aeroportuarios', 'Puntaje promedio': 39.2 },
+          { name: 'Vidrio y envases', 'Puntaje promedio': 39.2 },
+          { name: 'Servicios profesionales', 'Puntaje promedio': 37.6 },
+          { name: 'Computación y servicios', 'Puntaje promedio': 37.5 },
+          { name: 'Comercio Autoservicio', 'Puntaje promedio': 35.8 },
+          { name: 'Cuidado personal', 'Puntaje promedio': 35.8 },
+          { name: 'Seguros y fianzas', 'Puntaje promedio': 35.7 },
+          { name: 'Aerolíneas', 'Puntaje promedio': 35.3 },
+          { name: 'Alimentos', 'Puntaje promedio': 35.1 },
+          { name: 'Logística y transporte', 'Puntaje promedio': 34.6 },
+          { name: 'Equipo eléctrico', 'Puntaje promedio': 34.2 },
+          { name: 'Electrónica de consumo', 'Puntaje promedio': 33.3 },
+          { name: 'Restaurantes', 'Puntaje promedio': 33.3 },
+          { name: 'Servicios financieros', 'Puntaje promedio': 32.2 },
+          { name: 'Maquinaria y equipo', 'Puntaje promedio': 31.2 },
+          { name: 'Telecomunicaciones', 'Puntaje promedio': 30.3 },
+          { name: 'Construcción', 'Puntaje promedio': 29.9 },
+          { name: 'Entretenimiento', 'Puntaje promedio': 28.8 },
+          { name: 'Desarrolladora de vivienda', 'Puntaje promedio': 27.5 },
+          { name: 'Holding', 'Puntaje promedio': 27.1 },
+          { name: 'Siderurgia y metalurgia', 'Puntaje promedio': 26.9 },
+          { name: 'Comercio departamental', 'Puntaje promedio': 26.4 },
+          { name: 'Suplementos alimenticios', 'Puntaje promedio': 25.5 },
+          { name: 'Confitería y chocolates', 'Puntaje promedio': 24.2 },
+          { name: 'Servicios inmobiliarios', 'Puntaje promedio': 24.1 },
+          { name: 'Armadora', 'Puntaje promedio': 21 },
+          { name: 'Comercio de medicamentos', 'Puntaje promedio': 20.4 },
+          { name: 'Servicios de salud', 'Puntaje promedio': 19.6 },
+          { name: 'Hotelería y turismo', 'Puntaje promedio': 13.5 },
+          { name: 'Comercio especializado', 'Puntaje promedio': 12.4 },
+          { name: 'Accesorios para baños', 'Puntaje promedio': 9.8 },
+          { name: 'Envases para la industria', 'Puntaje promedio': 9.8 },
+          { name: 'Servicios básicos', 'Puntaje promedio': 9.8 }
         ],
         '03': [
           { name: 'Código de etica', Si: 59.6, No: 40.4 },
@@ -292,6 +313,12 @@ class Home extends Component {
             <Title className='title'>EDICIÓN 2017</Title>
           </Row>
           <Row>
+            <Title color='#ED4630'>Aviso</Title>
+          </Row>
+          <Row noMargin>
+            <p className='aviso'>Disponible hasta el 15 de noviembre.</p>
+          </Row>
+          <Row>
             <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA EL INFORME EJECUTIVO</Button>
             <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA LA BASE DE DATOS</Button>
           </Row>
@@ -304,18 +331,182 @@ class Home extends Component {
           <Col>
             <CollapseBox isOpen={isOpen.graphics} height='800px'>
               <Slider {...settings} ref='slider'>
+                <Col>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='El sector privado es una pieza central en cualquier estrategia anticorrupción...' textDown='El primer paso consiste en establecer e implementar políticas de integridad que muestren su compromiso anticorrupción, el cual sólo se hace efectivo al hacerlo público y accesible para su consulta, al capacitar a directivos y empleados para su implementación, y al socializarlo entre socios y clientes. La señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, y que facilitan y premian la denuncia, constituyen el primer eslabón en la lucha contra la corrupción. Sin embargo, la distribución de las 500 empresas refleja el estado embrionario en la adopción de políticas de integridad en el sector privado en México. Ninguna empresa obtuvo 100 puntos y sólo 13 empresas obtuvieron más de 80 puntos. Además, El 61.8% de las organizaciones obtuvieron menos de 50 puntos y apenas 2 por encima de los 90 puntos (0.4%).' />
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Rango de puntos</th>
+                        <th>Número de empresas dentro del rango</th>
+                        <th>Acumulado de empresas (del límite inferior del rango a 100 puntos)</th>
+                        <th>Porcentaje acumulado (sobre 500 empresas)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>100</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0%</td>
+                      </tr>
+                      <tr>
+                        <td>90-100</td>
+                        <td>2</td>
+                        <td>2</td>
+                        <td>0.4%</td>
+                      </tr>
+                      <tr>
+                        <td>80-90</td>
+                        <td>11</td>
+                        <td>13</td>
+                        <td>2.2%</td>
+                      </tr>
+                      <tr>
+                        <td>70-80</td>
+                        <td>32</td>
+                        <td>45</td>
+                        <td>6.4%</td>
+                      </tr>
+                      <tr>
+                        <td>60-70</td>
+                        <td>80</td>
+                        <td>125</td>
+                        <td>16.0%</td>
+                      </tr>
+                      <tr>
+                        <td>50-60</td>
+                        <td>66</td>
+                        <td>191</td>
+                        <td>13.2%</td>
+                      </tr>
+                      <tr>
+                        <td>Menos de 50</td>
+                        <td>309</td>
+                        <td>500</td>
+                        <td>61.8%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </Col>
                 <Col center='center'>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='El sector privado es una pieza central en cualquier estrategia anticorrupción.....' textDown='El primer paso consiste en establecer e implementar políticas de integridad que muestren su compromiso anticorrupción, el cual sólo se hace efectivo al hacerlo público y accesible para su consulta, al capacitar a directivos y empleados para su implementación, y al socializarlo entre socios y clientes. La señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, y que facilitan y premian la denuncia, constituyen el primer eslabón en la lucha contra la corrupción. Sin embargo, la distribución de las 500 empresas refleja el estado embrionario en la adopción de políticas de integridad en el sector privado en México. Ninguna empresa obtuvo 100 puntos y sólo 13 empresas obtuvieron más de 80 puntos. Además, El 61.8% de las organizaciones obtuvieron menos de 50 puntos y apenas 2 por encima de los 90 puntos (0.4%). '/>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Existen amplias oportunidades para generar mayor compromiso entre las 500 empresas...' textDown='La calificación promedio en IC500 es de 37 sobre 100. Apenas 13 empresas obtuvieron un puntaje igual o mayor a 80 puntos y sólo 4 de cada 10 empresas se colocaron por encima de los 50 puntos. Además, la mitad de las empresas (265 de 500) alcanzaron apenas 40 puntos o menos; y una de cada tres (168 de 500) obtuvo 10 puntos o menos. En la distribución general de empresas por puntaje, destacan dos grupos: el primero son 191 empresas (38% de las 500) con resultados satisfactorios (entre 50 y 100 puntos); el segundo grupo tiene muchas oportunidades de mejorar pues 309 empresas (62% de las 500) tienen menos de 50 puntos. Incluso el grupo peor evaluado lo conforman las 168 empresas (34% de las 500) que tienen menos de 10 puntos.' />
                   <ComposedChart width={800} height={600} data={charts['01']}>
                     <XAxis dataKey='name' />
                     <YAxis />
                     <Tooltip />
                     <Legend />
                     <CartesianGrid stroke='#f5f5f5' />
-                    <Bar dataKey='Frecuencia' barSize={20} fill='#413ea0' />
+                    <Bar dataKey='Número de empresas dentro del rango' barSize={20} fill='#413ea0' />
                     <View click={this.state.View} slide={this.clickView} />
-                    <Line type='monotone' dataKey='Frecuencia Acumulada' stroke='#ff7300' />
+                    <Line type='monotone' dataKey='Porcentaje del total (sobre 500 empresas)' stroke='#ff7300' />
                   </ComposedChart>
+                </Col>
+                <Col>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Predicar con el ejemplo y mandar la señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, así como que facilitan y premian la denuncia, son elementos iniciales en la lucha contra la corrupción...' textDown='De acuerdo con el IC500, 13 empresas obtuvieron más de 80 puntos. Entre las cinco empresas mejor evaluadas destaca, en primer lugar, Honeywell Aerospace de México, representando a la industria aeroespacial, seguida por Flextronics Manufacturing Mexico, de la industria electrónica; Grupo Sura (en dos posiciones) en la esfera de las Afores, y Autoliv México, de la industria automotriz. Importante destacar que ninguna de estas cinco tiene su matriz en México. En total, de las empresas que alcanzaron 80 puntos o más hay 3 de origen nacional: IEnova (Sempra), Bio PAPPEL y Grupo Bimbo. En tanto, dentro de las 13 empresas más de 80 puntos en IC500, cuatro cuentan con capital estadounidense; tres, mexicano y dos, colombiano.' />
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Posición respecto a IC500</th>
+                        <th>Empresa</th>
+                        <th>Puntaje IC500</th>
+                        <th>Sector</th>
+                        <th>País sede</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Honeywell Aerospace de México</td>
+                        <td>92.2</td>
+                        <td>Aeroespacial</td>
+                        <td>EUA</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Flextronics Manufacturing Mexico</td>
+                        <td>90.2</td>
+                        <td>Electrónica</td>
+                        <td>Singapur</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Afore Sura (Grupo Sura)</td>
+                        <td>88.2</td>
+                        <td>Afore</td>
+                        <td>Colombia</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Seguros Sura (Grupo Sura)</td>
+                        <td>88.2</td>
+                        <td>Afore</td>
+                        <td>Colombia</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Autoliv México</td>
+                        <td>86.3</td>
+                        <td>Automotriz y autopartes</td>
+                        <td>Suecia</td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Grupo Peñafiel</td>
+                        <td>84.3</td>
+                        <td>Bebidas y ceverzas</td>
+                        <td>EUA</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>Praxair México</td>
+                        <td>84.3</td>
+                        <td>Quimica y petroquimica</td>
+                        <td>EUA</td>
+                      </tr>
+                      <tr>
+                        <td>7</td>
+                        <td>Ryder de México</td>
+                        <td>84.3</td>
+                        <td>Logistica y transporte</td>
+                        <td>EUA</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>Grupo Modelo</td>
+                        <td>82.4</td>
+                        <td>Bebidas y cervezas</td>
+                        <td>Bélgica</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>IEnova (Sempra)</td>
+                        <td>82.4</td>
+                        <td>Petróleo y gas</td>
+                        <td>México</td>
+                      </tr>
+                      <tr>
+                        <td>9</td>
+                        <td>Pan American Silver Corp.</td>
+                        <td>82.4</td>
+                        <td>Minería</td>
+                        <td>Canadá</td>
+                      </tr>
+                      <tr>
+                        <td>12</td>
+                        <td>Bio PAPPEL</td>
+                        <td>80.4</td>
+                        <td>Papel y cartón</td>
+                        <td>México</td>
+                      </tr>
+                      <tr>
+                        <td>12</td>
+                        <td>Grupo Bimbo</td>
+                        <td>80.4</td>
+                        <td>Alimentos</td>
+                        <td>México</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </Col>
                 <Col>
                   <View click={this.state.View.click} slide={this.clickView} textUp='Existen amplias oportunidades para generar mayor compromiso entre las 500 empresas.....' textDown='La calificación promedio en IC500 es de 37 sobre 100. Apenas 13 empresas obtuvieron un puntaje igual o mayor a 80 puntos y sólo 4 de cada 10 empresas se colocaron por encima de los 50 puntos. Además, la mitad de las empresas (265 de 500) alcanzaron apenas 40 puntos o menos; y una de cada tres (168 de 500) obtuvo 10 puntos o menos.En la distribución general de empresas por puntaje, destacan dos grupos: el primero son 178 empresas (36% de las 500) con resultados relativamente satisfactorios (entre 60 y 80 puntos de 100); el segundo grupo tiene muchas oportunidades de mejorar pues 168 empresas  (34% de las 500) tienen menos de 10 puntos. '/>
@@ -331,7 +522,7 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey='Porcentaje Promedio' fill='#ED7D31' />
+                    <Bar dataKey='Puntaje promedio' fill='#ED7D31' />
                   </BarChart>
                 </Col>
                 <Col>

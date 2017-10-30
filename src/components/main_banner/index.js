@@ -61,19 +61,25 @@ const MainBanner = (props) => {
       </Row>
       <Row>
         <SubTitle>
-          Compartir y replicar buenas prácticas anticorrupción refrenda el compromiso del sector privado en la lucha contra la corrupción y la impunidad, y mejora la rendición de cuentas hacia socios, accionistas y clientes. En alianza, Expansión, Transparencia Mexicana y Mexicanos Contra la Corrupción y la Impunidad, buscan sumar al sector privado a la lucha 
+          Compartir y replicar buenas prácticas anticorrupción refrenda el compromiso del sector privado en la lucha contra la corrupción y la impunidad, y mejora la rendición de cuentas hacia socios, accionistas y clientes. En alianza, Expansión, Transparencia Mexicana y Mexicanos Contra la Corrupción y la Impunidad, buscan sumar al sector privado a la lucha
         </SubTitle>
       </Row>
       <Hr />
       <Row center>
         <Figure>
-          <Image src='assets/img/mcci_logo.png' alt='' />
+          <a href='https://contralacorrupcion.mx/' target='_blank'>
+            <Image src='assets/img/mcci_logo.png' alt='' />
+          </a>
         </Figure>
         <Figure>
-          <Image src='assets/img/logo_expansion.jpg' alt='' />
+          <a href='http://expansion.mx/' target='_blank'>
+            <Image src='assets/img/logo_expansion.jpg' alt='' />
+          </a>
         </Figure>
         <Figure>
-          <Image src='assets/img/transparencia_mexicana.png' alt='' />
+          <a href='https://www.tm.org.mx/' target='_blank'>
+            <Image src='assets/img/transparencia_mexicana.png' alt='' />
+          </a>
         </Figure>
       </Row>
     </Wrapper>
