@@ -126,7 +126,7 @@ const Events = styled.a`
     background-color: darkred;
 `
 const EventsTitle = styled.p`
-    width: 90%;
+    width: 100%;
     font-size: 16px;
     color: #FFF;
     text-align: center;
@@ -467,10 +467,10 @@ export const News = (props) => {
       <Container>
         <NewsBlog />
         <NewsEvents>
-          <Events>
+          <Link to='/eventos' style={{width: '80%', textDecoration: 'none', textAlign: 'center', backgroundColor: 'darkred', padding: 10}}>
             <i className='fa fa-calendar' aria-hidden='true' style={{color: '#FFF', padding: 7, fontSize: 30 }} />
             <EventsTitle>Calendario de actividades y eventos</EventsTitle>
-          </Events>
+          </Link>
         </NewsEvents>
         <hr style={{borderColor: '#E4E5E4', width: '80%'}} />
         <NewsSponsors>

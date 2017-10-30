@@ -216,3 +216,21 @@ export const dataArrayArticulo = [
     ]
   }
 ]
+
+export const dataEvents = [
+  {
+    day: '1',
+    month: 'Nov',
+    title: 'Lanzamiento del sitio www.integridadcorporativa500.mx'
+  },
+  {
+    day: '15',
+    month: 'Nov',
+    title: 'A travez del sitio www.integridadcorporativa500.mx se podrá descargar la base de datos en formato de datos abiertos de IC500 edición 2017, así como el informe con los principales resultados.'
+  },
+  {
+    day: '15',
+    month: 'Nov',
+    title: 'Lanzamiento de la Plataforma Digital IC500.'
+  }
+]

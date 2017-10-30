@@ -47,6 +47,9 @@ import {LogoLink} from './logoLink'
 import {
   NewsContainer
 } from './news'
+import {
+  EventList
+} from './eventos'
 export {
   NavigationBar,
   MainBanner,
@@ -92,5 +95,6 @@ export {
   ScoreInfo,
   Anchor,
   NewsContainer,
-  LogoLink
+  LogoLink,
+  EventList
 }

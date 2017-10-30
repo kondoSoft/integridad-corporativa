@@ -1,18 +1,11 @@
 import styled from 'styled-components'
 import React, { Component } from 'react'
 import {
-    MainBanner,
     SectionBanner,
     Main,
     Route,
-    Edition,
-    Topic,
     Footer,
-    Sources,
     Container,
-    Box,
-    BoxTitle,
-    BoxDescription,
     News,
     Articles
 } from '../../components'
