@@ -63,8 +63,13 @@ const ListItem = styled.li`
   }
 `
 
-const border = styled.div`
-  
+const Anchor = styled.a`
+  text-decoration: none;
+  color: #FFF;
+  transition: 0.3s;
+  &:hover{
+    color: #ED4630;
+  }
 `
 
 const AxisInfo = props => (
@@ -72,7 +77,7 @@ const AxisInfo = props => (
     <Row>
       <Paragraph>
         Se diseñó un cuestionario basado en el componente de publicidad de las políticas
-        anticorrupción del estudio TRAC de Transparencia Internacional. Las preguntas a
+        anticorrupción del estudio <Anchor href='https://www.tm.org.mx/informetrac2016/' target='_blank'>TRAC</Anchor> de Transparencia Internacional. Las preguntas a
         evaluar se agrupan en los siguientes cuatro ejes:
       </Paragraph>
     </Row>

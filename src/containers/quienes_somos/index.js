@@ -32,10 +32,10 @@ export default class AboutUs extends Component {
           <MainSection className='middleSection'>
             <Content className='contentLeft' column>
               <ContentText className='contentText'>
-                Esta iniciativa, creada conjuntamente por <Anchor href='https://contralacorrupcion.mx/' bold>Mexicanos Contra la Corrupción y la impunidad</Anchor>,
+                Esta iniciativa, creada conjuntamente por <Anchor href='https://contralacorrupcion.mx/' target='_blank' bold>Mexicanos Contra la Corrupción y la impunidad</Anchor>,
               </ContentText>
               <ContentText className='contentText'>
-               <Anchor href='https://www.tm.org.mx/' bold>Transparencia Mexicana</Anchor> y la revista <Anchor href='http://expansion.mx/' bold>Expansión</Anchor> busca dar a conocer los avances en el compromiso
+               <Anchor href='https://www.tm.org.mx/' target='_blank' bold>Transparencia Mexicana</Anchor> y la revista <Anchor href='http://expansion.mx/' target='_blank' bold>Expansión</Anchor> busca dar a conocer los avances en el compromiso
               </ContentText>
               <ContentText className='contentTextLast'>
                   anticorrupción de las empresas mas grandes del país.

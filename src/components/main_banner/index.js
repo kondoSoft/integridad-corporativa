@@ -68,19 +68,19 @@ const MainBanner = (props) => {
       <Hr />
       <Row center>
         <Figure>
-          <LogoLink href='https://contralacorrupcion.mx/' target='blank'>
+          <a href='https://contralacorrupcion.mx/' target='_blank'>
             <Image src='assets/img/mcci_logo.png' alt='' />
-          </LogoLink>
+          </a>
         </Figure>
         <Figure>
-          <LogoLink href='http://expansion.mx/' target='blank'>
+          <a href='http://expansion.mx/' target='_blank'>
             <Image src='assets/img/logo_expansion.jpg' alt='' />
-          </LogoLink>
+          </a>
         </Figure>
         <Figure>
-          <LogoLink href='https://www.tm.org.mx/' target='blank'>
+          <a href='https://www.tm.org.mx/' target='_blank'>
             <Image src='assets/img/transparencia_mexicana.png' alt='' />
-          </LogoLink>
+          </a>
         </Figure>
       </Row>
     </Wrapper>

@@ -48,7 +48,7 @@ export const MiddleBanner = props => (
         <Image src='assets/img/quienessomos_banner.png' />
       </Col>
       <Col width='50%' >
-        <Title>Apartir del 15º de noviembre 2017,</Title>
+        <Title>Apartir del 15 de noviembre 2017,</Title>
         <ContentText normal>las empresas podrán actualizar la información sobre sus políticas</ContentText>
         <ContentText normal>anticorrupción a través de este sitio para futuras evaluaciones de</ContentText>
         <ContentText normal>las 500 Frente a la Corrupción.</ContentText>
@@ -63,9 +63,10 @@ export const MiddleBanner = props => (
     </Row>
     <Row padding='0px 100px' margin='100px 0px'>
       <Col width='50%' >
-        <LogoLink href='https://contralacorrupcion.mx/' target='blank' style={{width: '100%'}}>
+
+        <a href='https://contralacorrupcion.mx/' target='_blank'>
           <Image src='assets/img/mcci.png' width='50%' />
-        </LogoLink>
+        </a>
       </Col>
       <Col width='50%' background='#F1F2F1' padding='30px 0px'>
         <Title red>Sobre Mexicanos Contra la Corrupción y la Impunidad</Title>
@@ -81,9 +82,9 @@ export const MiddleBanner = props => (
     </Row>
     <Row padding='0px 100px' margin='50px 0px' invert>
       <Col width='50%' >
-        <LogoLink href='https://www.tm.org.mx/' target='blank'>
+        <a href='https://www.tm.org.mx/' target='_blank'>
           <Image src='assets/img/quienessomos_tranparencia.jpg' width='80%' />
-        </LogoLink>
+        </a>
       </Col>
       <Col width='50%' background='#F1F2F1' padding='30px 0px'>
         <Title red>Sobre Transparencia Mexicana</Title>
@@ -102,9 +103,9 @@ export const MiddleBanner = props => (
     </Row>
     <Row padding='0px 100px' margin='50px 0px'>
       <Col width='50%' >
-        <LogoLink href='http://expansion.mx/' target='blank'>
+        <a href='http://expansion.mx/' target='_blank'>
           <Image src='assets/img/logo_expansion.jpg' width='60%' />
-        </LogoLink>
+        </a>
       </Col>
       <Col width='50%' background='#F1F2F1' padding='30px 0px'>
         <Title red>Sobre Expasión</Title>
