@@ -65,9 +65,9 @@ const Banner500 = (props) => (
     <Title>SOY PARTE DE LAS <Span>500</Span></Title>
     <Column>
       <Button>
-        Actualiza aquí&nbsp;<i className='fa fa-chevron-right' aria-hidden='true'/>
+        Actualiza aquí&nbsp;<i className='fa fa-chevron-right' aria-hidden='true' />
       </Button>
-      <Description>tu información sobre integridad corporativa</Description>
+      <Description>tu información sobre integridad corporativa apartir del 15 de noviembre</Description>
     </Column>
   </Wrapper>
 )

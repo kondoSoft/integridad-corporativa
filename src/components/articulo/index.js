@@ -138,7 +138,7 @@ const ArticleInformation = styled.div`
   width: 100%;
   display: flex;
   padding-top: 15px;
-  height: ${props => props.expanded ? '170px' : '100px'};
+  height: ${props => props.expanded ? '140px' : '100px'};
 `
 const ArticleDescription = styled.div`
   width: 84%;
@@ -186,9 +186,15 @@ const RightColBottomWithButton = styled.div`
   flex-direction: ${props => props.column ? 'column' : 'row'};
   margin-top: 10px;
 `
-const TitleArticle = styled.p`
+const TitleArticle = styled.a`
   font-size: 24px;
   font-family: 'Druk Text Web';
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    color: #73030E;
+    cursor: pointer;
+  }
 `
 const Left = styled.div`
   width: 40%;
@@ -266,16 +272,21 @@ export const Article = (props) => {
   const {data} = props
   if (Array.isArray(data)) {
     return data.map((data, i) => {
+      const description = data.descripcion.substring(0, 201) + `...`
       return (
         <ArticleContainer>
-          <ArticleImg>
-            <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
-          </ArticleImg>
+          {
+          data.imagen !== undefined
+            ? <ArticleImg>
+              <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
+            </ArticleImg>
+            : null
+        }
           <ArticleInformation expanded={props.expanded}>
             <InformationLeft>
               <LeftDate>
-                <LeftDateText isDay>5</LeftDateText>
-                <LeftDateText>Nov</LeftDateText>
+                <LeftDateText isDay>{data.dia}</LeftDateText>
+                <LeftDateText>{data.mes}</LeftDateText>
               </LeftDate>
             </InformationLeft>
             <InformationRigth>
@@ -284,37 +295,27 @@ export const Article = (props) => {
                   {data.titulo}
                 </TitleArticle>
               </RightColTop>
-              <RightColBottom disabled={props.disabled}>
-                <Left>
-                  <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
-                  <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
-                </Left>
-                <Rigth>
-                  <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
-                  {
-                    data.categorias.map((categoria, i) => {
-                      return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
-                    })
-                  }
-                </Rigth>
-              </RightColBottom>
               <RightColBottomWithButton column={props.column} isArticle={props.isArticle}>
                 <MiniInfo>
                   <Left>
                     <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
                     <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
                   </Left>
-                  <Rigth>
-                    <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
-                    {
-                      data.categorias.map((categoria, i) => {
-                        return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
-                      })
-                    }
-                  </Rigth>
+                  {
+                    (data.categorias !== undefined)
+                      ? <Rigth>
+                        <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
+                        {
+                            data.categorias.map((categoria, i) => {
+                              return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
+                            })
+                          }
+                      </Rigth>
+                        : null
+                  }
                 </MiniInfo>
                 <MiniDescription>
-                  Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa
+                  {description}
                 </MiniDescription>
                 <SeeMoreButton>Leer más</SeeMoreButton>
               </RightColBottomWithButton>
@@ -365,6 +366,8 @@ export const Article = (props) => {
         <ArticleDescription disabled={props.disabled}>
           <p style={{letterSpacing: 1, fontSize: 14, fontWeight: 400, fontFamily: 'arial'}}>{data.descripcion}</p>
         </ArticleDescription>
+        <hr style={{borderColor: '#E4E5E4', width: '100%', marginTop: 20, marginBottom: 20}} />
+        <iframe src='//e.issuu.com/embed.html#7138783/10008731' width='968' height='686' frameborder='0' allowfullscreen='allowfullscreen' />
       </ArticleContainer>
     )
   }

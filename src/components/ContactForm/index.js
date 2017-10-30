@@ -88,6 +88,7 @@ const Submit = styled.button`
     background: none;
     color: #ED4630;
     border: 2px solid #ED4630;
+    cursor: pointer;
   }
 `
 
@@ -95,7 +96,7 @@ const ContactForm = props => (
   <Form>
     <Input type='text' placeholder='Nombre' />
     <Input type='email' placeholder='Correo electrónico' />
-    <TextArea name='' id='' cols='30' rows='10' placeholder='Mensaje'></TextArea>
+    <TextArea name='' id='' cols='30' rows='10' placeholder='Mensaje' />
     <Submit>enviar</Submit>
   </Form>
 )

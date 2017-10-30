@@ -36,6 +36,7 @@ import {
   ComposedChart
 } from 'recharts'
 import Slider from 'react-slick'
+import './styles.css'
 
 class Home extends Component {
   constructor (props) {
@@ -239,7 +240,7 @@ class Home extends Component {
           { name: 'Prevención lavado de dinero', Si: 20.6, No: 79.4 },
           { name: 'Prevención fraudes', Si: 19.8, No: 80.2 },
           { name: 'Contribuciones sociales', Si: 12.6, No: 87.4 },
-          { name: 'Política de viáticos', Si: 6.6, No: 93.4 } 
+          { name: 'Política de viáticos', Si: 6.6, No: 93.4 }
         ],
         '04': [
           { name: 'Política anticorrupción', 'Si': 219, 'No': 281 },
@@ -329,61 +330,67 @@ class Home extends Component {
         <Section>
           <Title color={(isOpen.graphics) ? '#ED4630' : ''}>GRÁFICAS</Title>
           <Col>
-            <CollapseBox isOpen={isOpen.graphics} height='800px'>
+            <CollapseBox isOpen={isOpen.graphics}>
               <Slider {...settings} ref='slider'>
-                <Col>
+                <Col style={{backgroundColor: '#FFF', alignItems: 'center', justifyConten: 'center'}}>
                   <View click={this.state.View.click} slide={this.clickView} textUp='El sector privado es una pieza central en cualquier estrategia anticorrupción...' textDown='El primer paso consiste en establecer e implementar políticas de integridad que muestren su compromiso anticorrupción, el cual sólo se hace efectivo al hacerlo público y accesible para su consulta, al capacitar a directivos y empleados para su implementación, y al socializarlo entre socios y clientes. La señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, y que facilitan y premian la denuncia, constituyen el primer eslabón en la lucha contra la corrupción. Sin embargo, la distribución de las 500 empresas refleja el estado embrionario en la adopción de políticas de integridad en el sector privado en México. Ninguna empresa obtuvo 100 puntos y sólo 13 empresas obtuvieron más de 80 puntos. Además, El 61.8% de las organizaciones obtuvieron menos de 50 puntos y apenas 2 por encima de los 90 puntos (0.4%).' />
-                  <table>
-                    <thead>
+                  <table style={{marginTop: 30}}>
+                    <thead className='tHead'>
                       <tr>
-                        <th>Rango de puntos</th>
-                        <th>Número de empresas dentro del rango</th>
-                        <th>Acumulado de empresas (del límite inferior del rango a 100 puntos)</th>
-                        <th>Porcentaje acumulado (sobre 500 empresas)</th>
+                        <th className='thHead'>Rango de puntos</th>
+                        <th className='thHead'>Número de empresas dentro del rango</th>
+                        <th className='thHead'>Acumulado de empresas (del límite inferior del rango a 100 puntos)</th>
+                        <th style={{padding: 15, color: '#FFF'}}>Porcentaje acumulado (sobre 500 empresas)</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>100</td>
-                        <td>0</td>
-                        <td>0</td>
-                        <td>0%</td>
+                        <td className='trWhite'>100</td>
+                        <td className='trWhite'>0</td>
+                        <td className='trWhite'>0</td>
+                        <td className='trWhite'>0%</td>
                       </tr>
                       <tr>
-                        <td>90-100</td>
-                        <td>2</td>
-                        <td>2</td>
-                        <td>0.4%</td>
+                        <td className='trGrey'>90-100</td>
+                        <td className='trGrey'>2</td>
+                        <td className='trGrey'>2</td>
+                        <td className='trGrey'>0.4%</td>
                       </tr>
                       <tr>
-                        <td>80-90</td>
-                        <td>11</td>
-                        <td>13</td>
-                        <td>2.2%</td>
+                        <td className='trWhite'>80-90</td>
+                        <td className='trWhite'>11</td>
+                        <td className='trWhite'>13</td>
+                        <td className='trWhite'>2.2%</td>
                       </tr>
                       <tr>
-                        <td>70-80</td>
-                        <td>32</td>
-                        <td>45</td>
-                        <td>6.4%</td>
+                        <td className='trGrey'>70-80</td>
+                        <td className='trGrey'>32</td>
+                        <td className='trGrey'>45</td>
+                        <td className='trGrey'>6.4%</td>
                       </tr>
                       <tr>
-                        <td>60-70</td>
-                        <td>80</td>
-                        <td>125</td>
-                        <td>16.0%</td>
+                        <td className='trWhite'>60-70</td>
+                        <td className='trWhite'>80</td>
+                        <td className='trWhite'>125</td>
+                        <td className='trWhite'>16.0%</td>
                       </tr>
                       <tr>
-                        <td>50-60</td>
-                        <td>66</td>
-                        <td>191</td>
-                        <td>13.2%</td>
+                        <td className='trGrey'>50-60</td>
+                        <td className='trGrey'>66</td>
+                        <td className='trGrey'>191</td>
+                        <td className='trGrey'>13.2%</td>
                       </tr>
                       <tr>
-                        <td>Menos de 50</td>
-                        <td>309</td>
-                        <td>500</td>
-                        <td>61.8%</td>
+                        <td className='trWhite'>Menos de 50</td>
+                        <td className='trWhite'>309</td>
+                        <td className='trWhite'>500</td>
+                        <td className='trWhite'>61.8%</td>
+                      </tr>
+                      <tr>
+                        <td style={{padding: 15, textAlign: 'center', color: 'red', backgroundColor: '#EBEBEB'}}>TOTAL</td>
+                        <td style={{padding: 15, textAlign: 'center', color: 'red', backgroundColor: '#EBEBEB'}}>500</td>
+                        <td style={{padding: 15, textAlign: 'center', color: 'red', backgroundColor: '#EBEBEB'}}>500</td>
+                        <td style={{padding: 15, textAlign: 'center', color: 'red', backgroundColor: '#EBEBEB'}}>100%</td>
                       </tr>
                     </tbody>
                   </table>
@@ -402,114 +409,114 @@ class Home extends Component {
                   </ComposedChart>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Predicar con el ejemplo y mandar la señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, así como que facilitan y premian la denuncia, son elementos iniciales en la lucha contra la corrupción...' textDown='De acuerdo con el IC500, 13 empresas obtuvieron más de 80 puntos. Entre las cinco empresas mejor evaluadas destaca, en primer lugar, Honeywell Aerospace de México, representando a la industria aeroespacial, seguida por Flextronics Manufacturing Mexico, de la industria electrónica; Grupo Sura (en dos posiciones) en la esfera de las Afores, y Autoliv México, de la industria automotriz. Importante destacar que ninguna de estas cinco tiene su matriz en México. En total, de las empresas que alcanzaron 80 puntos o más hay 3 de origen nacional: IEnova (Sempra), Bio PAPPEL y Grupo Bimbo. En tanto, dentro de las 13 empresas más de 80 puntos en IC500, cuatro cuentan con capital estadounidense; tres, mexicano y dos, colombiano.' />
-                  <table>
-                    <thead>
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Predicar con el ejemplo y mandar la señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, así como que facilitan y premian la denuncia, son elementos iniciales en la lucha contra la corrupción...' textDown='De acuerdo con el IC500, 13 empresas obtuvieron más de 80 puntos. Entre las cinco empresas mejor evaluadas destaca, en primer lugar, Honeywell Aerospace de México, representando a la industria aeroespacial, seguida por Flextronics Manufacturing Mexico, de la industria electrónica; Grupo Sura (en dos posiciones) en la esfera de las Afores, y Autoliv México, de la industria automotriz. Importante destacar que ninguna de estas cinco tiene su matriz en México. En total, de las empresas que alcanzaron 80 puntos o más hay 3 de origen nacional: IEnova (Sempra), Bio PAPPEL y Grupo Bimbo. En tanto, dentro de las 13 empresas más de 80 puntos en IC500, cuatro cuentan con capital estadounidense; tres, mexicano y dos, colombiano.' />
+                  <table style={{marginTop: 30}}>
+                    <thead className='tHead'>
                       <tr>
-                        <th>Posición respecto a IC500</th>
-                        <th>Empresa</th>
-                        <th>Puntaje IC500</th>
-                        <th>Sector</th>
-                        <th>País sede</th>
+                        <th className='thHead'>Posición respecto a IC500</th>
+                        <th className='thHead'>Empresa</th>
+                        <th className='thHead'>Puntaje IC500</th>
+                        <th className='thHead'>Sector</th>
+                        <th className='thHead'>País sede</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>1</td>
-                        <td>Honeywell Aerospace de México</td>
-                        <td>92.2</td>
-                        <td>Aeroespacial</td>
-                        <td>EUA</td>
+                        <td className='trWhite'>1</td>
+                        <td className='trWhite'>Honeywell Aerospace de México</td>
+                        <td className='trWhite'>92.2</td>
+                        <td className='trWhite'>Aeroespacial</td>
+                        <td className='trWhite'>EUA</td>
                       </tr>
                       <tr>
-                        <td>2</td>
-                        <td>Flextronics Manufacturing Mexico</td>
-                        <td>90.2</td>
-                        <td>Electrónica</td>
-                        <td>Singapur</td>
+                        <td className='trGrey'>2</td>
+                        <td className='trGrey'>Flextronics Manufacturing Mexico</td>
+                        <td className='trGrey'>90.2</td>
+                        <td className='trGrey'>Electrónica</td>
+                        <td className='trGrey'>Singapur</td>
                       </tr>
                       <tr>
-                        <td>3</td>
-                        <td>Afore Sura (Grupo Sura)</td>
-                        <td>88.2</td>
-                        <td>Afore</td>
-                        <td>Colombia</td>
+                        <td className='trWhite'>3</td>
+                        <td className='trWhite'>Afore Sura (Grupo Sura)</td>
+                        <td className='trWhite'>88.2</td>
+                        <td className='trWhite'>Afore</td>
+                        <td className='trWhite'>Colombia</td>
                       </tr>
                       <tr>
-                        <td>3</td>
-                        <td>Seguros Sura (Grupo Sura)</td>
-                        <td>88.2</td>
-                        <td>Afore</td>
-                        <td>Colombia</td>
+                        <td className='trGrey'>3</td>
+                        <td className='trGrey'>Seguros Sura (Grupo Sura)</td>
+                        <td className='trGrey'>88.2</td>
+                        <td className='trGrey'>Afore</td>
+                        <td className='trGrey'>Colombia</td>
                       </tr>
                       <tr>
-                        <td>5</td>
-                        <td>Autoliv México</td>
-                        <td>86.3</td>
-                        <td>Automotriz y autopartes</td>
-                        <td>Suecia</td>
+                        <td className='trWhite'>5</td>
+                        <td className='trWhite'>Autoliv México</td>
+                        <td className='trWhite'>86.3</td>
+                        <td className='trWhite'>Automotriz y autopartes</td>
+                        <td className='trWhite'>Suecia</td>
                       </tr>
                       <tr>
-                        <td>5</td>
-                        <td>Grupo Peñafiel</td>
-                        <td>84.3</td>
-                        <td>Bebidas y ceverzas</td>
-                        <td>EUA</td>
+                        <td className='trGrey'>5</td>
+                        <td className='trGrey'>Grupo Peñafiel</td>
+                        <td className='trGrey'>84.3</td>
+                        <td className='trGrey'>Bebidas y ceverzas</td>
+                        <td className='trGrey'>EUA</td>
                       </tr>
                       <tr>
-                        <td>7</td>
-                        <td>Praxair México</td>
-                        <td>84.3</td>
-                        <td>Quimica y petroquimica</td>
-                        <td>EUA</td>
+                        <td className='trWhite' >7</td>
+                        <td className='trWhite' >Praxair México</td>
+                        <td className='trWhite' >84.3</td>
+                        <td className='trWhite' >Quimica y petroquimica</td>
+                        <td className='trWhite' >EUA</td>
                       </tr>
                       <tr>
-                        <td>7</td>
-                        <td>Ryder de México</td>
-                        <td>84.3</td>
-                        <td>Logistica y transporte</td>
-                        <td>EUA</td>
+                        <td className='trGrey'>7</td>
+                        <td className='trGrey'>Ryder de México</td>
+                        <td className='trGrey'>84.3</td>
+                        <td className='trGrey'>Logistica y transporte</td>
+                        <td className='trGrey'>EUA</td>
                       </tr>
                       <tr>
-                        <td>9</td>
-                        <td>Grupo Modelo</td>
-                        <td>82.4</td>
-                        <td>Bebidas y cervezas</td>
-                        <td>Bélgica</td>
+                        <td className='trWhite'>9</td>
+                        <td className='trWhite'>Grupo Modelo</td>
+                        <td className='trWhite'>82.4</td>
+                        <td className='trWhite'>Bebidas y cervezas</td>
+                        <td className='trWhite'>Bélgica</td>
                       </tr>
                       <tr>
-                        <td>9</td>
-                        <td>IEnova (Sempra)</td>
-                        <td>82.4</td>
-                        <td>Petróleo y gas</td>
-                        <td>México</td>
+                        <td className='trGrey'>9</td>
+                        <td className='trGrey'>IEnova (Sempra)</td>
+                        <td className='trGrey'>82.4</td>
+                        <td className='trGrey'>Petróleo y gas</td>
+                        <td className='trGrey'>México</td>
                       </tr>
                       <tr>
-                        <td>9</td>
-                        <td>Pan American Silver Corp.</td>
-                        <td>82.4</td>
-                        <td>Minería</td>
-                        <td>Canadá</td>
+                        <td className='trWhite'>9</td>
+                        <td className='trWhite'>Pan American Silver Corp.</td>
+                        <td className='trWhite'>82.4</td>
+                        <td className='trWhite'>Minería</td>
+                        <td className='trWhite'>Canadá</td>
                       </tr>
                       <tr>
-                        <td>12</td>
-                        <td>Bio PAPPEL</td>
-                        <td>80.4</td>
-                        <td>Papel y cartón</td>
-                        <td>México</td>
+                        <td className='trGrey'>12</td>
+                        <td className='trGrey'>Bio PAPPEL</td>
+                        <td className='trGrey'>80.4</td>
+                        <td className='trGrey'>Papel y cartón</td>
+                        <td className='trGrey'>México</td>
                       </tr>
                       <tr>
-                        <td>12</td>
-                        <td>Grupo Bimbo</td>
-                        <td>80.4</td>
-                        <td>Alimentos</td>
-                        <td>México</td>
+                        <td className='trWhite'>12</td>
+                        <td className='trWhite'>Grupo Bimbo</td>
+                        <td className='trWhite'>80.4</td>
+                        <td className='trWhite'>Alimentos</td>
+                        <td className='trWhite'>México</td>
                       </tr>
                     </tbody>
                   </table>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Existen amplias oportunidades para generar mayor compromiso entre las 500 empresas.....' textDown='La calificación promedio en IC500 es de 37 sobre 100. Apenas 13 empresas obtuvieron un puntaje igual o mayor a 80 puntos y sólo 4 de cada 10 empresas se colocaron por encima de los 50 puntos. Además, la mitad de las empresas (265 de 500) alcanzaron apenas 40 puntos o menos; y una de cada tres (168 de 500) obtuvo 10 puntos o menos.En la distribución general de empresas por puntaje, destacan dos grupos: el primero son 178 empresas (36% de las 500) con resultados relativamente satisfactorios (entre 60 y 80 puntos de 100); el segundo grupo tiene muchas oportunidades de mejorar pues 168 empresas  (34% de las 500) tienen menos de 10 puntos. '/>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Existen amplias oportunidades para generar mayor compromiso entre las 500 empresas.....' textDown='La calificación promedio en IC500 es de 37 sobre 100. Apenas 13 empresas obtuvieron un puntaje igual o mayor a 80 puntos y sólo 4 de cada 10 empresas se colocaron por encima de los 50 puntos. Además, la mitad de las empresas (265 de 500) alcanzaron apenas 40 puntos o menos; y una de cada tres (168 de 500) obtuvo 10 puntos o menos.En la distribución general de empresas por puntaje, destacan dos grupos: el primero son 178 empresas (36% de las 500) con resultados relativamente satisfactorios (entre 60 y 80 puntos de 100); el segundo grupo tiene muchas oportunidades de mejorar pues 168 empresas  (34% de las 500) tienen menos de 10 puntos. ' />
                   <BarChart
                     width={800}
                     height={600}
@@ -526,8 +533,8 @@ class Home extends Component {
                   </BarChart>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Predicar con el ejemplo y mandar la señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, así como que facilitan y premian la denuncia, son elementos iniciales en la lucha contra la corrupción.....' textDown='De acuerdo con el IC500, 13 empresas obtuvieron más de 80 puntos. Entre las cinco empresas mejor evaluadas destaca, en primer lugar, Honeywell Aerospace de México, representando a la industria aeroespacial, seguida por Flextronics Manufacturing Mexico, de la industria electrónica; Grupo Sura (en dos posiciones) en la esfera de las Afores, y Autoliv México, de la industria automotriz. Importante destacar que ninguna de estas cinco tiene su matriz en México. En total, de las empresas que alcanzaron 80 puntos o más hay 3 de origen nacional: IEnova (Sempra), Bio PAPPEL y Grupo Bimbo. En tanto, dentro de las 13 empresas más de 80 puntos en IC500, cuatro cuentan con capital estadounidense; tres, mexicano y dos, colombiano.'/>
-                   <BarChart
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Predicar con el ejemplo y mandar la señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, así como que facilitan y premian la denuncia, son elementos iniciales en la lucha contra la corrupción.....' textDown='De acuerdo con el IC500, 13 empresas obtuvieron más de 80 puntos. Entre las cinco empresas mejor evaluadas destaca, en primer lugar, Honeywell Aerospace de México, representando a la industria aeroespacial, seguida por Flextronics Manufacturing Mexico, de la industria electrónica; Grupo Sura (en dos posiciones) en la esfera de las Afores, y Autoliv México, de la industria automotriz. Importante destacar que ninguna de estas cinco tiene su matriz en México. En total, de las empresas que alcanzaron 80 puntos o más hay 3 de origen nacional: IEnova (Sempra), Bio PAPPEL y Grupo Bimbo. En tanto, dentro de las 13 empresas más de 80 puntos en IC500, cuatro cuentan con capital estadounidense; tres, mexicano y dos, colombiano.' />
+                  <BarChart
                     width={800}
                     height={600}
                     data={charts['03']}
@@ -539,8 +546,8 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey='Si' fill='#ED7D31' stackId='a' barSize={50}/>
-                    <Bar dataKey='No' fill='#92CF4F' stackId='a' barSize={50}/>
+                    <Bar dataKey='Si' fill='#ED7D31' stackId='a' barSize={50} />
+                    <Bar dataKey='No' fill='#92CF4F' stackId='a' barSize={50} />
                   </BarChart>
                   {/* <BarChart
                     width={800}
@@ -558,7 +565,7 @@ class Home extends Component {
                   </BarChart> */}
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Las 500 empresas más importantes en México son las que determinan el estándar anticorrupción dentro de sus sectores y, con ello, tienen la capacidad de inducir cambios en su cadena de producción, así como en las prácticas de sus socios comerciales, proveedores y distribuidores......' textDown='IC500 muestra que los servicios financieros concentran la mayor parte de las 191 empresas con 50 puntos o más (9.4%), seguido por el sector automotriz y autopartes (7.3%), química y petroquímica (6.3%), los sectores de alimentos, minería y seguros y fianzas (cada uno con 5.8%). Estos seis sectores (de 15 considerados) concentran al 40% de las 191 empresas mejor evaluadas. Los sectores que tienen una mejor representación entre las 191 empresas mejor evaluadas son aquellos en los que la barra naranja es mayor que la barra azul (que indica la representación del sector en el universo de las 500 empresas más grandes en México). Tal es el caso del sector de química farmacéutica, bebidas y cervezas, productos de consumo, minería química y petroquímica, además del automotriz y autopartes, química y petroquímica, alimentos y minería.'/>
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Las 500 empresas más importantes en México son las que determinan el estándar anticorrupción dentro de sus sectores y, con ello, tienen la capacidad de inducir cambios en su cadena de producción, así como en las prácticas de sus socios comerciales, proveedores y distribuidores......' textDown='IC500 muestra que los servicios financieros concentran la mayor parte de las 191 empresas con 50 puntos o más (9.4%), seguido por el sector automotriz y autopartes (7.3%), química y petroquímica (6.3%), los sectores de alimentos, minería y seguros y fianzas (cada uno con 5.8%). Estos seis sectores (de 15 considerados) concentran al 40% de las 191 empresas mejor evaluadas. Los sectores que tienen una mejor representación entre las 191 empresas mejor evaluadas son aquellos en los que la barra naranja es mayor que la barra azul (que indica la representación del sector en el universo de las 500 empresas más grandes en México). Tal es el caso del sector de química farmacéutica, bebidas y cervezas, productos de consumo, minería química y petroquímica, además del automotriz y autopartes, química y petroquímica, alimentos y minería.' />
                   <BarChart
                     width={800}
                     height={600}
@@ -571,12 +578,12 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey='Si' fill='#64ADB1' stackId='a' barSize={40}/>
-                    <Bar dataKey='No' fill='#DDDDDD' stackId='a' barSize={40}/>
+                    <Bar dataKey='Si' fill='#64ADB1' stackId='a' barSize={40} />
+                    <Bar dataKey='No' fill='#DDDDDD' stackId='a' barSize={40} />
                   </BarChart>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='El sector aeroespacial es el mejor evaluado, está conformado únicamente por dos empresas......' text2='El sector mejor evaluado es el aeroespacial (79.4%), conformado únicamente por dos empresas. El segundo sitio es ocupado por el sector de servicios educativos (70.6%) representado por una sola empresa. Los ocho sectores con un puntaje por encima de los 60 puntos del ranking suman 36 empresas (7.2%)'/>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='El sector aeroespacial es el mejor evaluado, está conformado únicamente por dos empresas......' text2='El sector mejor evaluado es el aeroespacial (79.4%), conformado únicamente por dos empresas. El segundo sitio es ocupado por el sector de servicios educativos (70.6%) representado por una sola empresa. Los ocho sectores con un puntaje por encima de los 60 puntos del ranking suman 36 empresas (7.2%)' />
                   <BarChart
                     width={800}
                     height={600}
@@ -637,7 +644,7 @@ class Home extends Component {
                   </BarChart>
                 </Col>
                 <Col>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Eje 1: Publicidad de los elementos básicos de una política anticorrupción integral.Para que el sector privado haga efectivo su compromiso en la lucha contra la corrupción este tiene que ser público y accesible para su consulta....' textDown='De acuerdo con IC500, 298 de las 500 empresas publicaron un código de ética o un código de conducta en su página web; éste fue el documento publicado con mayor frecuencia por las empresas. En segundo lugar, poco más de la mitad de las empresas (255) publicaron también una política de regalos y agradecimientos. El tercer documento publicado con mayor frecuencia es la prohibición explícita de sobornos y pagos facilitadores (236 empresas, 47.2% de las 500).Los documentos que fueron encontrados con menor frecuencia en los portales de internet de las 500 empresas fueron la política de hospitalidad y viáticos (33 empresas, 6.6%) y la política de donaciones o contribuciones sociales (63 empresas, 12.6%).Si bien sólo 190 empresas hacen explícito su compromiso con la legalidad y 55 empresas NO expresan públicamente un compromiso con la legalidad, 255 confirman únicamente la protección de datos personales (medida intermedia entre los dos primeros grupos).'/>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Eje 1: Publicidad de los elementos básicos de una política anticorrupción integral.Para que el sector privado haga efectivo su compromiso en la lucha contra la corrupción este tiene que ser público y accesible para su consulta....' textDown='De acuerdo con IC500, 298 de las 500 empresas publicaron un código de ética o un código de conducta en su página web; éste fue el documento publicado con mayor frecuencia por las empresas. En segundo lugar, poco más de la mitad de las empresas (255) publicaron también una política de regalos y agradecimientos. El tercer documento publicado con mayor frecuencia es la prohibición explícita de sobornos y pagos facilitadores (236 empresas, 47.2% de las 500).Los documentos que fueron encontrados con menor frecuencia en los portales de internet de las 500 empresas fueron la política de hospitalidad y viáticos (33 empresas, 6.6%) y la política de donaciones o contribuciones sociales (63 empresas, 12.6%).Si bien sólo 190 empresas hacen explícito su compromiso con la legalidad y 55 empresas NO expresan públicamente un compromiso con la legalidad, 255 confirman únicamente la protección de datos personales (medida intermedia entre los dos primeros grupos).' />
                   <BarChart
                     width={800}
                     height={600}

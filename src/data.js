@@ -147,73 +147,43 @@ export const dataArticulo = {
 }
 export const dataArrayArticulo = [
   {
-    imagen: 'assets/img/calendario_background.jpg',
-    titulo: 'Expansion: indice 500 en 2017. Entre escandalos, publicidad y compliance.',
-    descripcion: `Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista
-    Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa, el primer diagnostico sobre politicas anticorrupcion o de integridad de las 500 empresas mas importantes de México. En años recientes, grandes escandalos internacionales de corrupcion corporativa han girado los reflectores de la lucha anticorrupcion hacia el sector privado. Desde el punto de vista punitivo, se se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 
+    titulo: 'Transparencia y anticorrupción en 100 multinacionales de economías emergentes: informe TRAC.',
+    descripcion: `Transparencia Internacional y Transparencia Mexicana hicieron pública la edición 2016 del informe Transparencia de la información corporativa: multinacionales de economías emergentes (TRAC). Este informe evalúa la disponibilidad de información corporativa sobre sus programas anticorrupción, su estructura organizacional y sobre sus actividades y resultados financieros en los países en los que operan.
 
-    Transparencia mexicana y mexicanos contra la corrupcion y 
-    la impunidad, en alianza con la revista Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa, el primer diagnostico sobre politicas anticorrupcion o de integridad de las 500 empresas mas importantes de México. En años recientes, grandes escandalos internacionales de corrupcion corporativa han girado los reflectores de la lucha anticorrupcion hacia el sector privado. Desde el punto de vista punitivo, se se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 
+El Informe TRAC revisa 100 empresas de mayor crecimiento en economías emergentes. De esta lista, seis empresas son mexicanas. De éstas, el 71% cotiza en bolsa, 18% son paraestatales y el 11% son privadas.
 
+Las empresas evaluadas –con sede en 15 países y operaciones en 185 países– obtuvieron en promedio una puntuación de 3.4 sobre un total de 10, donde 0 indica el menor nivel de transparencia en la publicidad de sus políticas anticorrupción y 10 el mayor nivel de transparencia en la publicación de las políticas anticorrupción. El informe TRAC no evalúa la calidad ni eficacia de esas políticas, sino su disponibilidad al público. Las 6 empresas mexicanas evaluadas por este informe obtuvieron en promedio la misma puntuación (3.4).
 
-
-    se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 
-
-    se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno.`,
-    fechaCreacion: '5-11-2017',
-    autor: 'Ignacio Rodriguez Cruz',
+Transparencia Internacional indicó que los resultados obtenidos están lejos aún de los estándares de apertura para el sector privado, incrementando los riesgos de corrupción en las actividades y en los países donde operan estas empresas, así como en sus costos de inversión.`,
     categorias: [
       'noticias',
       'corrupcion',
       'estados',
       'problemas'
-    ]
+    ],
+    autor: 'TRANSPARENCIA MEXICANA',
+    dia: '11',
+    mes: 'Jul'
   },
   {
-    imagen: 'assets/img/glosario_background.jpg',
-    titulo: 'Enterate de los resultados del estudio de transparencia en mexico',
-    descripcion: `Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista
-    Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa, el primer diagnostico sobre politicas anticorrupcion o de integridad de las 500 empresas mas importantes de México. En años recientes, grandes escandalos internacionales de corrupcion corporativa han girado los reflectores de la lucha anticorrupcion hacia el sector privado. Desde el punto de vista punitivo, se se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 
+    titulo: 'TRAC 2014: ¿Qué tan transparentes son las multinacionales?',
+    descripcion: `El informe sobre Transparencia en Información Corporativa –TRAC– de Transparencia Internacional analiza la disponibilidad pública de información corporativa de las multinacionales más grandes del mundo, en tres dimensiones:
 
-    Transparencia mexicana y mexicanos contra la corrupcion y 
-    la impunidad, en alianza con la revista Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa, el primer diagnostico sobre politicas anticorrupcion o de integridad de las 500 empresas mas importantes de México. En años recientes, grandes escandalos internacionales de corrupcion corporativa han girado los reflectores de la lucha anticorrupcion hacia el sector privado. Desde el punto de vista punitivo, se se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 
-
-
-
-    se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 
-
-    se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno.`,
+Programas anticorrupción: información relacionada con la existencia y cumplimiento de programas y políticas que eviten y sancionen el pago de sobornos, pagos de facilitación o contribuciones políticas, así como información sobre códigos de conducta, conflictos de interés y protección de denunciantes, entre otros.
+Transparencia organizacional: información completa y comprensible sobre la participación de la empresa en otras a través de subsidiarias, sucursales, filiales o empresas conjuntas (joint-ventures).
+Información desglosada por país: información sobre las operaciones en cada país en el que opera la empresa, incluyendo reportes financieros sobre ingresos, gastos de capital, ingresos previos al pago de impuestos, contribuciones por impuestos sobre la renta y donaciones, entre otros.
+ La edición 2014 de este informe analiza la disponibilidad de información de las 124 multinacionales que cotizan en bolsa, más grandes del mundo. 101 de las 124 empresas obtenidas obtuvieron una puntuación menor a 5, donde donde 10 es mayor transparencia y 0 menor transparencia, siendo el promedio de 3.8. De las 124 empresas analizadas, 81 operan en México, es decir, el 65% de las empresas incluidas en el informe y sólo una es mexicana: América Móvil.`,
     fechaCreacion: '5-11-2017',
     autor: 'Ignacio Rodriguez Cruz',
-    categorias: [
-      'noticias',
-      'corrupcion',
-      'estados',
-      'problemas'
-    ]
-  },
-  {
-    imagen: 'assets/img/quienessomos_background.jpg',
-    titulo: 'Enterate de los resultados del estudio de transparencia en mexico',
-    descripcion: `Transparencia mexicana y mexicanos contra la corrupcion y la impunidad, en alianza con la revista
-    Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa, el primer diagnostico sobre politicas anticorrupcion o de integridad de las 500 empresas mas importantes de México. En años recientes, grandes escandalos internacionales de corrupcion corporativa han girado los reflectores de la lucha anticorrupcion hacia el sector privado. Desde el punto de vista punitivo, se se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 
-
-    Transparencia mexicana y mexicanos contra la corrupcion y 
-    la impunidad, en alianza con la revista Expansion presentan 500 Frente a la corrupcion, Integridad Corporativa, el primer diagnostico sobre politicas anticorrupcion o de integridad de las 500 empresas mas importantes de México. En años recientes, grandes escandalos internacionales de corrupcion corporativa han girado los reflectores de la lucha anticorrupcion hacia el sector privado. Desde el punto de vista punitivo, se se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 
-
-
-
-    se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno. 
-
-    se han sentado precedentes importantes a traves de sanciones economicas como la que recibio Siemens por pagar sobornos a funcionarios para quedarse con contratos en Brasil y consecuencias penales como las que resultaron de la investigacion del caso Odebrecht por corrupcion y blanqueo de capitales en México y otros países. Al mismo tiempo, ha aumentado el número y la calidad de los mecanismos que las empresas pueden adoptar para prevenir, detectar y sancionar actos de corrupción en su interacción con ciudadanía, sector privado y/o gobierno.`,
-    fechaCreacion: '5-11-2017',
-    autor: 'Ignacio Rodriguez Cruz',
-    categorias: [
-      'noticias',
-      'corrupcion',
-      'estados',
-      'problemas'
-    ]
+    // categorias: [
+    //   'noticias',
+    //   'corrupcion',
+    //   'estados',
+    //   'problemas'
+    // ],
+    autor: 'TRANSPARENCIA MEXICANA',
+    dia: '4',
+    mes: 'Nov'
   }
 ]
 
