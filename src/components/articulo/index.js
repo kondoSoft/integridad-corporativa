@@ -50,7 +50,7 @@ const Container = styled.div`
 const NewsContainer = styled.div`
     flex: 2;
     width: 100%;
-    display: flex;
+    display: ${props => props.disabled ? 'none' : 'flex'};
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -422,7 +422,7 @@ export const Articles = (props) => {
 }
 const NewsBlog = (props) => {
   return (
-    <NewsContainer>
+    <NewsContainer disabled={props.disabled}>
       <NewsBlogArticle>
         <Img />
         <ArticleData>
@@ -457,6 +457,7 @@ const NewsBlog = (props) => {
   )
 }
 export const News = (props) => {
+  console.log('props', props)
   return (
     <NewsWrapper noPadding={props.noPadding}>
       <SearchBox withSearch={props.withSearch}>
@@ -468,7 +469,7 @@ export const News = (props) => {
       <NewEntries>ENTRADAS RECIENTES</NewEntries>
       <hr style={{borderColor: 'red', width: '80%'}} />
       <Container>
-        <NewsBlog />
+        <NewsBlog disabled={props.disabled} />
         <NewsEvents>
           <Link to='/eventos' style={{width: '80%', textDecoration: 'none', textAlign: 'center', backgroundColor: 'darkred', padding: 10}}>
             <i className='fa fa-calendar' aria-hidden='true' style={{color: '#FFF', padding: 7, fontSize: 30 }} />

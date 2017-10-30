@@ -22,7 +22,7 @@ export default class Events extends Component {
             <Route style={{fontSize: 26, fontFamily: 'Druk Text Web', letterSpacing: 1}}>PROXIMOS &nbsp;EVENTOS <i class='fa fa-chevron-down' aria-hidden='true' /></Route>
             <EventList data={dataEvents} />
           </Container>
-          <News />
+          <News disabled />
         </Main>
         <Footer />
       </div>
