@@ -784,7 +784,7 @@ class Home extends Component {
                   </ComposedChart>
                 </Col>
                 <Col>
-                  {/* Tabla 2*/}
+                  {/* Tabla 2 */}
                   <View isMore click={this.state.View.click} slide={this.clickView} textUp='Predicar con el ejemplo y mandar la señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, así como que facilitan y premian la denuncia, son elementos iniciales en la lucha contra la corrupción...' textDown='De acuerdo con el IC500, 13 empresas obtuvieron más de 80 puntos. Entre las cinco empresas mejor evaluadas destaca, en primer lugar, Honeywell Aerospace de México, representando a la industria aeroespacial, seguida por Flextronics Manufacturing Mexico, de la industria electrónica; Grupo Sura (en dos posiciones) en la esfera de las Afores, y Autoliv México, de la industria automotriz. Importante destacar que ninguna de estas cinco tiene su matriz en México. En total, de las empresas que alcanzaron 80 puntos o más hay 3 de origen nacional: IEnova (Sempra), Bio PAPPEL y Grupo Bimbo. En tanto, dentro de las 13 empresas más de 80 puntos en IC500, cuatro cuentan con capital estadounidense; tres, mexicano y dos, colombiano.' />
                   <table style={{marginTop: 30}}>
                     <thead className='tHead'>
@@ -901,7 +901,7 @@ class Home extends Component {
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
                     <YAxis type='category' dataKey='name' width={200} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip formatter={val => val.toString() + '%'} />
@@ -955,7 +955,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 6 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Los directivos marcan la pauta para sus empleados, socios, proveedores y clientes; por eso es esencial que respalden de manera activa las políticas anticorrupción o de integridad...' textDown='Por ello es crucial que los líderes de las empresas demuestren su respaldo a la política y transmitan su importancia al resto de los empleados. De acuerdo con el Ranking IC500, 188 empresas (32%) publicaron mensajes que expresan el nivel de prioridad y compromiso de este tipo de acciones dentro de la empresa por parte de sus líderes o directores.' />
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Los directivos marcan la pauta para sus empleados, socios, proveedores y clientes; por eso es esencial que respalden de manera activa las políticas anticorrupción o de integridad...' textDown='Por ello es crucial que los líderes de las empresas demuestren su respaldo a la política y transmitan su importancia al resto de los empleados. De acuerdo con el Ranking IC500, 188 empresas (32%) publicaron mensajes que expresan el nivel de prioridad y compromiso de este tipo de acciones dentro de la empresa por parte de sus líderes o directores.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
@@ -963,7 +963,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 7 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque demuestra que nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Además, al no ser selectiva, ofrece certeza ante denuncias por violaciones al código de ética por parte de empleados, socios y proveedores, y permite a la empresa demostrar que ha tomado medidas anticorrupción comprehensivas ante una investigación de la autoridad. El análisis del segundo eje de IC500 “Alcance y socialización de la política anticorrupción” arroja que sólo una tercera parte de las empresas especifican públicamente que su política anticorrupción abarca tanto a los directivos como a los empleados. Estas proporciones se explican como sigue: en dos de cada cinco empresas (202 de 500) no fue posible determinar quién está sujeto a la política de la integridad debido a que no cuentan con ésta o con un código de ética o conducta. De las empresas que sí publicaron ya sea una política anticorrupción o un código de ética o conducta, poco más de la mitad (159) consideraron que empleados y directivos son sujetos de este documento. Es decir, prácticamente sólo una tercera parte de las empresas está enviando la señal de que la política anticorrupción no es selectiva y aplica para todos.' />
+                  <View isMore title={'Grafica 7'} click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque demuestra que nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Además, al no ser selectiva, ofrece certeza ante denuncias por violaciones al código de ética por parte de empleados, socios y proveedores, y permite a la empresa demostrar que ha tomado medidas anticorrupción comprehensivas ante una investigación de la autoridad. El análisis del segundo eje de IC500 “Alcance y socialización de la política anticorrupción” arroja que sólo una tercera parte de las empresas especifican públicamente que su política anticorrupción abarca tanto a los directivos como a los empleados. Estas proporciones se explican como sigue: en dos de cada cinco empresas (202 de 500) no fue posible determinar quién está sujeto a la política de la integridad debido a que no cuentan con ésta o con un código de ética o conducta. De las empresas que sí publicaron ya sea una política anticorrupción o un código de ética o conducta, poco más de la mitad (159) consideraron que empleados y directivos son sujetos de este documento. Es decir, prácticamente sólo una tercera parte de las empresas está enviando la señal de que la política anticorrupción no es selectiva y aplica para todos.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['06']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
@@ -971,7 +971,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 8 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual...' textDown='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual se concretan las prácticas anticorrupción y, en este sentido, es sumamente importante que estén sujetos a dichas políticas. Las empresas deben asegurarse de que los empleados y otros intermediarios que actúan en representación suya estén sujetos a las políticas anticorrupción, y de que reciban el asesoramiento y la capacitación adecuados.' />
+                  <View isMore title={'Grafica 8'} click={this.state.View.click} slide={this.clickView} textUp='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual...' textDown='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual se concretan las prácticas anticorrupción y, en este sentido, es sumamente importante que estén sujetos a dichas políticas. Las empresas deben asegurarse de que los empleados y otros intermediarios que actúan en representación suya estén sujetos a las políticas anticorrupción, y de que reciban el asesoramiento y la capacitación adecuados.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['07']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
@@ -979,7 +979,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 9 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Dado que las 500 empresas más grandes de México son líderes en sus respectivos sectores tienen el potencial de influir directamente en las prácticas de integridad de sus socios comerciales...' textDown='Es por ello que los resultados que IC500 arroja sobre una mención expresa acerca de los socios comerciales en la política de integridad de la empresa son particularmente relevantes, pues entre las 500 empresas más grandes en México solamente 2 de cada 10 (115 de 500 empresas) incorporan menciones a sus socios comerciales -proveedores y contratistas, por ejemplo-. De éstas, una de cada 10 (59 de 500 empresas) publica una política específica para socios, mientras que la otra mitad (56) alude a sus socios como sujetos de su política general.' />
+                  <View isMore title={'Grafica 9'} click={this.state.View.click} slide={this.clickView} textUp='Dado que las 500 empresas más grandes de México son líderes en sus respectivos sectores tienen el potencial de influir directamente en las prácticas de integridad de sus socios comerciales...' textDown='Es por ello que los resultados que IC500 arroja sobre una mención expresa acerca de los socios comerciales en la política de integridad de la empresa son particularmente relevantes, pues entre las 500 empresas más grandes en México solamente 2 de cada 10 (115 de 500 empresas) incorporan menciones a sus socios comerciales -proveedores y contratistas, por ejemplo-. De éstas, una de cada 10 (59 de 500 empresas) publica una política específica para socios, mientras que la otra mitad (56) alude a sus socios como sujetos de su política general.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['08']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
@@ -987,7 +987,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 10 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Es sumamente importante que las políticas anticorrupción sean claras y precisas para que sean aplicables y tengan un mayor impacto...' textDown='De acuerdo con la información en sus páginas de internet, dos de cada cinco empresas (218 de 500 empresas) divulgan una definición de conflicto de interés; mientras que 14% (69 de 500 empresas) incluyen otras definiciones como soborno, pago facilitador o tráfico de influencia. De las 69 empresas que consideran otras definiciones de actos de corrupción, 61 definen el concepto de conflicto de intereses.' />
+                  <View isMore title={'Grafica 10'} click={this.state.View.click} slide={this.clickView} textUp='Es sumamente importante que las políticas anticorrupción sean claras y precisas para que sean aplicables y tengan un mayor impacto...' textDown='De acuerdo con la información en sus páginas de internet, dos de cada cinco empresas (218 de 500 empresas) divulgan una definición de conflicto de interés; mientras que 14% (69 de 500 empresas) incluyen otras definiciones como soborno, pago facilitador o tráfico de influencia. De las 69 empresas que consideran otras definiciones de actos de corrupción, 61 definen el concepto de conflicto de intereses.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['09'].left} cx='25%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
                     <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
@@ -996,7 +996,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 11 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Capacitar a sus empleados y directivos, así como adoptar prácticas comerciales éticas que contribuyan a detectar y prevenir la corrupción, permite a las 500 compañías más grandes en México sumarse a la lucha anticorrupción...' textDown='Debido a su alcance, conexiones y poder económico, éstas pueden actuar como agentes de cambio positivo, y desempeñar una función central en la lucha contra la corrupción. Sin embargo, únicamente 64 de 500 empresas publican en sus páginas web que cuentan con un programa de capacitación, lo cual indica que hay mucho trabajo por hacer en la socialización y entrenamiento de integridad.' />
+                  <View isMore title={'Grafica 11'} click={this.state.View.click} slide={this.clickView} textUp='Capacitar a sus empleados y directivos, así como adoptar prácticas comerciales éticas que contribuyan a detectar y prevenir la corrupción, permite a las 500 compañías más grandes en México sumarse a la lucha anticorrupción...' textDown='Debido a su alcance, conexiones y poder económico, éstas pueden actuar como agentes de cambio positivo, y desempeñar una función central en la lucha contra la corrupción. Sin embargo, únicamente 64 de 500 empresas publican en sus páginas web que cuentan con un programa de capacitación, lo cual indica que hay mucho trabajo por hacer en la socialización y entrenamiento de integridad.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['10']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
@@ -1004,7 +1004,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 12 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque muestra nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Para que directivos y empleados puedan dar cumplimiento a la política de integridad, deben recibir igualmente entrenamiento. IC500 arroja que, a pesar de los beneficios que conlleva la capacitación, el entrenamiento anticorrupción únicamente se menciona en 8% de los casos, de los cuales únicamente un punto porcentual corresponde a la mención de que el entrenamiento incluye a los directivos.' />
+                  <View isMore title={'Grafica 12'} click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque muestra nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Para que directivos y empleados puedan dar cumplimiento a la política de integridad, deben recibir igualmente entrenamiento. IC500 arroja que, a pesar de los beneficios que conlleva la capacitación, el entrenamiento anticorrupción únicamente se menciona en 8% de los casos, de los cuales únicamente un punto porcentual corresponde a la mención de que el entrenamiento incluye a los directivos.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['11']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
@@ -1012,7 +1012,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 13 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Para que el sector privado haga efectivo su compromiso en la lucha contra la corrupción este tiene que ser público y accesible para su consulta...' textDown='De acuerdo con IC500, 298 de las 500 empresas publicaron un código de ética o un código de conducta en su página web; éste fue el documento publicado con mayor frecuencia por las empresas. En segundo lugar, poco más de la mitad de las empresas (255) publicaron también una política de regalos y agradecimientos. El tercer documento publicado con mayor frecuencia es la prohibición explícita de sobornos y pagos facilitadores (236 empresas, 47.2% de las 500). Los documentos que fueron encontrados con menor frecuencia en los portales de internet de las 500 empresas fueron la política de hospitalidad y viáticos (33 empresas, 6.6%) y la política de donaciones o contribuciones sociales (63 empresas, 12.6%). Si bien sólo 190 empresas hacen explícito su compromiso con la legalidad y 55 empresas NO expresan públicamente un compromiso con la legalidad, 255 confirman únicamente la protección de datos personales (medida intermedia entre los dos primeros grupos).' />
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Para que el sector privado haga efectivo su compromiso en la lucha contra la corrupción este tiene que ser público y accesible para su consulta...' textDown='De acuerdo con IC500, 298 de las 500 empresas publicaron un código de ética o un código de conducta en su página web; éste fue el documento publicado con mayor frecuencia por las empresas. En segundo lugar, poco más de la mitad de las empresas (255) publicaron también una política de regalos y agradecimientos. El tercer documento publicado con mayor frecuencia es la prohibición explícita de sobornos y pagos facilitadores (236 empresas, 47.2% de las 500). Los documentos que fueron encontrados con menor frecuencia en los portales de internet de las 500 empresas fueron la política de hospitalidad y viáticos (33 empresas, 6.6%) y la política de donaciones o contribuciones sociales (63 empresas, 12.6%). Si bien sólo 190 empresas hacen explícito su compromiso con la legalidad y 55 empresas NO expresan públicamente un compromiso con la legalidad, 255 confirman únicamente la protección de datos personales (medida intermedia entre los dos primeros grupos).' />
                   <BarChart
                     width={800}
                     height={600}
@@ -1020,7 +1020,7 @@ class Home extends Component {
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'} />
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
                     <YAxis type='category' dataKey='name' width={250} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
@@ -1028,7 +1028,7 @@ class Home extends Component {
                     <Bar dataKey='Si' fill='#91CF4F' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
                     <Bar dataKey='No' fill='#ED7D31' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
                     <Bar dataKey='Sí, existen sanciones claras y detalladas' fill='#558336' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
-                    <Bar dataKey='Se menciona que existen sanciones pero no se especifica de qué tipo' fill='#F8C032' stackId='a' barSize={40} formatter={val => val.toString() +' %'} />
+                    <Bar dataKey='Se menciona que existen sanciones pero no se especifica de qué tipo' fill='#F8C032' stackId='a' barSize={40} formatter={val => val.toString() + ' %'} />
                     <Bar dataKey='No se mencionan sanciones' fill='#BE652B' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
                   </BarChart>
                 </Col>
@@ -1042,7 +1042,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 15 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='El compromiso público de las empresas contra la corrupción y la divulgación de políticas relevantes refuerzan la integridad entre los empleados y...' textDown='El compromiso público de las empresas contra la corrupción y la divulgación de políticas relevantes refuerzan la integridad entre los empleados y los socios comerciales, fomentan tendencias positivas y marcan el ejemplo en las sociedades en las cuales tienen presencia Para que las políticas de integridad empresarial y anticorrupción tengan todos los efectos deseados, estas tienen que ser públicas, accesibles y explicitamente para México. Es por esto que, en la metodología se toma en cuenta el idioma de la información y la ubicación de la información en conjunto. Al considerar a las 500 empresas, se observa que el 68% publica, en efecto, en un sitio para México y en español. Otro 11% tiene disponible su información en español pero en un sitio global o para Latinoamérica, 3% de las empresas tiene su información en un sitio para México pero esta se encuentra al menos parcialmente en otro idioma, y finalmente,  17% publica parte o toda su información en un idioma distinto al español y en un sitio global. ' />
+                  <View isMore title={'Grafica 15'} click={this.state.View.click} slide={this.clickView} textUp='El compromiso público de las empresas contra la corrupción y la divulgación de políticas relevantes refuerzan la integridad entre los empleados y...' textDown='El compromiso público de las empresas contra la corrupción y la divulgación de políticas relevantes refuerzan la integridad entre los empleados y los socios comerciales, fomentan tendencias positivas y marcan el ejemplo en las sociedades en las cuales tienen presencia Para que las políticas de integridad empresarial y anticorrupción tengan todos los efectos deseados, estas tienen que ser públicas, accesibles y explicitamente para México. Es por esto que, en la metodología se toma en cuenta el idioma de la información y la ubicación de la información en conjunto. Al considerar a las 500 empresas, se observa que el 68% publica, en efecto, en un sitio para México y en español. Otro 11% tiene disponible su información en español pero en un sitio global o para Latinoamérica, 3% de las empresas tiene su información en un sitio para México pero esta se encuentra al menos parcialmente en otro idioma, y finalmente,  17% publica parte o toda su información en un idioma distinto al español y en un sitio global. ' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['14']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
@@ -1058,7 +1058,7 @@ class Home extends Component {
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
                     <YAxis type='category' dataKey='name' width={200} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip formatter={val => val.toString() + '%'} />

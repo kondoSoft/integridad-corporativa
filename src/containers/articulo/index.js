@@ -27,7 +27,7 @@ export default class Article extends Component {
           
             <Articles data={art[0]} />
           </Container>
-          <News />
+          <News disabled />
         </Main>
         <Footer />
       </div>
