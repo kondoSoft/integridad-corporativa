@@ -95,3 +95,7 @@
   text-align: center;
   background-color: #EBEBEB; 
 }
+
+.width{
+  max-width: 100px;
+}

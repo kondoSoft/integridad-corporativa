@@ -33,15 +33,15 @@ import {
   PieChart,
   Pie,
   Line,
-  ComposedChart
+  ComposedChart,
+  Cell
 } from 'recharts'
 import Slider from 'react-slick'
 import './styles.css'
 
 class Home extends Component {
   constructor (props) {
-    super(props)
-
+    super(props)   
     this.state = {
       dataActualizada: [
         {name: 'aeroe', uv: 10, pv: 100, amt: 100},
@@ -91,7 +91,6 @@ class Home extends Component {
         newsWall: 'rotateUp'
       },
       modalOpen: true,
-      sliderIndex: 0,
       goTo: null,
       dataNewsWall: {
         video: {
@@ -413,6 +412,222 @@ class Home extends Component {
           {name: 'Taiwan', 'Puntaje promedio': 9.8},
           {name: 'China / Francia', 'Puntaje promedio': 7.8},
           {name: 'India', 'Puntaje promedio': 5.9}
+        ],
+        '16': {
+          europa: [
+            { name: 'Irlanda', 'Puntaje promedio': 67.6 },
+            { name: 'Austria', 'Puntaje promedio': 66.7 },
+            { name: 'Reino Unido / Holanda', 'Puntaje promedio': 66.7 },
+            { name: 'Holanda', 'Puntaje promedio': 62.7 },
+            { name: 'Suiza / Suecia', 'Puntaje promedio': 60.8 },
+            { name: 'Reino Unido', 'Puntaje promedio': 57.2 },
+            { name: 'España', 'Puntaje promedio': 57 },
+            { name: 'Suecia', 'Puntaje promedio': 53.7 },
+            { name: 'Francia', 'Puntaje promedio': 49.8 },
+            { name: 'Bélgica', 'Puntaje promedio': 47.7 },
+            { name: 'Italia / Argentina', 'Puntaje promedio': 44.4 },
+            { name: 'Alemania', 'Puntaje promedio': 43.1 },
+            { name: 'Siuiza', 'Puntaje promedio': 42.2 },
+            { name: 'Italia / España', 'Puntaje promedio': 31.4 },
+            { name: 'Italia', 'Puntaje promedio': 29.4 },
+            { name: 'Finlandia', 'Puntaje promedio': 17.6 },
+            { name: 'Rusia', 'Puntaje promedio': 15.7 },
+            { name: 'Luxemburgo', 'Puntaje promedio': 14.7 },
+            { name: 'Portugal', 'Puntaje promedio': 9.8 },
+            { name: 'China / Francia', 'Puntaje promedio': 7.8 }
+          ],
+          latinoamerica: [
+            { name: 'Colombia', 'Puntaje promedio': 88.2 },
+            { name: 'Chile', 'Puntaje promedio': 55.9 },
+            { name: 'México / Brasil', 'Puntaje promedio': 51 },
+            { name: 'Brasil', 'Puntaje promedio': 43.1 },
+            { name: 'Argentina', 'Puntaje promedio': 31.4 },
+            { name: 'México', 'Puntaje promedio': 30 }
+          ],
+          norteamerica: [
+            { name: 'Estados Unidos / Reino Unido', 'Puntaje promedio': 66.7 },
+            { name: 'Canadá', 'Puntaje promedio': 55.6 },
+            { name: 'Estados Unidos', 'Puntaje promedio': 45.8 },
+            { name: 'México / Estados Unidos', 'Puntaje promedio': 25 }
+          ],
+          asia: [
+            { name: 'Singapur', 'Puntaje promedio': 90.2 },
+            { name: 'Corea', 'Puntaje promedio': 25.1 },
+            { name: 'China', 'Puntaje promedio': 21.6 },
+            { name: 'Japón', 'Puntaje promedio': 14.5 },
+            { name: 'Taiwan', 'Puntaje promedio': 9.8 },
+            { name: 'India', 'Puntaje promedio': 5.9 }
+          ]
+        },
+        '17': [
+          { name: 'Petróleos Mexicanos', 'Calificacion': 78.4 },
+          { name: 'Comisión Federal de Electricidad', 'Calificacion': 66.7 },
+          { name: 'Banobras', 'Calificacion': 62.7 },
+          { name: 'Pronósticos para la Asistencia Pública', 'Calificacion': 56.9 },
+          { name: 'Bancomext', 'Calificacion': 52.9 },
+          { name: 'Bansefi', 'Calificacion': 47.1 },
+          { name: 'Caminos y Puentes Federales (Capufe)', 'Calificacion': 47.1 },
+          { name: 'Lotería Nacional para la Asistencia Pública', 'Calificacion': 45.1 },
+          { name: 'Financiera Rural', 'Calificacion': 41.2 },
+          { name: 'Agroasemex', 'Calificacion': 37.3 },
+          { name: 'Grupo Aeroportuario de la Cd. de México', 'Calificacion': 35.3 },
+          { name: 'Correos de México', 'Calificacion': 35.3 },
+          { name: 'Fonacot', 'Calificacion': 33.3 },
+          { name: 'Sociedad Hipotecaria Federal', 'Calificacion': 33.3 },
+          { name: 'Infonavit', 'Calificacion': 33.3 },
+          { name: 'Liconsa', 'Calificacion': 31.4 },
+          { name: 'Banjército ', 'Calificacion': 27.5 },
+          { name: 'Diconsa', 'Calificacion': 25.5 },
+          { name: 'Nafin', 'Calificacion': 19.6 },
+          { name: 'Fovissste', 'Calificacion': 15.7 },
+          { name: 'Aeropuertos y Servicios Auxiliares', 'Calificacion': 9.8 },
+          { name: 'Sistema de Transporte Colectivo', 'Calificacion': 7.8 }
+        ],
+        '18': [ 
+          { name: 'Servicios financieros',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 9.4,
+            '500 empresas': 13 },
+          { name: 'Automotriz y autopartes',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 7.3,
+            '500 empresas': 6 },
+          { name: 'Química y petroquímica',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 6.3,
+            '500 empresas': 4 },
+          { name: 'Alimentos',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 5.8,
+            '500 empresas': 5.2 },
+          { name: 'Minería',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 5.8,
+            '500 empresas': 2.6 },
+          { name: 'Seguros y fianzas',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 5.8,
+            '500 empresas': 6.8 },
+          { name: 'Química farmacéutica',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 4.7,
+            '500 empresas': 2.8 },
+          { name: 'Bebidas y cervezas',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 4.2,
+            '500 empresas': 2.4 },
+          { name: 'Productos de consumo',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 3.1,
+            '500 empresas': 1.2 },
+          { name: 'Construcción',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 2.6,
+            '500 empresas': 3.8 },
+          { name: 'Telecomunicaciones',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 2.6,
+            '500 empresas': 3.4 },
+          { name: 'Holding',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 2.6,
+            '500 empresas': 3.8 },
+          { name: 'Maquinaria y equipo',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
+            '500 empresas': 1.8 },
+          { name: 'Agroindustria',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
+            '500 empresas': 1.2 },
+          { name: 'Cemento y materiales',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
+            '500 empresas': 1.2 },
+          { name: 'Electricidad',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
+            '500 empresas': undefined },
+          { name: 'Petróleo y gas',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
+            '500 empresas': undefined },
+          { name: 'Electrónica',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+            '500 empresas': undefined },
+          { name: 'Equipo eléctrico ',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+            '500 empresas': undefined },
+          { name: 'Computación y servicios',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+            '500 empresas': undefined },
+          { name: 'Afore',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+            '500 empresas': undefined },
+          { name: 'Comercio Autoservicio',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+            '500 empresas': undefined },
+          { name: 'Armadora',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Siderurgia y metalurgia',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Cuidado personal',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Desarrolladora de vivienda',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Tecnología diversificada',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Productos cerámicos',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Servicios aeroportuarios',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Logística y transporte',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Servicios profesionales',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Electrónica de consumo',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Tabaco',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Juegos y sorteos',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Papel y cartón',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Restaurantes',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Aeroespacial',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+            '500 empresas': undefined },
+          { name: 'Comercio departamental',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Infraestructura de Transportes',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Materiales para la construcción',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Confitería y chocolates',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Comercio de medicamentos',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Servicios educativos',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Entretenimiento',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Vidrio y envases',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Aerolíneas',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Servicios inmobiliarios',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
+          { name: 'Hotelería y turismo',
+            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+            '500 empresas': undefined },
         ]
       }
     }
@@ -443,20 +658,6 @@ class Home extends Component {
       isPlaying,
       charts
     } = this.state
-    const data = [
-      {name: 'A', uv: 10, pv: 40, amt: 50},
-      {name: 'B', uv: 10, pv: 40, amt: 50},
-      {name: 'C', uv: 10, pv: 40, amt: 50},
-      {name: 'D', uv: 10, pv: 40, amt: 50},
-      {name: 'E', uv: 10, pv: 40, amt: 50},
-      {name: 'F', uv: 10, pv: 40, amt: 50},
-      {name: 'G', uv: 10, pv: 40, amt: 50}
-    ]
-    const data01 = [
-      {name: 'Group A', value: 400}, {name: 'Group B', value: 300},
-      {name: 'Group C', value: 300}, {name: 'Group D', value: 200},
-      {name: 'Group E', value: 278}, {name: 'Group F', value: 189}
-    ]
     var settings = {
       dots: false,
       infinite: true,
@@ -500,7 +701,7 @@ class Home extends Component {
                       <tr>
                         <th className='thHead'>Rango de puntos</th>
                         <th className='thHead'>Número de empresas dentro del rango</th>
-                        <th className='thHead'>Acumulado de empresas (del límite inferior del rango a 100 puntos)</th>
+                        <th className='thHead width'>Acumulado de empresas (del límite inferior del rango a 100 puntos)</th>
                         <th style={{padding: 15, color: '#FFF'}}>Porcentaje acumulado (sobre 500 empresas)</th>
                       </tr>
                     </thead>
@@ -695,11 +896,11 @@ class Home extends Component {
                     <Bar dataKey='Puntaje promedio' fill='#ED7D31' />
                   </BarChart>
                 </Col>
-                <Col>
-                  {/* Figura 2 */}
+                {/* <Col>
+                  {/* Figura 2
                   <View click={this.state.View.click} slide={this.clickView} textUp='Elementos de evaluación de una política anticorrupción...' textDown='El sector mejor evaluado es el aeroespacial (79.4%), conformado únicamente por dos empresas. El segundo sitio es ocupado por el sector de servicios educativos (70.6%) representado por una sola empresa. Los ocho sectores con un puntaje por encima de los 60 puntos del ranking suman 36 empresas (7.2%)' />
                   <img src='assets/img/figura2.png' alt='Figura 2' width='35%' />
-                </Col>
+                </Col> */}
                 <Col>
                   {/* Grafica 4 */}
                   <View isMore click={this.state.View.click} slide={this.clickView} textUp='La publicidad de una política anticorrupción es uno de los cuatro ejes —además del alcance y socialización de dicha política, del sistema de monitoreo, denuncia y sanción, así como de la accesibilidad de la información— considerados en IC500...' textDown='IC500 encontró que 3 de cada 5 empresas tienen publicado un código de ética, conducta o integridad en su página de internet, pero sólo la mitad de las 500 empresas cuenta con una política de regalos y agradecimientos, y en apenas una de cada 5 empresas se encontró una política específica para prevenir el lavado de dinero en el sitio web. La principal oportunidad de mejora de las empresas se encuentra en la posibilidad de publicitar su política de integridad.' />
@@ -710,28 +911,14 @@ class Home extends Component {
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' />
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCoun={11} dominio={[0, 100]} tickFormatter={val => val.toString() + '%'} />
                     <YAxis type='category' dataKey='name' width={200} />
                     <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                     <Legend />
                     <Bar dataKey='Si' fill='#ED7D31' stackId='a' barSize={50} />
                     <Bar dataKey='No' fill='#92CF4F' stackId='a' barSize={50} />
                   </BarChart>
-                  {/* <BarChart
-                    width={800}
-                    height={600}
-                    data={data}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                  >
-                    <XAxis dataKey='name' />
-                    <YAxis />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip />
-                    <Legend />
-                    <Bar dataKey='pv' fill='#8884d8' />
-                    <Bar dataKey='uv' fill='#82ca9d' />
-                  </BarChart> */}
                 </Col>
                 <Col>
                   {/* Grafica 5 */}
@@ -743,7 +930,7 @@ class Home extends Component {
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' />
+                    <XAxis type='number' ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]} tickCoun={11} dominio={[0, 500]} />
                     <YAxis type='category' dataKey='name' width={200} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
@@ -758,60 +945,56 @@ class Home extends Component {
                   <View click={this.state.View.click} slide={this.clickView} textUp='Los directivos marcan la pauta para sus empleados, socios, proveedores y clientes; por eso es esencial que respalden de manera activa las políticas anticorrupción o de integridad...' textDown='Por ello es crucial que los líderes de las empresas demuestren su respaldo a la política y transmitan su importancia al resto de los empleados. De acuerdo con el Ranking IC500, 188 empresas (32%) publicaron mensajes que expresan el nivel de prioridad y compromiso de este tipo de acciones dentro de la empresa por parte de sus líderes o directores.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label />
-                    <Tooltip />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 7 */}
-                  <h1>Grafica 7</h1>
                   <View click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque demuestra que nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Además, al no ser selectiva, ofrece certeza ante denuncias por violaciones al código de ética por parte de empleados, socios y proveedores, y permite a la empresa demostrar que ha tomado medidas anticorrupción comprehensivas ante una investigación de la autoridad. El análisis del segundo eje de IC500 “Alcance y socialización de la política anticorrupción” arroja que sólo una tercera parte de las empresas especifican públicamente que su política anticorrupción abarca tanto a los directivos como a los empleados. Estas proporciones se explican como sigue: en dos de cada cinco empresas (202 de 500) no fue posible determinar quién está sujeto a la política de la integridad debido a que no cuentan con ésta o con un código de ética o conducta. De las empresas que sí publicaron ya sea una política anticorrupción o un código de ética o conducta, poco más de la mitad (159) consideraron que empleados y directivos son sujetos de este documento. Es decir, prácticamente sólo una tercera parte de las empresas está enviando la señal de que la política anticorrupción no es selectiva y aplica para todos.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['06']} cx='50%' cy='50%' outerRadius={200} label />
-                    <Tooltip />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 8 */}
-                  <h1>Grafica 8</h1>
                   <View click={this.state.View.click} slide={this.clickView} textUp='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual...' textDown='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual se concretan las prácticas anticorrupción y, en este sentido, es sumamente importante que estén sujetos a dichas políticas. Las empresas deben asegurarse de que los empleados y otros intermediarios que actúan en representación suya estén sujetos a las políticas anticorrupción, y de que reciban el asesoramiento y la capacitación adecuados.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['07']} cx='50%' cy='50%' outerRadius={200} label />
-                    <Tooltip />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 9 */}
-                  <h1>Grafica 9</h1>
                   <View click={this.state.View.click} slide={this.clickView} textUp='Dado que las 500 empresas más grandes de México son líderes en sus respectivos sectores tienen el potencial de influir directamente en las prácticas de integridad de sus socios comerciales...' textDown='Es por ello que los resultados que IC500 arroja sobre una mención expresa acerca de los socios comerciales en la política de integridad de la empresa son particularmente relevantes, pues entre las 500 empresas más grandes en México solamente 2 de cada 10 (115 de 500 empresas) incorporan menciones a sus socios comerciales -proveedores y contratistas, por ejemplo-. De éstas, una de cada 10 (59 de 500 empresas) publica una política específica para socios, mientras que la otra mitad (56) alude a sus socios como sujetos de su política general.' />
                   <PieChart width={800} height={600}>
-                    <Pie data={charts['08']} cx='50%' cy='50%' outerRadius={200} label />
-                    <Tooltip />
+                    <Pie data={charts['08']} cx='50%' cy='50%' outerRadius={200} />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 10 */}
-                  <h1>Grafica 10</h1>
                   <View click={this.state.View.click} slide={this.clickView} textUp='Es sumamente importante que las políticas anticorrupción sean claras y precisas para que sean aplicables y tengan un mayor impacto...' textDown='De acuerdo con la información en sus páginas de internet, dos de cada cinco empresas (218 de 500 empresas) divulgan una definición de conflicto de interés; mientras que 14% (69 de 500 empresas) incluyen otras definiciones como soborno, pago facilitador o tráfico de influencia. De las 69 empresas que consideran otras definiciones de actos de corrupción, 61 definen el concepto de conflicto de intereses.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['09'].left} cx='25%' cy='50%' outerRadius={120} label />
                     <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label />
-                    <Tooltip />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 11 */}
-                  <h1>Grafica 11</h1>
                   <View click={this.state.View.click} slide={this.clickView} textUp='Capacitar a sus empleados y directivos, así como adoptar prácticas comerciales éticas que contribuyan a detectar y prevenir la corrupción, permite a las 500 compañías más grandes en México sumarse a la lucha anticorrupción...' textDown='Debido a su alcance, conexiones y poder económico, éstas pueden actuar como agentes de cambio positivo, y desempeñar una función central en la lucha contra la corrupción. Sin embargo, únicamente 64 de 500 empresas publican en sus páginas web que cuentan con un programa de capacitación, lo cual indica que hay mucho trabajo por hacer en la socialización y entrenamiento de integridad.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['10']} cx='50%' cy='50%' outerRadius={200} label />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 12 */}
-                  <h1>Grafica 12</h1>
                   <View click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque muestra nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Para que directivos y empleados puedan dar cumplimiento a la política de integridad, deben recibir igualmente entrenamiento. IC500 arroja que, a pesar de los beneficios que conlleva la capacitación, el entrenamiento anticorrupción únicamente se menciona en 8% de los casos, de los cuales únicamente un punto porcentual corresponde a la mención de que el entrenamiento incluye a los directivos.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['11']} cx='50%' cy='50%' outerRadius={200} label />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                   </PieChart>
                 </Col>
                 <Col>
@@ -838,23 +1021,23 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* Grafica 14 */}
-                  <h1>Grafica 14</h1>
                   <View click={this.state.View.click} slide={this.clickView} textUp='La efectividad de la política anticorrupción o de integridad depende de que sea fácil acceder a ella...' textDown='Cuando la información de integridad se encuentra muy resguardada en la arquitectura de un sitio de internet, su impacto es similar a la de las empresas que no la publicitan pues es difícil conocer su contenido. Es decir, si es difícil acceder a la información, prácticamente se está mermando su publicidad y alcance y, por tanto, su efectividad. IC500 utilizó el número de clics necesarios para acceder a la información anticorrupción como una medida de accesibilidad, con los siguientes resultados: En una cuarta parte de los casos (134 de 500) la información anticorrupción o de integridad es de fácil acceso, pues se necesitan tres clics o menos para llegar a ella. En casi una tercera parte de las empresas (145 de 500 empresas) son necesarios entre 4 o 5 clics para encontrar la información, lo cual implica que la información está poco disponible pues requiere tiempo y esfuerzo por parte del usuario. Llama la atención que en 9% de las veces (45 de 500 empresas) la política anticorrupción está disponible a más de 5 clics o fue encontrada usando un buscador (no directamente en la página); adicionalmente, en 35% de las empresas (176 de 500 empresas) no es posible encontrar códigos de conducta en sus sitios de internet, ni siquiera usando un buscador. Por lo que podemos asegurar que en casi 9 de cada 20 empresas (44%) la información está tan poco accesible que es como si no estuviera pública. La suma de estos dos rubros indica que en 44% de las empresas la información está poco accesible dentro del sitio de la compañía, ya sea porque requiere 5 clics o más para encontrarla, porque no está en el sitio y fue necesario usar un buscador o porque no cuentan con ésta (221 de 500 empresas).' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['13']} cx='50%' cy='50%' outerRadius={200} label />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 15 */}
-                  <h1>Grafica 15</h1>
                   <View click={this.state.View.click} slide={this.clickView} textUp='El compromiso público de las empresas contra la corrupción y la divulgación de políticas relevantes refuerzan la integridad entre los empleados y...' textDown='El compromiso público de las empresas contra la corrupción y la divulgación de políticas relevantes refuerzan la integridad entre los empleados y los socios comerciales, fomentan tendencias positivas y marcan el ejemplo en las sociedades en las cuales tienen presencia Para que las políticas de integridad empresarial y anticorrupción tengan todos los efectos deseados, estas tienen que ser públicas, accesibles y explicitamente para México. Es por esto que, en la metodología se toma en cuenta el idioma de la información y la ubicación de la información en conjunto. Al considerar a las 500 empresas, se observa que el 68% publica, en efecto, en un sitio para México y en español. Otro 11% tiene disponible su información en español pero en un sitio global o para Latinoamérica, 3% de las empresas tiene su información en un sitio para México pero esta se encuentra al menos parcialmente en otro idioma, y finalmente,  17% publica parte o toda su información en un idioma distinto al español y en un sitio global. ' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['14']} cx='50%' cy='50%' outerRadius={200} label />
+                    <Tooltip formatter={val => val.toString() + '%'} />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* GRAFICA 16 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='El sector aeroespacial es el mejor evaluado, está conformado únicamente por dos empresas...' textDown='Para evaluar a las 500 empresas, se diseñó un cuestionario basado en el componente de la existencia, calidad y publicidad de las políticas anticorrupción del estudio Transparencia de la Información Corporativa (TRAC). La valoración de la empresa se hizo a partir de la información disponible en el portal de internet de cada empresa y se clasificó en cuatro ejes: Publicidad de los elementos básicos de una política anticorrupción integral. Alcance y socialización de la política anticorrupción de la empresa, tanto al interior como al exterior. Sistema de monitoreo, denuncia y sanciones. Accesibilidad de la información. La escala de puntuación es de 0 a 100. El puntaje más alto posible es de 100, pero ninguna empresa obtuvo esa calificación.' />
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas...' textDown='Al considerar a las 500 por el origen de su capital, es posible encontrar que las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas (37). Empresas de dos países registran un promedio superior a 70 puntos: Singapur y Colombia. Sin embargo, en conjunto, las empresas de estos dos países sólo representan a 3 empresas; una de Singapur y dos de Colombia. Solamente 10 empresas provenientes de ocho países obtuvieron calificaciones promedio por encima de 60 puntos. Luego de México (277), Estados Unidos es el país con más empresas (95) con un promedio de 45.8 de 100. El tercer país con más empresas en este ranking es Alemania (17) con un promedio de 43 puntos.' />
                   <BarChart
                     width={800}
                     height={600}
@@ -870,9 +1053,108 @@ class Home extends Component {
                     <Bar dataKey='Puntaje promedio' fill='#4271C4' />
                   </BarChart>
                 </Col>
+                <Col>
+                  {/* GRAFICA 17 */}
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas...' textDown='Al considerar a las 500 por el origen de su capital, es posible encontrar que las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas (37). Empresas de dos países registran un promedio superior a 70 puntos: Singapur y Colombia. Sin embargo, en conjunto, las empresas de estos dos países sólo representan a 3 empresas; una de Singapur y dos de Colombia. Solamente 10 empresas provenientes de ocho países obtuvieron calificaciones promedio por encima de 60 puntos. Luego de México (277), Estados Unidos es el país con más empresas (95) con un promedio de 45.8 de 100. El tercer país con más empresas en este ranking es Alemania (17) con un promedio de 43 puntos.' />                  
+                  <Row noWrap>
+                  <BarChart
+                    width={500}
+                    height={300}
+                    data={charts['16'].europa}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                    layout='vertical'
+                  >
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
+                    <YAxis type='category' dataKey='name' width={100} />
+                    <CartesianGrid strokeDasharray='3 3' />
+                    <Tooltip formatter={val => val.toString() + '%'} />
+                    <Legend />
+                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                  </BarChart>
+                  <BarChart
+                    width={500}
+                    height={300}
+                    data={charts['16'].latinoamerica}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                    layout='vertical'
+                  >
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
+                    <YAxis type='category' dataKey='name' width={100} />
+                    <CartesianGrid strokeDasharray='3 3' />
+                    <Tooltip formatter={val => val.toString() + '%'} />
+                    <Legend />
+                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                  </BarChart>
+                  </Row>
+                  <Row noWrap>
+                  <BarChart
+                    width={500}
+                    height={300}
+                    data={charts['16'].norteamerica}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                    layout='vertical'
+                  >
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
+                    <YAxis type='category' dataKey='name' width={100} />
+                    <CartesianGrid strokeDasharray='3 3' />
+                    <Tooltip formatter={val => val.toString() + '%'} />
+                    <Legend />
+                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                  </BarChart>
+                  <BarChart
+                    width={500}
+                    height={300}
+                    data={charts['16'].asia}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                    layout='vertical'
+                  >
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
+                    <YAxis type='category' dataKey='name' width={100} />
+                    <CartesianGrid strokeDasharray='3 3' />
+                    <Tooltip formatter={val => val.toString() + '%'} />
+                    <Legend />
+                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                  </BarChart>
+                  </Row>
+                </Col>
+                <Col>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas...' textDown='Al considerar a las 500 por el origen de su capital, es posible encontrar que las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas (37). Empresas de dos países registran un promedio superior a 70 puntos: Singapur y Colombia. Sin embargo, en conjunto, las empresas de estos dos países sólo representan a 3 empresas; una de Singapur y dos de Colombia. Solamente 10 empresas provenientes de ocho países obtuvieron calificaciones promedio por encima de 60 puntos. Luego de México (277), Estados Unidos es el país con más empresas (95) con un promedio de 45.8 de 100. El tercer país con más empresas en este ranking es Alemania (17) con un promedio de 43 puntos.' />
+                  <BarChart
+                    width={800}
+                    height={600}
+                    data={charts['17']}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                    layout='vertical'
+                  >
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '.0'}/>
+                    <YAxis type='category' dataKey='name' width={250} />
+                    <CartesianGrid strokeDasharray='3 3' />
+                    <Tooltip />
+                    <Legend />
+                    <Bar dataKey='Calificacion' fill='#4271C4' />
+                  </BarChart>
+                </Col>
+                <Col>
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas...' textDown='Al considerar a las 500 por el origen de su capital, es posible encontrar que las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas (37). Empresas de dos países registran un promedio superior a 70 puntos: Singapur y Colombia. Sin embargo, en conjunto, las empresas de estos dos países sólo representan a 3 empresas; una de Singapur y dos de Colombia. Solamente 10 empresas provenientes de ocho países obtuvieron calificaciones promedio por encima de 60 puntos. Luego de México (277), Estados Unidos es el país con más empresas (95) con un promedio de 45.8 de 100. El tercer país con más empresas en este ranking es Alemania (17) con un promedio de 43 puntos.' />
+                  <BarChart
+                    width={800}
+                    height={600}
+                    data={charts['18']}
+                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                    layout='vertical'
+                  >
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickFormatter={val=> val.toString() + '%'} />
+                    <YAxis type='category' dataKey='name' width={250} />
+                    <CartesianGrid strokeDasharray='3 3' />
+                    <Tooltip formatter={val => val.toString() + '%'} />
+                    <Legend />
+                    <Bar dataKey='500 empresas' fill='#4472C4' />
+                    <Bar dataKey='191 Empresas mejor calificadas (50 ptos. o más)' fill='#ED7D31' />
+                  </BarChart>
+                </Col>
               </Slider>
-              <SliderPrev onClick={() => this.changeSlider(sliderIndex - 1)}><i className='fa fa-chevron-left' aria-hidden='true' /></SliderPrev>
-              <SliderNext onClick={() => this.changeSlider(sliderIndex + 1)}><i className='fa fa-chevron-right' aria-hidden='true' /></SliderNext>
+              <SliderPrev onClick={this.changeSlider}><i className='fa fa-chevron-left' aria-hidden='true' /></SliderPrev>
+              <SliderNext onClick={() => this.changeSlider('next')}><i className='fa fa-chevron-right' aria-hidden='true' /></SliderNext>
             </CollapseBox>
             <i className={`fa fa-caret-down fa-4x ${rotate.graphics} icon`} aria-hidden='true' onClick={() => this.openBox('graphics')} />
           </Col>
@@ -956,21 +1238,12 @@ class Home extends Component {
       this.setState({isOpen, rotate})
     }
   }
-  changeSlider (index) {
-    var i = index
-    if (i > 18) {
-      i = 0
-      this.setState({sliderIndex: i})
-      this.refs.slider.slickGoTo(i)
+  changeSlider (button) {
+    if (button === 'next') {
+      this.refs.slider.slickNext()
+    } else {
+      this.refs.slider.slickPrev()
     }
-    if (i < 0) {
-      i = 18
-      this.setState({sliderIndex: i})
-      this.refs.slider.slickGoTo(i)
-    }
-    this.setState({sliderIndex: i})
-    this.refs.slider.slickGoTo(i)
-    this.clickView()
   }
   clickView () {
     var state = this.state.View
