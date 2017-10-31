@@ -15,7 +15,6 @@ export default class Article extends Component {
   render () {
     const slug = this.props.match.params.articulo
     const art = dataArrayArticulo.filter(articulo => articulo.slug === slug)
-    console.log(art[0])
     return (
       <div>
         <header>
@@ -24,7 +23,7 @@ export default class Article extends Component {
         <Main>
           <Container style={{width: '70%'}}>
             <Route>HOME > NOTICIAS > EXPANSION INDICE 500</Route>
-          
+
             <Articles data={art[0]} />
           </Container>
           <News disabled />
