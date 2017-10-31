@@ -115,7 +115,7 @@ const Footer = props => (
     </Row>
     <SubFooter>
       <Row>
-        <Copy>Copyright- 2017, All Right Reserved</Copy>
+        <Copy>Copyright &copy; 2017, Todos los Derechos Reservados</Copy>
       </Row>
     </SubFooter>
   </Wrapper>
