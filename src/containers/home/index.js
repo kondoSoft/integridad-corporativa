@@ -39,12 +39,12 @@ import {
 import Slider from 'react-slick'
 import './styles.css'
 
-const RADIAN = Math.PI / 180         
+const RADIAN = Math.PI / 180
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5
   const x  = cx + radius * Math.cos(-midAngle * RADIAN)
   const y = cy  + radius * Math.sin(-midAngle * RADIAN)
- 
+
   return (
     <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'}  dominantBaseline="central">
       {`${(percent * 100).toFixed(0)}%`}
@@ -54,7 +54,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
 class Home extends Component {
   constructor (props) {
-    super(props)   
+    super(props)
     this.state = {
       dataActualizada: [
         {name: 'aeroe', uv: 10, pv: 100, amt: 100},
@@ -496,7 +496,7 @@ class Home extends Component {
           { name: 'Aeropuertos y Servicios Auxiliares', 'Calificacion': 9.8 },
           { name: 'Sistema de Transporte Colectivo', 'Calificacion': 7.8 }
         ],
-        '18': [ 
+        '18': [
           { name: 'Servicios financieros',
             '191 Empresas mejor calificadas (50 ptos. o más)': 9.4,
             '500 empresas': 13 },
@@ -927,8 +927,8 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip formatter={val => val.toString() + '%'} />
                     <Legend />
-                    <Bar dataKey='Si' fill='#ED7D31' stackId='a' barSize={50} />
-                    <Bar dataKey='No' fill='#92CF4F' stackId='a' barSize={50} />
+                    <Bar dataKey='Si' fill='#92CF4F' stackId='a' barSize={50} />
+                    <Bar dataKey='No' fill='#ED7D31' stackId='a' barSize={50} />
                   </BarChart>
                 </Col>
                 <Col>
@@ -1075,7 +1075,7 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* GRAFICA 17 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas...' textDown='Al considerar a las 500 por el origen de su capital, es posible encontrar que las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas (37). Empresas de dos países registran un promedio superior a 70 puntos: Singapur y Colombia. Sin embargo, en conjunto, las empresas de estos dos países sólo representan a 3 empresas; una de Singapur y dos de Colombia. Solamente 10 empresas provenientes de ocho países obtuvieron calificaciones promedio por encima de 60 puntos. Luego de México (277), Estados Unidos es el país con más empresas (95) con un promedio de 45.8 de 100. El tercer país con más empresas en este ranking es Alemania (17) con un promedio de 43 puntos.' />                  
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas...' textDown='Al considerar a las 500 por el origen de su capital, es posible encontrar que las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas (37). Empresas de dos países registran un promedio superior a 70 puntos: Singapur y Colombia. Sin embargo, en conjunto, las empresas de estos dos países sólo representan a 3 empresas; una de Singapur y dos de Colombia. Solamente 10 empresas provenientes de ocho países obtuvieron calificaciones promedio por encima de 60 puntos. Luego de México (277), Estados Unidos es el país con más empresas (95) con un promedio de 45.8 de 100. El tercer país con más empresas en este ranking es Alemania (17) con un promedio de 43 puntos.' />
                   <Row noWrap>
                   <BarChart
                     width={500}

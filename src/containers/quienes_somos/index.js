@@ -38,10 +38,10 @@ export default class AboutUs extends Component {
                 <Anchor href='https://www.tm.org.mx/' target='_blank' bold>Transparencia Mexicana</Anchor> y la revista <Anchor href='http://expansion.mx/' target='_blank' bold>Expansión</Anchor> busca dar a conocer los avances en el compromiso
               </ContentText>
               <ContentText className='contentTextLast'>
-                  anticorrupción de las empresas mas grandes del país.
+                  anticorrupción de las empresas más grandes del país.
               </ContentText>
               <ContentText className='contentTextFlex'>
-                <p style={{fontWeight: 600}}>&nbsp;500 Frente a la Corrupción, Integridad Corporativa&nbsp;</p> se basa en el principio de que la
+                <p style={{fontWeight: 600}}>500 Frente a la Corrupción, Integridad Corporativa&nbsp;</p> se basa en el principio de que la
               </ContentText>
               <ContentText className='contentText'>
                 publicidad de las políticas de integridad de las empresas se traduce en una mejor calidad y
@@ -60,7 +60,7 @@ export default class AboutUs extends Component {
               </ContentText>
               <br />
               <ContentText className='contentTextFlex'>
-                De esa manera, <p style={{fontWeight: 600}}>&nbsp;500 Frente a la Corrupción, Integridad Corporativa&nbsp;</p> a la lucha anticorrupción
+                De esa manera, <p style={{fontWeight: 600}}>&nbsp;500 Frente a la Corrupción, Integridad Corporativa&nbsp;</p>se une a la lucha anticorrupción
               </ContentText>
               <ContentText className='contentText'>
                 en México y facilita la adopción y publicidad de las políticas de integridad en el sector
