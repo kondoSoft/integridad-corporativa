@@ -476,7 +476,7 @@ class Home extends Component {
           </Row>
           <Row style={{display: 'flex', flexDirection: 'column', margin: 0, flexWrap: 'initial', alignItems: 'initial', justifyContent: 'initial', padding: 20}}>
             <Title style={{marginTop: 0, paddingTop: 10}} color='#ED4630'>Aviso</Title>
-            <p className='aviso' style={{textAlign: 'center'}}>Disponible hasta el 15 de noviembre.</p>
+            <p className='aviso' style={{textAlign: 'center'}}>Disponible a partir del 15 de noviembre.</p>
           </Row>
           <Row>
             <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA EL INFORME</Button>

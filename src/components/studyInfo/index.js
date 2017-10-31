@@ -17,8 +17,8 @@ const Image = styled.img`
 `
 
 const ImageContainer = styled.figure`
-  width: 600px;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 `
 
 const Col = styled.div`
