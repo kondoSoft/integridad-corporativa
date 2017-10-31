@@ -141,7 +141,7 @@ const NewsWall = (props) => {
             </Col>
           </Row>
           <Row noMargin width='100%' padding='10px'>
-            <CalendarEvents href='#'>
+            <CalendarEvents href='/eventos'>
               <TextCalendar>
                 <p>Calendario de Publicaciones </p> <br /><p> y eventos</p>
               </TextCalendar>

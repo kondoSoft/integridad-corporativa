@@ -83,12 +83,12 @@ class Home extends Component {
       isOpen: {
         graphics: true,
         data: false,
-        newsWall: false
+        newsWall: true
       },
       rotate: {
-        graphics: '',
+        graphics: 'rotateUp',
         data: '',
-        newsWall: ''
+        newsWall: 'rotateUp'
       },
       modalOpen: true,
       sliderIndex: 0,
@@ -462,8 +462,8 @@ class Home extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1,
-      initialSlide: 16
+      slidesToScroll: 1
+      // initialSlide: 16
     }
     return (
       <div>
@@ -481,7 +481,7 @@ class Home extends Component {
             <p className='aviso'>Disponible hasta el 15 de noviembre.</p>
           </Row>
           <Row>
-            <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA EL INFORME EJECUTIVO</Button>
+            <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA EL INFORME</Button>
             <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA LA BASE DE DATOS</Button>
           </Row>
         </section>
@@ -711,7 +711,7 @@ class Home extends Component {
                     layout='vertical'
                   >
                     <XAxis type='number' />
-                    <YAxis type='category' dataKey='name' />
+                    <YAxis type='category' dataKey='name' width={200} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />
@@ -744,7 +744,7 @@ class Home extends Component {
                     layout='vertical'
                   >
                     <XAxis type='number' />
-                    <YAxis type='category' dataKey='name' />
+                    <YAxis type='category' dataKey='name' width={200} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />

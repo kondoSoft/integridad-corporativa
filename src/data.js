@@ -147,6 +147,7 @@ export const dataArticulo = {
 }
 export const dataArrayArticulo = [
   {
+    slug: 'trans-ant',
     titulo: 'Transparencia y anticorrupción en 100 multinacionales de economías emergentes: informe TRAC.',
     descripcion: `Transparencia Internacional y Transparencia Mexicana hicieron pública la edición 2016 del informe Transparencia de la información corporativa: multinacionales de economías emergentes (TRAC). Este informe evalúa la disponibilidad de información corporativa sobre sus programas anticorrupción, su estructura organizacional y sobre sus actividades y resultados financieros en los países en los que operan.
 
@@ -166,6 +167,7 @@ Transparencia Internacional indicó que los resultados obtenidos están lejos a�
     mes: 'Jul'
   },
   {
+    slug: 'trac-2014',
     titulo: 'TRAC 2014: ¿Qué tan transparentes son las multinacionales?',
     descripcion: `El informe sobre Transparencia en Información Corporativa –TRAC– de Transparencia Internacional analiza la disponibilidad pública de información corporativa de las multinacionales más grandes del mundo, en tres dimensiones:
 
@@ -175,12 +177,6 @@ Información desglosada por país: información sobre las operaciones en cada pa
  La edición 2014 de este informe analiza la disponibilidad de información de las 124 multinacionales que cotizan en bolsa, más grandes del mundo. 101 de las 124 empresas obtenidas obtuvieron una puntuación menor a 5, donde donde 10 es mayor transparencia y 0 menor transparencia, siendo el promedio de 3.8. De las 124 empresas analizadas, 81 operan en México, es decir, el 65% de las empresas incluidas en el informe y sólo una es mexicana: América Móvil.`,
     fechaCreacion: '5-11-2017',
     autor: 'Ignacio Rodriguez Cruz',
-    // categorias: [
-    //   'noticias',
-    //   'corrupcion',
-    //   'estados',
-    //   'problemas'
-    // ],
     autor: 'TRANSPARENCIA MEXICANA',
     dia: '4',
     mes: 'Nov'
