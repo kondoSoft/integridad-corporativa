@@ -97,7 +97,7 @@ export const dataSources = [
     url: ' http://www.diputados.gob.mx/LeyesBiblio/pdf/9_260617.pdf'
   },
   {
-    title: 'Ernst & Young, ',
+    title: 'Ernst & Young,',
     book: '2011. Siete pasos para crear un programa anticorrupción sólido.',
     url: 'http://www.ey.com/mx/es/services/assurance/fraud-investigation---dispute-services/siete-pasos-para-crear-un-programa-anticorrupcion-solido--disenar-e-implementar-el-programa'
   },

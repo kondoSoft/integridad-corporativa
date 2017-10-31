@@ -153,7 +153,7 @@ const NewsWall = (props) => {
         </Col>
       </Row>
       <Row disabled={props.disabled}>
-        <Button invert>VER MÁS</Button>
+        <a href='/noticias'><Button invert>VER MÁS</Button></a>
       </Row>
     </Wrapper>
   )
