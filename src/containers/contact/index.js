@@ -10,7 +10,7 @@ class Contact extends Component {
     return (
       <div>
         <header>
-          <SectionBanner image={'assets/img/contacto_background.jpg'} title='CONTACTO' withBar />
+          <SectionBanner image={'/assets/img/contacto_background.jpg'} title='CONTACTO' withBar />
         </header>
         <ContactForm />
         <Footer />

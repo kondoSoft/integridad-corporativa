@@ -490,13 +490,13 @@ export const News = (props) => {
         <hr style={{borderColor: '#E4E5E4', width: '80%'}} />
         <NewsSponsors>
           <LogoLink href='http://expansion.mx/' target='blank'>
-            <Sponsors src={'assets/img/logo_expansion.jpg'} />
+            <Sponsors src={'/assets/img/logo_expansion.jpg'} />
           </LogoLink>
           <LogoLink href='https://contralacorrupcion.mx/' target='blank'>
-            <Sponsors isMCCI src={'assets/img/mcci.png'} />
+            <Sponsors isMCCI src={'/assets/img/mcci.png'} />
           </LogoLink>
           <LogoLink href='https://www.tm.org.mx/' target='blank'>
-            <Sponsors style={{width: '100%'}} src={'assets/img/transparencia_mexicana.png'} />
+            <Sponsors style={{width: '100%'}} src={'/assets/img/transparencia_mexicana.png'} />
           </LogoLink>
         </NewsSponsors>
         <hr style={{borderColor: '#E4E5E4', width: '80%'}} />

@@ -14,7 +14,7 @@ class Methodology extends Component {
     return (
       <div>
         <header>
-          <SectionBanner title='Metodologia' image='assets/img/metodologia_background.jpg' withBar />
+          <SectionBanner title='Metodologia' image='/assets/img/metodologia_background.jpg' withBar />
         </header>
         <Row>
           <RankingInfo />
@@ -23,7 +23,7 @@ class Methodology extends Component {
           <StudyInfo />
         </Row>
         <Row>
-          <AxisInfo backgroundImage='assets/img/metodologia_img2.jpg' />
+          <AxisInfo backgroundImage='/assets/img/metodologia_img2.jpg' />
         </Row>
         <Row>
           <ScoreInfo />
