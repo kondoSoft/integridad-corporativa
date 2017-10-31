@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react'
 import styled from 'styled-components'
 import Col from '../col'
 import {LogoLink} from '../'
@@ -16,6 +16,7 @@ const Row = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   width: 80%;
 `
 
@@ -62,63 +63,109 @@ const Image = styled.img`
   width: 50%;
   margin: 20px 0px;
 `
-
-const Footer = props => (
-  <Wrapper>
-    <Row>
-      <Col>
-        <Logo src='/assets/img/logofooter.png' alt='Logo 500' />
-      </Col>
-      <Col>
-        <Paragraph>
-          Transparencia Mexicana y Mexicanos contra la Corrupción y la
-          impunidad, en alianza con la Revista Expansión, presentan "500
-          Frente a la Corrupción. Integridad Corporativa", el primer diagnóstico
-          sobre politicas anticorrupción o de integridad de las 500 empresas
-          mas importantes de México.
-        </Paragraph>
-      </Col>
-      <Col>
+const RowColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+`
+class Footer extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      isHover: false,
+      social: ''
+    }
+    this.isHover = this.isHover.bind(this)
+    this.isLeave = this.isLeave.bind(this)
+  }
+  render () {
+    return (
+      <Wrapper>
         <Row>
-          <Anchor href='https://facebook.com' target='_blank' rel='noopener noreferrer'>
-            <i className='fa fa-facebook' aria-hidden='true' />
-          </Anchor>
-          <Anchor href='https://twitter.com' target='_blank' rel='noopener noreferrer'>
-            <i className='fa fa-twitter' aria-hidden='true' />
-          </Anchor>
-          <Anchor href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
-            <i className='fa fa-instagram' aria-hidden='true' />
-          </Anchor>
-          <Anchor href='https://youtube.com' target='_blank' rel='noopener noreferrer'>
-            <i className='fa fa-youtube-play' aria-hidden='true' />
-          </Anchor>
+          <Col>
+            <Logo src='/assets/img/logofooter.png' alt='Logo 500' />
+          </Col>
+          <Col>
+            <Paragraph>
+              Transparencia Mexicana y Mexicanos contra la Corrupción y la
+              impunidad, en alianza con la Revista Expansión, presentan "500
+              Frente a la Corrupción. Integridad Corporativa", el primer diagnóstico
+              sobre politicas anticorrupción o de integridad de las 500 empresas
+              mas importantes de México.
+            </Paragraph>
+          </Col>
+          <Row>
+            <RowColumn>
+              <Col style={{flexDirection: 'initial'}}>
+                <Anchor onMouseEnter={() => this.isHover('fb')} onMouseLeave={this.isLeave} href='https://facebook.com' target='_blank' rel='noopener noreferrer'>
+                  <i className='fa fa-facebook' aria-hidden='true' />
+                </Anchor>
+                <Anchor onMouseEnter={() => this.isHover('twt')} onMouseLeave={this.isLeave} href='https://twitter.com' target='_blank' rel='noopener noreferrer'>
+                  <i className='fa fa-twitter' aria-hidden='true' />
+                </Anchor>
+                <Anchor href='https://instagram.com' target='_blank' rel='noopener noreferrer'>
+                  <i className='fa fa-instagram' aria-hidden='true' />
+                </Anchor>
+                <Anchor href='https://youtube.com' target='_blank' rel='noopener noreferrer'>
+                  <i className='fa fa-youtube-play' aria-hidden='true' />
+                </Anchor>
+              </Col>
+              {
+                this.state.isHover
+                  ? <div onMouseEnter={() => this.isHover(this.state.social)} onMouseLeave={this.isLeave} style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
+                    <a href={(this.state.social === 'fb') ? 'https://facebook.com/MXvsCORRUPCION' : 'https://twitter.com/MXvsCORRUPCION'} target='_blank' rel='noopener noreferrer' style={{fontSize: 14, margin: '10px 5px 8px 0px', textDecoration: 'none', color: 'black'}}>
+                      @MXvsCORRUPCION
+                    </a>
+                    <a href={(this.state.social === 'fb') ? 'https://facebook.com/TransparenciaMexicana' : 'https://twitter.com/IntegridadMx'} target='_blank' rel='noopener noreferrer' style={{fontSize: 14, margin: '5px 5px 8px 0px', textDecoration: 'none', color: 'black'}}>
+                      {
+                        (this.state.social === 'fb') ? '@TransparenciaMexicana' : '@IntegridadMX'
+                      }
+                    </a>
+                  </div>
+                  : null
+              }
+            </RowColumn>
+          </Row>
         </Row>
-      </Col>
-    </Row>
-    <Hr />
-    <Row>
-      <Col>
-        <LogoLink href='https://www.tm.org.mx/' target='blank'>
-          <Image src='/assets/img/transparencia_mexicana_footer.png' alt='' />
-        </LogoLink>
-      </Col>
-      <Col>
-        <LogoLink href='http://expansion.mx/' target='blank'>
-          <Image src='/assets/img/expansion_footer.png' alt='' />
-        </LogoLink>
-      </Col>
-      <Col>
-        <LogoLink href='https://contralacorrupcion.mx/' target='blank'>
-          <Image src='/assets/img/mcci_footer.png' alt='' />
-        </LogoLink>
-      </Col>
-    </Row>
-    <SubFooter>
-      <Row>
-        <Copy>Copyright &copy; 2017, Todos los Derechos Reservados</Copy>
-      </Row>
-    </SubFooter>
-  </Wrapper>
-)
-
+        <Hr />
+        <Row>
+          <Col>
+            <LogoLink href='https://www.tm.org.mx/' target='blank'>
+              <Image src='/assets/img/transparencia_mexicana_footer.png' alt='' />
+            </LogoLink>
+          </Col>
+          <Col>
+            <LogoLink href='http://expansion.mx/' target='blank'>
+              <Image src='/assets/img/expansion_footer.png' alt='' />
+            </LogoLink>
+          </Col>
+          <Col>
+            <LogoLink href='https://contralacorrupcion.mx/' target='blank'>
+              <Image src='/assets/img/mcci_footer.png' alt='' />
+            </LogoLink>
+          </Col>
+        </Row>
+        <SubFooter>
+          <Row>
+            <Copy>Copyright- 2017, All Right Reserved</Copy>
+          </Row>
+        </SubFooter>
+      </Wrapper>
+    )
+  }
+  isHover (social) {
+    this.setState({
+      isHover: true,
+      social
+    })
+  }
+  isLeave () {
+    this.setState({
+      isHover: false,
+      social: ''
+    })
+  }
+}
 export default Footer
