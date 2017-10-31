@@ -97,7 +97,7 @@ const ContactForm = props => (
     <Input type='text' placeholder='Nombre' />
     <Input type='email' placeholder='Correo electrónico' />
     <TextArea name='' id='' cols='30' rows='10' placeholder='Mensaje' />
-    <Submit>enviar</Submit>
+    <Submit onClick={e => e.preventDefault()} disabled>enviar</Submit>
   </Form>
 )
 
