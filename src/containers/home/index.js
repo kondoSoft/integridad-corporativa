@@ -474,11 +474,9 @@ class Home extends Component {
           <Row>
             <Title className='title'>EDICIÓN 2017</Title>
           </Row>
-          <Row>
-            <Title color='#ED4630'>Aviso</Title>
-          </Row>
-          <Row noMargin>
-            <p className='aviso'>Disponible hasta el 15 de noviembre.</p>
+          <Row style={{display: 'flex', flexDirection: 'column', margin: 0, flexWrap: 'initial', alignItems: 'initial', justifyContent: 'initial', padding: 20}}>
+            <Title style={{marginTop: 0, paddingTop: 10}} color='#ED4630'>Aviso</Title>
+            <p className='aviso' style={{textAlign: 'center'}}>Disponible hasta el 15 de noviembre.</p>
           </Row>
           <Row>
             <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA EL INFORME</Button>
@@ -872,9 +870,9 @@ class Home extends Component {
         </Section>
         <Section background='#F2F2F2'>
           <Title color={(isOpen.data) ? '#ED4630' : ''}>INFORMACIÓN ACTUALIZADA</Title>
-          <Subtitle>DE LAS 500 FRENTE A LA CORRUPCIÓN</Subtitle>
+          <Subtitle>APARTIR DEL 15 DE NOVIEMBRE</Subtitle>
           <Col>
-            <CollapseBox isOpen={isOpen.data} height='1050px'>
+            <CollapseBox height='1050px'>
               <Row noMargin>
                 <TabsShowBy Graphics={this.changeGraphics} />
               </Row>
@@ -896,7 +894,8 @@ class Home extends Component {
                 <Disclaimer />
               </Row>
             </CollapseBox>
-            <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' onClick={() => this.openBox('data')} />
+            <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' />
+            {/* <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' onClick={() => this.openBox('data')} /> */}
           </Col>
         </Section>
         <Section>

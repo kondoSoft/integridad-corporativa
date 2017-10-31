@@ -114,8 +114,7 @@ const NewsWall = (props) => {
               onPause={props.onPlayPauseVideo}
             />
             <Description isPlaying={props.isPlaying}>
-              <Title>videos</Title>
-              <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.</Paragraph>
+              <Paragraph>¿Por qué las empresas deben tener códigos de conducta?</Paragraph>
             </Description>
           </VideoContainer>
         </Col>

@@ -45,7 +45,8 @@ class NavigationBar extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      isHover: false
+      isHover: false,
+      social: ''
     }
     this.isHover = this.isHover.bind(this)
     this.isLeave = this.isLeave.bind(this)
@@ -91,10 +92,10 @@ class NavigationBar extends Component {
           </NavList>
           <NavList>
             <NavItem>
-              <NavLink onMouseEnter={this.isHover} onMouseLeave={this.isLeave} href='https://facebook.com' target='_blank'>
+              <NavLink onMouseEnter={() => this.isHover('fb')} onMouseLeave={this.isLeave} >
                 <i className='fa fa-facebook' aria-hidden='true' />
               </NavLink>
-              <NavLink onMouseEnter={this.isHover} onMouseLeave={this.isLeave} href='https://twitter.com' target='_blank'>
+              <NavLink onMouseEnter={() => this.isHover('twt')} onMouseLeave={this.isLeave} >
                 <i className='fa fa-twitter' aria-hidden='true' />
               </NavLink>
               <NavLink onMouseEnter={this.isHover} onMouseLeave={this.isLeave} href='https://instagram.com' target='_blank'>
@@ -104,7 +105,7 @@ class NavigationBar extends Component {
                 <i className='fa fa-youtube-play' aria-hidden='true' />
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem style={{display: 'none'}}>
               <NavLink>
                 <i className='fa fa-search' aria-hidden='true' />
               </NavLink>
@@ -113,13 +114,15 @@ class NavigationBar extends Component {
         </NavBar>
         {
           this.state.isHover
-          ? <div onMouseEnter={this.isHover} onMouseLeave={this.isLeave} style={{display: 'flex', justifyContent: 'flex-end', position: 'absolute', top: 57, right: 0, zIndex: 4, width: '20%'}}>
+          ? <div onMouseEnter={() => this.isHover(this.state.social)} onMouseLeave={this.isLeave} style={{display: 'flex', justifyContent: 'flex-end', position: 'absolute', top: 57, right: 0, zIndex: 4, width: '20%'}}>
             <div style={{backgroundColor: '#ED4630', display: 'flex'}}>
-              <NavLink isSocial>
-                @Expansión
-              </NavLink>
-              <NavLink isSocial>
-                @TransparenciaMexicana
+              <NavLink isSocial href={(this.state.social === 'fb') ? 'https://facebook.com/MXvsCORRUPCION' : 'https://twitter.com/MXvsCORRUPCION'} target='blank'>
+                  @MXvsCORRUPCION
+                </NavLink>
+              <NavLink isSocial href={(this.state.social === 'fb') ? 'https://facebook.com/TransparenciaMexicana' : 'https://twitter.com/IntegridadMx'} target='blank'>
+                {
+                    (this.state.social === 'fb') ? '@TransparenciaMexicana' : '@IntegridadMX'
+                  }
               </NavLink>
             </div>
           </div>
@@ -128,14 +131,16 @@ class NavigationBar extends Component {
       </section>
     )
   }
-  isHover () {
+  isHover (social) {
     this.setState({
-      isHover: true
+      isHover: true,
+      social
     })
   }
   isLeave () {
     this.setState({
-      isHover: false
+      isHover: false,
+      social: ''
     })
   }
 }
