@@ -5,6 +5,9 @@ import {
   Row,
   Button
 } from '../index'
+import {
+  Link
+} from 'react-router-dom'
 
 const Wrapper = styled.div`
   display: flex;
@@ -121,22 +124,22 @@ const NewsWall = (props) => {
         <Col>
           <Row noMargin>
             <Col Ext>
-              <a href='#'>
+              <Link to='/noticias/trac-2014'>
                 <Image src={props.data.articles[0].image} />
                 <Description width='98%'>
-                  <Title small>integrity report</Title>
-                  <Paragraph fontSize='12px' width='100%'>Enterate de los resultados del estudio de Trasparencia Mexicana</Paragraph>
+                  <Title small>TRAC 2014</Title>
+                  <Paragraph fontSize='12px' width='100%'>¿Qué tan transparentes son las multinacionales?</Paragraph>
                 </Description>
-              </a>
+              </Link>
             </Col>
             <Col Ext>
-              <a href='#'>
+              <Link to='/noticias/trans-ant'>
                 <Image src={props.data.articles[1].image} />
                 <Description width='98%'>
-                  <Title small>blog invitado</Title>
-                  <Paragraph fontSize='12px' width='100%'>Expansión: índice 500 en 2017. Entre escándalos, publicidad y compliance</Paragraph>
+                  <Title small>TRAC 2016</Title>
+                  <Paragraph fontSize='12px' width='100%'>Transparencia y anticorrupción en 100 multinacionales de economías emergentes: informe TRAC.</Paragraph>
                 </Description>
-              </a>
+              </Link>
             </Col>
           </Row>
           <Row noMargin width='100%' padding='10px'>
