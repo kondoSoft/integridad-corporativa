@@ -24,7 +24,7 @@ const ShareBox = styled.div`
 `
 const OtherArticles = styled.div`
   width: 100%;
-  display: flex;
+  display: none;
   padding: 10px 0px;
   align-items: center;
   justify-content: space-between;
