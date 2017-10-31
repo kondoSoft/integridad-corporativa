@@ -957,55 +957,62 @@ class Home extends Component {
                   <PieChart width={800} height={600}>
                     <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
+                    <Legend />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 7 */}
-                  <View isMore title={'Grafica 7'} click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque demuestra que nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Además, al no ser selectiva, ofrece certeza ante denuncias por violaciones al código de ética por parte de empleados, socios y proveedores, y permite a la empresa demostrar que ha tomado medidas anticorrupción comprehensivas ante una investigación de la autoridad. El análisis del segundo eje de IC500 “Alcance y socialización de la política anticorrupción” arroja que sólo una tercera parte de las empresas especifican públicamente que su política anticorrupción abarca tanto a los directivos como a los empleados. Estas proporciones se explican como sigue: en dos de cada cinco empresas (202 de 500) no fue posible determinar quién está sujeto a la política de la integridad debido a que no cuentan con ésta o con un código de ética o conducta. De las empresas que sí publicaron ya sea una política anticorrupción o un código de ética o conducta, poco más de la mitad (159) consideraron que empleados y directivos son sujetos de este documento. Es decir, prácticamente sólo una tercera parte de las empresas está enviando la señal de que la política anticorrupción no es selectiva y aplica para todos.' />
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque demuestra que nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Además, al no ser selectiva, ofrece certeza ante denuncias por violaciones al código de ética por parte de empleados, socios y proveedores, y permite a la empresa demostrar que ha tomado medidas anticorrupción comprehensivas ante una investigación de la autoridad. El análisis del segundo eje de IC500 “Alcance y socialización de la política anticorrupción” arroja que sólo una tercera parte de las empresas especifican públicamente que su política anticorrupción abarca tanto a los directivos como a los empleados. Estas proporciones se explican como sigue: en dos de cada cinco empresas (202 de 500) no fue posible determinar quién está sujeto a la política de la integridad debido a que no cuentan con ésta o con un código de ética o conducta. De las empresas que sí publicaron ya sea una política anticorrupción o un código de ética o conducta, poco más de la mitad (159) consideraron que empleados y directivos son sujetos de este documento. Es decir, prácticamente sólo una tercera parte de las empresas está enviando la señal de que la política anticorrupción no es selectiva y aplica para todos.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['06']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
+                    <Legend />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 8 */}
-                  <View isMore title={'Grafica 8'} click={this.state.View.click} slide={this.clickView} textUp='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual...' textDown='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual se concretan las prácticas anticorrupción y, en este sentido, es sumamente importante que estén sujetos a dichas políticas. Las empresas deben asegurarse de que los empleados y otros intermediarios que actúan en representación suya estén sujetos a las políticas anticorrupción, y de que reciban el asesoramiento y la capacitación adecuados.' />
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual...' textDown='Los empleados, agentes y otros intermediarios que actúan en nombre de las empresas suelen ser un vehículo a través del cual se concretan las prácticas anticorrupción y, en este sentido, es sumamente importante que estén sujetos a dichas políticas. Las empresas deben asegurarse de que los empleados y otros intermediarios que actúan en representación suya estén sujetos a las políticas anticorrupción, y de que reciban el asesoramiento y la capacitación adecuados.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['07']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
+                    <Legend />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 9 */}
-                  <View isMore title={'Grafica 9'} click={this.state.View.click} slide={this.clickView} textUp='Dado que las 500 empresas más grandes de México son líderes en sus respectivos sectores tienen el potencial de influir directamente en las prácticas de integridad de sus socios comerciales...' textDown='Es por ello que los resultados que IC500 arroja sobre una mención expresa acerca de los socios comerciales en la política de integridad de la empresa son particularmente relevantes, pues entre las 500 empresas más grandes en México solamente 2 de cada 10 (115 de 500 empresas) incorporan menciones a sus socios comerciales -proveedores y contratistas, por ejemplo-. De éstas, una de cada 10 (59 de 500 empresas) publica una política específica para socios, mientras que la otra mitad (56) alude a sus socios como sujetos de su política general.' />
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Dado que las 500 empresas más grandes de México son líderes en sus respectivos sectores tienen el potencial de influir directamente en las prácticas de integridad de sus socios comerciales...' textDown='Es por ello que los resultados que IC500 arroja sobre una mención expresa acerca de los socios comerciales en la política de integridad de la empresa son particularmente relevantes, pues entre las 500 empresas más grandes en México solamente 2 de cada 10 (115 de 500 empresas) incorporan menciones a sus socios comerciales -proveedores y contratistas, por ejemplo-. De éstas, una de cada 10 (59 de 500 empresas) publica una política específica para socios, mientras que la otra mitad (56) alude a sus socios como sujetos de su política general.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['08']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
+                    <Legend />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 10 */}
-                  <View isMore title={'Grafica 10'} click={this.state.View.click} slide={this.clickView} textUp='Es sumamente importante que las políticas anticorrupción sean claras y precisas para que sean aplicables y tengan un mayor impacto...' textDown='De acuerdo con la información en sus páginas de internet, dos de cada cinco empresas (218 de 500 empresas) divulgan una definición de conflicto de interés; mientras que 14% (69 de 500 empresas) incluyen otras definiciones como soborno, pago facilitador o tráfico de influencia. De las 69 empresas que consideran otras definiciones de actos de corrupción, 61 definen el concepto de conflicto de intereses.' />
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Es sumamente importante que las políticas anticorrupción sean claras y precisas para que sean aplicables y tengan un mayor impacto...' textDown='De acuerdo con la información en sus páginas de internet, dos de cada cinco empresas (218 de 500 empresas) divulgan una definición de conflicto de interés; mientras que 14% (69 de 500 empresas) incluyen otras definiciones como soborno, pago facilitador o tráfico de influencia. De las 69 empresas que consideran otras definiciones de actos de corrupción, 61 definen el concepto de conflicto de intereses.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['09'].left} cx='25%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
                     <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
-                    <Tooltip  />
+                    <Tooltip />
+                    <Legend />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 11 */}
-                  <View isMore title={'Grafica 11'} click={this.state.View.click} slide={this.clickView} textUp='Capacitar a sus empleados y directivos, así como adoptar prácticas comerciales éticas que contribuyan a detectar y prevenir la corrupción, permite a las 500 compañías más grandes en México sumarse a la lucha anticorrupción...' textDown='Debido a su alcance, conexiones y poder económico, éstas pueden actuar como agentes de cambio positivo, y desempeñar una función central en la lucha contra la corrupción. Sin embargo, únicamente 64 de 500 empresas publican en sus páginas web que cuentan con un programa de capacitación, lo cual indica que hay mucho trabajo por hacer en la socialización y entrenamiento de integridad.' />
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Capacitar a sus empleados y directivos, así como adoptar prácticas comerciales éticas que contribuyan a detectar y prevenir la corrupción, permite a las 500 compañías más grandes en México sumarse a la lucha anticorrupción...' textDown='Debido a su alcance, conexiones y poder económico, éstas pueden actuar como agentes de cambio positivo, y desempeñar una función central en la lucha contra la corrupción. Sin embargo, únicamente 64 de 500 empresas publican en sus páginas web que cuentan con un programa de capacitación, lo cual indica que hay mucho trabajo por hacer en la socialización y entrenamiento de integridad.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['10']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
+                    <Legend />
                   </PieChart>
                 </Col>
                 <Col>
                   {/* Grafica 12 */}
-                  <View isMore title={'Grafica 12'} click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque muestra nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Para que directivos y empleados puedan dar cumplimiento a la política de integridad, deben recibir igualmente entrenamiento. IC500 arroja que, a pesar de los beneficios que conlleva la capacitación, el entrenamiento anticorrupción únicamente se menciona en 8% de los casos, de los cuales únicamente un punto porcentual corresponde a la mención de que el entrenamiento incluye a los directivos.' />
+                  <View isMore click={this.state.View.click} slide={this.clickView} textUp='Es importante que la política anticorrupción indique expresamente que los directivos son sujetos de cumplimiento porque muestra nadie queda al margen de las sanciones asociadas a las prácticas anticorrupción...' textDown='Para que directivos y empleados puedan dar cumplimiento a la política de integridad, deben recibir igualmente entrenamiento. IC500 arroja que, a pesar de los beneficios que conlleva la capacitación, el entrenamiento anticorrupción únicamente se menciona en 8% de los casos, de los cuales únicamente un punto porcentual corresponde a la mención de que el entrenamiento incluye a los directivos.' />
                   <PieChart width={800} height={600}>
                     <Pie data={charts['11']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
+                    <Legend />
                   </PieChart>
                 </Col>
                 <Col>
@@ -1036,6 +1043,7 @@ class Home extends Component {
                   <PieChart width={800} height={600}>
                     <Pie data={charts['13']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
+                    <Legend />
                   </PieChart>
                 </Col>
                 <Col>
@@ -1044,6 +1052,7 @@ class Home extends Component {
                   <PieChart width={800} height={600}>
                     <Pie data={charts['14']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                     <Tooltip />
+                    <Legend />
                   </PieChart>
                 </Col>
                 <Col>
