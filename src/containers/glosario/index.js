@@ -42,7 +42,7 @@ export default class Glossary extends Component {
             <Topic data={data} />
             <Sources data={dataSources} />
           </Container>
-          <News />
+          <News disabled />
         </Main>
         <Footer />
       </div>

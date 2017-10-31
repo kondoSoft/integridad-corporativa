@@ -59,7 +59,7 @@ export default class News extends Component {
             <hr style={{borderColor: '#E4E5E4', width: '100%', marginTop: 20, marginBottom: 20}} />
             <div style={{display: 'flex'}}>
               <NewsContainer noPadding style={{width: '80%'}} data={dataArrayArticulo} disabled column expanded />
-              <NewsSideBar withSearch noPadding />
+              <NewsSideBar disabled withSearch noPadding />
             </div>
           </Container>
         </Main>

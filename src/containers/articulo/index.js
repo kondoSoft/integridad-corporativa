@@ -32,7 +32,7 @@ export default class Article extends Component {
             <Route>HOME > NOTICIAS > EXPANSION INDICE 500</Route>
             <Articles data={dataArticulo} />
           </Container>
-          <News />
+          <News disabled />
         </Main>
         <Footer />
       </div>
