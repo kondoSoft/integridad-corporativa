@@ -138,7 +138,7 @@ const ArticleInformation = styled.div`
   width: 100%;
   display: flex;
   padding-top: 15px;
-  height: ${props => props.expanded ? '140px' : '100px'};
+  height: ${props => props.expanded ? '170px' : '100px'};
 `
 const ArticleDescription = styled.div`
   width: 84%;
@@ -159,7 +159,7 @@ const InformationRigth = styled.div`
   width: 85%; 
   display: flex;
   flex-direction: column;
-  padding: 10px 0px 0px 0px;
+  padding: 10px 10px 0px 0px;
 `
 const LeftDate = styled.div`
   background-color: red;
@@ -276,12 +276,12 @@ export const Article = (props) => {
       return (
         <ArticleContainer>
           {
-          data.imagen !== undefined
-            ? <ArticleImg>
-              <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
-            </ArticleImg>
-            : null
-        }
+            data.imagen !== undefined
+              ? <ArticleImg>
+                <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
+              </ArticleImg>
+              : null
+          }
           <ArticleInformation expanded={props.expanded}>
             <InformationLeft>
               <LeftDate>
@@ -317,7 +317,11 @@ export const Article = (props) => {
                 <MiniDescription>
                   {description}
                 </MiniDescription>
-                <SeeMoreButton>Leer más</SeeMoreButton>
+                <SeeMoreButton>
+                  <Link style={{color: '#FFF', textDecoration: 'none'}} to={`/noticias/${data.slug}`}>
+                    Leer más
+                  </Link>
+                </SeeMoreButton>
               </RightColBottomWithButton>
             </InformationRigth>
           </ArticleInformation>
@@ -331,9 +335,13 @@ export const Article = (props) => {
   } else {
     return (
       <ArticleContainer>
-        <ArticleImg>
-          <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
-        </ArticleImg>
+        {
+          data.imagen !== undefined
+          ? <ArticleImg>
+            <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
+          </ArticleImg>
+          : null
+        }
         <ArticleInformation expanded={props.expanded}>
           <InformationLeft>
             <LeftDate>
@@ -352,14 +360,18 @@ export const Article = (props) => {
                 <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
                 <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
               </Left>
-              <Rigth>
-                <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
-                {
-                  data.categorias.map((categoria, i) => {
-                    return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
-                  })
-                }
-              </Rigth>
+              {
+                (data.categorias !== undefined)
+                  ? <Rigth>
+                    <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
+                    {
+                        data.categorias.map((categoria, i) => {
+                          return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
+                        })
+                      }
+                  </Rigth>
+                    : null
+              }
             </RightColBottom>
           </InformationRigth>
         </ArticleInformation>
@@ -367,7 +379,7 @@ export const Article = (props) => {
           <p style={{letterSpacing: 1, fontSize: 14, fontWeight: 400, fontFamily: 'arial'}}>{data.descripcion}</p>
         </ArticleDescription>
         <hr style={{borderColor: '#E4E5E4', width: '100%', marginTop: 20, marginBottom: 20}} />
-        <iframe src='//e.issuu.com/embed.html#7138783/10008731' width='968' height='686' frameborder='0' allowfullscreen='allowfullscreen' />
+        <iframe style={{width: '100%'}} src='//e.issuu.com/embed.html#7138783/10008731' height='686' frameborder='0' allowfullscreen='allowfullscreen' />
       </ArticleContainer>
     )
   }
@@ -457,7 +469,6 @@ const NewsBlog = (props) => {
   )
 }
 export const News = (props) => {
-  console.log('props', props)
   return (
     <NewsWrapper noPadding={props.noPadding}>
       <SearchBox withSearch={props.withSearch}>
