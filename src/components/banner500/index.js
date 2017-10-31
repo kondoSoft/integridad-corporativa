@@ -67,7 +67,7 @@ const Banner500 = (props) => (
       <Button>
         Actualiza aquí&nbsp;<i className='fa fa-chevron-right' aria-hidden='true' />
       </Button>
-      <Description>tu información sobre integridad corporativa apartir del 15 de noviembre</Description>
+      <Description>tu información sobre integridad corporativa a partir del 15 de noviembre</Description>
     </Column>
   </Wrapper>
 )

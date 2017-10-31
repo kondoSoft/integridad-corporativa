@@ -18,7 +18,7 @@ export default class AboutUs extends Component {
     return (
       <div>
         <header>
-          <SectionBanner image={'assets/img/quienessomos_background.jpg'} title={'¿QUIÉNES SOMOS?'} subtitle={''} withBar />
+          <SectionBanner image={'/assets/img/quienessomos_background.jpg'} title={'¿QUIÉNES SOMOS?'} subtitle={''} withBar />
         </header>
         <Main column>
           <MainSection isBig>
@@ -83,7 +83,7 @@ export default class AboutUs extends Component {
               <MiddleBanner />
             </Content>
           </MainSection>
-          <Banner500 margin='100px 0px' image='assets/img/quienessomos_soyparte.jpg' />
+          <Banner500 margin='100px 0px' image='/assets/img/quienessomos_soyparte.jpg' />
         </Main>
         <Footer />
       </div>

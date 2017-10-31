@@ -90,8 +90,8 @@ export const Sources = (props) => {
             <SourceDetail>
               <BoldTitle>
                 <i className='fa fa-chevron-right' aria-hidden='true' style={{color: 'orange', marginRight: 10}} />
-                <HyperLikn href={source.url}>
-                  {source.title}
+                <HyperLikn href={source.url} target='_blank'>
+                  {source.title}&nbsp;
                 </HyperLikn>
                 <SourceBook>{source.book}</SourceBook>
               </BoldTitle>
