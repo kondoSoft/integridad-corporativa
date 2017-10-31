@@ -18,14 +18,14 @@ export default class AboutUs extends Component {
     return (
       <div>
         <header>
-          <SectionBanner image={'assets/img/quienessomos_background.jpg'} title={'¿QUIÉNES SOMOS?'} subtitle={''} withBar />
+          <SectionBanner image={'/assets/img/quienessomos_background.jpg'} title={'¿QUIÉNES SOMOS?'} subtitle={''} withBar />
         </header>
         <Main column>
           <MainSection isBig>
             <Content center column>
               <ContentText isBig>500 Frente a la Corrupción: Integridad Corporativa (IC500)</ContentText>
-              <ContentText normal>Es una metrica de la publicidad de las políticas de integridad y anticorrupción de las 500 empresas</ContentText>
-              <ContentText normal>mas grandes del país, asi como una plataforma digital para darle seguimiento al compromiso y</ContentText>
+              <ContentText normal>Es una métrica de la publicidad de las políticas de integridad y anticorrupción de las 500 empresas</ContentText>
+              <ContentText normal>más grandes del país, asi como una plataforma digital para darle seguimiento al compromiso y</ContentText>
               <ContentText normal>cumplimiento de estas empresas.</ContentText>
             </Content>
           </MainSection>
@@ -35,7 +35,7 @@ export default class AboutUs extends Component {
                 Esta iniciativa, creada conjuntamente por <Anchor href='https://contralacorrupcion.mx/' target='_blank' bold>Mexicanos Contra la Corrupción y la impunidad</Anchor>,
               </ContentText>
               <ContentText className='contentText'>
-               <Anchor href='https://www.tm.org.mx/' target='_blank' bold>Transparencia Mexicana</Anchor> y la revista <Anchor href='http://expansion.mx/' target='_blank' bold>Expansión</Anchor> busca dar a conocer los avances en el compromiso
+                <Anchor href='https://www.tm.org.mx/' target='_blank' bold>Transparencia Mexicana</Anchor> y la revista <Anchor href='http://expansion.mx/' target='_blank' bold>Expansión</Anchor> busca dar a conocer los avances en el compromiso
               </ContentText>
               <ContentText className='contentTextLast'>
                   anticorrupción de las empresas mas grandes del país.
@@ -68,7 +68,7 @@ export default class AboutUs extends Component {
               <ContentText className='contentTextLast'>empresarial.</ContentText>
             </Content>
             <Content className='contentImage' column>
-              <img width='400px' height='300px' src='assets/img/quienessomos_logo.jpg' alt='' />
+              <img width='400px' height='300px' src='/assets/img/quienessomos_logo.jpg' alt='' />
             </Content>
           </MainSection>
           <MainSection isBig>
@@ -83,7 +83,7 @@ export default class AboutUs extends Component {
               <MiddleBanner />
             </Content>
           </MainSection>
-          <Banner500 margin='100px 0px' image='assets/img/quienessomos_soyparte.jpg' />
+          <Banner500 margin='100px 0px' image='/assets/img/quienessomos_soyparte.jpg' />
         </Main>
         <Footer />
       </div>

@@ -15,7 +15,7 @@ export default class Events extends Component {
     return (
       <div>
         <header>
-          <SectionBanner image={'assets/img/calendario_background.jpg'} title={'Eventos'} subtitle={''} withBar />
+          <SectionBanner image={'/assets/img/calendario_background.jpg'} title={'Eventos'} subtitle={''} withBar />
         </header>
         <Main>
           <Container style={{width: '70%'}}>
