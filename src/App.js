@@ -18,7 +18,11 @@ import {
   Route
 } from 'react-router-dom'
 
+import ReactGA from 'react-ga'
+
+
 class App extends Component {
+
   render () {
     return (
       <Router>

@@ -650,6 +650,7 @@ class Home extends Component {
     this.changeGraphics = this.changeGraphics.bind(this)
     this.clickView = this.clickView.bind(this)
     this.onPlayPauseVideo = this.onPlayPauseVideo.bind(this)
+    this.closeModal = this.closeModal.bind(this)
   }
   componentWillMount () {
     window.addEventListener('scroll', (e) => {
@@ -659,6 +660,8 @@ class Home extends Component {
         this.setState({goTo: null})
       }
     })
+    let body = document.getElementsByTagName('body')[0]
+    body.style.overflow = 'hidden'
   }
   render () {
     const {
@@ -1220,9 +1223,18 @@ class Home extends Component {
         </Section>
         <Footer />
         {goTo}
-        <Dialog isVisible={modalOpen} onClickClose={() => this.setState({modalOpen: !modalOpen})} />
+        <Dialog isVisible={modalOpen} onClickClose={this.closeModal} />
       </div>
     )
+  }
+  closeModal () {
+    const {
+      modalOpen
+    } = this.state
+
+    this.setState({modalOpen: !modalOpen})
+    let body = document.getElementsByTagName('body')[0]
+    body.style.overflow = 'auto'
   }
   openBox (box) {
     const {
