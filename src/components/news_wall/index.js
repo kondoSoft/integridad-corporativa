@@ -1,6 +1,7 @@
 import React from 'react'
 import YouTube from 'react-youtube'
 import styled from 'styled-components'
+import './style.css'
 import {
   Row,
   Button
@@ -12,11 +13,52 @@ import {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
+  @media screen and (max-width: 1177px) {
+    
+  }
+  @media screen and (max-width: 630px) {
+
+  }
+`
+const RowWrapper = styled.div`
+  display: ${props => props.disabled ? 'none' : 'flex'};
+  ${props => {
+    if (props.flexEnd) {
+      return 'justify-content: flex-end;'
+    }
+    if (props.flexStart) {
+      return 'justify-content: flex-start;'
+    }
+    return 'justify-content: space-around;'
+  }}
+  align-items: ${props => props.flexStart ? 'flex-start' : 'center'};
+  flex-wrap: ${props => props.noWrap ? 'nowrap' : 'wrap'};
+  flex-direction: ${props => props.invert ? 'row-reverse' : 'row'};
+  margin: ${props => props.noMargin ? '0px' : props.margin ? props.margin : '0px 0px'};
+  background: ${props => props.background ? props.background : null};
+  width: ${props => props.width ? props.width : '100%'};
+  padding: ${props => props.padding ? props.padding : null};
+  box-sizing: border-box;
+  @media screen and (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 const VideoContainer = styled.div`
+  width: 100%;
   position: relative;
-  margin-right: 10px;
+  @media screen and (max-width: 1177px) {
+    margin-right: 0px;
+  }
+  @media screen and (max-width: 620px) {
+    width: 100%;
+  }
+  @media screen and (max-width: 597px) {
+    width: 100%;
+  }
 `
 
 const Description = styled.div`
@@ -63,6 +105,7 @@ const IconCalendar = styled.div`
 
 const Col = styled.div`
   display:flex;
+  width: 100%;
   flex-direction:column;
   justify-content:${props => (props.center) ? 'center' : 'space-around'};
   align-items:center;
@@ -81,13 +124,64 @@ const Col = styled.div`
       )
     }
   }}
+  @media screen and (max-width: 620px) {
+    width: 90%;
+  }
+  @media screen and (max-width: 597px) {
+    width: 95%;
+  }
 `
+const RowNews = styled.div`
+  display: ${props => props.disabled ? 'none' : 'flex'};
+  ${props => {
+    if (props.flexEnd) {
+      return 'justify-content: flex-end;'
+    }
+    if (props.flexStart) {
+      return 'justify-content: flex-start;'
+    }
+    return 'justify-content: space-around;'
+  }}
+  align-items: ${props => props.flexStart ? 'flex-start' : 'center'};
+  flex-wrap: ${props => props.noWrap ? 'nowrap' : 'wrap'};
+  flex-direction: ${props => props.invert ? 'row-reverse' : 'row'};
+  margin: ${props => props.noMargin ? '0px' : props.margin ? props.margin : '40px 0px'};
+  background: ${props => props.background ? props.background : null};
+  width: ${props => props.width ? props.width : null};
+  padding: ${props => props.padding ? props.padding : null};
+  box-sizing: border-box;
+  @media screen and (max-width: 620px) {
+   display: none;
 
+  }
+`
 const Paragraph = styled.p`
   width: ${props => props.width ? props.width : '80%'};
   font-size: ${props => props.fontSize ? props.fontSize : '18px'};
 `
-
+const RowEvents = styled.div`
+  display: ${props => props.disabled ? 'none' : 'flex'};
+  ${props => {
+    if (props.flexEnd) {
+      return 'justify-content: flex-end;'
+    }
+    if (props.flexStart) {
+      return 'justify-content: flex-start;'
+    }
+    return 'justify-content: space-around;'
+  }}
+  align-items: ${props => props.flexStart ? 'flex-start' : 'center'};
+  flex-wrap: ${props => props.noWrap ? 'nowrap' : 'wrap'};
+  flex-direction: ${props => props.invert ? 'row-reverse' : 'row'};
+  margin: ${props => props.noMargin ? '0px' : props.margin ? props.margin : '40px 0px'};
+  background: ${props => props.background ? props.background : null};
+  width: 100%;
+  padding: ${props => props.padding ? props.padding : null};
+  box-sizing: border-box;
+  @media screen and (max-width: 1177px) {
+    
+  }
+`
 const Title = styled.h4`
   position: relative;
   bottom: 10px;
@@ -98,8 +192,8 @@ const Title = styled.h4`
 
 const NewsWall = (props) => {
   const options = {
-    height: '380',
-    width: '600',
+    // height: '380',
+    // width: '600',
     playerVars: { // https://developers.google.com/youtube/player_parameters
       autoplay: 0,
       listType: 'playlist',
@@ -108,10 +202,11 @@ const NewsWall = (props) => {
   }
   return (
     <Wrapper>
-      <Row noMargin flexStart>
+      <RowWrapper noMargin flexStart>
         <Col>
           <VideoContainer>
             <YouTube
+              className='youtubePlayer'
               opts={options}
               onPlay={props.onPlayPauseVideo}
               onPause={props.onPlayPauseVideo}
@@ -122,7 +217,7 @@ const NewsWall = (props) => {
           </VideoContainer>
         </Col>
         <Col>
-          <Row noMargin>
+          <RowNews noMargin>
             <Col Ext>
               <Link to='/noticias/trac-2014'>
                 <Image src={props.data.articles[0].image} />
@@ -141,8 +236,8 @@ const NewsWall = (props) => {
                 </Description>
               </Link>
             </Col>
-          </Row>
-          <Row noMargin width='100%' padding='10px'>
+          </RowNews>
+          <RowEvents noMargin padding='10px'>
             <CalendarEvents href='/eventos'>
               <TextCalendar>
                 <p>Calendario de Publicaciones </p> <br /><p> y eventos</p>
@@ -151,9 +246,9 @@ const NewsWall = (props) => {
                 <i className='fa fa-calendar fa-4x' aria-hidden='true' />
               </IconCalendar>
             </CalendarEvents>
-          </Row>
+          </RowEvents>
         </Col>
-      </Row>
+      </RowWrapper>
       <Row disabled={props.disabled}>
         <a href='/noticias'><Button invert>VER MÁS</Button></a>
       </Row>
