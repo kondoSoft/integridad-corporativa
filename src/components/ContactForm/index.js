@@ -93,10 +93,10 @@ const Submit = styled.button`
 `
 
 const ContactForm = props => (
-  <Form>
-    <Input type='text' placeholder='Nombre' />
-    <Input type='email' placeholder='Correo electrónico' />
-    <TextArea name='' id='' cols='30' rows='10' placeholder='Mensaje' />
+  <Form onSubmit={props.sendMail}>
+    <Input type='text' placeholder='Nombre' name='name' />
+    <Input type='email' placeholder='Correo electrónico' name='email' />
+    <TextArea name='message' cols='30' rows='10' placeholder='Mensaje' />
     <Submit>enviar</Submit>
   </Form>
 )

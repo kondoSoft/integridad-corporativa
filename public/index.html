@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="assets/fonts/commercial-type-1710-XLKIDD-web/1710-XLKIDD.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
+<script src="https://wzrd.in/standalone/es7-shim@latest"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -42,4 +44,11 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+    window.onload = function () {
+      setTimeout(function() {
+        scrollTo(0, 0)
+      }, 10)
+    }
+  </script>
 </html>
