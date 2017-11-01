@@ -680,7 +680,7 @@ class Home extends Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1
-      // initialSlide: 16
+      // initialSlide: 12
     }
     return (
       <div>
@@ -1184,9 +1184,9 @@ class Home extends Component {
         </Section>
         <Section background='#F2F2F2'>
           <Title color={(isOpen.data) ? '#ED4630' : ''}>INFORMACIÓN ACTUALIZADA</Title>
-          <Subtitle>APARTIR DEL 15 DE NOVIEMBRE</Subtitle>
+          <Subtitle>A PARTIR DEL 15 DE NOVIEMBRE</Subtitle>
           <Col>
-            <CollapseBox height='1050px'>
+            <CollapseBox height='1050px' >
               <Row noMargin>
                 <TabsShowBy Graphics={this.changeGraphics} />
               </Row>
@@ -1209,7 +1209,7 @@ class Home extends Component {
               </Row>
             </CollapseBox>
             <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' />
-            {/* <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' onClick={() => this.openBox('data')} /> */}
+            {/* <i c§lassName={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' onClick={() => this.openBox('data')} /> */}
           </Col>
         </Section>
         <Section>

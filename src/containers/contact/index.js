@@ -29,20 +29,20 @@ class Contact extends Component {
     formData.append('message', message)
 
     const headers = new Headers()
-    // headers.append('Accept', 'application/json')
-    headers.append('Accept', 'text/html')
+    headers.append('Accept', 'application/json')
+    // headers.append('Accept', 'text/html')
     headers.append('X-Requested-With', 'XMLHttpRequest')
     headers.append('Content-Type', 'application/json')
 
     const fetchOptions = {
-      method: 'GET',
-      // body: formData,
+      method: 'POST',
+      body: formData,
       mode: 'no-cors',
       headers: headers
     }
-    fetch('https://guarded-cove-20930.herokuapp.com/send-mail/', fetchOptions)
+    fetch('http://165.227.53.250:8000/send-mail/', fetchOptions)
     .then(res => res.text())
-    .then(res => console.log(res))
+    .then(res => window.location.reload())
     .catch(err => console.error(err))
   }
 }
