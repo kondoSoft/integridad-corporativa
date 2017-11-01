@@ -64,7 +64,7 @@ function View (props) {
     <Container style={props.style}>
       <Title>{props.title}</Title>
       <ContainerUp isMore={props.isMore} click={props.click} >
-        <TextUp> {props.textUp}<Vmore onClick={props.slide} click={props.click}> Ver mas </Vmore></TextUp>
+        <TextUp> {props.textUp}<Vmore onClick={props.slide} click={props.click}>Ver Más</Vmore></TextUp>
       </ContainerUp>
       <ContainerDown click={props.click}>
         <TextDown > {props.textDown}<Vless onClick={props.slide} click={props.click}>Ver menos</Vless></TextDown>
