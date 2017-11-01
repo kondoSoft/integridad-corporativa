@@ -1,16 +1,22 @@
 .download{
-  height: 300px;
   display: flex;
   flex-flow: column;
   background:#F2F2F2;
-  padding-bottom: 30px;
 }
-
+.slider{
+  width: 100%;
+  display:  flex;
+  flex-direction: row;
+}
 .title{
   border-bottom: 3px solid #ED4630;
-  width: 400px;
+  width: 30%;
   padding-bottom: 10px;
   position: relative;
+}
+.slick-track{
+  display: flex;
+  align-items: center;
 }
 @media screen and (min-width: 1200px){
   .title:after{
@@ -24,6 +30,16 @@
     background: #ED4630;
     color:rgba(0,0,0,0);
   } 
+}
+@media screen and (max-width: 1005px) {
+  .title{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 668px) {
+  .title{
+    width: 80%;
+  }
 }
 
 @keyframes rotateUp{

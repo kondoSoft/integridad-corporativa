@@ -12,6 +12,9 @@ const Wrapper = styled.div`
   padding:20px 0px 40px 0px;
   height:150px;
   margin: ${props => props.margin ? props.margin : null};
+  @media screen and (max-width: 768px) {
+    padding: 10px 0px 10px 0px;
+  }
 `
 const Button = styled.div`
   cursor:pointer;
@@ -31,13 +34,32 @@ const Button = styled.div`
   &:active{
     box-shadow:none;
   }
+  @media screen and (max-width: 1056px) {
+
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    padding: 10px 10px;
+  }
+  @media screen and (max-width: 487px) {
+    font-size: 18px;
+    padding: 10px 10px;
+  }
 `
 
 const Title = styled.h2`
+  width: 50%;
+  padding: 10px;
   font-size:2em;
   color:#FFF;
   font-weight:bolder;
   vertical-align:middle;
+  @media screen and (max-width: 1056px) {
+    text-align: center;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 1.5em;
+  }
 `
 
 const Span = styled.span`
@@ -51,13 +73,24 @@ const Description = styled.p`
   margin-top:15px;
   font-size:24px;
   font-weight:300;
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 487px) {
+    font-size: 14px;
+  }
 `
 
 const Column = styled.div`
+  width: 50%;
+  padding: 40px;
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+  }
 `
 
 const Banner500 = (props) => (

@@ -5,7 +5,7 @@ import {
   Button,
   Row,
   Banner500,
-  CollapseBox,
+  SliderBox,
   Col,
   Section,
   Subtitle,
@@ -19,7 +19,12 @@ import {
   Disclaimer,
   NewsWall,
   CustomizedAxisTick,
-  View
+  View,
+  EditionSection,
+  SectionButtons,
+  SectionGraphics,
+  NewsBox,
+  CollapseBox
 } from '../../components'
 import './styles.css'
 import {
@@ -39,14 +44,14 @@ import {
 import Slider from 'react-slick'
 import './styles.css'
 
-const RADIAN = Math.PI / 180         
+const RADIAN = Math.PI / 180
 const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5
-  const x  = cx + radius * Math.cos(-midAngle * RADIAN)
-  const y = cy  + radius * Math.sin(-midAngle * RADIAN)
- 
+  const x = cx + radius * Math.cos(-midAngle * RADIAN)
+  const y = cy + radius * Math.sin(-midAngle * RADIAN)
+
   return (
-    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'}  dominantBaseline="central">
+    <text x={x} y={y} fill='white' textAnchor={x > cx ? 'start' : 'end'} dominantBaseline='central'>
       {`${(percent * 100).toFixed(0)}%`}
     </text>
   )
@@ -54,7 +59,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
 class Home extends Component {
   constructor (props) {
-    super(props)   
+    super(props)
     this.state = {
       dataActualizada: [
         {name: 'aeroe', uv: 10, pv: 100, amt: 100},
@@ -496,7 +501,7 @@ class Home extends Component {
           { name: 'Aeropuertos y Servicios Auxiliares', 'Calificacion': 9.8 },
           { name: 'Sistema de Transporte Colectivo', 'Calificacion': 7.8 }
         ],
-        '18': [ 
+        '18': [
           { name: 'Servicios financieros',
             '191 Empresas mejor calificadas (50 ptos. o más)': 9.4,
             '500 empresas': 13 },
@@ -640,7 +645,7 @@ class Home extends Component {
             '500 empresas': undefined },
           { name: 'Hotelería y turismo',
             '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
+            '500 empresas': undefined }
         ]
       }
     }
@@ -673,39 +678,39 @@ class Home extends Component {
     } = this.state
     var settings = {
       dots: false,
-      infinite: true,
+      infinite: false,
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1
       // initialSlide: 16
     }
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <header>
           <MainBanner />
         </header>
-        <section className='download'>
-          <Row>
+        <EditionSection className='download'>
+          <Row style={{marginTop: 0, marginBottom: 5}}>
             <Title className='title'>EDICIÓN 2017</Title>
           </Row>
-          <Row style={{display: 'flex', flexDirection: 'column', margin: 0, flexWrap: 'initial', alignItems: 'initial', justifyContent: 'initial', padding: 20}}>
+          <Row style={{display: 'flex', flexDirection: 'column', margin: 0, flexWrap: 'initial', alignItems: 'initial', justifyContent: 'initial', padding: 10}}>
             <Title style={{marginTop: 0, paddingTop: 10}} color='#ED4630'>Aviso</Title>
             <p className='aviso' style={{textAlign: 'center'}}>Disponible a partir del 15 de noviembre.</p>
           </Row>
-          <Row>
-            <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA EL INFORME</Button>
-            <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA LA BASE DE DATOS</Button>
-          </Row>
-        </section>
+          <SectionButtons style={{marginTop: 0, marginBottom: 20}}>
+            <Button style={{margin: 5}}><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA EL INFORME</Button>
+            <Button style={{margin: 5}}><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA LA BASE DE DATOS</Button>
+          </SectionButtons>
+        </EditionSection>
         <section>
           <Banner500 />
         </section>
-        <Section>
+        <SectionGraphics>
           <Title color={(isOpen.graphics) ? '#ED4630' : ''}>GRÁFICAS</Title>
           <Col>
-            <CollapseBox isOpen={isOpen.graphics}>
-              <Slider {...settings} ref='slider'>
-                <Col style={{backgroundColor: '#FFF', alignItems: 'center', justifyConten: 'center'}}>
+            <SliderBox isOpen={isOpen.graphics}>
+              <Slider className='slider' {...settings} ref='slider' arrows={false} infinite>
+                <Col style={{backgroundColor: 'transparent'}}>
                   <View click={this.state.View.click} slide={this.clickView} textUp='El sector privado es una pieza central en cualquier estrategia anticorrupción...' textDown='El primer paso consiste en establecer e implementar políticas de integridad que muestren su compromiso anticorrupción, el cual sólo se hace efectivo al hacerlo público y accesible para su consulta, al capacitar a directivos y empleados para su implementación, y al socializarlo entre socios y clientes. La señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, y que facilitan y premian la denuncia, constituyen el primer eslabón en la lucha contra la corrupción. Sin embargo, la distribución de las 500 empresas refleja el estado embrionario en la adopción de políticas de integridad en el sector privado en México. Ninguna empresa obtuvo 100 puntos y sólo 13 empresas obtuvieron más de 80 puntos. Además, El 61.8% de las organizaciones obtuvieron menos de 50 puntos y apenas 2 por encima de los 90 puntos (0.4%).' />
                   <table style={{marginTop: 30}}>
                     <thead className='tHead'>
@@ -989,7 +994,7 @@ class Home extends Component {
                   <PieChart width={800} height={600}>
                     <Pie data={charts['09'].left} cx='25%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
                     <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
-                    <Tooltip  />
+                    <Tooltip />
                   </PieChart>
                 </Col>
                 <Col>
@@ -1066,66 +1071,66 @@ class Home extends Component {
                 </Col>
                 <Col>
                   {/* GRAFICA 17 */}
-                  <View click={this.state.View.click} slide={this.clickView} textUp='Las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas...' textDown='Al considerar a las 500 por el origen de su capital, es posible encontrar que las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas (37). Empresas de dos países registran un promedio superior a 70 puntos: Singapur y Colombia. Sin embargo, en conjunto, las empresas de estos dos países sólo representan a 3 empresas; una de Singapur y dos de Colombia. Solamente 10 empresas provenientes de ocho países obtuvieron calificaciones promedio por encima de 60 puntos. Luego de México (277), Estados Unidos es el país con más empresas (95) con un promedio de 45.8 de 100. El tercer país con más empresas en este ranking es Alemania (17) con un promedio de 43 puntos.' />                  
+                  <View click={this.state.View.click} slide={this.clickView} textUp='Las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas...' textDown='Al considerar a las 500 por el origen de su capital, es posible encontrar que las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas (37). Empresas de dos países registran un promedio superior a 70 puntos: Singapur y Colombia. Sin embargo, en conjunto, las empresas de estos dos países sólo representan a 3 empresas; una de Singapur y dos de Colombia. Solamente 10 empresas provenientes de ocho países obtuvieron calificaciones promedio por encima de 60 puntos. Luego de México (277), Estados Unidos es el país con más empresas (95) con un promedio de 45.8 de 100. El tercer país con más empresas en este ranking es Alemania (17) con un promedio de 43 puntos.' />
                   <Row noWrap>
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={charts['16'].europa}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
+                    <BarChart
+                      width={500}
+                      height={300}
+                      data={charts['16'].europa}
+                      margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                      layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
-                    <YAxis type='category' dataKey='name' width={100} />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip formatter={val => val.toString() + '%'} />
-                    <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
-                  </BarChart>
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={charts['16'].latinoamerica}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
+                      <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
+                      <YAxis type='category' dataKey='name' width={100} />
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <Tooltip formatter={val => val.toString() + '%'} />
+                      <Legend />
+                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                    </BarChart>
+                    <BarChart
+                      width={500}
+                      height={300}
+                      data={charts['16'].latinoamerica}
+                      margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                      layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
-                    <YAxis type='category' dataKey='name' width={100} />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip formatter={val => val.toString() + '%'} />
-                    <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
-                  </BarChart>
+                      <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
+                      <YAxis type='category' dataKey='name' width={100} />
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <Tooltip formatter={val => val.toString() + '%'} />
+                      <Legend />
+                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                    </BarChart>
                   </Row>
                   <Row noWrap>
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={charts['16'].norteamerica}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
+                    <BarChart
+                      width={500}
+                      height={300}
+                      data={charts['16'].norteamerica}
+                      margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                      layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
-                    <YAxis type='category' dataKey='name' width={100} />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip formatter={val => val.toString() + '%'} />
-                    <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
-                  </BarChart>
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={charts['16'].asia}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
+                      <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
+                      <YAxis type='category' dataKey='name' width={100} />
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <Tooltip formatter={val => val.toString() + '%'} />
+                      <Legend />
+                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                    </BarChart>
+                    <BarChart
+                      width={500}
+                      height={300}
+                      data={charts['16'].asia}
+                      margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                      layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
-                    <YAxis type='category' dataKey='name' width={100} />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip formatter={val => val.toString() + '%'} />
-                    <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
-                  </BarChart>
+                      <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
+                      <YAxis type='category' dataKey='name' width={100} />
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <Tooltip formatter={val => val.toString() + '%'} />
+                      <Legend />
+                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                    </BarChart>
                   </Row>
                 </Col>
                 <Col>
@@ -1137,7 +1142,7 @@ class Home extends Component {
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '.0'}/>
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '.0'} />
                     <YAxis type='category' dataKey='name' width={250} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
@@ -1154,7 +1159,7 @@ class Home extends Component {
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickFormatter={val=> val.toString() + '%'} />
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickFormatter={val => val.toString() + '%'} />
                     <YAxis type='category' dataKey='name' width={250} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip formatter={val => val.toString() + '%'} />
@@ -1166,10 +1171,10 @@ class Home extends Component {
               </Slider>
               <SliderPrev onClick={this.changeSlider}><i className='fa fa-chevron-left' aria-hidden='true' /></SliderPrev>
               <SliderNext onClick={() => this.changeSlider('next')}><i className='fa fa-chevron-right' aria-hidden='true' /></SliderNext>
-            </CollapseBox>
+            </SliderBox>
             <i className={`fa fa-caret-down fa-4x ${rotate.graphics} icon`} aria-hidden='true' onClick={() => this.openBox('graphics')} />
           </Col>
-        </Section>
+        </SectionGraphics>
         <Section background='#F2F2F2'>
           <Title color={(isOpen.data) ? '#ED4630' : ''}>INFORMACIÓN ACTUALIZADA</Title>
           <Subtitle>APARTIR DEL 15 DE NOVIEMBRE</Subtitle>
@@ -1200,12 +1205,12 @@ class Home extends Component {
             {/* <i className={`fa fa-caret-down fa-4x ${rotate.data} icon`} aria-hidden='true' onClick={() => this.openBox('data')} /> */}
           </Col>
         </Section>
-        <Section>
+        <Section isNews>
           <Title color={(isOpen.newsWall) ? '#ED4630' : ''}>MURO DE NOTICIAS</Title>
           <Col>
-            <CollapseBox isOpen={isOpen.newsWall} height='600px'>
+            <NewsBox isOpen={isOpen.newsWall}>
               <NewsWall data={dataNewsWall} onPlayPauseVideo={this.onPlayPauseVideo} isPlaying={isPlaying} />
-            </CollapseBox>
+            </NewsBox>
             <i className={`fa fa-caret-down fa-4x ${rotate.newsWall} icon`} aria-hidden='true' onClick={() => this.openBox('newsWall')} />
           </Col>
         </Section>

@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
-import Col from '../col'
 import {LogoLink} from '../'
 
 const Wrapper = styled.footer`
@@ -18,11 +17,46 @@ const Row = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 80%;
+  ${props => {
+    if (props.sponsors) {
+      return `@media screen and (max-width: 700px) {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      @media screen and (max-width: 968px) and (min-width: 701px) {
+        width: 100%;
+        align-items: center;
+        justify-content: center; 
+      }`
+    }
+  }}
+`
+const RowTop = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media screen and (max-width: 968px) and (min-width: 701px) {
+    width: 100%;
+    align-items: center; 
+  }
 `
 
 const Logo = styled.img`
   width: 100%;
   margin-left: 100px;
+  @media screen and (max-width: 700px) {
+    margin-left: 0px;
+  }
 `
 const Paragraph = styled.p`
   width: 66%;
@@ -30,6 +64,21 @@ const Paragraph = styled.p`
   color: #FFF;
   font-weight: 200;
   margin-left: 50px;
+  @media screen and (max-width: 1111px) {
+   font-size: 16px; 
+  }
+  @media screen and (max-width: 700px) {
+    margin-left: 0px;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+  }
+  @media screen and (max-width: 968px) and (min-width: 701px) {
+    font-size: 16px;
+    margin-left: 0px;
+    padding: 5px;
+  }
 `
 const Anchor = styled.a`
   color: #FFF;
@@ -37,6 +86,12 @@ const Anchor = styled.a`
   margin: 0px 10px;
   &:nth-child(4){
     margin-right:40px;
+  }
+  @media screen and (max-width: 700px) {
+    margin: 0px;
+    &:nth-child(4){
+      margin-right: 0px;
+    }
   }
 `
 
@@ -57,6 +112,15 @@ const SubFooter = styled.div`
 const Copy = styled.div`
   color: #FFF;
   font-weight: 200;
+  @media screen and (max-width: 700px) {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+  @media screen and (max-width: 600px) {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
 `
 
 const Image = styled.img`
@@ -69,6 +133,60 @@ const RowColumn = styled.div`
   justify-content: center;
   align-items: center;
   width: 80%;
+  @media screen and (max-width: 700px) {
+    width: 100%;
+  }
+`
+const Col = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:${props => (props.center) ? 'center' : 'space-around'};
+  align-items:center;
+  Width: ${props => props.width ? props.width : null};
+  margin: ${props => props.margin ? props.margin : null};
+  background: ${props => props.background ? props.background : null};
+  padding: ${props => props.padding ? props.padding : null};
+  ${
+    props => {
+      if (props.isParagraph) {
+        return `@media screen and (max-width: 968px) and (min-width: 701px) {
+          align-items: flex-end;
+        }`
+      }
+    }
+  }
+`
+const SocialCol = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:${props => (props.center) ? 'center' : 'space-around'};
+  align-items:center;
+  Width: ${props => props.width ? props.width : null};
+  margin: ${props => props.margin ? props.margin : null};
+  background: ${props => props.background ? props.background : null};
+  padding: ${props => props.padding ? props.padding : null};
+  @media screen and (max-width: 700px) {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+  }
+`
+const ColLogo = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:${props => (props.center) ? 'center' : 'space-around'};
+  align-items:center;
+  Width: ${props => props.width ? props.width : '70%'};
+  margin: ${props => props.margin ? props.margin : null};
+  background: ${props => props.background ? props.background : null};
+  padding: ${props => props.padding ? props.padding : null};
+  @media screen and (max-width: 700px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 968px) and (min-width: 701px) {
+    width: 100%;
+  }
 `
 class Footer extends Component {
   constructor (props) {
@@ -83,11 +201,11 @@ class Footer extends Component {
   render () {
     return (
       <Wrapper>
-        <Row>
-          <Col>
+        <RowTop>
+          <ColLogo>
             <Logo src='/assets/img/logofooter.png' alt='Logo 500' />
-          </Col>
-          <Col>
+          </ColLogo>
+          <Col isParagraph>
             <Paragraph>
               Transparencia Mexicana y Mexicanos contra la Corrupción y la
               impunidad, en alianza con la Revista Expansión, presentan "500
@@ -98,7 +216,7 @@ class Footer extends Component {
           </Col>
           <Row>
             <RowColumn>
-              <Col style={{flexDirection: 'initial'}}>
+              <SocialCol style={{flexDirection: 'initial'}}>
                 <Anchor onMouseEnter={() => this.isHover('fb')} onMouseLeave={this.isLeave} href='https://facebook.com' target='_blank' rel='noopener noreferrer'>
                   <i className='fa fa-facebook' aria-hidden='true' />
                 </Anchor>
@@ -111,7 +229,7 @@ class Footer extends Component {
                 <Anchor href='https://youtube.com' target='_blank' rel='noopener noreferrer'>
                   <i className='fa fa-youtube-play' aria-hidden='true' />
                 </Anchor>
-              </Col>
+              </SocialCol>
               {
                 this.state.isHover
                   ? <div onMouseEnter={() => this.isHover(this.state.social)} onMouseLeave={this.isLeave} style={{width: '100%', display: 'flex', flexDirection: 'column'}}>
@@ -128,9 +246,9 @@ class Footer extends Component {
               }
             </RowColumn>
           </Row>
-        </Row>
+        </RowTop>
         <Hr />
-        <Row>
+        <Row sponsors>
           <Col>
             <LogoLink href='https://www.tm.org.mx/' target='blank'>
               <Image src='/assets/img/transparencia_mexicana_footer.png' alt='' />

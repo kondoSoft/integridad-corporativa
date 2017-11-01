@@ -9,9 +9,54 @@ const NavBar = styled.nav`
   background: #ED4630;
   display:flex;
   justify-content:space-around;
+  @media screen and (max-width: 1165px) {
+    flex-direction: column-reverse;
+  }
+  @media screen and (max-width: 945px) {
+    flex-direction: row; 
+  }
 `
 const NavList = styled.ul`
+  width: 80%;
   list-style:none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media screen and (max-width: 1165px) {
+    width: 100%;
+    flex-direction: row;
+  }
+  @media screen and (max-width: 945px) {
+   flex-direction: row; 
+   display: none;
+  }
+  @media screen and (max-width: 731px) {
+    width: 60%; 
+  }
+  @media screen and (max-width: 440px) {
+    width: 40%; 
+  }
+`
+const NavListSocials = styled.ul`
+  width: 20%;
+  list-style:none;
+  @media screen and (max-width: 1165px) {
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
+  @media screen and (max-width: 945px) {
+    width: 20%;
+  }
+  @media screen and (max-width: 731px) {
+    width: 40%; 
+  }
+  @media screen and (max-width: 440px) {
+    width: 60%; 
+  }
 `
 
 const NavItem = styled.li`
@@ -33,13 +78,45 @@ const NavLink = styled.a`
   text-decoration:none;
   color: #FFF;
   font-weight:lighter;
-  padding:20px 10px;
+  padding: 15px 15px;
   transition:0.3s;
-  border-radius: ${props => props.isSocial ? '0px' : '5px'};
+  font-size: ${props => props.isSocial ? '18px' : '16px'};
   &:hover{
     background: #d03e3d;
     cursor: pointer;
   }
+`
+const SocialsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 57;
+  right: 0;
+  z-index: 4;
+  background-color: #ED4630;
+`
+const SocialIcon = styled.i`
+  font-size: 22px;
+  color: #FFF;
+  padding: 10px;
+`
+const HamMenu = styled.div`
+  width: 80%;
+  list-style:none;
+  display: none;
+  justify-content: flex-start;
+  align-items: flex-start;
+  @media screen and (max-width: 945px) {
+    display: flex;
+  }
+  @media screen and (max-width: 731px) {
+    
+  }
+`
+const MenuIcon = styled.i`
+  color: #FFF;
+  font-size: 25px;
 `
 class NavigationBar extends Component {
   constructor (props) {
@@ -55,6 +132,11 @@ class NavigationBar extends Component {
     return (
       <section>
         <NavBar>
+          <HamMenu>
+            <NavLink>
+              <MenuIcon className='fa fa-bars' aria-hidden='true' />
+            </NavLink>
+          </HamMenu>
           <NavList>
             <NavItem>
               <Link to='/'>
@@ -90,18 +172,18 @@ class NavigationBar extends Component {
               <NavLink href='#'>SOY PARTE DE LAS 500</NavLink>
             </NavItem>
           </NavList>
-          <NavList>
+          <NavListSocials>
             <NavItem>
-              <NavLink onMouseEnter={() => this.isHover('fb')} onMouseLeave={this.isLeave} >
+              <NavLink isSocial onClick={() => this.isHover('fb')} >
                 <i className='fa fa-facebook' aria-hidden='true' />
               </NavLink>
-              <NavLink onMouseEnter={() => this.isHover('twt')} onMouseLeave={this.isLeave} >
+              <NavLink isSocial onClick={() => this.isHover('twt')} >
                 <i className='fa fa-twitter' aria-hidden='true' />
               </NavLink>
-              <NavLink onMouseEnter={this.isHover} onMouseLeave={this.isLeave} href='https://instagram.com' target='_blank'>
+              {/* <NavLink onClick={this.isHover} href='https://instagram.com' target='_blank'>
                 <i className='fa fa-instagram' aria-hidden='true' />
-              </NavLink>
-              <NavLink onMouseEnter={this.isHover} onMouseLeave={this.isLeave} href='https://youtube.com' target='_blank'>
+              </NavLink> */}
+              <NavLink isSocial onClick={this.isHover} href='https://www.youtube.com/channel/UCr052Of4pfPKREgfVITItZw' target='_blank'>
                 <i className='fa fa-youtube-play' aria-hidden='true' />
               </NavLink>
             </NavItem>
@@ -110,22 +192,25 @@ class NavigationBar extends Component {
                 <i className='fa fa-search' aria-hidden='true' />
               </NavLink>
             </NavItem>
-          </NavList>
+          </NavListSocials>
         </NavBar>
         {
           this.state.isHover
-          ? <div onMouseEnter={() => this.isHover(this.state.social)} onMouseLeave={this.isLeave} style={{display: 'flex', justifyContent: 'flex-end', position: 'absolute', top: 57, right: 0, zIndex: 4, width: '20%'}}>
-            <div style={{backgroundColor: '#ED4630', display: 'flex'}}>
-              <NavLink isSocial href={(this.state.social === 'fb') ? 'https://facebook.com/MXvsCORRUPCION' : 'https://twitter.com/MXvsCORRUPCION'} target='blank'>
-                  @MXvsCORRUPCION
-                </NavLink>
-              <NavLink isSocial href={(this.state.social === 'fb') ? 'https://facebook.com/TransparenciaMexicana' : 'https://twitter.com/IntegridadMx'} target='blank'>
-                {
-                    (this.state.social === 'fb') ? '@TransparenciaMexicana' : '@IntegridadMX'
-                  }
+          ? <SocialsContainer onMouseEnter={() => this.isHover(this.state.social)} onMouseLeave={this.isLeave}>
+            {
+              this.state.social === 'fb'
+                ? <SocialIcon className='fa fa-facebook' aria-hidden='true' />
+                : <SocialIcon className='fa fa-twitter' aria-hidden='true' />
+            }
+            <NavLink onClick={this.isLeave} isSocial href={(this.state.social === 'fb') ? 'https://facebook.com/MXvsCORRUPCION' : 'https://twitter.com/MXvsCORRUPCION'} target='blank'>
+                @MXvsCORRUPCION
               </NavLink>
-            </div>
-          </div>
+            <NavLink onClick={this.isLeave} isSocial href={(this.state.social === 'fb') ? 'https://facebook.com/TransparenciaMexicana' : 'https://twitter.com/IntegridadMx'} target='blank'>
+              {
+                  (this.state.social === 'fb') ? '@TransparenciaMexicana' : '@IntegridadMX'
+                }
+            </NavLink>
+          </SocialsContainer>
           : null
         }
       </section>

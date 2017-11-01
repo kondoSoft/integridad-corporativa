@@ -13,8 +13,19 @@ const Wrapper = styled.section`
 `
 
 const Logo = styled.img`
-  height:350px;
+  height: auto;
   margin-top:30px;
+  width: 50%;
+  @media screen and (max-width: 945px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 731px) { 
+    width: 80%;
+  }
+  @media screen and (max-width: 440px) { 
+    width: 80%;
+    margin-bottom: 30px;
+  }
 `
 
 const Row = styled.div`
@@ -26,7 +37,21 @@ const Row = styled.div`
     margin:10px 0px 40px 0px;
   }
 `
+const RowSponsors = styled.div`
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  @media screen and (max-width: 945px) {
 
+  }
+  @media screen and (max-width: 731px) { 
+
+  }
+  @media screen and (max-width: 440px) {
+    display: none; 
+  }
+`
 const SubTitle = styled.p`
   color:#FFF;
   margin-top:30px;
@@ -36,24 +61,38 @@ const SubTitle = styled.p`
   font-size:18px;
   font-weight:lighter;
   line-height: 25px;
+  @media screen and (max-width: 945px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 731px) { 
+    width: 90%;
+    font-size:16px;
+    padding: 15px 0px 15px 0px;
+  }
+  @media screen and (max-width: 440px) {
+    display: none; 
+  }
 `
-
 const Hr = styled.hr`
   width:85%;
   border-radius:10px;
+  @media screen and (max-width: 440px) {
+    display: none; 
+  }
 `
-
 const Image = styled.img`
   width:100%;
 `
-
 const Figure = styled.figure`
-  width:10%;
-  &:nth-child(2){
-    margin:0px 160px;
+  width: 15%;
+  height: auto;
+  @media screen and (max-width: 945px) {
+    width: 25%;
+  }
+  @media screen and (max-width: 731px) { 
+    width: 30%;
   }
 `
-
 const MainBanner = (props) => {
   return (
     <Wrapper>
@@ -66,7 +105,7 @@ const MainBanner = (props) => {
         </SubTitle>
       </Row>
       <Hr />
-      <Row center>
+      <RowSponsors center>
         <Figure>
           <a href='https://contralacorrupcion.mx/' target='_blank'>
             <Image src='assets/img/mcci_logo.png' alt='' />
@@ -82,7 +121,7 @@ const MainBanner = (props) => {
             <Image src='assets/img/transparencia_mexicana.png' alt='' />
           </a>
         </Figure>
-      </Row>
+      </RowSponsors>
     </Wrapper>
   )
 }

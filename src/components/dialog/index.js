@@ -42,6 +42,7 @@ const slideOut = keyframes`
 `
 
 const Wrapper = styled.div`
+  display: flex;
   position: absolute;
   background: ${props => props.isVisible ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0)'};
   height: 100%;
@@ -51,6 +52,10 @@ const Wrapper = styled.div`
   animation-name: ${props => props.isVisible ? fadeIn : fadeOut};
   animation-duration:1s;
   visibility: ${props => props.isVisible ? 'initial' : 'hidden'};
+  @media screen and (max-width: 597px) {
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 const Card = styled.div`
@@ -67,6 +72,21 @@ const Card = styled.div`
   padding: 20px;
   animation-name: ${props => props.isVisible ? slideIn : slideOut};
   animation-duration: 1s;
+  @media screen and (max-width: 597px) {
+    width: 90%;
+    top: 50;
+    left: 5%;
+  }
+  @media screen and (max-width: 700px) {
+    width: 90%;
+    top: 50;
+    left: 5%;
+  }
+  @media screen and (max-width: 968px) and (min-width: 701px) {
+    width: 70%;
+    top: 50;
+    left: 15%;
+  }
 `
 
 const Icon = styled.i`

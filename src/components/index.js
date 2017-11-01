@@ -4,9 +4,9 @@ import Title from './title'
 import Button from './button'
 import Row from './row'
 import Banner500 from './banner500'
-import CollapseBox from './collapse-box'
+import CollapseBox, {SliderBox, NewsBox} from './collapse-box'
 import Col from './col'
-import Section from './section'
+import Section, {EditionSection, SectionButtons, SectionGraphics} from './section'
 import Subtitle from './subtitle'
 import Footer from './footer'
 import Dialog from './dialog'
@@ -96,5 +96,10 @@ export {
   Anchor,
   NewsContainer,
   LogoLink,
-  EventList
+  EventList,
+  EditionSection,
+  SectionButtons,
+  SectionGraphics,
+  SliderBox,
+  NewsBox
 }
