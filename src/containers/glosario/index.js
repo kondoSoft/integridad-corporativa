@@ -36,13 +36,13 @@ export default class Glossary extends Component {
           <SectionBanner image={'/assets/img/glosario_background.jpg'} title={'GLOSARIO'} subtitle={'500 FRENTE A LA CORRUPCIÓN'} withBar />
         </header>
         <Main>
-          <Container >
-            <Route>HOME > GLOSARIO</Route>
+          <Container isNews Phone isGlossary>
+            <Route isResponsive>HOME > GLOSARIO</Route>
             <Edition>PRIMERA EDICIÓN NOVIEMBRE 2017</Edition>
             <Topic data={data} />
             <Sources data={dataSources} />
           </Container>
-          <News disabled />
+          <News isTablet disabled />
         </Main>
         <Footer />
       </div>

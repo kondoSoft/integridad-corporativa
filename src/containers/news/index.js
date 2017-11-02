@@ -53,13 +53,13 @@ export default class News extends Component {
           <SectionBanner image={'assets/img/noticias_background.jpg'} title={'NOTICIAS'} subtitle={''} withBar />
         </header>
         <Main>
-          <Container style={{width: '100%'}}>
-            <Route>HOME > NOTICIAS</Route>
+          <Container style={{width: '100%'}} isNews Phone>
+            <Route isResponsive>HOME > NOTICIAS</Route>
             <NewsWall disabled data={dataNewsWall} />
             <hr style={{borderColor: '#E4E5E4', width: '100%', marginTop: 20, marginBottom: 20}} />
             <div style={{display: 'flex'}}>
               <NewsContainer noPadding style={{width: '80%'}} data={dataArrayArticulo} disabled column expanded />
-              <NewsSideBar disabled withSearch noPadding />
+              <NewsSideBar isTablet disabled withSearch noPadding />
             </div>
           </Container>
         </Main>

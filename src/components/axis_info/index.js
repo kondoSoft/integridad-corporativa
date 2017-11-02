@@ -20,10 +20,27 @@ const Paragraph = styled.p`
   padding: 20px;
   box-sizing: border-box;
   font-weight: lighter;
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 968px) {
+        width: 90%;
+        font-size: 1.3em;
+        line-height: 30px;
+      }`
+    }
+  }}
 `
 
 const List = styled.ul`
   list-style: none;
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 968px) {
+        display: flex;
+        flex-direction: column;
+      }`
+    }
+  }}
 `
 
 const ListItem = styled.li`
@@ -75,14 +92,14 @@ const Anchor = styled.a`
 const AxisInfo = props => (
   <Wrapper backgroundImage={props.backgroundImage}>
     <Row>
-      <Paragraph>
+      <Paragraph Tablet>
         Se diseñó un cuestionario basado en el componente de publicidad de las políticas
         anticorrupción del estudio <Anchor href='https://www.tm.org.mx/informetrac2016/' target='_blank'>TRAC</Anchor> de Transparencia Internacional. Las preguntas a
         evaluar se agrupan en los siguientes cuatro ejes:
       </Paragraph>
     </Row>
     <Row>
-      <List>
+      <List Tablet>
         <ListItem>
           Publicidad de los elementos de una política
           anticorrupción integral
