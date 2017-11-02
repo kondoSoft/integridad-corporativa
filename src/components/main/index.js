@@ -14,12 +14,35 @@ export const Container = styled.div`
     padding: 0px 90px 0px 60px;
     border-right: 2px solid lightgrey;
     width: 60%;
+    ${props => {
+      if (props.isNews) {
+        return `@media screen and (max-width: 744px) {
+          padding: 0px 30px 0px 30px;
+          border-right: 0px;
+        }`
+      }
+    }}
+    ${props => {
+      if (props.Phone) {
+        return `@media screen and (max-width: 480px) {
+          padding: 0px 10px 0px 10px;
+          margin-bottom: 30px;  
+        }`
+      }
+    }}
 `
 export const Route = styled.p`
     font-size: 16px;
     color: red;
     margin-bottom: 50px;
     font-weight: 200;
+    ${props => {
+      if (props.isResponsive) {
+        return `@media screen and (max-width: 480px) {
+          display: none;
+        }`
+      }
+    }}
 `
 export const Edition = styled.p`
     font-size: 12px;
