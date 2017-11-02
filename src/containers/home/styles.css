@@ -94,6 +94,9 @@
   font-weight: bold;
   font-size: 1.2em;
 }
+table{
+  width: 85%;
+}
 .tHead{
   background-color: #750310;
 }
@@ -110,8 +113,4 @@
   padding: 15px;
   text-align: center;
   background-color: #EBEBEB; 
-}
-
-.width{
-  max-width: 100px;
 }

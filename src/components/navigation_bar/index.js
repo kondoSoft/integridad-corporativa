@@ -140,7 +140,7 @@ class NavigationBar extends Component {
           <NavList>
             <NavItem>
               <Link to='/'>
-                <NavLink>INICIO</NavLink>
+                <NavLink onClick={e => window.scrollTo(0, 0)}>INICIO</NavLink>
               </Link>
             </NavItem>
             <NavItem>
