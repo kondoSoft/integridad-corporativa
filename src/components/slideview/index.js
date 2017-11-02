@@ -9,13 +9,18 @@ const Container = styled.div`
   text-align: center;
   `
 const Vmore = styled.a`
-  color: #F24437;
+  color: #ED4630;
   font-weight: bolder;
   display: ${props => props.click ? 'none' : 'initial'};
-  text-decoration: underline;
+  text-decoration: none;
   margin-left: 5px;
   cursor: pointer;
   padding: 15px 15px 15px 0px;
+  transition: 0.3s;
+  z-index: 2;
+  &:hover{
+    color: #000;
+  }
 `
 const Vless = styled.a`
   color: #F24437;
@@ -67,7 +72,7 @@ function View (props) {
         <TextUp> {props.textUp}<Vmore onClick={props.slide} click={props.click}>Ver Más</Vmore></TextUp>
       </ContainerUp>
       <ContainerDown click={props.click}>
-        <TextDown > {props.textDown}<Vless onClick={props.slide} click={props.click}>Ver menos</Vless></TextDown>
+        <TextDown> {props.textDown}<Vless onClick={props.slide} click={props.click}>Ver menos</Vless></TextDown>
       </ContainerDown>
     </Container>
   )

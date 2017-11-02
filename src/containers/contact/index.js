@@ -2,17 +2,32 @@ import React, {Component} from 'react'
 import {
   SectionBanner,
   Footer,
-  ContactForm
+  ContactForm,
+  Dialog
 } from '../../components'
 
 class Contact extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      isVisible: false
+    }
+    this.closeModal = this.closeModal.bind(this)
+    this.sendMail = this.sendMail.bind(this)
+  }
   render () {
+    const {
+      isVisible
+    } = this.state
     return (
       <div>
         <header>
           <SectionBanner image={'/assets/img/contacto_background.jpg'} title='CONTACTO' withBar />
         </header>
         <ContactForm sendMail={this.sendMail}/>
+        <Dialog isVisible={isVisible} textCenter title='Aviso' onClickClose={this.closeModal}>
+          Su mensaje fue enviado exitosamente
+        </Dialog>
         <Footer />
       </div>
     )
@@ -42,8 +57,17 @@ class Contact extends Component {
     }
     fetch('http://165.227.53.250:8000/send-mail/', fetchOptions)
     .then(res => res.text())
-    .then(res => window.location.reload())
+    .then(res => {
+      this.setState({isVisible: true})
+      setTimeout(function () { window.location.reload() }, 1000)
+    })
     .catch(err => console.error(err))
+  }
+  closeModal () {
+    const {
+      isVisible
+    } = this.state
+    this.setState({isVisible: !isVisible})
   }
 }
 

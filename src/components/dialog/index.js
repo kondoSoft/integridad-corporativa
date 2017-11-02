@@ -113,14 +113,16 @@ const Title = styled.h3`
 const P = styled.p`
   color: #616161;
   padding:15px;
+  text-align: ${props => props.textCenter ? 'center' : 'left'};
+
 `
 
 const Dialog = (props) => (
   <Wrapper isVisible={props.isVisible}>
     <Card isVisible={props.isVisible} >
       <Icon className='fa fa-times' aria-hidden='true' onClick={props.onClickClose} />
-      <Title>¡ADVERTENCIA!</Title>
-      <P>500 Frente a la Corrupción: Integridad Corporativa (IC500) no es un índice sobre la corrupción en las empresas. Es una evaluación de los compromisos públicos de las empresas más importantes del país en favor de las políticas de  integridad, NO de su cumplimiento.</P>
+      <Title>{props.title}</Title>
+      <P textCenter={props.textCenter}>{props.children}</P>
     </Card>
   </Wrapper>
 )
