@@ -11,7 +11,7 @@ export const Container = styled.div`
     flex-direction: ${props => props.row ? 'row' : 'column'};
     margin-top: 60px;
     margin-bottom: 60px;
-    padding: 0px 90px 0px 60px;
+    padding: 0px 30px 0px 30px;
     border-right: 2px solid lightgrey;
     width: 60%;
     ${props => {
@@ -27,6 +27,17 @@ export const Container = styled.div`
         return `@media screen and (max-width: 480px) {
           padding: 0px 10px 0px 10px;
           margin-bottom: 30px;  
+        }`
+      }
+    }}
+    ${props => {
+      if (props.isGlossary) {
+        return `@media screen and (max-width: 1030px) {
+          width: 100%;
+          border-right: 0px;
+          padding: 0px 30px 0px 30px;
+          margin-bottom: 30px;
+          margin-top: 30px;
         }`
       }
     }}
