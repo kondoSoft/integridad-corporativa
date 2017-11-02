@@ -55,7 +55,7 @@ class Contact extends Component {
       mode: 'no-cors',
       headers: headers
     }
-    fetch('http://127.0.0.1:8000/send-mail/', fetchOptions)
+    fetch('http://165.227.53.250:8000/send-mail/', fetchOptions)
     .then(res => res.text())
     .then(res => {
       this.setState({isVisible: true})
