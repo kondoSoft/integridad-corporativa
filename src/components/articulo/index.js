@@ -39,6 +39,13 @@ const NewsWrapper = styled.div`
     flex-direction: column;
     height: 1400px;
     margin-top: 60px;
+    ${props => {
+      if (props.isTablet) {
+        return `@media screen and (max-width: 1030px){
+          display: none;
+        }`
+      }
+    }}
 `
 const Container = styled.div`
     flex: ${props => props.bottom ? 0 : 4};
@@ -139,6 +146,21 @@ const ArticleInformation = styled.div`
   display: flex;
   padding-top: 15px;
   height: ${props => props.expanded ? '170px' : '100px'};
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 684px) {
+        height: auto;
+      }`
+    }
+  }}
+  ${props => {
+    if (props.Phone) {
+      return `@media screen and (max-width: 480px) {
+        flex-direction: column;
+        padding-top: 0px;
+      }`
+    }
+  }}
 `
 const ArticleDescription = styled.div`
   width: 84%;
@@ -154,12 +176,42 @@ const InformationLeft = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   padding: 10px 10px 10px 0px;
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 684px) {
+        width: 20%;
+        padding: 5px 0px; 
+      }`
+    }
+  }}
+  ${props => {
+    if (props.Phone) {
+      return `@media screen and (max-width: 480px){
+        width: 100%;
+      }`
+    }
+  }}
 `
 const InformationRigth = styled.div`
   width: 85%; 
   display: flex;
   flex-direction: column;
   padding: 10px 10px 0px 0px;
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 684px) {
+        width: 80%;
+        padding: 5px 0px; 
+      }`
+    }
+  }}
+  ${props => {
+    if (props.Phone) {
+      return `@media screen and (max-width: 480px){
+        width: 100%;
+      }`
+    }
+  }}
 `
 const LeftDate = styled.div`
   background-color: red;
@@ -169,6 +221,13 @@ const LeftDate = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  ${props => {
+    if (props.Phone) {
+      return `@media screen and (max-width: 480px) {
+        width: 100%;
+      }`
+    }
+  }}
 `
 const RightColTop = styled.div`
   width: 100%;
@@ -200,11 +259,43 @@ const Left = styled.div`
   width: 40%;
   display: flex;
   align-items: flex-end;
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 744px){
+          width: 100%;
+          padding: 5px 0px;
+          height: 15px;
+      }`
+    }
+  }}
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 684px) {
+         
+      }`
+    }
+  }}
 `
 const Rigth = styled.div`
   width: 60%;
   display: flex;
   align-items: flex-end;
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 744px){
+          width: 100%;
+          padding: 5px 0px;
+          height: 15px;
+      }`
+    }
+  }}
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 684px) {
+         
+      }`
+    }
+  }}
 `
 const Socials = styled.div`
   width: 25%;
@@ -260,6 +351,13 @@ const SeeMoreButton = styled.button`
   background-color: #FF0000;
   color: #FFF;
   cursor: pointer;
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 684px) {
+        display: none;
+      }`
+    }
+  }}
 `
 const MiniInfo = styled.div`
   width: 100%;
@@ -267,6 +365,20 @@ const MiniInfo = styled.div`
   align-items: flex-end;
   flex-direction: ${props => props.column ? 'column' : 'row'};
   padding-bottom: 15px;
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 744px){
+          flex-direction: column;
+      }`
+    }
+  }}
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 684px) {
+        
+      }`
+    }
+  }}
 `
 export const Article = (props) => {
   const {data} = props
@@ -282,28 +394,28 @@ export const Article = (props) => {
               </ArticleImg>
               : null
           }
-          <ArticleInformation expanded={props.expanded}>
-            <InformationLeft>
-              <LeftDate>
+          <ArticleInformation expanded={props.expanded} Tablet Phone>
+            <InformationLeft Tablet Phone>
+              <LeftDate Phone>
                 <LeftDateText isDay>{data.dia}</LeftDateText>
                 <LeftDateText>{data.mes}</LeftDateText>
               </LeftDate>
             </InformationLeft>
-            <InformationRigth>
+            <InformationRigth Tablet Phone>
               <RightColTop>
                 <TitleArticle>
                   {data.titulo}
                 </TitleArticle>
               </RightColTop>
               <RightColBottomWithButton column={props.column} isArticle={props.isArticle}>
-                <MiniInfo>
-                  <Left>
+                <MiniInfo Tablet>
+                  <Left Tablet>
                     <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
                     <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
                   </Left>
                   {
                     (data.categorias !== undefined)
-                      ? <Rigth>
+                      ? <Rigth Tablet>
                         <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
                         {
                             data.categorias.map((categoria, i) => {
@@ -317,7 +429,7 @@ export const Article = (props) => {
                 <MiniDescription>
                   {description}
                 </MiniDescription>
-                <SeeMoreButton>
+                <SeeMoreButton Tablet>
                   <Link style={{color: '#FFF', textDecoration: 'none'}} to={`/noticias/${data.slug}`}>
                     Leer más
                   </Link>
@@ -470,7 +582,7 @@ const NewsBlog = (props) => {
 }
 export const News = (props) => {
   return (
-    <NewsWrapper noPadding={props.noPadding}>
+    <NewsWrapper isTablet={props.isTablet} noPadding={props.noPadding}>
       <SearchBox withSearch={props.withSearch}>
         <SearchInput />
         <IconButton>
