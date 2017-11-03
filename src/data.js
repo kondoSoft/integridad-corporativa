@@ -92,34 +92,34 @@ Dentro de las políticas y procedimientos de denuncia se deben prohibir expresam
 ]
 export const dataSources = [
   {
-    title: 'Código Penal Federal,',
-    book: 'DOF 26-06-2017.',
-    url: ' http://www.diputados.gob.mx/LeyesBiblio/pdf/9_260617.pdf'
+    'title': 'Código Penal Federal,',
+    'book': 'DOF 26-06-2017.',
+    'url': ' http://www.diputados.gob.mx/LeyesBiblio/pdf/9_260617.pdf'
   },
   {
-    title: 'Ernst & Young,',
-    book: '2011. Siete pasos para crear un programa anticorrupción sólido.',
-    url: 'http://www.ey.com/mx/es/services/assurance/fraud-investigation---dispute-services/siete-pasos-para-crear-un-programa-anticorrupcion-solido--disenar-e-implementar-el-programa'
+    'title': 'Ernst & Young,',
+    'book': '2011. Siete pasos para crear un programa anticorrupción sólido.',
+    'url': 'http://www.ey.com/mx/es/services/assurance/fraud-investigation---dispute-services/siete-pasos-para-crear-un-programa-anticorrupcion-solido--disenar-e-implementar-el-programa'
   },
   {
-    title: 'Ley General de Responsabilidades Administrativas, ',
-    book: 'DOF 18-07-2016.',
-    url: 'http://www.diputados.gob.mx/LeyesBiblio/pdf/LGRA.pdf'
+    'title': 'Ley General de Responsabilidades Administrativas, ',
+    'book': 'DOF 18-07-2016.',
+    'url': 'http://www.diputados.gob.mx/LeyesBiblio/pdf/LGRA.pdf'
   },
   {
-    title: 'Secretaría de la Función Pública, ',
-    book: 'Definición de Corrupción.',
-    url: 'https://www.gob.mx/sfp/documentos/definicion-de-corrupcion'
+    'title': 'Secretaría de la Función Pública, ',
+    'book': 'Definición de Corrupción.',
+    'url': 'https://www.gob.mx/sfp/documentos/definicion-de-corrupcion'
   },
   {
-    title: 'Transparencia Internacional 2008, ',
-    book: 'Principios Empresariales para Contrarrestar el Soborno-Edición para pequeñas y medianas empresas.',
-    url: 'https://www.transparency.org/whatwedo/publication/principios_empresariales_para_contrarrestar_el_soborno_edicion_para_pequena'
+    'title': 'Transparencia Internacional 2008, ',
+    'book': 'Principios Empresariales para Contrarrestar el Soborno-Edición para pequeñas y medianas empresas.',
+    'url': 'https://www.transparency.org/whatwedo/publication/principios_empresariales_para_contrarrestar_el_soborno_edicion_para_pequena'
   },
   {
-    title: 'Transparencia Internacional 2009, ',
-    book: 'Guía de lenguaje claro sobre lucha contra la corrupción.',
-    url: 'https://www.transparency.org/whatwedo/publication/guia_de_lenguaje_claro_sobre_lucha_contra_la_corrupcion'
+    'title': 'Transparencia Internacional 2009, ',
+    'book': 'Guía de lenguaje claro sobre lucha contra la corrupción.',
+    'url': 'https://www.transparency.org/whatwedo/publication/guia_de_lenguaje_claro_sobre_lucha_contra_la_corrupcion'
   }
 ]
 export const dataArticulo = {

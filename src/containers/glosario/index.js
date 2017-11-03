@@ -12,22 +12,21 @@ import {
     Container
 } from '../../components'
 import {data, dataSources} from '../../data'
+import {httpRequest} from '../../helpers'
 
 export default class Glossary extends Component {
   componentDidMount () {
-    // fetch('http://127.0.0.1:8000/fuentes/', {
-    //   method: 'GET',
-    //   mode: 'no-cors',
-    //   headers: new Headers({
-    //     'Content-Type': 'text/html'
-    //   })
-    // })
-    // .then((response) => {
-    //   return response.text()
-    // })
-    // .then(text => {
-    //   console.log(text)
-    // })
+    const options = {
+      host: '127.0.0.1',
+      port: 8000,
+      path: '/fuentes/',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    }
+    httpRequest(options)
+    .then(res => console.log(res))
   }
   render () {
     return (
