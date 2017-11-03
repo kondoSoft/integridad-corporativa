@@ -19,6 +19,15 @@ const Row = styled.div`
   width: ${props => props.width ? props.width : null};
   padding: ${props => props.padding ? props.padding : null};
   box-sizing: border-box;
+  ${props => {
+    if (props.small) {
+      return `@media screen and (max-width: 968px){
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }`
+    }
+  }}
 `
 
 export default Row
