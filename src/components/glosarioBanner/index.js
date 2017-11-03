@@ -13,6 +13,7 @@ const WrapperBanner = styled.div`
   justify-content: ${props => (props.center) ? 'center' : 'flex-start'};
 `
 const SectionText = styled.div`
+  width: 100%;
   display:flex;
   flex-direction:column;
   justify-content: ${props => (props.center) ? 'center' : 'space-around'};
@@ -24,6 +25,9 @@ const Title = styled.h2`
   color: #FFF;
   padding: 3px;
   font-family: 'Druk Text Web';
+  @media screen and (max-width: 597px) {
+    font-size: 50px;
+  }
 `
 const SubTitle = styled.p`
   font-size: 30px;

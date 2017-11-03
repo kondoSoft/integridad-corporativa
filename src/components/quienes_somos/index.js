@@ -11,6 +11,26 @@ export const MainSection = styled.div`
   display: flex;
   flex-direction: ${props => props.column ? 'column' : 'row'};
   padding: ${props => props.isBig ? '90px 100px' : '0px'};
+  @media screen and (max-width: 1083px) {
+ 
+  }
+  @media screen and (max-width: 660px) {
+    padding: 90px 30px;
+  }
+  @media screen and (max-width: 968px) {
+    padding: ${props => props.isMiddleBanner ? '0px' : '30px 10px'};
+  }
+  ${props => {
+    if (props.isMiddle) {
+      return `@media screen and (max-width: 420px) {
+        flex-direction: column;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+      }`
+    }
+  }}
 `
 export const Content = styled.div`
   width: 100%;
@@ -19,6 +39,28 @@ export const Content = styled.div`
   background-color: ${props => props.isGrey ? 'lightgrey' : '#FFF'};
   align-items: ${props => props.center ? 'center' : 'flex-start'};
   text-align: center;
+  @media screen and (max-width: 660px) {
+    
+  }
+  @media screen and (max-width: 407px) {
+    
+  }
+  ${props => {
+    if (props.isMiddle) {
+      return `@media screen and (max-width: 420px) {
+        
+      }`
+    }
+  }}
+  ${props => {
+    if (props.middleImg) {
+      return `@media screen and (max-width: 420px) {
+        align-items: center;
+        justify-content: center;
+        
+      }`
+    }
+  }}
 `
 export const ContentText = styled.p`
   font-size: ${props => props.isBig ? '2.5em' : props.normal ? '18px' : '22px'};
@@ -27,10 +69,25 @@ export const ContentText = styled.p`
   font-weight: 200;
   font-family: ${props => props.normal ? 'sans-serif' : "'Druk Text Web'"};
   margin: 3px 0px;
+  @media screen and (max-width: 968px) {
+    font-size: ${props => props.normal ? '1em' : props.isBig ? '1.5em' : '1em'};
+  }
+  @media screen and (max-width: 1220px) {
+    font-size: ${props => props.normal ? '1em' : props.isBig ? '2em' : '1.5em'};
+  }
+  @media screen and (max-width: 1220px) {
+    font-size: ${props => props.normal ? '0.9em' : props.isBig ? '1.9em' : '1.4em'};
+  }
+  @media screen and (max-width: 420px) {
+    font-size: ${props => props.normal ? '0.8em' : props.isBig ? '1em' : '0.9em'};
+  }
 `
 
 const Image = styled.img`
   width: ${props => props.width ? props.width : '100%'};
+  @media screen and (max-width: 968px) {
+    width: ${props => props.isBanner ? '70%' : '60%'};
+  }
 `
 
 const Title = styled.h3`
@@ -39,15 +96,89 @@ const Title = styled.h3`
   font-size: ${props => props.red ? '1.5em' : '2em'}; 
   margin-bottom: 10px; 
   color: ${props => props.red ? '#ED462F' : '#000'};
+  @media screen and (max-width: 968px) {
+    font-size: 22px;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 22px; 
+  }
+`
+export const MiddleSection = styled.div`
+  flex: 1;
+  display: flex;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  background-color: #ebebeb;
+  @media screen and (max-width: 1083px) {
+ 
+  }
+  @media screen and (max-width: 660px) {
+    padding: 90px 30px;
+  }
+  @media screen and (max-width: 968px) {
+    padding: ${props => props.isMiddleBanner ? '0px' : '30px 10px'};
+  }
+  ${props => {
+    if (props.isMiddle) {
+      return `@media screen and (max-width: 995px) {
+        flex-direction: column;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        align-items: center;
+        justify-content: center;
+      }
+      @media screen and (max-width: 663px) {
+        
+      }`
+    }
+  }}
+`
+export const MiddleLeft = styled.div`
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: ${props => props.column ? 'column' : 'row'};
+  align-items: ${props => props.center ? 'center' : 'flex-start'};
+  text-align: center;
+  @media screen and (max-width: 660px) {
+    
+  }
+  @media screen and (max-width: 407px) {
+    
+  }
+  ${props => {
+    if (props.isMiddle) {
+      return `@media screen and (max-width: 995px) {
+        width: 95%;
+        padding: 10px;
+        align-items: center;
+      }
+      @media screen and (max-width: 663px) {
+        align-items: flex-start;
+      }`
+    }
+  }}
+  ${props => {
+    if (props.middleImg) {
+      return `@media screen and (max-width: 420px) {
+        
+      }`
+    }
+  }}
 `
 
 export const MiddleBanner = props => (
   <div>
-    <Row>
-      <Col width='50%' >
-        <Image src='assets/img/quienessomos_banner.png' />
+    <Row small>
+      <Col width='50%' isImage >
+        <Image isBanner src='assets/img/quienessomos_banner.png' />
       </Col>
-      <Col width='50%' >
+      <Col width='50%' isDescription>
         <Title>Apartir del 15 de noviembre 2017,</Title>
         <ContentText normal>las empresas podrán actualizar la información sobre sus políticas</ContentText>
         <ContentText normal>anticorrupción a través de este sitio para futuras evaluaciones de</ContentText>
@@ -61,14 +192,13 @@ export const MiddleBanner = props => (
         <ContentText normal>para el reporte anual de IC500 en noviembre</ContentText>
       </Col>
     </Row>
-    <Row padding='0px 100px' margin='100px 0px'>
-      <Col width='50%' >
-
+    <Row small padding='0px 100px' margin='100px 0px'>
+      <Col width='50%' isImage >
         <a href='https://contralacorrupcion.mx/' target='_blank'>
-          <Image src='assets/img/mcci.png' width='50%' />
+          <Image src='assets/img/mcci.png' width='80%' />
         </a>
       </Col>
-      <Col width='50%' background='#F1F2F1' padding='30px 0px'>
+      <Col width='50%' background='#F1F2F1' padding='30px 0px' isDescription>
         <Title red>Sobre Mexicanos Contra la Corrupción y la Impunidad</Title>
         <ContentText normal>Asociación civil sin fines de lucro comprometida con la</ContentText>
         <ContentText normal>consolidación del Estado de Derecho en México, a través de una</ContentText>
@@ -80,13 +210,13 @@ export const MiddleBanner = props => (
         <ContentText normal>movilización ciudadana.</ContentText>
       </Col>
     </Row>
-    <Row padding='0px 100px' margin='50px 0px' invert>
-      <Col width='50%' >
+    <Row small padding='0px 100px' margin='50px 0px' invert>
+      <Col width='50%' isImage>
         <a href='https://www.tm.org.mx/' target='_blank'>
           <Image src='assets/img/quienessomos_tranparencia.jpg' width='80%' />
         </a>
       </Col>
-      <Col width='50%' background='#F1F2F1' padding='30px 0px'>
+      <Col width='50%' background='#F1F2F1' padding='30px 0px' isDescription>
         <Title red>Sobre Transparencia Mexicana</Title>
         <ContentText normal>Transparencia Mexicana es una organización de la sociedad civil</ContentText>
         <ContentText normal>dedicada a lucha contra la corrupción en México. Bajo un</ContentText>
@@ -101,13 +231,13 @@ export const MiddleBanner = props => (
         <ContentText normal>México de Transparencia Internacional.</ContentText>
       </Col>
     </Row>
-    <Row padding='0px 100px' margin='50px 0px'>
-      <Col width='50%' >
+    <Row small padding='0px 100px' margin='50px 0px'>
+      <Col width='50%' isImage>
         <a href='http://expansion.mx/' target='_blank'>
           <Image src='assets/img/logo_expansion.jpg' width='60%' />
         </a>
       </Col>
-      <Col width='50%' background='#F1F2F1' padding='30px 0px'>
+      <Col width='50%' background='#F1F2F1' padding='30px 0px' isDescription>
         <Title red>Sobre Expasión</Title>
         <ContentText normal>Expasión es el medio de comunicación líder en periodismo de</ContentText>
         <ContentText normal>negocios en México. Con cerca de cinco décadas de trayectoria</ContentText>

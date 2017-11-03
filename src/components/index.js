@@ -34,7 +34,9 @@ import {
   ContentText,
   Content,
   MainSection,
-  MiddleBanner
+  MiddleBanner,
+  MiddleSection,
+  MiddleLeft
 } from './quienes_somos'
 import ContactForm from './ContactForm'
 import View from './slideview'
@@ -101,5 +103,7 @@ export {
   SectionButtons,
   SectionGraphics,
   SliderBox,
-  NewsBox
+  NewsBox,
+  MiddleSection,
+  MiddleLeft
 }

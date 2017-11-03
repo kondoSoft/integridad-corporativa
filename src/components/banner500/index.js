@@ -15,6 +15,9 @@ const Wrapper = styled.div`
   @media screen and (max-width: 768px) {
     padding: 10px 0px 10px 0px;
   }
+  @media screen and (max-width: 597px) {
+    margin: 50px 0px;
+  }
 `
 const Button = styled.div`
   cursor:pointer;
