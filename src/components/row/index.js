@@ -25,7 +25,12 @@ const Row = styled.div`
             width: 100%;
             margin: 0px;
             padding: 0px;
-        }`
+      }`
+    }
+    if (props.Tablet) {
+      return `@media screen and (max-width: 968px) {
+        flex-direction: column;
+      }`
     }
   }}
 `

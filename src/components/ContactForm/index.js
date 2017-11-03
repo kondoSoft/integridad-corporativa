@@ -11,6 +11,20 @@ const Form = styled.form`
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 968px) {
+        width: 80%;
+      }`
+    }
+  }}
+  ${props => {
+    if (props.Phone) {
+      return `@media screen and (max-width: 500px) {
+        width: 90%;
+      }`
+    }
+  }}
 `
 
 const Input = styled.input`
@@ -93,7 +107,7 @@ const Submit = styled.button`
 `
 
 const ContactForm = props => (
-  <Form onSubmit={props.sendMail}>
+  <Form onSubmit={props.sendMail} Tablet Phone>
     <Input type='text' placeholder='Nombre' name='name' />
     <Input type='email' placeholder='Correo electrónico' name='email' />
     <TextArea name='message' cols='30' rows='10' placeholder='Mensaje' />

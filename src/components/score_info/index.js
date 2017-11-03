@@ -58,7 +58,7 @@ const Span = styled.span`
 
 const ScoreInfo = props => (
   <Wrapper>
-    <Row noWrap>
+    <Row Tablet noWrap>
       <Col>
         <Paragraph>
           La mayoría de los reactivos fueron calificados de manera binaria (0 o 1), aunque en algunos caso, se admitieron respuestas

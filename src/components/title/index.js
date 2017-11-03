@@ -8,6 +8,13 @@ const Title = styled.h2`
   font-family:'Druk Text Web';
   transition:0.3s;
   color: ${props => (props.color) ? props.color : null};
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 923px) {
+          font-size: 2em;
+        }`
+    }
+  }}
 `
 
 export default Title

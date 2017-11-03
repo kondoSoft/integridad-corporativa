@@ -9,7 +9,13 @@ const Col = styled.div`
   margin: ${props => props.margin ? props.margin : null};
   background: ${props => props.background ? props.background : null};
   padding: ${props => props.padding ? props.padding : null};
-
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 968px) {
+            
+        }`
+    }
+  }}
   ${props => {
     if (props.isImage) {
       return `@media screen and (max-width: 968px){
@@ -25,6 +31,7 @@ const Col = styled.div`
             padding: 20px;
         }`
     }
-  }}
+  }
+  }
 `
 export default Col
