@@ -20,7 +20,7 @@ export default class AboutUs extends Component {
     return (
       <div style={{overflow: 'hidden'}}>
         <header>
-          <SectionBanner image={'/assets/img/quienessomos_background.jpg'} title={'¿QUIÉNES SOMOS?'} subtitle={''} withBar />
+          <SectionBanner image={'/assets/img/quienessomos_background.jpg'} title={'¿QUIÉNES SOMOS?'} subtitle={''} withBar isQuienes />
         </header>
         <Main column>
           <MainSection isBig>

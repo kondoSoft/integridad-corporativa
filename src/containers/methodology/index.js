@@ -12,7 +12,7 @@ import {
 class Methodology extends Component {
   render () {
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <header>
           <SectionBanner title='Metodología' image='/assets/img/metodologia_background.jpg' withBar />
         </header>

@@ -30,7 +30,7 @@ export default class Glossary extends Component {
   }
   render () {
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <header>
           <SectionBanner image={'/assets/img/glosario_background.jpg'} title={'GLOSARIO'} subtitle={'500 FRENTE A LA CORRUPCIÓN'} withBar />
         </header>

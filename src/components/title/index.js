@@ -15,6 +15,15 @@ const Title = styled.h2`
         }`
     }
   }}
+  ${props => {
+    if (props.Cel) {
+      return `
+        @media screen and (max-width:380px) {
+          font-size: 1.2em;
+        }
+      `
+    }
+  }}
 `
 
 export default Title

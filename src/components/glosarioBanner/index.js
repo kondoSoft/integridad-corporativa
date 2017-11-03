@@ -28,12 +28,23 @@ const Title = styled.h2`
   @media screen and (max-width: 597px) {
     font-size: 50px;
   }
+  ${props => {
+    if (props.isQuienes) {
+      return `
+        @media screen and (max-width:380px){
+          text-align: center;
+          font-size: 40px;
+        }
+      `
+    }
+  }}
 `
 const SubTitle = styled.p`
   font-size: 30px;
   color: #FFF;
   padding: 3px;
   font-family: 'Druk Text Web';
+  text-align: center;
 `
 const DivisionBar = styled.hr`
   background-color: red;
@@ -47,7 +58,7 @@ const SectionBanner = (props) => {
   return (
     <WrapperBanner image={props.image} center>
       <SectionText center>
-        <Title>{props.title}</Title>
+        <Title isQuienes={props.isQuienes}>{props.title}</Title>
         <SubTitle>{props.subtitle}</SubTitle>
         {
             props.withBar

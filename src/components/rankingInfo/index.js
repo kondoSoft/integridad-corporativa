@@ -32,14 +32,18 @@ const RakingDescription = styled.p`
           line-height: 20px;
           margin-top: 20px;
           max-width: 100%;
-        }`
+        }
+        `
     }
   }}
+  @media screen and (max-width:380px){
+    font-size: 0.9em;
+  }
 `
 
 const RankingInfo = props => (
   <Wrapper Tablet>
-    <Title Tablet lighter fontSize='2.5em' color='#721D11'>500 Frente a la Corrupción evalúa a las 500 empresas más importantes de México de acuerdo al ranking publicado por Expansión cada año.</Title>
+    <Title Cel Tablet lighter fontSize='2.5em' color='#721D11'>500 Frente a la Corrupción evalúa a las 500 empresas más importantes de México de acuerdo al ranking publicado por Expansión cada año.</Title>
     <RakingDescription Tablet>
       Estas empresas representan más de 15 billones de pesos en ventas anuales y emplean de manera directa a 4.7 millones de personas. Por ello, la adopción de buenas prácticas anticorrupción
       a su anterior, es clave, pues tiene el potencial de impactar positivamente a toda su cadena de producción, sus socios comerciales, proveedores y distribuidores. Son éstas las empresas
