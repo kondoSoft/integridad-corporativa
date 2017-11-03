@@ -14,6 +14,11 @@ const Paragraph = styled.p`
   line-height: 30px;
   font-weight: lighter;
   text-align: center;
+  @media screen and (max-width: 380px){
+    font-size: 1em;
+    margin-right: 0px;
+
+  }
 `
 const Score = styled.p`
   padding: 20px;
@@ -30,6 +35,19 @@ const Score = styled.p`
     width: 140px;
     bottom: 0px;
     right: 28%;
+  }
+  @media screen and (max-width: 380px){
+    padding: 15px 5px 0px 5px;
+    font-size: 1.1em;
+    margin-right: 0px;
+    &:after{
+    content: '';
+    position: absolute;
+    border-bottom: 0px;
+    width: 140px;
+    bottom: 0px;
+    right: 28%;
+  }
   }
   `
 
@@ -48,6 +66,14 @@ const ScoreTot = styled.p`
     width: 250px;
     bottom: 0px;
     right: 10%;
+  }
+  @media screen and (max-width: 380px){
+    padding: 15px 10px 0px 10px;
+    font-size: 1.1em;
+    margin-right: 0px;
+    &:after{
+      border-bottom: 0px;  
+    }
   }
   `
 

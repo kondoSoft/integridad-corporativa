@@ -20,11 +20,11 @@ class Contact extends Component {
       isVisible
     } = this.state
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <header>
           <SectionBanner image={'/assets/img/contacto_background.jpg'} title='CONTACTO' withBar />
         </header>
-        <ContactForm sendMail={this.sendMail}/>
+        <ContactForm sendMail={this.sendMail} />
         <Dialog isVisible={isVisible} textCenter title='Aviso' onClickClose={this.closeModal}>
           Su mensaje fue enviado exitosamente
         </Dialog>
@@ -37,7 +37,7 @@ class Contact extends Component {
     let name = e.target.name.value
     let email = e.target.email.value
     let message = e.target.message.value
-    
+
     const formData = new FormData()
     formData.append('name', name)
     formData.append('email', email)

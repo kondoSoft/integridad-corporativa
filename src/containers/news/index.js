@@ -48,7 +48,7 @@ export default class News extends Component {
   render () {
     const {dataNewsWall} = this.state
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <header>
           <SectionBanner image={'assets/img/noticias_background.jpg'} title={'NOTICIAS'} subtitle={''} withBar />
         </header>

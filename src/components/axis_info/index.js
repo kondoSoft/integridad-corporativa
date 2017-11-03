@@ -78,6 +78,16 @@ const ListItem = styled.li`
       bottom: 10px;
     }
   }
+  ${props => {
+    if (props.Cel) {
+      return `
+        @media screen and (max-width:380px){
+          &:after{
+            border-right: 0px;
+        }
+      `
+    }
+  }}
 `
 
 const Anchor = styled.a`
@@ -100,14 +110,14 @@ const AxisInfo = props => (
     </Row>
     <Row>
       <List Tablet>
-        <ListItem>
+        <ListItem Cel>
           Publicidad de los elementos de una política
           anticorrupción integral
         </ListItem>
-        <ListItem>
+        <ListItem Cel>
           Alcance y socialización de la política anticorrupción
         </ListItem>
-        <ListItem>
+        <ListItem Cel>
           Sistema de monitoreo, denuncia y sanciones.
         </ListItem>
         <ListItem>

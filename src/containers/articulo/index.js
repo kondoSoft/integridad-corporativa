@@ -16,7 +16,7 @@ export default class Article extends Component {
     const slug = this.props.match.params.articulo
     const art = dataArrayArticulo.filter(articulo => articulo.slug === slug)
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <header>
           <SectionBanner image={'/assets/img/noticias_background.jpg'} title={'ARTICULO'} subtitle={''} withBar />
         </header>

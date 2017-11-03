@@ -41,6 +41,15 @@ export const Container = styled.div`
         }`
       }
     }}
+    ${props => {
+      if (props.events) {
+        return `
+          @media screen and (max-width: 380px){
+            padding: 0px 10px 0px 10px;
+          }
+        `
+      }
+    }}
 `
 export const Route = styled.p`
     font-size: 16px;
@@ -92,6 +101,13 @@ const BoldTitle = styled.b`
 const SourceBook = styled.p`
     font-size: 14px;
     font-weight: 200;
+    ${props => {
+      if (props.Tablet) {
+        return `@media screen and (max-width: 950px) {
+          display: none;
+        }`
+      }
+    }}
 `
 const SourceLink = styled.a`
     font-size: 14px;
@@ -127,7 +143,7 @@ export const Sources = (props) => {
                 <HyperLikn href={source.url} target='_blank'>
                   {source.title}&nbsp;
                 </HyperLikn>
-                <SourceBook>{source.book}</SourceBook>
+                <SourceBook Tablet>{source.book}</SourceBook>
               </BoldTitle>
             </SourceDetail>
           )

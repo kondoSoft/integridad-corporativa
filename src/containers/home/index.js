@@ -700,7 +700,7 @@ class Home extends Component {
       // initialSlide: 12
     }
     return (
-      <div>
+      <div style={{overflow: 'hidden'}}>
         <header>
           <MainBanner />
         </header>
@@ -1096,65 +1096,65 @@ class Home extends Component {
                 <Col>
                   {/* GRAFICA 17 */}
                   <View click={this.state.View.click} slide={this.clickView} textUp='Las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas...' textDown='Al considerar a las 500 por el origen de su capital, es posible encontrar que las 282 empresas con capital nacional cuentan con un promedio de 30 sobre 100 puntos posibles, siete puntos por debajo del promedio de las 500 empresas (37). Empresas de dos países registran un promedio superior a 70 puntos: Singapur y Colombia. Sin embargo, en conjunto, las empresas de estos dos países sólo representan a 3 empresas; una de Singapur y dos de Colombia. Solamente 10 empresas provenientes de ocho países obtuvieron calificaciones promedio por encima de 60 puntos. Luego de México (277), Estados Unidos es el país con más empresas (95) con un promedio de 45.8 de 100. El tercer país con más empresas en este ranking es Alemania (17) con un promedio de 43 puntos.' />
-                  <Row noWrap={window.innerWidth > 1024 ? true : false}>
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={charts['16'].europa}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
+                  <Row noWrap={window.innerWidth > 1024}>
+                    <BarChart
+                      width={500}
+                      height={300}
+                      data={charts['16'].europa}
+                      margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                      layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
-                    <YAxis type='category' dataKey='name' width={100} />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip formatter={val => val.toString() + '%'} />
-                    <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
-                  </BarChart>
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={charts['16'].latinoamerica}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
+                      <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
+                      <YAxis type='category' dataKey='name' width={100} />
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <Tooltip formatter={val => val.toString() + '%'} />
+                      <Legend />
+                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                    </BarChart>
+                    <BarChart
+                      width={500}
+                      height={300}
+                      data={charts['16'].latinoamerica}
+                      margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                      layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
-                    <YAxis type='category' dataKey='name' width={100} />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip formatter={val => val.toString() + '%'} />
-                    <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
-                  </BarChart>
+                      <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
+                      <YAxis type='category' dataKey='name' width={100} />
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <Tooltip formatter={val => val.toString() + '%'} />
+                      <Legend />
+                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                    </BarChart>
                   </Row>
                   <Row noWrap={window.innerWidth > 1024 ? 1 : 0}>
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={charts['16'].norteamerica}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
+                    <BarChart
+                      width={500}
+                      height={300}
+                      data={charts['16'].norteamerica}
+                      margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                      layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
-                    <YAxis type='category' dataKey='name' width={100} />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip formatter={val => val.toString() + '%'} />
-                    <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
-                  </BarChart>
-                  <BarChart
-                    width={500}
-                    height={300}
-                    data={charts['16'].asia}
-                    margin={{top: 5, right: 30, left: 20, bottom: 5}}
-                    layout='vertical'
+                      <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
+                      <YAxis type='category' dataKey='name' width={100} />
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <Tooltip formatter={val => val.toString() + '%'} />
+                      <Legend />
+                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                    </BarChart>
+                    <BarChart
+                      width={500}
+                      height={300}
+                      data={charts['16'].asia}
+                      margin={{top: 5, right: 30, left: 20, bottom: 5}}
+                      layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val=> val.toString() + '%'}/>
-                    <YAxis type='category' dataKey='name' width={100} />
-                    <CartesianGrid strokeDasharray='3 3' />
-                    <Tooltip formatter={val => val.toString() + '%'} />
-                    <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
-                  </BarChart>
+                      <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
+                      <YAxis type='category' dataKey='name' width={100} />
+                      <CartesianGrid strokeDasharray='3 3' />
+                      <Tooltip formatter={val => val.toString() + '%'} />
+                      <Legend />
+                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                    </BarChart>
                   </Row>
                 </Col>
                 <Col>
@@ -1183,7 +1183,7 @@ class Home extends Component {
                     margin={{top: 5, right: 30, left: 20, bottom: 5}}
                     layout='vertical'
                   >
-                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickFormatter={val=> val.toString() + '%'} />
+                    <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickFormatter={val => val.toString() + '%'} />
                     <YAxis type='category' dataKey='name' width={250} />
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip formatter={val => val.toString() + '%'} />

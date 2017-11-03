@@ -71,6 +71,18 @@ const NavItem = styled.li`
       border-right:1px solid #FFF;
     }
   }
+  @media screen and (max-width:468px){
+   &:after{
+    content:'';
+    border-right:0px;
+  }
+  &:nth-child(1){
+    &:before{
+      content:'';
+      border-right:0px;
+    }
+  } 
+  }
 `
 
 const NavLink = styled.a`
@@ -85,6 +97,9 @@ const NavLink = styled.a`
     background: #d03e3d;
     cursor: pointer;
   }
+  @media screen and (max-width:476px){
+          font-size: 16px;
+        }
 `
 const SocialsContainer = styled.div`
   display: flex;
@@ -95,11 +110,17 @@ const SocialsContainer = styled.div`
   right: 0;
   z-index: 4;
   background-color: #ED4630;
+  @media screen and (max-width:476px){
+    flex-direction: column;
+  }
 `
 const SocialIcon = styled.i`
   font-size: 22px;
   color: #FFF;
   padding: 10px;
+  @media screen and (max-width:476px){
+    display: none;
+  }
 `
 const HamMenu = styled.div`
   width: 80%;
@@ -110,9 +131,7 @@ const HamMenu = styled.div`
   @media screen and (max-width: 945px) {
     display: flex;
   }
-  @media screen and (max-width: 731px) {
-    
-  }
+  
 `
 const MenuIcon = styled.i`
   color: #FFF;
