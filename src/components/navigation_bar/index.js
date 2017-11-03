@@ -72,17 +72,38 @@ const NavItem = styled.li`
     }
   }
   @media screen and (max-width:468px){
-   &:after{
-    content:'';
-    border-right:0px;
-  }
-  &:nth-child(1){
-    &:before{
+    &:after{
       content:'';
       border-right:0px;
     }
-  } 
+    &:nth-child(1){
+      &:before{
+        content:'';
+        border-right:0px;
+      }
+    } 
   }
+  ${props => {
+    if (props.isResponsiveMenu) {
+      return `
+        width: 100%;
+        &:after{
+          content:'';
+          border-right:0px;
+        }
+        &:nth-child(1){
+          &:before{
+            content:'';
+            border-right:0px;
+          }
+        }
+        &:hover{
+          background: #d03e3d;
+          cursor: pointer;
+        }
+      `
+    }
+  }}
 `
 
 const NavLink = styled.a`
@@ -98,8 +119,13 @@ const NavLink = styled.a`
     cursor: pointer;
   }
   @media screen and (max-width:476px){
-          font-size: 16px;
-        }
+    font-size: 16px;
+  }
+  ${props => {
+    if (props.isResponsiveMenu) {
+      return `width: 100%;`
+    }
+  }}
 `
 const SocialsContainer = styled.div`
   display: flex;
@@ -113,6 +139,14 @@ const SocialsContainer = styled.div`
   @media screen and (max-width:476px){
     flex-direction: column;
   }
+  ${props => {
+    if (props.isResponsiveMenu) {
+      return `
+        flex-direction: column;
+        width: 100%;
+      `
+    }
+  }}
 `
 const SocialIcon = styled.i`
   font-size: 22px;
@@ -142,17 +176,19 @@ class NavigationBar extends Component {
     super(props)
     this.state = {
       isHover: false,
-      social: ''
+      social: '',
+      showMenu: false
     }
     this.isHover = this.isHover.bind(this)
     this.isLeave = this.isLeave.bind(this)
+    this.showMenu = this.showMenu.bind(this)
   }
   render () {
     return (
       <section>
         <NavBar>
           <HamMenu>
-            <NavLink>
+            <NavLink onClick={() => this.showMenu()}>
               <MenuIcon className='fa fa-bars' aria-hidden='true' />
             </NavLink>
           </HamMenu>
@@ -232,6 +268,45 @@ class NavigationBar extends Component {
           </SocialsContainer>
           : null
         }
+        {
+          this.state.showMenu
+            ? <SocialsContainer isResponsiveMenu>
+              <NavItem isResponsiveMenu>
+                <Link onClick={() => this.showMenu()} to='/'>
+                  <NavLink isResponsiveMenu onClick={e => window.scrollTo(0, 0)}>INICIO</NavLink>
+                </Link>
+              </NavItem>
+              <NavItem isResponsiveMenu>
+                <Link onClick={() => this.showMenu()} to='/quienes-somos'>
+                  <NavLink isResponsiveMenu>QUIÉNES SOMOS</NavLink>
+                </Link>
+              </NavItem>
+              <NavItem isResponsiveMenu>
+                <Link onClick={() => this.showMenu()} to='/noticias'>
+                  <NavLink isResponsiveMenu>NOTICIAS</NavLink>
+                </Link>
+              </NavItem>
+              <NavItem isResponsiveMenu>
+                <Link onClick={() => this.showMenu()} to='/glosario'>
+                  <NavLink isResponsiveMenu>GLOSARIO</NavLink>
+                </Link>
+              </NavItem>
+              <NavItem isResponsiveMenu>
+                <Link onClick={() => this.showMenu()}to='/metodologia'>
+                  <NavLink isResponsiveMenu>METODOLOGÍA</NavLink>
+                </Link>
+              </NavItem>
+              <NavItem isResponsiveMenu>
+                <Link onClick={() => this.showMenu()} to='/contacto'>
+                  <NavLink isResponsiveMenu href='#'>CONTACTO</NavLink>
+                </Link>
+              </NavItem>
+              <NavItem isResponsiveMenu>
+                <NavLink isResponsiveMenu href='#'>SOY PARTE DE LAS 500</NavLink>
+              </NavItem>
+            </SocialsContainer>
+          : null
+        }
       </section>
     )
   }
@@ -245,6 +320,12 @@ class NavigationBar extends Component {
     this.setState({
       isHover: false,
       social: ''
+    })
+  }
+  showMenu () {
+    console.log('se ejecuta la hamburguesa')
+    this.setState({
+      showMenu: !this.state.showMenu
     })
   }
 }
