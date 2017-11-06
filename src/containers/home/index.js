@@ -19,7 +19,13 @@ import {
   Disclaimer,
   NewsWall,
   CustomizedAxisTick,
-  View
+  View,
+  Vless,
+  Vmore,
+  TextUp,
+  TextDown,
+  ContainerUp,
+  ContainerDown
 } from '../../components'
 import './styles.css'
 import {
@@ -305,41 +311,41 @@ class Home extends Component {
           {name: 'Compromiso con la legalidad y el respeto a las leyes nacionales e internacionales', 'Si': 190, 'Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO': 255, 'No': 55}
         ],
         '05': [
-          {name: 'Si', value: 38, fill: '#3A8D91'},
-          {name: 'No', value: 62, fill: '#CFCECE'}
+          {name: 'Si', value: 38, fill: '#4CAF50'},
+          {name: 'No', value: 62, fill: '#F44336'}
         ],
         '06': [
-          {name: 'Información no disponible', value: 40, fill: '#E18442'},
-          {name: 'Empleados', value: 28, fill: '#6FAD47'},
-          {name: 'Empleados y Directivos', value: 32, fill: '#957319'}
+          {name: 'Información no disponible', value: 40, fill: '#9E9E9E'},
+          {name: 'Empleados', value: 28, fill: '#3498db'},
+          {name: 'Empleados y Directivos', value: 32, fill: '#3F51B5'}
         ],
         '07': [
-          {name: 'Si', value: 19, fill: '#F8BF32'},
-          {name: 'No', value: 81, fill: '#6FAD47'}
+          {name: 'Si', value: 19, fill: '#4CAF50'},
+          {name: 'No', value: 81, fill: '#F44336'}
         ],
         '08': [
-          {name: 'Información no disponible', value: 77, fill: '#B78C22'},
-          {name: 'No, pero los socios comerciales están sujetos al programa anticorrupción de la empresa', value: 11, fill: '#ECB62F'},
-          {name: 'Hay un programa específico para socios comerciales', value: 12, fill: '#FAD599'}
+          {name: 'Información no disponible', value: 77, fill: '#9E9E9E'},
+          {name: 'No, pero los socios comerciales están sujetos al programa anticorrupción de la empresa', value: 11, fill: '#3498db'},
+          {name: 'Hay un programa específico para socios comerciales', value: 12, fill: '#3F51B5'}
         ],
         '09': {
           left: [
-            {name: 'Si', value: 43, fill: '#3A8D91'},
-            {name: 'No', value: 57, fill: '#CFCECE'}
+            {name: 'Si', value: 43, fill: '#4CAF50'},
+            {name: 'No', value: 57, fill: '#F44336'}
           ],
           right: [
-            {name: 'Si', value: 14, fill: '#3A8D91'},
-            {name: 'No', value: 86, fill: '#CFCECE'}
+            {name: 'Si', value: 14, fill: '#4CAF50'},
+            {name: 'No', value: 86, fill: '#F44336'}
           ]
         },
         '10': [
-          {name: 'Si', value: 13, fill: '#7EA548'},
-          {name: 'No', value: 87, fill: '#E28542'}
+          {name: 'Si', value: 13, fill: '#4CAF50'},
+          {name: 'No', value: 87, fill: '#F44336'}
         ],
         '11': [
-          {name: 'Información no disponible', value: 92, fill: '#BB8B23'},
-          {name: 'Empleados', value: 7, fill: '#F3B730'},
-          {name: 'Empleados y Directivos', value: 1, fill: '#FAD594'}
+          {name: 'Información no disponible', value: 92, fill: '#9E9E9E'},
+          {name: 'Empleados', value: 7, fill: '#3498db'},
+          {name: 'Empleados y Directivos', value: 1, fill: '#3F51B5'}
         ],
         '12': [
           {
@@ -375,16 +381,16 @@ class Home extends Component {
           }
         ],
         '13': [
-          {name: 'Más de 5 (o información encontrada con un buscador)', value: 35, fill: '#BB8B23'},
-          {name: 'Información no disponible', value: 9, fill: '#F3B730'},
-          {name: '4 o 5', value: 29, fill: '#FAD594'},
-          {name: '3 o menos', value: 27, fill: '#999A99'}
+          {name: 'Más de 5 (o información encontrada con un buscador)', value: 35, fill: '#3F51B5'},
+          {name: 'Información no disponible', value: 9, fill: '#9E9E9E'},
+          {name: '4 o 5', value: 29, fill: '#2196F3'},
+          {name: '3 o menos', value: 27, fill: '#00BCD4'}
         ],
         '14': [
-          {name: 'En otro idioma en sitio global ', value: 17, fill: '#D5DCE5'},
-          {name: 'En español en sitio global ', value: 11, fill: '#D9E2F3'},
-          {name: 'En otro idioma en sitio para México', value: 3, fill: '#8EA9DB'},
-          {name: 'En español en sitio para México', value: 69, fill: '#2F5496'}
+          {name: 'En otro idioma en sitio global ', value: 17, fill: '#607D8B'},
+          {name: 'En español en sitio global ', value: 11, fill: '#9E9E9E'},
+          {name: 'En otro idioma en sitio para México', value: 3, fill: '#2196F3'},
+          {name: 'En español en sitio para México', value: 69, fill: '#3F51B5'}
         ],
         '15': [
           {name: 'Singapur', 'Puntaje promedio': 90.2},
@@ -723,10 +729,31 @@ class Home extends Component {
         <Section>
           <Title color={(isOpen.graphics) && '#ED4630'}>GRÁFICAS</Title>
           <Col>
-            <CollapseBox isOpen={isOpen.graphics}>
+            <CollapseBox noMargin isOpen={isOpen.graphics}>
               <Slider {...settings} ref='slider'>
                 <Col style={{backgroundColor: '#FFF', alignItems: 'center', justifyConten: 'center'}}>
-                  <View click={this.state.View.click} slide={this.clickView} textUp='El sector privado es una pieza central en cualquier estrategia anticorrupción...' textDown='El primer paso consiste en establecer e implementar políticas de integridad que muestren su compromiso anticorrupción, el cual sólo se hace efectivo al hacerlo público y accesible para su consulta, al capacitar a directivos y empleados para su implementación, y al socializarlo entre socios y clientes. La señal de que las empresas no admiten actos de corrupción a su interior ni en los tratos con los gobiernos o socios comerciales, y que facilitan y premian la denuncia, constituyen el primer eslabón en la lucha contra la corrupción. Sin embargo, la distribución de las 500 empresas refleja el estado embrionario en la adopción de políticas de integridad en el sector privado en México. Ninguna empresa obtuvo 100 puntos y sólo 13 empresas obtuvieron más de 80 puntos. Además, El 61.8% de las organizaciones obtuvieron menos de 50 puntos y apenas 2 por encima de los 90 puntos (0.4%).' />
+                  <View click={this.state.View.click} slide={this.clickView}>
+                    <ContainerUp isMore click={this.state.View.click}>
+                      <TextUp>El sector privado es una pieza central en cualquier estrategia anticorrupción...<Vmore onClick={this.clickView} click={this.state.View.click}>Ver más</Vmore></TextUp>
+                    </ContainerUp>
+                    <ContainerDown click={this.state.View.click}>
+                      <TextDown>
+                        <p>El primer paso consiste en establecer e implementar políticas de integridad que</p>
+                        <p>muestren su compromiso anticorrupción, el cual sólo se hace efectivo al hacerlo</p>
+                        <p>muestren su compromiso anticorrupción, el cual sólo se hace efectivo al hacerlo</p>
+                        <p>público y accesible para su consulta, al capacitar a directivos y empleados para</p>
+                        <p>su implementación, y al socializarlo entre socios y clientes. La señal de que las</p>
+                        <p>empresas no admiten actos de corrupción a su interior ni en los tratos con los</p>
+                        <p>gobiernos o socios comerciales, y que facilitan y premian la denuncia, constituyen</p>
+                        <p>el primer eslabón en la lucha contra la corrupción.</p>
+                        <p>Sin embargo, la distribución de las 500 empresas refleja el estado embrionario en</p>
+                        <p>la adopción de políticas de integridad en el sector privado en México. Ninguna</p>
+                        <p>empresa obtuvo 100 puntos y sólo 13 empresas obtuvieron más de 80 puntos.</p>
+                        <p>Además, El 61.8% de las organizaciones obtuvieron menos de 50 puntos y apenas</p>
+                        <p>2 por encima de los 90 puntos (0.4%).<Vless onClick={this.clickView} click={this.state.View.click}>Ver menos</Vless></p>
+                      </TextDown>
+                    </ContainerDown>
+                  </View>
                   <table style={{marginTop: 30}}>
                     <thead className='tHead'>
                       <tr>
@@ -796,9 +823,9 @@ class Home extends Component {
                     <Tooltip />
                     <Legend />
                     <CartesianGrid stroke='#f5f5f5' />
-                    <Bar dataKey='Número de empresas dentro del rango' barSize={20} fill='#413ea0' />
+                    <Bar dataKey='Número de empresas dentro del rango' barSize={20} fill='#3498db' />
                     <View click={this.state.View} slide={this.clickView} />
-                    <Line type='monotone' dataKey='Porcentaje del total (sobre 500 empresas)' stroke='#ff7300' />
+                    <Line type='monotone' dataKey='Porcentaje del total (sobre 500 empresas)' stroke='#FF5722' />
                   </ComposedChart>
                 </Col>
                 <Col>
@@ -880,7 +907,7 @@ class Home extends Component {
                       </tr>
                       <tr>
                         <td className='trGrey'>9</td>
-                        <td className='trGrey'>IEnova (Sempra)</td>
+                        <td className='trGrey'><b>IEnova (Sempra)</b></td>
                         <td className='trGrey'>82.4</td>
                         <td className='trGrey'>Petróleo y gas</td>
                         <td className='trGrey'>México</td>
@@ -894,14 +921,14 @@ class Home extends Component {
                       </tr>
                       <tr>
                         <td className='trGrey'>12</td>
-                        <td className='trGrey'>Bio PAPPEL</td>
+                        <td className='trGrey'><b>Bio PAPPEL</b></td>
                         <td className='trGrey'>80.4</td>
                         <td className='trGrey'>Papel y cartón</td>
                         <td className='trGrey'>México</td>
                       </tr>
                       <tr>
                         <td className='trWhite'>12</td>
-                        <td className='trWhite'>Grupo Bimbo</td>
+                        <td className='trWhite'><b>Grupo Bimbo</b></td>
                         <td className='trWhite'>80.4</td>
                         <td className='trWhite'>Alimentos</td>
                         <td className='trWhite'>México</td>
@@ -924,7 +951,7 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip formatter={val => val.toString() + '%'} />
                     <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#ED7D31' />
+                    <Bar dataKey='Puntaje promedio' fill='#FF5722' />
                   </BarChart>
                 </Col>
                 {/* <Col>
@@ -947,8 +974,8 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip formatter={val => val.toString() + '%'} />
                     <Legend />
-                    <Bar dataKey='Si' fill='#92CF4F' stackId='a' barSize={50} />
-                    <Bar dataKey='No' fill='#ED7D31' stackId='a' barSize={50} />
+                    <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={50} />
+                    <Bar dataKey='No' fill='#F44336' stackId='a' barSize={50} />
                   </BarChart>
                 </Col>
                 <Col>
@@ -966,9 +993,9 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey='Si' fill='#64ADB1' stackId='a' barSize={40} />
-                    <Bar dataKey='Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO' fill='#FDE391' stackId='a' barSize={40} />
-                    <Bar dataKey='No' fill='#DDDDDD' stackId='a' barSize={40} />
+                    <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={40} />
+                    <Bar dataKey='Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO' fill='#9E9E9E' stackId='a' barSize={40} />
+                    <Bar dataKey='No' fill='#F44336' stackId='a' barSize={40} />
                   </BarChart>
                 </Col>
                 <Col>
@@ -1050,11 +1077,11 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey='Si' fill='#91CF4F' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
-                    <Bar dataKey='No' fill='#ED7D31' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
-                    <Bar dataKey='Sí, existen sanciones claras y detalladas' fill='#558336' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
-                    <Bar dataKey='Se menciona que existen sanciones pero no se especifica de qué tipo' fill='#F8C032' stackId='a' barSize={40} formatter={val => val.toString() + ' %'} />
-                    <Bar dataKey='No se mencionan sanciones' fill='#BE652B' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
+                    <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
+                    <Bar dataKey='No' fill='#F44336' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
+                    <Bar dataKey='Sí, existen sanciones claras y detalladas' fill='#3498db' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
+                    <Bar dataKey='Se menciona que existen sanciones pero no se especifica de qué tipo' fill='#3F51B5' stackId='a' barSize={40} formatter={val => val.toString() + ' %'} />
+                    <Bar dataKey='No se mencionan sanciones' fill='#9E9E9E' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
                   </BarChart>
                 </Col>
                 <Col>
@@ -1090,7 +1117,7 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip formatter={val => val.toString() + '%'} />
                     <Legend />
-                    <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                    <Bar dataKey='Puntaje promedio' fill='#3498db' />
                   </BarChart>
                 </Col>
                 <Col>
@@ -1109,7 +1136,7 @@ class Home extends Component {
                       <CartesianGrid strokeDasharray='3 3' />
                       <Tooltip formatter={val => val.toString() + '%'} />
                       <Legend />
-                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                      <Bar dataKey='Puntaje promedio' fill='#3498db' />
                     </BarChart>
                     <BarChart
                       width={500}
@@ -1123,7 +1150,7 @@ class Home extends Component {
                       <CartesianGrid strokeDasharray='3 3' />
                       <Tooltip formatter={val => val.toString() + '%'} />
                       <Legend />
-                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                      <Bar dataKey='Puntaje promedio' fill='#3498db' />
                     </BarChart>
                   </Row>
                   <Row noWrap={window.innerWidth > 1024 ? 1 : 0}>
@@ -1139,7 +1166,7 @@ class Home extends Component {
                       <CartesianGrid strokeDasharray='3 3' />
                       <Tooltip formatter={val => val.toString() + '%'} />
                       <Legend />
-                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                      <Bar dataKey='Puntaje promedio' fill='#3498db' />
                     </BarChart>
                     <BarChart
                       width={500}
@@ -1153,7 +1180,7 @@ class Home extends Component {
                       <CartesianGrid strokeDasharray='3 3' />
                       <Tooltip formatter={val => val.toString() + '%'} />
                       <Legend />
-                      <Bar dataKey='Puntaje promedio' fill='#4271C4' />
+                      <Bar dataKey='Puntaje promedio' fill='#3498db' />
                     </BarChart>
                   </Row>
                 </Col>
@@ -1171,7 +1198,7 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey='Calificacion' fill='#4271C4' />
+                    <Bar dataKey='Calificacion' fill='#3498db' />
                   </BarChart>
                 </Col>
                 <Col>
@@ -1188,8 +1215,8 @@ class Home extends Component {
                     <CartesianGrid strokeDasharray='3 3' />
                     <Tooltip formatter={val => val.toString() + '%'} />
                     <Legend />
-                    <Bar dataKey='500 empresas' fill='#4472C4' />
-                    <Bar dataKey='191 Empresas mejor calificadas (50 ptos. o más)' fill='#ED7D31' />
+                    <Bar dataKey='500 empresas' fill='#3498db' />
+                    <Bar dataKey='191 Empresas mejor calificadas (50 ptos. o más)' fill='#FF5722' />
                   </BarChart>
                 </Col>
               </Slider>

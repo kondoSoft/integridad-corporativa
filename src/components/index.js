@@ -39,7 +39,7 @@ import {
   MiddleLeft
 } from './quienes_somos'
 import ContactForm from './ContactForm'
-import View from './slideview'
+import View, { Vmore, Vless, TextUp, TextDown, ContainerUp, ContainerDown } from './slideview'
 import RankingInfo from './rankingInfo'
 import StudyInfo from './studyInfo'
 import AxisInfo from './axis_info'
@@ -105,5 +105,11 @@ export {
   SliderBox,
   NewsBox,
   MiddleSection,
-  MiddleLeft
+  MiddleLeft,
+  Vless,
+  Vmore,
+  TextUp,
+  TextDown,
+  ContainerUp,
+  ContainerDown
 }
