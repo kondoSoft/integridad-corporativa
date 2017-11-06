@@ -16,7 +16,6 @@
 }
 .slick-track{
   display: flex;
-  align-items: center;
 }
 @media screen and (min-width: 1200px){
   .title:after{
@@ -98,7 +97,7 @@ table{
   width: 85%;
 }
 .tHead{
-  background-color: #750310;
+  background-color: #F44336;
 }
 .thHead{
   border-right: 3px solid #FFF;

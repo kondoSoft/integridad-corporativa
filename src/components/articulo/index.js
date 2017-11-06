@@ -608,7 +608,7 @@ export const News = (props) => {
             <Sponsors isMCCI src={'/assets/img/mcci.png'} />
           </LogoLink>
           <LogoLink href='https://www.tm.org.mx/' target='blank'>
-            <Sponsors style={{width: '100%'}} src={'/assets/img/transparencia_mexicana.png'} />
+            <Sponsors style={{width: '100%', height: '90px'}} src={'/assets/img/transparencia_mexicana.png'} />
           </LogoLink>
         </NewsSponsors>
         <hr style={{borderColor: '#E4E5E4', width: '80%'}} />
