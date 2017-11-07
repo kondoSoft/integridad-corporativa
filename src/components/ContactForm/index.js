@@ -64,7 +64,6 @@ const TextArea = styled.textarea`
   border: 1px solid #CCC;
   &:focus{
     outline: none;
-    border: none;
   }
   &::-webkit-input-placeholder {
     font-size: 14px;

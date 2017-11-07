@@ -237,7 +237,7 @@ const NewsWall = (props) => {
               </Link>
             </Col>
           </RowNews>
-          <RowEvents noMargin padding='10px'>
+          <RowEvents noMargin padding='21px 4px 0px 4px'>
             <CalendarEvents href='/eventos'>
               <TextCalendar>
                 <p>Calendario de Publicaciones </p> <br /><p> y eventos</p>
