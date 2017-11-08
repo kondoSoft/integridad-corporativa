@@ -666,15 +666,10 @@ class Home extends Component {
     this.clickView = this.clickView.bind(this)
     this.onPlayPauseVideo = this.onPlayPauseVideo.bind(this)
     this.closeModal = this.closeModal.bind(this)
+    this.scrollTo = this.scrollTo.bind(this)
   }
   componentWillMount () {
-    window.addEventListener('scroll', (e) => {
-      if (window.scrollY >= 1000) {
-        this.setState({goTo: <GoToTop onClick={e => window.scrollTo(0, 0)} />})
-      } else {
-        this.setState({goTo: null})
-      }
-    })
+    window.addEventListener('scroll', this.scrollTo)
     let body = document.getElementsByTagName('body')[0]
     body.style.overflow = 'hidden'
     var width = window.innerWidth
@@ -685,6 +680,9 @@ class Home extends Component {
       chartsSize.barLarge.height = 300
       this.setState({chartsSize})
     }
+  }
+  componentWillUnmount () {
+    window.removeEventListener('scroll', this.scrollTo)
   }
   render () {
     const {
@@ -1435,6 +1433,13 @@ class Home extends Component {
     }
     if (event.data === 2) {
       this.setState({isPlaying: !isPlaying})
+    }
+  }
+  scrollTo (e) {
+    if (window.scrollY >= 1000) {
+      this.setState({goTo: <GoToTop onClick={e => window.scrollTo(0, 0)} />})
+    } else {
+      this.setState({goTo: null})
     }
   }
 }

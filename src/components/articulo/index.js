@@ -62,6 +62,7 @@ const NewsContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     padding: 15px 0px;
+    overflow: scroll;
 `
 const NewsEvents = styled.div`
     flex: 1;
@@ -90,7 +91,7 @@ const NewEntries = styled.p`
     font-family: 'Druk Text Web';
 `
 const NewsBlogArticle = styled.div`
-    flex: 1;
+    height: 100px;
     background-color: #EBEBEB;
     width: 90%;
     margin: 5px;
@@ -111,17 +112,25 @@ const ArticleData = styled.div`
     padding: 8px;
     display: flex;
     flex-direction: column;
+    textAlign: left;
 `
 const ArticleDate = styled.p`
     width: 100%;
     color: '#E4E5E4';
     font-size: 12px;
     padding-top: 5px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
 `
-const ArticleTitle = styled.p`
+const ArticleTitle = styled.a`
     width: 100%;
-    font-size: 12px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: black;
+    &:hover{
+      text-decoration: underline;
+      color: #F24437;
+    }
 `
 const Events = styled.a`
     width: 90%;
@@ -545,40 +554,33 @@ export const Articles = (props) => {
   )
 }
 const NewsBlog = (props) => {
-  return (
-    <NewsContainer disabled={props.disabled}>
-      <NewsBlogArticle>
-        <Img />
-        <ArticleData>
-          <ArticleDate>19 sep 2017</ArticleDate>
-          <ArticleTitle>
-              Lorem ipsum dolor sit amet consectetur
-          </ArticleTitle>
-        </ArticleData>
-      </NewsBlogArticle>
-      <hr style={{borderColor: '#E4E5E4', width: '80%'}} />
-      <NewsBlogArticle>
-        <Img />
-        <ArticleData>
-          <ArticleDate>19 sep 2017</ArticleDate>
-          <ArticleTitle>
-              Lorem ipsum dolor sit amet consectetur
-          </ArticleTitle>
-        </ArticleData>
-      </NewsBlogArticle>
-      <hr style={{borderColor: '#E4E5E4', width: '80%'}} />
-      <NewsBlogArticle>
-        <Img />
-        <ArticleData>
-          <ArticleDate>19 sep 2017</ArticleDate>
-          <ArticleTitle>
-              Lorem ipsum dolor sit amet consectetur
-          </ArticleTitle>
-        </ArticleData>
-      </NewsBlogArticle>
-      <hr style={{borderColor: '#E4E5E4', width: '80%'}} />
-    </NewsContainer>
-  )
+  const {data} = props
+  if (data === undefined || data.length === 0) {
+    return (<NewsContainer>
+      <i className='fa fa-spinner fa-pulse fa-3x fa-fw margin-bottom' style={{color: '#F24437'}} />
+    </NewsContainer>)
+  } else {
+    return (
+      <NewsContainer disabled={props.disabled}>
+        {
+          data.map((news, i) => {
+            return (
+              <NewsBlogArticle key={i}>
+                <Img />
+                <ArticleData>
+                  <ArticleDate>{news.fields.fecha}</ArticleDate>
+                  <ArticleTitle href={news.fields.url} target='_blank'>
+                    {news.fields.titulo}
+                  </ArticleTitle>
+                </ArticleData>
+              </NewsBlogArticle>
+            )
+          })
+        }
+        <hr style={{borderColor: '#E4E5E4', width: '80%', marginTop: 5}} />
+      </NewsContainer>
+    )
+  }
 }
 export const News = (props) => {
   return (
@@ -592,7 +594,7 @@ export const News = (props) => {
       <NewEntries>ENTRADAS RECIENTES</NewEntries>
       <hr style={{borderColor: 'red', width: '80%'}} />
       <Container>
-        <NewsBlog disabled={props.disabled} />
+        <NewsBlog disabled={props.disabled} data={props.data} />
         <NewsEvents>
           <Link to='/eventos' style={{width: '80%', textDecoration: 'none', textAlign: 'center', backgroundColor: 'darkred', padding: 10}}>
             <i className='fa fa-calendar' aria-hidden='true' style={{color: '#FFF', padding: 7, fontSize: 30 }} />
