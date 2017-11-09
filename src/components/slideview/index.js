@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import React from 'react'
 
 const Container = styled.div`
-  width: 70%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,7 +55,7 @@ export const ContainerUp = styled.div`
   justify-content: end;
 `
 export const ContainerDown = styled.div`
-  width: 90%;
+  width: 100%;
   height: auto;
   display: ${props => props.click ? 'flex' : 'none'};
   flex-direction: column;
