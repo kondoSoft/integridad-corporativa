@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Slider from 'react-slick'
 import React from 'react'
 
 export const Main = styled.main`
@@ -140,10 +141,10 @@ export const Sources = (props) => {
             <SourceDetail>
               <BoldTitle>
                 <i className='fa fa-chevron-right' aria-hidden='true' style={{color: 'orange', marginRight: 10}} />
-                <HyperLikn href={source.url} target='_blank'>
-                  {source.title}&nbsp;
+                <HyperLikn href={source.fields.url} target='_blank'>
+                  {source.fields.titulo}&nbsp;
                 </HyperLikn>
-                <SourceBook Tablet>{source.book}</SourceBook>
+                <SourceBook Tablet>{source.fields.libro}</SourceBook>
               </BoldTitle>
             </SourceDetail>
           )
@@ -249,6 +250,29 @@ export const News = (props) => {
               <Text>datos</Text>
             </ThumbnailDescription>
           </SideBarThumb>
+          <SideBarThumb>
+            <Thumbnail src={'http://via.placeholder.com/80x80'} />
+            <ThumbnailDescription>
+              <Text date>fecha</Text>
+              <Text>datos</Text>
+            </ThumbnailDescription>
+          </SideBarThumb>
+          <hr style={{borderColor: 'lightgrey', width: '90%'}} />
+          <SideBarThumb>
+            <Thumbnail src={'http://via.placeholder.com/80x80'} />
+            <ThumbnailDescription>
+              <Text date>fecha</Text>
+              <Text>datos</Text>
+            </ThumbnailDescription>
+          </SideBarThumb>
+          <hr style={{borderColor: 'lightgrey', width: '90%'}} />
+          <SideBarThumb>
+            <Thumbnail src={'http://via.placeholder.com/80x80'} />
+            <ThumbnailDescription>
+              <Text date>fecha</Text>
+              <Text>datos</Text>
+            </ThumbnailDescription>
+          </SideBarThumb>
         </SideBarNews>
         <hr style={{borderColor: 'lightgrey', width: '90%'}} />
         <SideBarThumb outSide middle>
@@ -276,9 +300,9 @@ export const Topic = (props) => {
     props.data.map((topic, i) => {
       return (
         <Box>
-          <BoxTitle>{topic.title}</BoxTitle>
+          <BoxTitle>{topic.fields.titulo}</BoxTitle>
           <BoxDescription>
-            {topic.description}
+            {topic.fields.descripcion}
           </BoxDescription>
         </Box>
       )
