@@ -147,7 +147,7 @@ export const dataArticulo = {
 }
 export const dataArrayArticulo = [
   {
-    slug: 'trans-ant',
+    slug: 'transparencia-y-anticorrupcion-en-100-multinacionales-de-economias-emergentes-informe-trac',
     titulo: 'Transparencia y anticorrupción en 100 multinacionales de economías emergentes: informe TRAC.',
     descripcion: `Transparencia Internacional y Transparencia Mexicana hicieron pública la edición 2016 del informe Transparencia de la información corporativa: multinacionales de economías emergentes (TRAC). Este informe evalúa la disponibilidad de información corporativa sobre sus programas anticorrupción, su estructura organizacional y sobre sus actividades y resultados financieros en los países en los que operan.
 

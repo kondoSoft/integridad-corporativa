@@ -16,10 +16,12 @@ export default class Article extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      news: []
+      news: [],
+      data: []
     }
   }
   componentDidMount () {
+    this.getSlugArticle(this.props.match.params.articulo)
     const newsOptions = {
       host: '127.0.0.1',
       port: 8000,
@@ -45,7 +47,7 @@ export default class Article extends Component {
     })
   }
   render () {
-    const {news} = this.state
+    const {news, data} = this.state
     const slug = this.props.match.params.articulo
     const art = dataArrayArticulo.filter(articulo => articulo.slug === slug)
     return (
@@ -55,14 +57,30 @@ export default class Article extends Component {
         </header>
         <Main>
           <Container style={{width: '70%'}}>
-            <Route>HOME > NOTICIAS > EXPANSION INDICE 500</Route>
-
-            <Articles data={art[0]} />
+            <Route>{`HOME > NOTICIAS > ${(data.length !== 0) && data[0].fields.titulo}`}</Route>
+            <Articles data={(data.length !== 0) && data[0].fields} />
           </Container>
           <News data={news} />
         </Main>
         <Footer />
       </div>
     )
+  }
+  getSlugArticle (slug) {
+    const articleOptions = {
+      host: '127.0.0.1',
+      port: 8000,
+      path: `/articulo/${slug}/`,
+      headers: {
+        'Content-Type': 'text/html',
+        'Accept': 'text/html'
+      }
+    }
+    httpRequest(articleOptions)
+    .then(res => {
+      this.setState({
+        data: JSON.parse(res)
+      })
+    })
   }
 }

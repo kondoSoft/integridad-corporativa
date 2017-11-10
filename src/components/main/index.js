@@ -53,10 +53,11 @@ export const Container = styled.div`
     }}
 `
 export const Route = styled.p`
-    font-size: 16px;
+    font-size: 14px;
     color: red;
     margin-bottom: 50px;
     font-weight: 200;
+    text-transform: uppercase;
     ${props => {
       if (props.isResponsive) {
         return `@media screen and (max-width: 480px) {
