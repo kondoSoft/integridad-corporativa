@@ -44,7 +44,8 @@ export default class News extends Component {
           }
         ]
       },
-      news: []
+      news: [],
+      data: []
     }
   }
   componentDidMount () {
@@ -52,6 +53,15 @@ export default class News extends Component {
       host: '127.0.0.1',
       port: 8000,
       path: '/recientes/',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      }
+    }
+    const articleOptions = {
+      host: '127.0.0.1',
+      port: 8000,
+      path: '/articulos/',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -71,9 +81,15 @@ export default class News extends Component {
         news
       })
     })
+    httpRequest(articleOptions)
+    .then(res => {
+      this.setState({
+        data: JSON.parse(res)
+      })
+    })
   }
   render () {
-    const {dataNewsWall, news} = this.state
+    const {dataNewsWall, news, data} = this.state
     return (
       <div style={{overflow: 'hidden'}}>
         <header>
@@ -85,7 +101,7 @@ export default class News extends Component {
             <NewsWall disabled data={dataNewsWall} />
             <hr style={{borderColor: '#E4E5E4', width: '100%', marginTop: 20, marginBottom: 20}} />
             <div style={{display: 'flex'}}>
-              <NewsContainer noPadding style={{width: '80%'}} data={dataArrayArticulo} disabled column expanded />
+              <NewsContainer noPadding style={{width: '80%'}} data={data} disabled column expanded />
               <NewsSideBar data={news} isTablet withSearch noPadding />
             </div>
           </Container>

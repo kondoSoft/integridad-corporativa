@@ -26,3 +26,10 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.Demo__some-network__share-button {
+  cursor: pointer;
+  border-radius: 50%;
+}
+.Demo__some-network__share-button:hover:not(:active) {
+  opacity: 0.75;
+}

@@ -3,7 +3,12 @@ import React from 'react'
 import {
   Link
 } from 'react-router-dom'
+import {
+  ShareButtons,
+  generateShareIcon
+} from 'react-share'
 import {LogoLink} from '../'
+import '../../App.css'
 
 const ArticleBox = styled.div`
   width: 100%;
@@ -260,7 +265,7 @@ const TitleArticle = styled.a`
   text-decoration: none;
   &:hover {
     text-decoration: underline;
-    color: #73030E;
+    color: #771C15;
     cursor: pointer;
   }
 `
@@ -309,7 +314,7 @@ const Rigth = styled.div`
 const Socials = styled.div`
   width: 25%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 `
 const SocialsTitle = styled.div`
   width: 75%;
@@ -389,45 +394,61 @@ const MiniInfo = styled.div`
     }
   }}
 `
+const VirtualMagazine = styled.div`
+  width: 100%;
+`
+const renderContentArticle = (data, screen) => {
+  if (screen === 'noticias') {
+    const descripcion = data.substring(0, 201) + `...`
+    return {__html: descripcion}
+  } else {
+    return {__html: data}
+  }
+}
 export const Article = (props) => {
   const {data} = props
-  if (Array.isArray(data)) {
+  if (Array.isArray(data) && data.length !== 0) {
     return data.map((data, i) => {
-      const description = data.descripcion.substring(0, 201) + `...`
+      const date = new Date(data.fields.fecha)
+      const month = date.getMonth() + 1
+      const day = date.getDate() + 1
+      const months = ['', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
       return (
         <ArticleContainer>
           {
-            data.imagen !== undefined
+            data.fields.imagen !== undefined
               ? <ArticleImg>
-                <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
+                <img height='200px' style={{width: '100%'}} src={`http://127.0.0.1:8000/${data.fields.imagen}`} alt='' />
               </ArticleImg>
               : null
           }
           <ArticleInformation expanded={props.expanded} Tablet Phone>
             <InformationLeft Tablet Phone>
               <LeftDate Phone>
-                <LeftDateText isDay>{data.dia}</LeftDateText>
-                <LeftDateText>{data.mes}</LeftDateText>
+                <LeftDateText isDay>{day}</LeftDateText>
+                <LeftDateText>{months[month]}</LeftDateText>
               </LeftDate>
             </InformationLeft>
             <InformationRigth Tablet Phone>
               <RightColTop>
-                <TitleArticle>
-                  {data.titulo}
-                </TitleArticle>
+                <Link style={{color: 'black', textDecoration: 'none'}} to={`/noticias/${data.fields.slug}`}>
+                  <TitleArticle>
+                    {data.fields.titulo}
+                  </TitleArticle>
+                </Link>
               </RightColTop>
               <RightColBottomWithButton column={props.column} isArticle={props.isArticle}>
                 <MiniInfo Tablet>
                   <Left Tablet>
                     <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
-                    <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
+                    <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.fields.autor}</a>
                   </Left>
                   {
-                    (data.categorias !== undefined)
+                    (data.fields.categorias !== undefined)
                       ? <Rigth Tablet>
                         <p style={{color: '#A9AAA9', fontSize: 12}}>Categorias:&nbsp;</p>
                         {
-                            data.categorias.map((categoria, i) => {
+                            data.fields.categorias.map((categoria, i) => {
                               return <a href='' style={{color: '#EC0F00', fontSize: 14, paddingLeft: 5, paddingRigth: 5}}>{categoria}</a>
                             })
                           }
@@ -435,11 +456,9 @@ export const Article = (props) => {
                         : null
                   }
                 </MiniInfo>
-                <MiniDescription>
-                  {description}
-                </MiniDescription>
+                <MiniDescription dangerouslySetInnerHTML={renderContentArticle(data.fields.contenido, 'noticias')} />
                 <SeeMoreButton Tablet>
-                  <Link style={{color: '#FFF', textDecoration: 'none'}} to={`/noticias/${data.slug}`}>
+                  <Link style={{color: '#FFF', textDecoration: 'none'}} to={`/noticias/${data.fields.slug}`}>
                     Leer más
                   </Link>
                 </SeeMoreButton>
@@ -453,21 +472,27 @@ export const Article = (props) => {
         </ArticleContainer>
       )
     })
-  } else {
+  } if (!Array.isArray(data) && data instanceof Object) {
+    const date = new Date(data.fecha)
+    const month = date.getMonth() + 1
+    const day = date.getDate() + 1
+    const months = ['', 'Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic']
     return (
       <ArticleContainer>
-        {
-          data.imagen !== undefined
-          ? <ArticleImg>
-            <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
-          </ArticleImg>
-          : null
-        }
+        {/*
+          {
+            data.imagen !== undefined
+            ? <ArticleImg>
+              <img height='200px' style={{width: '100%'}} src={data.imagen} alt='' />
+            </ArticleImg>
+            : null
+          }
+      */}
         <ArticleInformation expanded={props.expanded}>
           <InformationLeft>
             <LeftDate>
-              <LeftDateText isDay>5</LeftDateText>
-              <LeftDateText>Nov</LeftDateText>
+              <LeftDateText isDay>{day}</LeftDateText>
+              <LeftDateText>{months[month]}</LeftDateText>
             </LeftDate>
           </InformationLeft>
           <InformationRigth>
@@ -496,15 +521,45 @@ export const Article = (props) => {
             </RightColBottom>
           </InformationRigth>
         </ArticleInformation>
-        <ArticleDescription disabled={props.disabled}>
-          <p style={{letterSpacing: 1, fontSize: 14, fontWeight: 400, fontFamily: 'arial'}}>{data.descripcion}</p>
-        </ArticleDescription>
+        <ArticleDescription disabled={props.disabled} dangerouslySetInnerHTML={renderContentArticle(data.contenido, 'articulo')} />
         <hr style={{borderColor: '#E4E5E4', width: '100%', marginTop: 20, marginBottom: 20}} />
-        <iframe style={{width: '100%'}} src='//e.issuu.com/embed.html#7138783/10008731' height='686' frameborder='0' allowfullscreen='allowfullscreen' />
+        {
+          (data.revista !== undefined)
+            ? <VirtualMagazine dangerouslySetInnerHTML={{__html: data.revista}} />
+            : null
+        }
+        {/* <iframe style={{width: '100%'}} src='//e.issuu.com/embed.html#7138783/10008731' height='686' frameborder='0' allowfullscreen='allowfullscreen' /> */}
       </ArticleContainer>
     )
+  } else {
+    return null
   }
 }
+
+// share buttons
+const {
+  FacebookShareButton,
+  GooglePlusShareButton,
+  LinkedinShareButton,
+  TwitterShareButton
+} = ShareButtons
+
+// share icons
+const FacebookIcon = generateShareIcon('facebook')
+const TwitterIcon = generateShareIcon('twitter')
+const GooglePlusIcon = generateShareIcon('google')
+const LinkedinIcon = generateShareIcon('linkedin')
+
+// Social url's
+const fbURL = 'https://facebook.com'
+const fbTitle = 'facebook'
+const twtURL = 'https://twitter.com'
+const twtTitle = 'twitter'
+const lkdinURL = 'https://linkedin.com'
+const lkdinTitle = 'linkedin'
+const googleURL = 'https://plus.google.com/'
+const googleTitle = 'google plus'
+
 export const Articles = (props) => {
   return (
     <ArticleBox>
@@ -515,18 +570,42 @@ export const Articles = (props) => {
           <p>Comparte este artículo:</p>
         </SocialsTitle>
         <Socials>
-          <a href=''>
-            <i style={{fontSize: 35, paddingLeft: 5, paddingRight: 5, color: '#3A5896'}} class='fa fa-facebook-square' aria-hidden='true' />
-          </a>
-          <a href=''>
-            <i style={{fontSize: 35, paddingLeft: 5, paddingRight: 5, color: '#40B7D8'}} className='fa fa-twitter-square' aria-hidden='true' />
-          </a>
-          <a href=''>
-            <i style={{fontSize: 35, paddingLeft: 5, paddingRight: 5, color: '#1572B1'}} className='fa fa-linkedin-square' aria-hidden='true' />
-          </a>
-          <a href=''>
-            <i style={{fontSize: 35, paddingLeft: 5, paddingRight: 5, color: '#D54937'}} className='fa fa-google-plus-square' aria-hidden='true' />
-          </a>
+          <FacebookShareButton
+            url={fbURL}
+            quote={fbTitle}
+            className='Demo__some-network__share-button'>
+            <FacebookIcon
+              size={36}
+              round
+              />
+          </FacebookShareButton>
+          <TwitterShareButton
+            url={twtURL}
+            quote={twtTitle}
+            className='Demo__some-network__share-button'>
+            <TwitterIcon
+              size={36}
+              round
+              />
+          </TwitterShareButton>
+          <LinkedinShareButton
+            url={lkdinURL}
+            quote={lkdinTitle}
+            className='Demo__some-network__share-button'>
+            <LinkedinIcon
+              size={36}
+              round
+              />
+          </LinkedinShareButton>
+          <GooglePlusShareButton
+            url={googleURL}
+            quote={googleTitle}
+            className='Demo__some-network__share-button'>
+            <GooglePlusIcon
+              size={36}
+              round
+              />
+          </GooglePlusShareButton>
         </Socials>
       </ShareBox>
       <hr style={{borderColor: '#E4E5E4', width: '100%'}} />
@@ -566,7 +645,10 @@ const NewsBlog = (props) => {
           data.map((news, i) => {
             return (
               <NewsBlogArticle key={i}>
-                <Img />
+                { (news.fields.imagen !== undefined)
+                  ? <Img src={`http://127.0.0.1:8000/${news.fields.imagen}`} />
+                  : null
+                }
                 <ArticleData>
                   <ArticleDate>{news.fields.fecha}</ArticleDate>
                   <ArticleTitle href={news.fields.url} target='_blank'>
