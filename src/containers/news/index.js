@@ -20,6 +20,8 @@ import {
 import {dataArrayArticulo} from '../../data'
 import {httpRequest} from '../../helpers'
 
+const ENDPOINT = '165.227.53.250'
+
 export default class News extends Component {
   constructor (props) {
     super(props)
@@ -50,30 +52,32 @@ export default class News extends Component {
   }
   componentDidMount () {
     const newsOptions = {
-      host: '127.0.0.1',
+      host: ENDPOINT,
       port: 8000,
       path: '/recientes/',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
       }
     }
     const articleOptions = {
-      host: '127.0.0.1',
+      host: ENDPOINT,
       port: 8000,
       path: '/articulos/',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
       }
     }
     httpRequest(newsOptions)
     .then(res => {
+      if (res) {
+        return JSON.parse(res)
+      }
+    })
+    .then(res => {
       const news = []
-      const data = JSON.parse(res)
-      const newsRecently1 = data[data.length - 3]
-      const newsRecently2 = data[data.length - 2]
-      const newsRecently3 = data[data.length - 1]
+      const newsRecently1 = res[res.length - 3]
+      const newsRecently2 = res[res.length - 2]
+      const newsRecently3 = res[res.length - 1]
       news.push(newsRecently1)
       news.push(newsRecently2)
       news.push(newsRecently3)
@@ -83,8 +87,13 @@ export default class News extends Component {
     })
     httpRequest(articleOptions)
     .then(res => {
+      if (res) {
+        return JSON.parse(res)
+      }
+    })
+    .then(res => {
       this.setState({
-        data: JSON.parse(res)
+        data: res
       })
     })
   }

@@ -7,6 +7,7 @@ import Article from './articulo'
 import Methodology from './methodology'
 import News from './news'
 import Events from './eventos'
+import SliderGraphics from './slider'
 export {
   Home,
   SignIn,
@@ -16,5 +17,6 @@ export {
   AboutUs,
   Methodology,
   News,
-  Events
+  Events,
+  SliderGraphics
 }

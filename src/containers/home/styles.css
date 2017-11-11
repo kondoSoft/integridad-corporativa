@@ -16,7 +16,6 @@
 }
 .slick-track{
   display: flex;
-  align-items: center;
 }
 @media screen and (min-width: 1200px){
   .title:after{
@@ -89,7 +88,6 @@
 .slick-active{
   display: flex !important;
 }
-
 .aviso{
   font-weight: bold;
   font-size: 1.2em;

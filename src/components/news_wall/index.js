@@ -220,7 +220,7 @@ const NewsWall = (props) => {
           <RowNews noMargin>
             <Col Ext>
               <Link to='/noticias/trac-2014'>
-                <Image src={props.data.articles[0].image} />
+                <Image src={'assets/img/TRAC2014.png'} />
                 <Description width='98%'>
                   <Title small>TRAC 2014</Title>
                   <Paragraph fontSize='12px' width='100%'>¿Qué tan transparentes son las multinacionales?</Paragraph>
@@ -229,7 +229,7 @@ const NewsWall = (props) => {
             </Col>
             <Col Ext>
               <Link to='/noticias/trans-ant'>
-                <Image src={props.data.articles[1].image} />
+                <Image src={'assets/img/TRAC2016.png'} />
                 <Description width='98%'>
                   <Title small>TRAC 2016</Title>
                   <Paragraph fontSize='12px' width='100%'>Transparencia y anticorrupción en 100 multinacionales de economías emergentes: informe TRAC.</Paragraph>

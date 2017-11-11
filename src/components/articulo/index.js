@@ -10,6 +10,8 @@ import {
 import {LogoLink} from '../'
 import '../../App.css'
 
+const ENDPOINT = '165.227.53.250'
+
 const ArticleBox = styled.div`
   width: 100%;
   flex: 1;
@@ -418,7 +420,7 @@ export const Article = (props) => {
           {
             data.fields.imagen !== undefined
               ? <ArticleImg>
-                <img height='200px' style={{width: '100%'}} src={`http://127.0.0.1:8000/${data.fields.imagen}`} alt='' />
+                <img height='200px' style={{width: '100%'}} src={`http://${ENDPOINT}:8000/${data.fields.imagen}`} alt='' />
               </ArticleImg>
               : null
           }
@@ -441,7 +443,7 @@ export const Article = (props) => {
                 <MiniInfo Tablet>
                   <Left Tablet>
                     <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
-                    <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.fields.autor}</a>
+                    <a href={data.fields.url} target='_blank' style={{color: '#EC0F00', fontSize: 14}}>{data.fields.autor}</a>
                   </Left>
                   {
                     (data.fields.categorias !== undefined)
@@ -504,7 +506,7 @@ export const Article = (props) => {
             <RightColBottom disabled={props.disabled}>
               <Left>
                 <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
-                <a href='' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
+                <a href={data.url} target='_blank' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
               </Left>
               {
                 (data.categorias !== undefined)
@@ -646,7 +648,7 @@ const NewsBlog = (props) => {
             return (
               <NewsBlogArticle key={i}>
                 { (news.fields.imagen !== undefined)
-                  ? <Img src={`http://127.0.0.1:8000/${news.fields.imagen}`} />
+                  ? <Img src={`http://${ENDPOINT}:8000/${news.fields.imagen}`} />
                   : null
                 }
                 <ArticleData>
