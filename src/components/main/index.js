@@ -16,6 +16,13 @@ export const Container = styled.div`
     border-right: 2px solid lightgrey;
     width: 60%;
     ${props => {
+      if (props.isTablet) {
+        return `@media screen and (max-width: 968px) {
+          width: 100%;
+        }`
+      }
+    }}
+    ${props => {
       if (props.isNews) {
         return `@media screen and (max-width: 744px) {
           padding: 0px 30px 0px 30px;
@@ -162,6 +169,9 @@ const SideBar = styled.div`
     padding-top: 150px;
     padding-left: 20px;
     padding-right: 20px;
+    @media screen and (max-width: 968px) {
+      display: none;
+    }
 `
 const SideBarContent = styled.div`
     padding-top: 10px;

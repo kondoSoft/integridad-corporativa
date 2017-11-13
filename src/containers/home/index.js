@@ -655,6 +655,10 @@ class Home extends Component {
           width: 700,
           height: 500
         },
+        barMedium: {
+          width: 600,
+          height: 400
+        },
         barSmal: {
           width: 400,
           height: 300

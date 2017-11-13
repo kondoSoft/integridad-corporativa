@@ -24,13 +24,13 @@ export default class Glossary extends Component {
       news: []
     }
   }
-  componentDidMount () {
+  componentWillMount () {
     const sourcesOptions = {
       host: ENDPOINT,
       port: 8000,
       path: '/fuentes/',
       headers: {
-        'Content-Type': 'text/html; charset=utf-8'
+        'Content-Type': 'application/json'
       }
     }
     const glossaryOptions = {
@@ -38,7 +38,7 @@ export default class Glossary extends Component {
       port: 8000,
       path: '/glosario/',
       headers: {
-        'Content-Type': 'text/html; charset=utf-8'
+        'Content-Type': 'application/json'
       }
     }
     const newsOptions = {
@@ -46,13 +46,14 @@ export default class Glossary extends Component {
       port: 8000,
       path: '/recientes/',
       headers: {
-        'Content-Type': 'text/html; charset=utf-8'
+        'Content-Type': 'application/json'
       }
     }
     httpRequest(sourcesOptions)
     .then(res => {
-      if (res) {
-        return JSON.parse(res)
+      if (typeof res === 'string') {
+        const json = JSON.parse(res)
+        return json
       }
     })
     .then(res => {
@@ -62,8 +63,9 @@ export default class Glossary extends Component {
     })
     httpRequest(glossaryOptions)
     .then(res => {
-      if (res) {
-        return JSON.parse(res)
+      if (typeof res === 'string') {
+        const json = JSON.parse(res)
+        return json
       }
     })
     .then(res => {
@@ -73,8 +75,9 @@ export default class Glossary extends Component {
     })
     httpRequest(newsOptions)
     .then(res => {
-      if (res) {
-        return JSON.parse(res)
+      if (typeof res === 'string') {
+        const json = JSON.parse(res)
+        return json
       }
     })
     .then(res => {

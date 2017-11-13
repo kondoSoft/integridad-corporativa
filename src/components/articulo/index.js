@@ -19,6 +19,9 @@ const ArticleBox = styled.div`
   flex-direction: column;
   padding: 15px;
   align-items: center;
+  @media screen and (max-width: 968px) {
+    padding: 0px;
+  }
 `
 const ArticleContainer = styled.div`
   width: 100%;
@@ -28,6 +31,12 @@ const ShareBox = styled.div`
   width: 95%;
   display: flex;
   padding: 20px;
+  @media screen and (max-width: 968px) {
+    width: 100%;
+    flex-direction: column;
+    padding: 0px;
+    align-items: center;
+  }
 `
 const OtherArticles = styled.div`
   width: 100%;
@@ -48,7 +57,7 @@ const NewsWrapper = styled.div`
     margin-top: 60px;
     ${props => {
       if (props.isTablet) {
-        return `@media screen and (max-width: 1030px){
+        return `@media screen and (max-width: 968px){
           display: none;
         }`
       }
@@ -171,7 +180,7 @@ const ArticleInformation = styled.div`
   }}
   ${props => {
     if (props.Phone) {
-      return `@media screen and (max-width: 480px) {
+      return `@media screen and (max-width: 768px) {
         flex-direction: column;
         padding-top: 0px;
       }`
@@ -185,6 +194,21 @@ const ArticleDescription = styled.div`
   padding-top: 40px;
   padding-bottom: 20px;
   display: ${props => props.disabled ? 'none' : null};
+  ${props => {
+    if (props.Tablet) {
+      return `@media screen and (max-width: 684px) {
+        padding-left: 0px;
+      }`
+    }
+  }}
+  ${props => {
+    if (props.Phone) {
+      return `@media screen and (max-width: 768px) {
+        width: 100%;
+        padding-left: 0px;
+      }`
+    }
+  }}
 `
 const InformationLeft = styled.div`
   width: 15%; 
@@ -285,9 +309,9 @@ const Left = styled.div`
     }
   }}
   ${props => {
-    if (props.Tablet) {
+    if (props.Phone) {
       return `@media screen and (max-width: 684px) {
-         
+         width: 100%;
       }`
     }
   }}
@@ -325,6 +349,11 @@ const SocialsTitle = styled.div`
   align-items: center;
   font-family: 'Druk Text Web';
   font-size: 20px;
+  @media screen and (max-width: 968px) {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
 `
 const LeftDateText = styled.p`
   font-size: ${props => props.isDay ? '24px' : '22px'};
@@ -441,7 +470,7 @@ export const Article = (props) => {
               </RightColTop>
               <RightColBottomWithButton column={props.column} isArticle={props.isArticle}>
                 <MiniInfo Tablet>
-                  <Left Tablet>
+                  <Left Tablet Phone>
                     <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
                     <a href={data.fields.url} target='_blank' style={{color: '#EC0F00', fontSize: 14}}>{data.fields.autor}</a>
                   </Left>
@@ -490,21 +519,21 @@ export const Article = (props) => {
             : null
           }
       */}
-        <ArticleInformation expanded={props.expanded}>
-          <InformationLeft>
-            <LeftDate>
+        <ArticleInformation expanded={props.expanded} Tablet Phone>
+          <InformationLeft Tablet Phone>
+            <LeftDate Phone>
               <LeftDateText isDay>{day}</LeftDateText>
               <LeftDateText>{months[month]}</LeftDateText>
             </LeftDate>
           </InformationLeft>
-          <InformationRigth>
+          <InformationRigth Tablet Phone>
             <RightColTop style={{marginBottom: 20}}>
               <TitleArticle>
                 {data.titulo}
               </TitleArticle>
             </RightColTop>
             <RightColBottom disabled={props.disabled}>
-              <Left>
+              <Left Tablet Phone>
                 <p style={{color: '#A9AAA9', fontSize: 12}}>Autor:&nbsp;</p>
                 <a href={data.url} target='_blank' style={{color: '#EC0F00', fontSize: 14}}>{data.autor}</a>
               </Left>
@@ -523,7 +552,7 @@ export const Article = (props) => {
             </RightColBottom>
           </InformationRigth>
         </ArticleInformation>
-        <ArticleDescription disabled={props.disabled} dangerouslySetInnerHTML={renderContentArticle(data.contenido, 'articulo')} />
+        <ArticleDescription disabled={props.disabled} dangerouslySetInnerHTML={renderContentArticle(data.contenido, 'articulo')} Tablet Phone />
         <hr style={{borderColor: '#E4E5E4', width: '100%', marginTop: 20, marginBottom: 20}} />
         {
           (data.revista !== undefined)

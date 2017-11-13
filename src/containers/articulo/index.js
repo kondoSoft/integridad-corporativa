@@ -61,11 +61,11 @@ export default class Article extends Component {
           <SectionBanner image={'/assets/img/noticias_background.jpg'} title={'ARTICULO'} subtitle={''} withBar />
         </header>
         <Main>
-          <Container style={{width: '70%'}}>
+          <Container isTablet>
             <Route>{`HOME > NOTICIAS > ${(data.length !== 0) && data[0].fields.titulo}`}</Route>
             <Articles data={(data.length !== 0) && data[0].fields} />
           </Container>
-          <News data={news} />
+          <News data={news} isTablet />
         </Main>
         <Footer />
       </div>
@@ -83,13 +83,11 @@ export default class Article extends Component {
     httpRequest(articleOptions)
     .then(res => {
       if (res) {
-        return JSON.parse(res)
+        const json = JSON.parse(res)
+        this.setState({
+          data: json
+        })
       }
-    })
-    .then(res => {
-      this.setState({
-        data: res
-      })
     })
   }
 }

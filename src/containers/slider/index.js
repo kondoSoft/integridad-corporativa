@@ -661,9 +661,13 @@ export default class SliderGraphics extends Component {
           width: 700,
           height: 500
         },
+        barMedium: {
+          width: 600,
+          height: 500
+        },
         barSmal: {
-          width: 500,
-          height: 300
+          width: 600,
+          height: 500
         }
       }
     }
@@ -688,6 +692,8 @@ export default class SliderGraphics extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     }
+    var sizeWidth = (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.width : chartsSize.barMedium.width : chartsSize.barLarge.width
+    var sizeHeight = (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : chartsSize.barLarge.height
     return (
       <Container style={{overflow: 'hidden'}}>
         <Slider ref='slider' {...settings} arrows>
@@ -803,7 +809,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <ComposedChart width={(window.innerWidth <= 768) ? chartsSize.barSmal.width : chartsSize.barLarge.width} height={(window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barSmal.height} data={charts['01']}>
+              <ComposedChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight} data={charts['01']}>
                 <XAxis dataKey='name' />
                 <YAxis />
                 <Tooltip />
@@ -838,7 +844,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <table style={{marginTop: 30}}>
+              <table className='table' style={{marginTop: 30}}>
                 <thead className='tHead'>
                   <tr>
                     <th className='thHead'>Posición respecto a IC500</th>
@@ -963,8 +969,8 @@ export default class SliderGraphics extends Component {
                 </ContainerDown>
               </View>
               <BarChart
-                width={chartsSize.barLarge.width}
-                height={chartsSize.barLarge.height}
+                width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                 data={charts['02']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -999,8 +1005,8 @@ export default class SliderGraphics extends Component {
                 </ContainerDown>
               </View>
               <BarChart
-                width={chartsSize.barLarge.width}
-                height={chartsSize.barLarge.height}
+                width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                 data={charts['03']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -1044,8 +1050,8 @@ export default class SliderGraphics extends Component {
                 </ContainerDown>
               </View>
               <BarChart
-                width={chartsSize.barLarge.width}
-                height={chartsSize.barLarge.height}
+                width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                 data={charts['04']}
                 // margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -1079,7 +1085,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <PieChart width={chartsSize.barLarge.width} height={chartsSize.barLarge.height}>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
                 <Legend />
@@ -1115,7 +1121,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <PieChart width={chartsSize.barLarge.width} height={chartsSize.barLarge.height}>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['06']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
                 <Legend />
@@ -1141,7 +1147,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <PieChart width={chartsSize.barLarge.width} height={chartsSize.barLarge.height}>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['07']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
                 <Legend />
@@ -1170,7 +1176,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <PieChart width={chartsSize.barLarge.width} height={chartsSize.barLarge.height}>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['08']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
                 <Legend />
@@ -1197,7 +1203,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <PieChart width={chartsSize.barLarge.width} height={chartsSize.barLarge.height}>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['09'].left} cx='25%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
                 <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1224,7 +1230,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <PieChart width={chartsSize.barLarge.width} height={chartsSize.barLarge.height}>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['10']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
                 <Legend />
@@ -1252,7 +1258,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <PieChart width={chartsSize.barLarge.width} height={chartsSize.barLarge.height}>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['11']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
                 <Legend />
@@ -1290,8 +1296,8 @@ export default class SliderGraphics extends Component {
                 </ContainerDown>
               </View>
               <BarChart
-                width={chartsSize.barLarge.width}
-                height={chartsSize.barLarge.height}
+                width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                 data={charts['12']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -1351,7 +1357,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <PieChart width={chartsSize.barLarge.width} height={chartsSize.barLarge.height}>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['13']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
                 <Legend />
@@ -1387,7 +1393,7 @@ export default class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <PieChart width={chartsSize.barLarge.width} height={chartsSize.barLarge.height}>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['14']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
                 <Legend />
@@ -1422,8 +1428,8 @@ export default class SliderGraphics extends Component {
                 </ContainerDown>
               </View>
               <BarChart
-                width={chartsSize.barLarge.width}
-                height={chartsSize.barLarge.height}
+                width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                 data={charts['15']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -1463,8 +1469,8 @@ export default class SliderGraphics extends Component {
               </View>
               <Row noWrap={window.innerWidth > 1024}>
                 <BarChart
-                  width={500}
-                  height={300}
+                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                   data={charts['16'].europa}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1477,8 +1483,8 @@ export default class SliderGraphics extends Component {
                   <Bar dataKey='Puntaje promedio' fill='#3498db' />
                 </BarChart>
                 <BarChart
-                  width={500}
-                  height={300}
+                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                   data={charts['16'].latinoamerica}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1493,8 +1499,8 @@ export default class SliderGraphics extends Component {
               </Row>
               <Row noWrap={window.innerWidth > 1024 ? 1 : 0}>
                 <BarChart
-                  width={500}
-                  height={300}
+                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                   data={charts['16'].norteamerica}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1507,8 +1513,8 @@ export default class SliderGraphics extends Component {
                   <Bar dataKey='Puntaje promedio' fill='#3498db' />
                 </BarChart>
                 <BarChart
-                  width={500}
-                  height={300}
+                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                   data={charts['16'].asia}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1561,8 +1567,8 @@ export default class SliderGraphics extends Component {
                 </ContainerDown>
               </View>
               <BarChart
-                width={chartsSize.barLarge.width}
-                height={chartsSize.barLarge.height}
+                width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                 data={charts['17']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -1604,8 +1610,8 @@ export default class SliderGraphics extends Component {
                 </ContainerDown>
               </View>
               <BarChart
-                width={chartsSize.barLarge.width}
-                height={chartsSize.barLarge.height}
+                width={(window.innerWidth <= 500) ? 500 : sizeWidth}
+                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                 data={charts['18']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -1621,8 +1627,16 @@ export default class SliderGraphics extends Component {
             </Content>
           </SliderContainer>
         </Slider>
-        <SliderPrev onClick={this.changeSlider}><i className='fa fa-chevron-left' aria-hidden='true' /></SliderPrev>
-        <SliderNext onClick={() => this.changeSlider('next')}><i className='fa fa-chevron-right' aria-hidden='true' /></SliderNext>
+        {
+          window.innerWidth > 968
+          ? <SliderPrev onClick={this.changeSlider}><i className='fa fa-chevron-left' aria-hidden='true' /></SliderPrev>
+          : null
+        }
+        {
+          window.innerWidth > 968
+          ? <SliderNext onClick={() => this.changeSlider('next')}><i className='fa fa-chevron-right' aria-hidden='true' /></SliderNext>
+          : null
+        }
       </Container>
     )
   }
