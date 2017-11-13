@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
-const SliderPrev= styled.button`
+const SliderPrev = styled.button`
   border: none;
   position: relative;
   font-size: 3em;
   top: -405px;
+  left: 22px;
   background: none;
   color: #ED4630;
   cursor: pointer;

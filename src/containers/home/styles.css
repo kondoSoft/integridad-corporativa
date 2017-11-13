@@ -16,7 +16,6 @@
 }
 .slick-track{
   display: flex;
-  align-items: center;
 }
 @media screen and (min-width: 1200px){
   .title:after{
@@ -89,13 +88,17 @@
 .slick-active{
   display: flex !important;
 }
-
 .aviso{
   font-weight: bold;
   font-size: 1.2em;
 }
 table{
   width: 85%;
+  @media screen and (max-width: 500px) {
+    width: 95%;
+    overflow-y: auto;    /* Trigger vertical scroll    */
+    overflow-x: scroll;
+  }
 }
 .tHead{
   background-color: #F44336;
@@ -104,6 +107,9 @@ table{
   border-right: 3px solid #FFF;
   padding: 15px;
   color: #FFF;
+  @media screen and (max-width: 400px) {
+    padding: 0px;
+  }
 }
 .trWhite{
   padding: 15px;

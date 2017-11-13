@@ -1,7 +1,7 @@
 import styled, {keyframes} from 'styled-components'
 
 const CollapseBox = styled.div`
-  width:80%;
+  width: ${props => props.isGraphics ? '100%' : '80%'};
   border-bottom:3px solid #ED4630;
   margin: 0 auto;
   margin-top: ${props => props.noMargin ? '0px' : '40px'};

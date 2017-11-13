@@ -4,8 +4,8 @@ const SliderNext = styled.button`
   border: none;
   position: relative;
   font-size: 3em;
-  top: -405px;
-  right: -90%;
+  top: -390px;
+  right: -91%;
   background: none;
   color: #ED4630;
   cursor: pointer;

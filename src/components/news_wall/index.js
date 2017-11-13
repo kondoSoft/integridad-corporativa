@@ -150,9 +150,8 @@ const RowNews = styled.div`
   width: ${props => props.width ? props.width : null};
   padding: ${props => props.padding ? props.padding : null};
   box-sizing: border-box;
-  @media screen and (max-width: 620px) {
-   display: none;
-
+  @media screen and (max-width: 968px) {
+    display: none; 
   }
 `
 const Paragraph = styled.p`
@@ -178,8 +177,8 @@ const RowEvents = styled.div`
   width: 100%;
   padding: ${props => props.padding ? props.padding : null};
   box-sizing: border-box;
-  @media screen and (max-width: 1177px) {
-    
+  @media screen and (max-width: 968px) {
+   paddig: 10px 0px; 
   }
 `
 const Title = styled.h4`
@@ -220,7 +219,7 @@ const NewsWall = (props) => {
           <RowNews noMargin>
             <Col Ext>
               <Link to='/noticias/trac-2014'>
-                <Image src={props.data.articles[0].image} />
+                <Image src={'assets/img/TRAC2014.png'} />
                 <Description width='98%'>
                   <Title small>TRAC 2014</Title>
                   <Paragraph fontSize='12px' width='100%'>¿Qué tan transparentes son las multinacionales?</Paragraph>
@@ -229,7 +228,7 @@ const NewsWall = (props) => {
             </Col>
             <Col Ext>
               <Link to='/noticias/trans-ant'>
-                <Image src={props.data.articles[1].image} />
+                <Image src={'assets/img/TRAC2016.png'} />
                 <Description width='98%'>
                   <Title small>TRAC 2016</Title>
                   <Paragraph fontSize='12px' width='100%'>Transparencia y anticorrupción en 100 multinacionales de economías emergentes: informe TRAC.</Paragraph>
@@ -237,7 +236,7 @@ const NewsWall = (props) => {
               </Link>
             </Col>
           </RowNews>
-          <RowEvents noMargin padding='21px 4px 0px 4px'>
+          <RowEvents noMargin padding='20px 4px'>
             <CalendarEvents href='/eventos'>
               <TextCalendar>
                 <p>Calendario de Publicaciones </p> <br /><p> y eventos</p>
@@ -249,7 +248,7 @@ const NewsWall = (props) => {
           </RowEvents>
         </Col>
       </RowWrapper>
-      <Row disabled={props.disabled}>
+      <Row noMargin disabled={props.disabled} style={{marginTop: 10}}>
         <a href='/noticias'><Button invert>VER MÁS</Button></a>
       </Row>
     </Wrapper>

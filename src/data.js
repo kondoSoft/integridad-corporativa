@@ -177,7 +177,6 @@ Información desglosada por país: información sobre las operaciones en cada pa
  La edición 2014 de este informe analiza la disponibilidad de información de las 124 multinacionales que cotizan en bolsa, más grandes del mundo. 101 de las 124 empresas obtenidas obtuvieron una puntuación menor a 5, donde donde 10 es mayor transparencia y 0 menor transparencia, siendo el promedio de 3.8. De las 124 empresas analizadas, 81 operan en México, es decir, el 65% de las empresas incluidas en el informe y sólo una es mexicana: América Móvil.`,
     fechaCreacion: '5-11-2017',
     autor: 'Ignacio Rodriguez Cruz',
-    autor: 'TRANSPARENCIA MEXICANA',
     dia: '4',
     mes: 'Nov'
   }

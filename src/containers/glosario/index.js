@@ -13,6 +13,7 @@ import {
 } from '../../components'
 import {data, dataSources} from '../../data'
 import {httpRequest} from '../../helpers'
+const ENDPOINT = '165.227.53.250'
 
 export default class Glossary extends Component {
   constructor (props) {
@@ -23,54 +24,68 @@ export default class Glossary extends Component {
       news: []
     }
   }
-  componentDidMount () {
+  componentWillMount () {
     const sourcesOptions = {
-      host: '127.0.0.1',
+      host: ENDPOINT,
       port: 8000,
       path: '/fuentes/',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
       }
     }
     const glossaryOptions = {
-      host: '127.0.0.1',
+      host: ENDPOINT,
       port: 8000,
       path: '/glosario/',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
       }
     }
     const newsOptions = {
-      host: '127.0.0.1',
+      host: ENDPOINT,
       port: 8000,
       path: '/recientes/',
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Content-Type': 'application/json'
       }
     }
     httpRequest(sourcesOptions)
     .then(res => {
+      if (typeof res === 'string') {
+        const json = JSON.parse(res)
+        return json
+      }
+    })
+    .then(res => {
       this.setState({
-        sources: JSON.parse(res)
+        sources: res
       })
     })
     httpRequest(glossaryOptions)
     .then(res => {
+      if (typeof res === 'string') {
+        const json = JSON.parse(res)
+        return json
+      }
+    })
+    .then(res => {
       this.setState({
-        glossary: JSON.parse(res)
+        glossary: res
       })
     })
     httpRequest(newsOptions)
     .then(res => {
+      if (typeof res === 'string') {
+        const json = JSON.parse(res)
+        return json
+      }
+    })
+    .then(res => {
       const news = []
-      const data = JSON.parse(res)
-      if (data.length !== 0) {
-        const newsRecently1 = data[data.length - 3]
-        const newsRecently2 = data[data.length - 2]
-        const newsRecently3 = data[data.length - 1]
+      if (res.length !== 0) {
+        const newsRecently1 = res[res.length - 3]
+        const newsRecently2 = res[res.length - 2]
+        const newsRecently3 = res[res.length - 1]
         news.push(newsRecently1)
         news.push(newsRecently2)
         news.push(newsRecently3)
