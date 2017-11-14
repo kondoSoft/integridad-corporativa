@@ -171,6 +171,7 @@ const MenuIcon = styled.i`
   color: #FFF;
   font-size: 25px;
 `
+
 class NavigationBar extends Component {
   constructor (props) {
     super(props)
@@ -184,6 +185,7 @@ class NavigationBar extends Component {
     this.showMenu = this.showMenu.bind(this)
   }
   render () {
+    const ENDPOINT = '165.227.53.250'
     return (
       <section>
         <NavBar>
@@ -224,7 +226,7 @@ class NavigationBar extends Component {
               </Link>
             </NavItem>
             <NavItem>
-              <NavLink href='#'>SOY PARTE DE LAS 500</NavLink>
+              <NavLink href={`http://${ENDPOINT}:8000/login/`}>SOY PARTE DE LAS 500</NavLink>
             </NavItem>
           </NavList>
           <NavListSocials>

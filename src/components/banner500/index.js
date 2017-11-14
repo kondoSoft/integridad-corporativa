@@ -95,14 +95,17 @@ const Column = styled.div`
     padding: 20px;
   }
 `
+const ENDPOINT = '165.227.53.250'
 
 const Banner500 = (props) => (
   <Wrapper margin={props.margin} image={props.image}>
     <Title>SOY PARTE DE LAS <Span>500</Span></Title>
     <Column>
-      <Button>
-        Actualiza aquí&nbsp;<i className='fa fa-chevron-right' aria-hidden='true' />
-      </Button>
+      <a href={`http://${ENDPOINT}:8000/login/`}>
+        <Button>
+          Actualiza aquí&nbsp;<i className='fa fa-chevron-right' aria-hidden='true' />
+        </Button>
+      </a>
       <Description>tu información sobre integridad corporativa a partir del 15 de noviembre</Description>
     </Column>
   </Wrapper>
