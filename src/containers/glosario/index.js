@@ -51,51 +51,51 @@ export default class Glossary extends Component {
     }
     httpRequest(sourcesOptions)
     .then(res => {
+      console.log('res > ', res);
       if (typeof res === 'string') {
-        const json = JSON.parse(res)
-        return json
+        try {
+          const json = JSON.parse(res)
+
+          this.setState({
+            sources: json
+          })
+        }
+        catch (err){
+          console.log(err)
+          return err
+        }
       }
-    })
-    .then(res => {
-      this.setState({
-        sources: res
-      })
     })
     httpRequest(glossaryOptions)
     .then(res => {
+      console.log('res > ', res);
       if (typeof res === 'string') {
-        const json = JSON.parse(res)
-        return json
+        try {
+          this.setState({
+            glossary: JSON.parse(res)
+          })
+        }
+        catch (err){
+          console.log(err)
+          return err
+        }
       }
     })
-    .then(res => {
-      this.setState({
-        glossary: res
-      })
-    })
+
     httpRequest(newsOptions)
     .then(res => {
+      console.log('res > ', res);
       if (typeof res === 'string') {
-        const json = JSON.parse(res)
-        return json
-      }
-    })
-    .then(res => {
-      const news = []
-      if (res.length !== 0) {
-        const newsRecently1 = res[res.length - 3]
-        const newsRecently2 = res[res.length - 2]
-        const newsRecently3 = res[res.length - 1]
-        news.push(newsRecently1)
-        news.push(newsRecently2)
-        news.push(newsRecently3)
-        this.setState({
-          news
-        })
-      } else {
-        this.setState({
-          news: []
-        })
+        try {
+          const json = JSON.parse(res)
+          this.setState({
+            news: json
+          })
+        }
+        catch (err){
+          console.log(err)
+          return err
+        }
       }
     })
   }

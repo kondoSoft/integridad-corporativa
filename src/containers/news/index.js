@@ -70,31 +70,35 @@ export default class News extends Component {
     httpRequest(newsOptions)
     .then(res => {
       if (res) {
-        return JSON.parse(res)
+        try {
+          const json = JSON.parse(res)
+
+          this.setState({
+            news: json
+          })
+        }
+        catch (err){
+          console.log(err)
+          return err
+        }
       }
     })
-    .then(res => {
-      const news = []
-      const newsRecently1 = res[res.length - 3]
-      const newsRecently2 = res[res.length - 2]
-      const newsRecently3 = res[res.length - 1]
-      news.push(newsRecently1)
-      news.push(newsRecently2)
-      news.push(newsRecently3)
-      this.setState({
-        news
-      })
-    })
+
     httpRequest(articleOptions)
     .then(res => {
       if (res) {
-        return JSON.parse(res)
+         try {
+          const json = JSON.parse(res)
+
+          this.setState({
+            data: json
+          })
+        }
+        catch (err){
+          console.log(err)
+          return err
+        }
       }
-    })
-    .then(res => {
-      this.setState({
-        data: res
-      })
     })
   }
   render () {
