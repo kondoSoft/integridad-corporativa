@@ -179,7 +179,7 @@ export const MiddleBanner = props => (
         <Image isBanner src='assets/img/quienessomos_banner.png' />
       </Col>
       <Col width='50%' isDescription>
-        <Title>Apartir del 15 de noviembre 2017,</Title>
+        <Title>A partir del 15 de noviembre 2017,</Title>
         <ContentText normal>las empresas podrán actualizar la información sobre sus políticas</ContentText>
         <ContentText normal>anticorrupción a través de este sitio para futuras evaluaciones de</ContentText>
         <ContentText normal>las 500 Frente a la Corrupción.</ContentText>
@@ -188,8 +188,8 @@ export const MiddleBanner = props => (
         <br />
         <ContentText normal>Los cortes de información se realizarán dos veces al año;</ContentText>
         <ContentText normal>uno el <b>31 de diciembre</b> y otro el <b>31 de julio</b>,</ContentText>
-        <ContentText normal>con miras a la publicación del índice 500 de Expasión en junio y</ContentText>
-        <ContentText normal>para el reporte anual de IC500 en noviembre</ContentText>
+        <ContentText normal>con miras a la publicación del índice 500 de Expansión en junio y</ContentText>
+        <ContentText normal>para el reporte anual de IC500 en noviembre.</ContentText>
       </Col>
     </Row>
     <Row small padding='0px 100px' margin='100px 0px'>
@@ -238,14 +238,14 @@ export const MiddleBanner = props => (
         </a>
       </Col>
       <Col width='50%' background='#F1F2F1' padding='30px 0px' isDescription>
-        <Title red>Sobre Expasión</Title>
-        <ContentText normal>Expasión es el medio de comunicación líder en periodismo de</ContentText>
+        <Title red>Sobre Expansión</Title>
+        <ContentText normal>Expansión es el medio de comunicación líder en periodismo de</ContentText>
         <ContentText normal>negocios en México. Con cerca de cinco décadas de trayectoria</ContentText>
         <ContentText normal>dando a conocer la actualidad económica, empresarial y política</ContentText>
         <ContentText normal>del país, esta marca se ha convertido en un referente para</ContentText>
         <ContentText normal>empresarios, directivos de empresas, emprendedores, e</ContentText>
         <ContentText normal>inversionistas de habla hispana. Con el paso de los años,</ContentText>
-        <ContentText normal>Expasión se ha convertido en una plataforma multimedia que</ContentText>
+        <ContentText normal>Expansión se ha convertido en una plataforma multimedia que</ContentText>
         <ContentText normal>llega a más de 50 millones de lectores al año.</ContentText>
       </Col>
     </Row>

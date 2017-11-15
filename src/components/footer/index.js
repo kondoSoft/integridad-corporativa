@@ -211,7 +211,7 @@ class Footer extends Component {
               impunidad, en alianza con la Revista Expansión, presentan "500
               Frente a la Corrupción. Integridad Corporativa", el primer diagnóstico
               sobre politicas anticorrupción o de integridad de las 500 empresas
-              mas importantes de México.
+              más importantes de México.
             </Paragraph>
           </Col>
           <Row>
