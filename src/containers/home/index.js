@@ -743,7 +743,7 @@ class Home extends Component {
           <Title color={(isOpen.data) ? '#ED4630' : ''}>INFORMACIÓN ACTUALIZADA</Title>
           <Subtitle>A PARTIR DEL 15 DE NOVIEMBRE</Subtitle>
           <Col>
-            <CollapseBox height='1050px' isOpen={isOpen.graphics} >
+            <CollapseBox height='1050px' isOpen={isOpen.data} >
               <Row noMargin>
                 <TabsShowBy Graphics={this.changeGraphics} />
               </Row>
