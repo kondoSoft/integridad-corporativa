@@ -44,14 +44,28 @@ const slideOut = keyframes`
 const Wrapper = styled.div`
   display: flex;
   position: absolute;
-  background: ${props => props.isVisible ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0)'};
   height: 100%;
   width: 100%;
   top: 0px;
   left: 0px;
-  animation-name: ${props => props.isVisible ? fadeIn : fadeOut};
-  animation-duration:1s;
-  visibility: ${props => props.isVisible ? 'initial' : 'hidden'};
+  ${props => {
+    if (props.animate) {
+      return (
+        `
+          background: ${props.isVisible ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0)'};
+          animation-name: ${props.isVisible ? fadeIn : fadeOut};
+          animation-duration:1s;
+          visibility: ${props.isVisible ? 'initial' : 'hidden'};
+        `
+      )
+    }else {
+      return (
+        `
+          display:none;
+        `
+      )
+    }
+  }}
   @media screen and (max-width: 597px) {
     align-items: center;
     justify-content: center;
@@ -66,12 +80,22 @@ const Card = styled.div`
   box-sizing: border-box;
   border-radius:10px;
   width: 40%;
-  top: ${props => props.isVisible ? '200px' : '-200px'};
+  ${props => {
+    if (props.animate) {
+      return(
+        `
+          top: ${props.isVisible ? '200px' : '-200px'};
+          animation-name: ${props.isVisible ? slideIn : slideOut};
+          animation-duration: 1s;
+        `
+      )
+    }else{
+      return 'top: -200px;'
+    }
+  }}
   left: 30%;
   text-align: justify;
   padding: 20px;
-  animation-name: ${props => props.isVisible ? slideIn : slideOut};
-  animation-duration: 1s;
   @media screen and (max-width: 597px) {
     width: 90%;
     top: 50;
@@ -118,8 +142,8 @@ const P = styled.p`
 `
 
 const Dialog = (props) => (
-  <Wrapper isVisible={props.isVisible}>
-    <Card isVisible={props.isVisible} >
+  <Wrapper isVisible={props.isVisible} animate={props.animate}>
+    <Card isVisible={props.isVisible} animate={props.animate} >
       <Icon className='fa fa-times' aria-hidden='true' onClick={props.onClickClose} />
       <Title>{props.title}</Title>
       <P textCenter={props.textCenter}>{props.children}</P>
