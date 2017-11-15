@@ -87,7 +87,7 @@ const ScoreInfo = props => (
     <Row Tablet noWrap>
       <Col>
         <Paragraph>
-          La mayoría de los reactivos fueron calificados de manera binaria (0 o 1), aunque en algunos caso, se admitieron respuestas
+          La mayoría de los reactivos fueron calificados de manera binaria (0 o 1), aunque en algunos casos, se admitieron respuestas
           parciales o subóptimas (Ver anexo 1). Los valores obtenidos por las empresas en cada variable se sumaron de manera lineal,
           sin ninguna ponderación adicional.
         </Paragraph>

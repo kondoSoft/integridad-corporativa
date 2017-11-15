@@ -27,7 +27,7 @@ export default class AboutUs extends Component {
             <Content center column>
               <ContentText isBig>500 Frente a la Corrupción: Integridad Corporativa (IC500)</ContentText>
               <ContentText >Es una métrica de la publicidad de las políticas de integridad y anticorrupción de las 500 empresas</ContentText>
-              <ContentText >más grandes del país, asi como una plataforma digital para darle seguimiento al compromiso y</ContentText>
+              <ContentText >más grandes del país, así como una plataforma digital para darle seguimiento al compromiso y</ContentText>
               <ContentText >cumplimiento de estas empresas.</ContentText>
             </Content>
           </MainSection>
@@ -62,7 +62,7 @@ export default class AboutUs extends Component {
               </ContentText>
               <br />
               <ContentText className='contentTextFlex'>
-                De esa manera, <p style={{fontWeight: 600}}>&nbsp;500 Frente a la Corrupción, Integridad Corporativa&nbsp;</p>se une a la lucha anticorrupción
+                De esa manera, <p style={{fontWeight: 600}}>&nbsp;500 Frente a la Corrupción, Integridad Corporativa&nbsp;</p>se unen a la lucha anticorrupción
               </ContentText>
               <ContentText className='contentText'>
                 en México y facilita la adopción y publicidad de las políticas de integridad en el sector
