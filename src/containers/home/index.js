@@ -780,7 +780,7 @@ class Home extends Component {
         </Section>
         <Footer />
         {goTo}
-        <Dialog isVisible={modalOpen} onClickClose={this.closeModal} title='¡ADVERTENCIA!'>
+        <Dialog isVisible={modalOpen} animate={true} onClickClose={this.closeModal} title='¡ADVERTENCIA!'>
           500 Frente a la Corrupción: Integridad Corporativa (IC500) no es un índice sobre la corrupción en las empresas. Es una evaluación de los compromisos públicos de las empresas más importantes del país en favor de las políticas de  integridad, NO de su cumplimiento.
         </Dialog>
       </div>
