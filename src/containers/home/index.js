@@ -718,13 +718,9 @@ class Home extends Component {
           <Row>
             <Title className='title'>EDICIÓN 2017</Title>
           </Row>
-          <Row style={{display: 'flex', flexDirection: 'column', margin: 0, flexWrap: 'initial', alignItems: 'initial', justifyContent: 'initial', padding: 20}}>
-            <Title style={{marginTop: 0, paddingTop: 10}} color='#ED4630'>Aviso</Title>
-            <p className='aviso' style={{textAlign: 'center'}}>Disponible a partir del 15 de noviembre.</p>
-          </Row>
           <Row>
-            <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA EL INFORME</Button>
-            <Button><i className='fa fa-download' aria-hidden='true' />&nbsp;DESCARGA LA BASE DE DATOS</Button>
+            <Button onClick={()=> window.location = 'assets/docs/500 Frente a la Corrupción. Integridad Corporativa. 1nov2017.pdf'}><i className='fa fa-download' aria-hidden='true'/>&nbsp;DESCARGA EL INFORME</Button>
+            <Button onClick={()=> window.location = 'assets/docs/base IC500.xlsx'}><i className='fa fa-download' aria-hidden='true'/>&nbsp;DESCARGA LA BASE DE DATOS</Button>
           </Row>
         </section>
         <section>
@@ -741,7 +737,6 @@ class Home extends Component {
         </Section>
         <Section background='#F2F2F2'>
           <Title color={(isOpen.data) ? '#ED4630' : ''}>INFORMACIÓN ACTUALIZADA</Title>
-          <Subtitle>A PARTIR DEL 15 DE NOVIEMBRE</Subtitle>
           <Col>
             <CollapseBox height='1050px' isOpen={isOpen.data} >
               <Row noMargin>
