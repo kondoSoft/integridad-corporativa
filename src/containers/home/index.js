@@ -32,15 +32,7 @@ import {
   BarChart,
   XAxis,
   YAxis,
-  Bar,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  PieChart,
-  Pie,
-  Line,
-  ComposedChart,
-  ResponsiveContainer
+  Bar
 } from 'recharts'
 import Slider from 'react-slick'
 import SliderGraphics from '../slider'

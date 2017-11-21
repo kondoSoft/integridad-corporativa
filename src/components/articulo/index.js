@@ -107,15 +107,14 @@ const NewEntries = styled.p`
     font-family: 'Druk Text Web';
 `
 const NewsBlogArticle = styled.div`
-    height: 100px;
+    max-height: 125px;
     background-color: #EBEBEB;
     width: 90%;
     margin: 5px;
     display: flex;
 `
 const Img = styled.img`
-    flex: 1;
-    width: 50%;
+    width: 100%;
 `
 const ImgBottom = styled.img`
     flex: 0;
@@ -676,9 +675,9 @@ const NewsBlog = (props) => {
           data.map((news, i) => {
             return (
               <NewsBlogArticle key={i}>
-                { (news.fields.imagen !== undefined)
-                  ? <Img src={`http://${ENDPOINT}:8000/${news.fields.imagen}`} />
-                  : null
+                { (news.fields.imagen)
+                  ? <div style={{width: 180, height: 120, display: 'flex', alignItems: 'center'}}><Img src={`http://${ENDPOINT}:8000/${news.fields.imagen}`} /></div>
+                  : <div style={{width: 180, height: 120, display: 'flex', alignItems: 'center'}}><Img src='/assets/img/LOGO IC500.jpg' /></div>
                 }
                 <ArticleData>
                   <ArticleDate>{news.fields.fecha}</ArticleDate>

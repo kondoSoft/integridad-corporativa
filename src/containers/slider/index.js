@@ -25,8 +25,7 @@ import {
   PieChart,
   Pie,
   Line,
-  ComposedChart,
-  ResponsiveContainer
+  ComposedChart
 } from 'recharts'
 
 const Container = styled.div`
@@ -65,7 +64,7 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   )
 }
 
-export default class SliderGraphics extends Component {
+class SliderGraphics extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -1657,3 +1656,6 @@ export default class SliderGraphics extends Component {
     this.setState(state)
   }
 }
+
+
+export default SliderGraphics
