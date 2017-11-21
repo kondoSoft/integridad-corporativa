@@ -186,7 +186,7 @@ export const MiddleBanner = props => (
         <br />
         <br />
         <ContentText normal>Los cortes de información se realizarán dos veces al año;</ContentText>
-        <ContentText normal>uno el <b>31 de diciembre</b> y otro el <b>31 de julio</b>,</ContentText>
+        <ContentText normal>uno el <b>31 de enero</b> y otro el <b>31 de julio</b>,</ContentText>
         <ContentText normal>con miras a la publicación del índice 500 de Expansión en junio y</ContentText>
         <ContentText normal>para el reporte anual de IC500 en noviembre.</ContentText>
       </Col>

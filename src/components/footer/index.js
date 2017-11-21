@@ -208,7 +208,7 @@ class Footer extends Component {
           <Col isParagraph>
             <Paragraph>
               Mexicanos contra la Corrupción y la
-              impunidad y Transparencia Mexicana, en alianza con la Revista Expansión, presentan "Integridad Corporativa 500", el primer diagnóstico
+              Impunidad y Transparencia Mexicana, en alianza con la Revista Expansión, presentan "Integridad Corporativa 500", el primer diagnóstico
               sobre políticas anticorrupción o de integridad de las 500 empresas
               más importantes de México.
             </Paragraph>

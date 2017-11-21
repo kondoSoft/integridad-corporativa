@@ -716,11 +716,11 @@ class Home extends Component {
         </header>
         <section className='download'>
           <Row>
-            <Title className='title'>EDICIÓN 2017</Title>
+            <Title onClick={()=> window.location = 'assets/docs/EXP-1222-RANKING.zip'} className='title'>EDICIÓN 2017</Title>
           </Row>
           <Row>
-            <Button onClick={()=> window.location = 'assets/docs/500 Frente a la Corrupción. Integridad Corporativa. 1nov2017.pdf'}><i className='fa fa-download' aria-hidden='true'/>&nbsp;DESCARGA EL INFORME</Button>
-            <Button onClick={()=> window.location = 'assets/docs/base IC500.xlsx'}><i className='fa fa-download' aria-hidden='true'/>&nbsp;DESCARGA LA BASE DE DATOS</Button>
+            <Button onClick={()=> window.location = 'assets/docs/500 Frente a la Corrupción. Integridad Corporativa. 1nov2017.zip'}><i className='fa fa-download' aria-hidden='true'/>&nbsp;DESCARGA EL INFORME</Button>
+            <Button onClick={()=> window.location = 'assets/docs/base IC500.zip'}><i className='fa fa-download' aria-hidden='true'/>&nbsp;DESCARGA LA BASE DE DATOS</Button>
           </Row>
         </section>
         <section>
