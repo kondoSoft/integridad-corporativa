@@ -321,16 +321,6 @@ export const Topic = (props) => {
     <Accordion>
       {createAccordionItems(props.data)}
     </Accordion>
-    // props.data.map((topic, i) => {
-    //   return (
-    //     <Box>
-    //       <BoxTitle>{topic.fields.titulo}</BoxTitle>
-    //       <BoxDescription>
-    //         {topic.fields.descripcion}
-    //       </BoxDescription>
-    //     </Box>
-    //   )
-    // })
   )
 }
 
