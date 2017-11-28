@@ -1,6 +1,15 @@
 import styled from 'styled-components'
 import Slider from 'react-slick'
 import React from 'react'
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemTitle,
+    AccordionItemBody,
+} from 'react-accessible-accordion';
+import './styles.css'
+import '../../../node_modules/react-accessible-accordion/dist/react-accessible-accordion.css';
+
 
 export const Main = styled.main`
     width: 100%;
@@ -307,15 +316,38 @@ export const News = (props) => {
   )
 }
 export const Topic = (props) => {
+  console.log(props.data)
   return (
-    props.data.map((topic, i) => {
-      return (
-        <Box>
-          <BoxTitle>{topic.fields.titulo}</BoxTitle>
-          <BoxDescription>
-            {topic.fields.descripcion}
-          </BoxDescription>
-        </Box>
+    <Accordion>
+      {createAccordionItems(props.data)}
+    </Accordion>
+    // props.data.map((topic, i) => {
+    //   return (
+    //     <Box>
+    //       <BoxTitle>{topic.fields.titulo}</BoxTitle>
+    //       <BoxDescription>
+    //         {topic.fields.descripcion}
+    //       </BoxDescription>
+    //     </Box>
+    //   )
+    // })
+  )
+}
+
+function createAccordionItems (data){
+  return(
+    data.map((obj, i) => {
+      return(
+        <AccordionItem customKey={i}>
+          <AccordionItemTitle>
+            <h3 className='accordion-title'>{obj.fields.titulo}</h3><i className='fa fa-chevron-down' aria-hidden='true'></i>
+          </AccordionItemTitle>
+          <AccordionItemBody>
+            <p>
+              {obj.fields.descripcion}
+            </p>
+          </AccordionItemBody>
+        </AccordionItem>
       )
     })
   )

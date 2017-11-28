@@ -51,7 +51,6 @@ export default class Glossary extends Component {
     }
     httpRequest(sourcesOptions)
     .then(res => {
-      console.log('res > ', res);
       if (typeof res === 'string') {
         try {
           const json = JSON.parse(res)
@@ -68,7 +67,7 @@ export default class Glossary extends Component {
     })
     httpRequest(glossaryOptions)
     .then(res => {
-      console.log('res > ', res);
+      console.log('res > ', typeof res);
       if (typeof res === 'string') {
         try {
           this.setState({
@@ -84,7 +83,6 @@ export default class Glossary extends Component {
 
     httpRequest(newsOptions)
     .then(res => {
-      console.log('res > ', res);
       if (typeof res === 'string') {
         try {
           const json = JSON.parse(res)
