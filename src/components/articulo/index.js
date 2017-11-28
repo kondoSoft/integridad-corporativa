@@ -715,9 +715,9 @@ export const News = (props) => {
         </NewsEvents>
         <hr style={{borderColor: '#E4E5E4', width: '80%'}} />
         <NewsSponsors>
-          <LogoLink href='http://expansion.mx/' target='blank'>
+          {/*<LogoLink href='http://expansion.mx/' target='blank'>
             <Sponsors src={'/assets/img/logo_expansion.jpg'} />
-          </LogoLink>
+          </LogoLink>*/}
           <LogoLink href='https://contralacorrupcion.mx/' target='blank'>
             <Sponsors isMCCI src={'/assets/img/mcci.png'} />
           </LogoLink>

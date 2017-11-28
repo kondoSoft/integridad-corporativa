@@ -316,7 +316,6 @@ export const News = (props) => {
   )
 }
 export const Topic = (props) => {
-  console.log(props.data)
   return (
     <Accordion>
       {createAccordionItems(props.data)}

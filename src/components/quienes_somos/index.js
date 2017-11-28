@@ -179,7 +179,7 @@ export const MiddleBanner = props => (
         <Image isBanner src='assets/img/quienessomos_banner.png' />
       </Col>
       <Col width='50%' isDescription>
-        <ContentText normal>las empresas podrán actualizar la información sobre sus políticas</ContentText>
+        <ContentText normal>Las empresas podrán actualizar la información sobre sus políticas</ContentText>
         <ContentText normal>anticorrupción a través de este sitio para futuras evaluaciones de</ContentText>
         <ContentText normal>las 500 Frente a la Corrupción.</ContentText>
         <br />
