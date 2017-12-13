@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 const SliderNext = styled.button`
   border: none;
-  position: relative;
+  position: absolute;
   font-size: 3em;
-  top: -390px;
-  right: -91%;
+  top: 50%;
+  right: 5%;
   background: none;
   color: #ED4630;
   cursor: pointer;
