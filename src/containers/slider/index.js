@@ -601,6 +601,20 @@ class SliderGraphics extends Component {
           width: 600,
           height: 500
         }
+      },
+      regionCharts: {
+        barLarge: {
+          width: 600,
+          height: 400
+        },
+        barMedium: {
+          width: 500,
+          height: 400
+        },
+        barSmal: {
+          width: 400,
+          height: 300
+        }
       }
     }
     this.changeSlider = this.changeSlider.bind(this)
@@ -615,7 +629,8 @@ class SliderGraphics extends Component {
       dataNewsWall,
       isPlaying,
       charts,
-      chartsSize
+      chartsSize,
+      regionCharts
     } = this.state
     var settings = {
       dots: false,
@@ -626,6 +641,7 @@ class SliderGraphics extends Component {
     }
     var sizeWidth = (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.width : chartsSize.barMedium.width : chartsSize.barLarge.width
     var sizeHeight = (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : chartsSize.barLarge.height
+    var regionChartWidth = (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.width : regionCharts.barMedium.width : regionCharts.barLarge.width
     return (
       <Container>
         <Slider ref='slider' {...settings} arrows>
@@ -902,7 +918,7 @@ class SliderGraphics extends Component {
               </View>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
                 data={charts['02']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -990,7 +1006,6 @@ class SliderGraphics extends Component {
               >
                 <XAxis type='number' ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]} tickCoun={11} dominio={[0, 500]} />
                 <YAxis type='category' dataKey='name' width={200} />
-                <CartesianGrid strokeDasharray='3 3' />
                 <Tooltip />
                 <Legend />
                 <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={40} />
@@ -1361,7 +1376,7 @@ class SliderGraphics extends Component {
               </View>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
                 data={charts['15']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -1401,8 +1416,8 @@ class SliderGraphics extends Component {
               </View>
               <Row noWrap={window.innerWidth > 1024}>
                 <BarChart
-                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                  width={regionChartWidth}
+                  height={(window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.height : regionCharts.barMedium.height : 800}
                   data={charts['16'].europa}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1415,8 +1430,8 @@ class SliderGraphics extends Component {
                   <Bar dataKey='Puntaje promedio' fill='#3498db' />
                 </BarChart>
                 <BarChart
-                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                  width={regionChartWidth}
+                  height={(window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.height : regionCharts.barMedium.height : 400}
                   data={charts['16'].latinoamerica}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1431,8 +1446,8 @@ class SliderGraphics extends Component {
               </Row>
               <Row noWrap={window.innerWidth > 1024 ? 1 : 0}>
                 <BarChart
-                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                  width={regionChartWidth}
+                  height={(window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.height : regionCharts.barMedium.height : 400}
                   data={charts['16'].norteamerica}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1445,8 +1460,8 @@ class SliderGraphics extends Component {
                   <Bar dataKey='Puntaje promedio' fill='#3498db' />
                 </BarChart>
                 <BarChart
-                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                  width={regionChartWidth}
+                  height={(window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.height : regionCharts.barMedium.height : 400}
                   data={charts['16'].asia}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1543,7 +1558,7 @@ class SliderGraphics extends Component {
               </View>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
                 data={charts['18']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
