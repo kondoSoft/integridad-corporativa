@@ -67,9 +67,10 @@ export default class Glossary extends Component {
     })
     httpRequest(glossaryOptions)
     .then(res => {
-      console.log('res > ', typeof res);
+      console.log('res > ', res);
       if (typeof res === 'string') {
         try {
+          var json = JSON.parse(res)
           this.setState({
             glossary: JSON.parse(res)
           })

@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 const SliderPrev = styled.button`
   border: none;
-  position: relative;
+  position: absolute;
   font-size: 3em;
-  top: -405px;
+  top: 50%;
   left: 22px;
   background: none;
   color: #ED4630;

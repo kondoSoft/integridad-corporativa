@@ -29,7 +29,9 @@ import {
 } from 'recharts'
 
 const Container = styled.div`
-  overflow: hidden;
+  overflow-y: auto;
+  max-height: 800px;
+  position: relative;
 `
 const SliderContainer = styled.div`
   background-color: transparent;
@@ -68,78 +70,9 @@ class SliderGraphics extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      dataActualizada: [
-        {name: 'aeroe', uv: 10, pv: 100, amt: 100},
-        {name: 'B', uv: 10, pv: 95, amt: 95},
-        {name: 'C', uv: 10, pv: 90, amt: 90},
-        {name: 'D', uv: 10, pv: 80, amt: 80},
-        {name: 'E', uv: 10, pv: 85, amt: 85},
-        {name: 'F', uv: 10, pv: 80, amt: 80},
-        {name: 'A', uv: 10, pv: 75, amt: 75},
-        {name: 'B', uv: 10, pv: 70, amt: 70},
-        {name: 'C', uv: 10, pv: 65, amt: 65},
-        {name: 'D', uv: 10, pv: 60, amt: 60},
-        {name: 'E', uv: 10, pv: 55, amt: 55},
-        {name: 'F', uv: 10, pv: 50, amt: 50},
-        {name: 'A', uv: 10, pv: 45, amt: 45},
-        {name: 'B', uv: 10, pv: 40, amt: 40},
-        {name: 'C', uv: 10, pv: 35, amt: 35},
-        {name: 'D', uv: 10, pv: 30, amt: 30},
-        {name: 'E', uv: 10, pv: 25, amt: 25},
-        {name: 'B', uv: 10, pv: 70, amt: 70},
-        {name: 'C', uv: 10, pv: 65, amt: 65},
-        {name: 'D', uv: 10, pv: 60, amt: 60},
-        {name: 'E', uv: 10, pv: 55, amt: 55},
-        {name: 'F', uv: 10, pv: 50, amt: 50},
-        {name: 'A', uv: 10, pv: 45, amt: 45},
-        {name: 'B', uv: 10, pv: 40, amt: 40},
-        {name: 'C', uv: 10, pv: 35, amt: 35},
-        {name: 'D', uv: 10, pv: 30, amt: 30},
-        {name: 'E', uv: 10, pv: 25, amt: 25},
-        {name: 'F', uv: 10, pv: 20, amt: 20},
-        {name: 'A', uv: 10, pv: 50, amt: 10},
-        {name: 'B', uv: 10, pv: 60, amt: 10},
-        {name: 'C', uv: 10, pv: 30, amt: 10},
-        {name: 'D', uv: 10, pv: 80, amt: 10},
-        {name: 'E', uv: 10, pv: 90, amt: 10},
-        {name: 'F', uv: 10, pv: 40, amt: 10},
-        {name: 'G', uv: 10, pv: 65, amt: 10}
-      ],
-      isOpen: {
-        graphics: true,
-        data: false,
-        newsWall: true
-      },
-      rotate: {
-        graphics: 'rotateUp',
-        data: '',
-        newsWall: 'rotateUp'
-      },
-      modalOpen: true,
-      goTo: null,
-      dataNewsWall: {
-        video: {
-          id: 'PLfulSRq1bzxp84VTcylyeD-ZFqpw46grU',
-          title: 'Videos',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
-        },
-        articles: [
-          {
-            title: 'integrity report',
-            description: 'Enterate de los resultados del estudio de transparencia mexicana',
-            image: 'assets/img/blog_example.jpeg'
-          },
-          {
-            title: 'blog invitado',
-            description: 'Expasión: índice 500 en 2017. Entre escándalos, publicidad y compliance',
-            image: 'assets/img/blog2_example.jpg'
-          }
-        ]
-      },
       View: {
         click: false
       },
-      isPlaying: false,
       charts: {
         '01': [
           {
@@ -668,6 +601,20 @@ class SliderGraphics extends Component {
           width: 600,
           height: 500
         }
+      },
+      regionCharts: {
+        barLarge: {
+          width: 600,
+          height: 400
+        },
+        barMedium: {
+          width: 500,
+          height: 400
+        },
+        barSmal: {
+          width: 400,
+          height: 300
+        }
       }
     }
     this.changeSlider = this.changeSlider.bind(this)
@@ -682,7 +629,8 @@ class SliderGraphics extends Component {
       dataNewsWall,
       isPlaying,
       charts,
-      chartsSize
+      chartsSize,
+      regionCharts
     } = this.state
     var settings = {
       dots: false,
@@ -693,8 +641,9 @@ class SliderGraphics extends Component {
     }
     var sizeWidth = (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.width : chartsSize.barMedium.width : chartsSize.barLarge.width
     var sizeHeight = (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : chartsSize.barLarge.height
+    var regionChartWidth = (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.width : regionCharts.barMedium.width : regionCharts.barLarge.width
     return (
-      <Container style={{overflow: 'hidden'}}>
+      <Container>
         <Slider ref='slider' {...settings} arrows>
           <SliderContainer>
             <Content>
@@ -969,7 +918,7 @@ class SliderGraphics extends Component {
               </View>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
                 data={charts['02']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -1057,7 +1006,6 @@ class SliderGraphics extends Component {
               >
                 <XAxis type='number' ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]} tickCoun={11} dominio={[0, 500]} />
                 <YAxis type='category' dataKey='name' width={200} />
-                <CartesianGrid strokeDasharray='3 3' />
                 <Tooltip />
                 <Legend />
                 <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={40} />
@@ -1428,7 +1376,7 @@ class SliderGraphics extends Component {
               </View>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
                 data={charts['15']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -1468,8 +1416,8 @@ class SliderGraphics extends Component {
               </View>
               <Row noWrap={window.innerWidth > 1024}>
                 <BarChart
-                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                  width={regionChartWidth}
+                  height={(window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.height : regionCharts.barMedium.height : 800}
                   data={charts['16'].europa}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1482,8 +1430,8 @@ class SliderGraphics extends Component {
                   <Bar dataKey='Puntaje promedio' fill='#3498db' />
                 </BarChart>
                 <BarChart
-                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                  width={regionChartWidth}
+                  height={(window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.height : regionCharts.barMedium.height : 400}
                   data={charts['16'].latinoamerica}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1498,8 +1446,8 @@ class SliderGraphics extends Component {
               </Row>
               <Row noWrap={window.innerWidth > 1024 ? 1 : 0}>
                 <BarChart
-                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                  width={regionChartWidth}
+                  height={(window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.height : regionCharts.barMedium.height : 400}
                   data={charts['16'].norteamerica}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1512,8 +1460,8 @@ class SliderGraphics extends Component {
                   <Bar dataKey='Puntaje promedio' fill='#3498db' />
                 </BarChart>
                 <BarChart
-                  width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                  height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                  width={regionChartWidth}
+                  height={(window.innerWidth <= 968) ? (window.innerWidth <= 768) ? regionCharts.barSmal.height : regionCharts.barMedium.height : 400}
                   data={charts['16'].asia}
                   margin={{top: 5, right: 30, left: 20, bottom: 5}}
                   layout='vertical'
@@ -1610,7 +1558,7 @@ class SliderGraphics extends Component {
               </View>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                height={(window.innerWidth <= 500) ? 400 : sizeHeight}
+                height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
                 data={charts['18']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
