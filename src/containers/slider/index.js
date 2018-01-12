@@ -25,7 +25,9 @@ import {
   PieChart,
   Pie,
   Line,
-  ComposedChart
+  ComposedChart,
+  Text,
+  LabelList
 } from 'recharts'
 
 const Container = styled.div`
@@ -76,57 +78,57 @@ class SliderGraphics extends Component {
       charts: {
         '01': [
           {
-            name: '0-10',
+            name: '0%-10%',
             'Número de empresas dentro del rango': 168,
             'Porcentaje del total (sobre 500 empresas)': 34
           },
           {
-            name: '10-20',
+            name: '10%-20%',
             'Número de empresas dentro del rango': 32,
             'Porcentaje del total (sobre 500 empresas)': 6
           },
           {
-            name: '20-30',
+            name: '20%-30%',
             'Número de empresas dentro del rango': 30,
             'Porcentaje del total (sobre 500 empresas)': 6
           },
           {
-            name: '30-40',
+            name: '30%-40%',
             'Número de empresas dentro del rango': 35,
             'Porcentaje del total (sobre 500 empresas)': 7
           },
           {
-            name: '40-50',
+            name: '40%-50%',
             'Número de empresas dentro del rango': 44,
             'Porcentaje del total (sobre 500 empresas)': 9
           },
           {
-            name: '50-60',
+            name: '50%-60%',
             'Número de empresas dentro del rango': 66,
             'Porcentaje del total (sobre 500 empresas)': 13
           },
           {
-            name: '60-70',
+            name: '60%-70%',
             'Número de empresas dentro del rango': 80,
             'Porcentaje del total (sobre 500 empresas)': 16
           },
           {
-            name: '70-80',
+            name: '70%-80%',
             'Número de empresas dentro del rango': 32,
             'Porcentaje del total (sobre 500 empresas)': 6
           },
           {
-            name: '80-90',
+            name: '80%-90%',
             'Número de empresas dentro del rango': 11,
             'Porcentaje del total (sobre 500 empresas)': 2
           },
           {
-            name: '90-100',
+            name: '90%-100%',
             'Número de empresas dentro del rango': 2,
             'Porcentaje del total (sobre 500 empresas)': 0
           },
           {
-            name: '100',
+            name: '100%',
             'Número de empresas dentro del rango': 0,
             'Porcentaje del total (sobre 500 empresas)': 0
           }
@@ -190,65 +192,65 @@ class SliderGraphics extends Component {
         '03': [
           {
             name: 'Política de hospitalidad y viáticos',
-            Si: 6.6,
-            No: 93.4
+            'Sí cuenta con': 6.6,
+            'No cuenta con': 93.4
           },
           {
             name: 'Política de donaciones y/o contribuciones sociales',
-            Si: 12.6,
-            No: 87.4
+            'Sí cuenta con': 12.6,
+            'No cuenta con': 87.4
           },
           {
             name: 'Políticas específicas para prevenir fraudes internos',
-            Si: 19.8,
-            No: 80.2
+            'Sí cuenta con': 19.8,
+            'No cuenta con': 80.2
           },
           {
             name: 'Políticas específicas para prevenir lavado de dinero',
-            Si: 20.6,
-            No: 79.4
+            'Sí cuenta con': 20.6,
+            'No cuenta con': 79.4
           },
           {
             name: 'Declaración o compromiso anticorrupción / cero tolerancia a la corrupción',
-            Si: 27.6,
-            No: 72.4
+            'Sí cuenta con': 27.6,
+            'No cuenta con': 72.4
           },
           {
             name: 'Política de donaciones y/o contribuciones políticas',
-            Si: 28.4,
-            No: 71.6
+            'Sí cuenta con': 28.4,
+            'No cuenta con': 71.6
           },
           { name: 'Política anticorrupción / integridad',
-            Si: 43.8,
-            No: 56.2 },
+            'Sí cuenta con': 43.8,
+            'No cuenta con': 56.2 },
           {
             name: 'Prohibición explícita de sobornos y pagos facilitadores',
-            Si: 47.2,
-            No: 52.8
+            'Sí cuenta con': 47.2,
+            'No cuenta con': 52.8
           },
           {
             name: 'Política de regalos y agradecimientos',
-            Si: 51,
-            No: 49
+            'Sí cuenta con': 51,
+            'No cuenta con': 49
           },
           {
             name: 'Código de ética o de conducta para empleados',
-            Si: 59.6,
-            No: 40.4
+            'Sí cuenta con': 59.6,
+            'No cuenta con': 40.4
           }
         ].reverse(),
         '04': [
-          { name: 'Política anticorrupción', 'Si': 219, 'No': 281 },
-          { name: 'Código de ética', 'Si': 298, 'No': 202 },
-          { name: 'compromiso anticorrupción', 'Si': 138, 'No': 362 },
-          { name: 'Prohibición sobornos', 'Si': 236, 'No': 264 },
-          { name: 'Política de viáticos', 'Si': 33, 'No': 467 },
-          { name: 'Política de regalos', 'Si': 255, 'No': 245 },
-          { name: 'Prevención fraudes', 'Si': 99, 'No': 401 },
-          { name: 'Prevención lavado de dinero', 'Si': 103, 'No': 397 },
-          { name: 'Contribuciones políticas', 'Si': 142, 'No': 358 },
-          { name: 'Contribuciones sociales', 'Si': 63, 'No': 437 },
-          {name: 'Compromiso con la legalidad y el respeto a las leyes nacionales e internacionales', 'Si': 190, 'Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO': 255, 'No': 55}
+          { name: 'Política anticorrupción', 'Sí publica': 219, 'No publica': 281 },
+          { name: 'Código de ética', 'Sí publica': 298, 'No publica': 202 },
+          { name: 'compromiso anticorrupción', 'Sí publica': 138, 'No publica': 362 },
+          { name: 'Prohibición sobornos', 'Sí publica': 236, 'No publica': 264 },
+          { name: 'Política de viáticos', 'Sí publica': 33, 'No publica': 467 },
+          { name: 'Política de regalos', 'Sí publica': 255, 'No publica': 245 },
+          { name: 'Prevención fraudes', 'Sí publica': 99, 'No publica': 401 },
+          { name: 'Prevención lavado de dinero', 'Sí publica': 103, 'No publica': 397 },
+          { name: 'Contribuciones políticas', 'Sí publica': 142, 'No publica': 358 },
+          { name: 'Contribuciones sociales', 'Sí publica': 63, 'No publica': 437 },
+          {name: 'Compromiso con la legalidad y el respeto a las leyes nacionales e internacionales', 'Sí publica': 190, 'Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO': 255, 'No publica': 55}
         ],
         '05': [
           {name: 'Si', value: 38, fill: '#4CAF50'},
@@ -757,13 +759,17 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <ComposedChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight} data={charts['01']}>
-                <XAxis dataKey='name' />
-                <YAxis />
+              <ComposedChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 450 : sizeHeight} data={charts['01']}>
+                <Legend style ={{marginTop:20}} verticalAlign="bottom"/>
+                <XAxis dataKey='name' label={{ value: 'Calificación', angle: 0, position: 'bottom' }} />
+                <YAxis label={{ value: 'Número de Empresas', angle: -90, position: 'insideLeft' }} />
+                <Text scaleToFit={true}/>
                 <Tooltip />
-                <Legend />
+                <LabelList dataKey="name" position="top" />
                 <CartesianGrid stroke='#f5f5f5' />
-                <Bar dataKey='Número de empresas dentro del rango' barSize={20} fill='#3498db' />
+                <Bar dataKey='Número de empresas dentro del rango' barSize={20} fill='#3498db' >
+                  <LabelList dataKey="Número de empresas dentro del rango" position="top" />
+                </Bar>
                 <View click={this.state.View} slide={this.clickView} />
                 <Line type='monotone' dataKey='Porcentaje del total (sobre 500 empresas)' stroke='#FF5722' />
               </ComposedChart>
@@ -928,7 +934,9 @@ class SliderGraphics extends Component {
                 <CartesianGrid strokeDasharray='3 3' />
                 <Tooltip formatter={val => val.toString() + '%'} />
                 <Legend />
-                <Bar dataKey='Puntaje promedio' fill='#FF5722' />
+                <Bar dataKey='Puntaje promedio' fill='#FF5722'>
+                  <LabelList dataKey="Puntaje promedio" position="right" />
+                </Bar>
               </BarChart>
             </Content>
           </SliderContainer>
@@ -952,6 +960,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+                <h1 style = {{fontWeight: 500}}>De acuerdo con su portal de , la empresa cuenta con...</h1>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
@@ -964,8 +973,12 @@ class SliderGraphics extends Component {
                 <CartesianGrid strokeDasharray='3 3' />
                 <Tooltip formatter={val => val.toString() + '%'} />
                 <Legend />
-                <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={50} />
-                <Bar dataKey='No' fill='#F44336' stackId='a' barSize={50} />
+                <Bar dataKey='Sí cuenta con' fill='#4CAF50' stackId='a' barSize={50} >
+                  <LabelList dataKey="Sí cuenta con" position="inside" />
+                </Bar>
+                <Bar dataKey='No cuenta con' fill='#F44336' stackId='a' barSize={50} >
+                  <LabelList dataKey="No cuenta con" position="inside" />
+                </Bar>
               </BarChart>
             </Content>
           </SliderContainer>
@@ -997,27 +1010,33 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1 style = {{fontWeight: 500}}>La empresa en su pagina web</h1>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                 data={charts['04']}
-                // margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
               >
                 <XAxis type='number' ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]} tickCoun={11} dominio={[0, 500]} />
                 <YAxis type='category' dataKey='name' width={200} />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={40} />
-                <Bar dataKey='Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO' fill='#9E9E9E' stackId='a' barSize={40} />
-                <Bar dataKey='No' fill='#F44336' stackId='a' barSize={40} />
+                <Bar dataKey='Sí publica' fill='#4CAF50' stackId='a' barSize={40} >
+                  <LabelList dataKey="Sí publica" position="inside" />
+                </Bar>
+                <Bar dataKey='Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO' fill='#9E9E9E' stackId='a' barSize={40} >
+                  <LabelList dataKey="Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO" position="inside" />
+                </Bar>
+                <Bar dataKey='No publica' fill='#F44336' stackId='a' barSize={40}>
+                  <LabelList dataKey="No publica" position="inside" />
+                </Bar>
               </BarChart>
             </Content>
           </SliderContainer>
           <SliderContainer>
             <Content>
               <View isMore>
-                <ContainerUp isMore click>
+                <ContainerUp  isMore click>
                   <TextUp style={{textAlign: 'justify'}}>Los directivos marcan la pauta para sus empleados, socios, proveedores y clientes; por eso es esencial que respalden de manera activa las políticas anticorrupción o de integridad...<Vmore onClick={this.clickView} click={this.state.View.click}>Ver más</Vmore></TextUp>
                 </ContainerUp>
                 <ContainerDown click>
@@ -1032,9 +1051,10 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1 style = {{fontWeight: 500}}>De acuerdo a la información publica</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label={renderCustomizedLabel} labelLine={false} />
-                <Tooltip />
+                <Tooltip label='Porcentaje'/>
                 <Legend />
               </PieChart>
             </Content>
@@ -1068,6 +1088,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1 style = {{fontWeight: 500}}>Empleados y directivos están sujetos a la política de anticorrupción o de integridad, o al código de conducta?</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['06']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1094,6 +1115,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1 style = {{fontWeight: 500}}>Los agentes (quienes actúan en representación de laempresa) están sujeto a la política anticorrupción o de integridad, o al código de conducta?</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['07']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1123,6 +1145,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1 style = {{fontWeight: 500}}>Existe una ploítica anticorrupción o de integridad exclusivamente para los socios comerciales(proveedores, contratistas, socios) de la empresa?</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['08']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1150,11 +1173,13 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1>¿De acuerdo a la información publica...</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['09'].left} cx='25%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
                 <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
-                <Legend />
+                <Legend/>
+                {/* <Legend payload={[{ value: 'Si', type: 'square', id: 'ID01' },{ value: 'No', type: 'square', id: 'ID02' }]}/> */}
               </PieChart>
             </Content>
           </SliderContainer>
@@ -1177,6 +1202,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1>Existe un programa de capacitación o un entrenamiento anticorrupción</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['10']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1205,6 +1231,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1>Quiénes participan del entrenamiento anticorrupcion</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['11']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1242,6 +1269,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1>De acuerdo con la información pública...</h1>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
@@ -1254,11 +1282,21 @@ class SliderGraphics extends Component {
                 <CartesianGrid strokeDasharray='3 3' />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
-                <Bar dataKey='No' fill='#F44336' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
-                <Bar dataKey='Sí, existen sanciones claras y detalladas' fill='#3498db' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
-                <Bar dataKey='Se menciona que existen sanciones pero no se especifica de qué tipo' fill='#3F51B5' stackId='a' barSize={40} formatter={val => val.toString() + ' %'} />
-                <Bar dataKey='No se mencionan sanciones' fill='#9E9E9E' stackId='a' barSize={40} formatter={val => val.toString() + '%'} />
+                <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={40} formatter={val => val.toString() + '%'} >
+                  <LabelList dataKey="Si" position="inside" />
+                </Bar>
+                <Bar dataKey='No' fill='#F44336' stackId='a' barSize={40} formatter={val => val.toString() + '%'} >
+                  <LabelList dataKey="No" position="inside" />
+                </Bar>
+                <Bar dataKey='Sí, existen sanciones claras y detalladas' fill='#3498db' stackId='a' barSize={40} formatter={val => val.toString() + '%'} >
+                  <LabelList dataKey="Sí, existen sanciones claras y detalladas" position="inside" />
+                </Bar>
+                <Bar dataKey='Se menciona que existen sanciones pero no se especifica de qué tipo' fill='#3F51B5' stackId='a' barSize={40} formatter={val => val.toString() + ' %'} >
+                  <LabelList dataKey="Se menciona que existen sanciones pero no se especifica de qué tipo" position="inside" />
+                </Bar>
+                <Bar dataKey='No se mencionan sanciones' fill='#9E9E9E' stackId='a' barSize={40} formatter={val => val.toString() + '%'} >
+                  <LabelList dataKey="No se mencionan sanciones" position="inside" />
+                </Bar>
               </BarChart>
             </Content>
           </SliderContainer>
@@ -1304,6 +1342,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1>Número de click que se necesitaron para llegar a a la información requerida </h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['13']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1340,6 +1379,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1>¿La información se encontró en un sitio para México y en español?</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['14']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1374,6 +1414,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1>Puntajes por país</h1>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
@@ -1386,7 +1427,9 @@ class SliderGraphics extends Component {
                 <CartesianGrid strokeDasharray='3 3' />
                 <Tooltip formatter={val => val.toString() + '%'} />
                 <Legend />
-                <Bar dataKey='Puntaje promedio' fill='#3498db' />
+                <Bar dataKey='Puntaje promedio' fill='#3498db' >
+                  <LabelList dataKey="Puntaje promedio" position="right" />
+                </Bar>
               </BarChart>
             </Content>
           </SliderContainer>
@@ -1414,6 +1457,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1>Puntajes por país</h1>
               <Row noWrap={window.innerWidth > 1024}>
                 <BarChart
                   width={regionChartWidth}
@@ -1427,7 +1471,9 @@ class SliderGraphics extends Component {
                   <CartesianGrid strokeDasharray='3 3' />
                   <Tooltip formatter={val => val.toString() + '%'} />
                   <Legend />
-                  <Bar dataKey='Puntaje promedio' fill='#3498db' />
+                  <Bar dataKey='Puntaje promedio' fill='#3498db' >
+                    <LabelList dataKey="Puntaje promedio" position="right" />
+                  </Bar>
                 </BarChart>
                 <BarChart
                   width={regionChartWidth}
@@ -1441,7 +1487,9 @@ class SliderGraphics extends Component {
                   <CartesianGrid strokeDasharray='3 3' />
                   <Tooltip formatter={val => val.toString() + '%'} />
                   <Legend />
-                  <Bar dataKey='Puntaje promedio' fill='#3498db' />
+                  <Bar dataKey='Puntaje promedio' fill='#3498db' >
+                    <LabelList dataKey="Puntaje promedio" position="right" />
+                  </Bar>
                 </BarChart>
               </Row>
               <Row noWrap={window.innerWidth > 1024 ? 1 : 0}>
@@ -1457,7 +1505,9 @@ class SliderGraphics extends Component {
                   <CartesianGrid strokeDasharray='3 3' />
                   <Tooltip formatter={val => val.toString() + '%'} />
                   <Legend />
-                  <Bar dataKey='Puntaje promedio' fill='#3498db' />
+                  <Bar dataKey='Puntaje promedio' fill='#3498db' >
+                    <LabelList dataKey="Puntaje promedio" position="right" />
+                  </Bar>
                 </BarChart>
                 <BarChart
                   width={regionChartWidth}
@@ -1471,7 +1521,9 @@ class SliderGraphics extends Component {
                   <CartesianGrid strokeDasharray='3 3' />
                   <Tooltip formatter={val => val.toString() + '%'} />
                   <Legend />
-                  <Bar dataKey='Puntaje promedio' fill='#3498db' />
+                  <Bar dataKey='Puntaje promedio' fill='#3498db' >
+                    <LabelList dataKey="Puntaje promedio" position="right" />
+                  </Bar>
                 </BarChart>
               </Row>
             </Content>
@@ -1513,6 +1565,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1>Puntajes empresas de gobierno</h1>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
@@ -1525,7 +1578,9 @@ class SliderGraphics extends Component {
                 <CartesianGrid strokeDasharray='3 3' />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey='Calificacion' fill='#3498db' />
+                <Bar dataKey='Calificacion' fill='#3498db' >
+                  <LabelList dataKey="Calificacion" position="inside" />
+                </Bar>
               </BarChart>
             </Content>
           </SliderContainer>
@@ -1568,8 +1623,12 @@ class SliderGraphics extends Component {
                 <CartesianGrid strokeDasharray='3 3' />
                 <Tooltip formatter={val => val.toString() + '%'} />
                 <Legend />
-                <Bar dataKey='500 empresas' fill='#3498db' />
-                <Bar dataKey='191 Empresas mejor calificadas (50 ptos. o más)' fill='#FF5722' />
+                <Bar dataKey='500 empresas' fill='#3498db' >
+                  <LabelList dataKey="500 empresas" position="right" />
+                </Bar>
+                <Bar dataKey='191 Empresas mejor calificadas (50 ptos. o más)' fill='#FF5722' >
+                  <LabelList dataKey="191 Empresas mejor calificadas (50 ptos. o más)" position="right" />
+                </Bar>
               </BarChart>
             </Content>
           </SliderContainer>
