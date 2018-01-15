@@ -14,6 +14,7 @@ import SliderPrev from './slider_prev'
 import SliderNext from './slider_nex'
 import GoToTop from './gototop'
 import TabsShowBy from './tabs_show_by'
+import CustomTooltip from './customToolTip'
 import {
   GraphicDescription,
   CustomizedAxisTick
@@ -111,5 +112,6 @@ export {
   TextUp,
   TextDown,
   ContainerUp,
-  ContainerDown
+  ContainerDown,
+  CustomTooltip
 }

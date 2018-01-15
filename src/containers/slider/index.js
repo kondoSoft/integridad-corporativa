@@ -12,7 +12,8 @@ import {
   ContainerDown,
   SliderPrev,
   SliderNext,
-  Row
+  Row,
+  CustomTooltip
 } from '../../components'
 import {
   BarChart,
@@ -771,7 +772,7 @@ class SliderGraphics extends Component {
                   <LabelList dataKey="Número de empresas dentro del rango" position="top" />
                 </Bar>
                 <View click={this.state.View} slide={this.clickView} />
-                <Line type='monotone' dataKey='Porcentaje del total (sobre 500 empresas)' stroke='#FF5722' />
+                <Line type='monotone' dataKey='Porcentaje del total (sobre 500 empresas)' stroke='#FF5722'/>
               </ComposedChart>
             </Content>
           </SliderContainer>
@@ -1053,8 +1054,9 @@ class SliderGraphics extends Component {
               </View>
               <h1 style = {{fontWeight: 500}}>De acuerdo a la información publica</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
-                <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label={renderCustomizedLabel} labelLine={false} />
-                <Tooltip label='Porcentaje'/>
+                <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label={renderCustomizedLabel} labelLine={false}/>
+                {/* <Tooltip content={<CustomTooltip Label='Empresas'/>}/> */}
+                <Tooltip/>
                 <Legend />
               </PieChart>
             </Content>
@@ -1091,7 +1093,7 @@ class SliderGraphics extends Component {
               <h1 style = {{fontWeight: 500}}>Empleados y directivos están sujetos a la política de anticorrupción o de integridad, o al código de conducta?</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['06']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
-                <Tooltip />
+                <Tooltip/>
                 <Legend />
               </PieChart>
             </Content>
@@ -1173,13 +1175,13 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>¿De acuerdo a la información publica...</h1>
+              <h1>De acuerdo a la información publica...</h1>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['09'].left} cx='25%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
-                <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
+                <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} legendType='none'/>
                 <Tooltip />
+                {/* <Legend/> */}
                 <Legend/>
-                {/* <Legend payload={[{ value: 'Si', type: 'square', id: 'ID01' },{ value: 'No', type: 'square', id: 'ID02' }]}/> */}
               </PieChart>
             </Content>
           </SliderContainer>
