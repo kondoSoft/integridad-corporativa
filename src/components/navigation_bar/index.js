@@ -230,16 +230,16 @@ class NavigationBar extends Component {
           </NavList>
           <NavListSocials>
             <NavItem>
-              <NavLink isSocial onClick={() => this.isHover('fb')} >
+              <NavLink isSocial onMouseOver={() => this.isHover('fb')} >
                 <i className='fa fa-facebook' aria-hidden='true' />
               </NavLink>
-              <NavLink isSocial onClick={() => this.isHover('twt')} >
+              <NavLink isSocial onMouseOver={() => this.isHover('twt')} >
                 <i className='fa fa-twitter' aria-hidden='true' />
               </NavLink>
               {/* <NavLink onClick={this.isHover} href='https://instagram.com' target='_blank'>
                 <i className='fa fa-instagram' aria-hidden='true' />
               </NavLink> */}
-              <NavLink isSocial onClick={this.isHover} href='https://www.youtube.com/channel/UCr052Of4pfPKREgfVITItZw' target='_blank'>
+              <NavLink isSocial href='https://www.youtube.com/channel/UCr052Of4pfPKREgfVITItZw' target='_blank'>
                 <i className='fa fa-youtube-play' aria-hidden='true' />
               </NavLink>
             </NavItem>
