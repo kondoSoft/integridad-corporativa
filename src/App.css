@@ -33,3 +33,6 @@
 .Demo__some-network__share-button:hover:not(:active) {
   opacity: 0.75;
 }
+.recharts-default-legend{
+  margin-top: 20px !important;
+}
