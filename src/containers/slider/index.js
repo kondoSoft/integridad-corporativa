@@ -625,12 +625,6 @@ class SliderGraphics extends Component {
   }
   render () {
     const {
-      isOpen,
-      rotate,
-      modalOpen,
-      goTo,
-      dataNewsWall,
-      isPlaying,
       charts,
       chartsSize,
       regionCharts
@@ -737,6 +731,7 @@ class SliderGraphics extends Component {
             </Content>
           </SliderContainer>
           <SliderContainer>
+              {/* GRAFICA 1 */}
             <Content>
               <View>
                 <ContainerUp isMore click={this.state.View.click}>
@@ -760,19 +755,19 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <ComposedChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 450 : sizeHeight} data={charts['01']}>
-                <Legend style ={{marginTop:20}} verticalAlign="bottom"/>
+              <ComposedChart width={(window.innerWidth <= 500) ? 500 : (window.innerWidth >= 1000) ? 1000 : sizeWidth} height={(window.innerWidth <= 500) ? 450 : sizeHeight} data={charts['01']}>
+                <Legend style={{marginTop: 20}} verticalAlign='bottom' />
                 <XAxis dataKey='name' label={{ value: 'Calificación', angle: 0, position: 'bottom' }} />
                 <YAxis label={{ value: 'Número de Empresas', angle: -90, position: 'insideLeft' }} />
-                <Text scaleToFit={true}/>
+                <Text scaleToFit />
                 <Tooltip />
-                <LabelList dataKey="name" position="top" />
+                <LabelList dataKey='name' position='top' />
                 <CartesianGrid stroke='#f5f5f5' />
                 <Bar dataKey='Número de empresas dentro del rango' barSize={20} fill='#3498db' >
-                  <LabelList dataKey="Número de empresas dentro del rango" position="top" />
+                  <LabelList dataKey='Número de empresas dentro del rango' position='top' />
                 </Bar>
                 <View click={this.state.View} slide={this.clickView} />
-                <Line type='monotone' dataKey='Porcentaje del total (sobre 500 empresas)' stroke='#FF5722'/>
+                <Line type='monotone' dataKey='Porcentaje del total (sobre 500 empresas)' stroke='#FF5722' />
               </ComposedChart>
             </Content>
           </SliderContainer>
@@ -923,9 +918,10 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1 style={{fontWeight: 600, margin:15}}>Puntajes por sector.</h1>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
-                height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
+                height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1300}
                 data={charts['02']}
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
@@ -936,7 +932,7 @@ class SliderGraphics extends Component {
                 <Tooltip formatter={val => val.toString() + '%'} />
                 <Legend />
                 <Bar dataKey='Puntaje promedio' fill='#FF5722'>
-                  <LabelList dataKey="Puntaje promedio" position="right" />
+                  <LabelList dataKey='Puntaje promedio' position='right' formatter={value => value + '%'} />
                 </Bar>
               </BarChart>
             </Content>
@@ -961,7 +957,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-                <h1 style = {{fontWeight: 500}}>De acuerdo con su portal de , la empresa cuenta con...</h1>
+              <h1 style={{fontWeight: 500}}>De acuerdo con su portal de , la empresa cuenta con...</h1>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
@@ -975,10 +971,10 @@ class SliderGraphics extends Component {
                 <Tooltip formatter={val => val.toString() + '%'} />
                 <Legend />
                 <Bar dataKey='Sí cuenta con' fill='#4CAF50' stackId='a' barSize={50} >
-                  <LabelList dataKey="Sí cuenta con" position="inside" />
+                  <LabelList dataKey='Sí cuenta con' position='inside' formatter={value => value + '%'} />
                 </Bar>
                 <Bar dataKey='No cuenta con' fill='#F44336' stackId='a' barSize={50} >
-                  <LabelList dataKey="No cuenta con" position="inside" />
+                  <LabelList dataKey='No cuenta con' position='inside' formatter={value => value + '%'} />
                 </Bar>
               </BarChart>
             </Content>
@@ -1011,25 +1007,25 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style = {{fontWeight: 500}}>La empresa en su pagina web</h1>
+              <h1 style={{fontWeight: 500}}>La empresa en su pagina web</h1>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
                 data={charts['04']}
                 layout='vertical'
               >
-                <XAxis type='number' ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]} tickCoun={11} dominio={[0, 500]} />
+                <XAxis type='number' ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]} tickCoun={11} dominio={[0, 500]} tickFormatter={val => val} />
                 <YAxis type='category' dataKey='name' width={200} />
                 <Tooltip />
                 <Legend />
                 <Bar dataKey='Sí publica' fill='#4CAF50' stackId='a' barSize={40} >
-                  <LabelList dataKey="Sí publica" position="inside" />
+                  <LabelList dataKey='Sí publica' position='inside' />
                 </Bar>
                 <Bar dataKey='Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO' fill='#9E9E9E' stackId='a' barSize={40} >
-                  <LabelList dataKey="Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO" position="inside" />
+                  <LabelList dataKey='Únicamente respecto a la Ley de Protección de Datos Personales /Derechos ARCO' position='inside' />
                 </Bar>
                 <Bar dataKey='No publica' fill='#F44336' stackId='a' barSize={40}>
-                  <LabelList dataKey="No publica" position="inside" />
+                  <LabelList dataKey='No publica' position='inside' />
                 </Bar>
               </BarChart>
             </Content>
@@ -1285,19 +1281,19 @@ class SliderGraphics extends Component {
                 <Tooltip />
                 <Legend />
                 <Bar dataKey='Si' fill='#4CAF50' stackId='a' barSize={40} formatter={val => val.toString() + '%'} >
-                  <LabelList dataKey="Si" position="inside" />
+                  <LabelList dataKey='Si' position='inside' formatter={val => val + '%'} />
                 </Bar>
                 <Bar dataKey='No' fill='#F44336' stackId='a' barSize={40} formatter={val => val.toString() + '%'} >
-                  <LabelList dataKey="No" position="inside" />
+                  <LabelList dataKey='No' position='inside' formatter={val => val + '%'} />
                 </Bar>
                 <Bar dataKey='Sí, existen sanciones claras y detalladas' fill='#3498db' stackId='a' barSize={40} formatter={val => val.toString() + '%'} >
-                  <LabelList dataKey="Sí, existen sanciones claras y detalladas" position="inside" />
+                  <LabelList dataKey='Sí, existen sanciones claras y detalladas' position='inside' formatter={val => val + '%'} />
                 </Bar>
                 <Bar dataKey='Se menciona que existen sanciones pero no se especifica de qué tipo' fill='#3F51B5' stackId='a' barSize={40} formatter={val => val.toString() + ' %'} >
-                  <LabelList dataKey="Se menciona que existen sanciones pero no se especifica de qué tipo" position="inside" />
+                  <LabelList dataKey='Se menciona que existen sanciones pero no se especifica de qué tipo' position='inside' formatter={val => val + '%'} />
                 </Bar>
                 <Bar dataKey='No se mencionan sanciones' fill='#9E9E9E' stackId='a' barSize={40} formatter={val => val.toString() + '%'} >
-                  <LabelList dataKey="No se mencionan sanciones" position="inside" />
+                  <LabelList dataKey='No se mencionan sanciones' position='inside' formatter={val => val + '%'} />
                 </Bar>
               </BarChart>
             </Content>
@@ -1430,7 +1426,7 @@ class SliderGraphics extends Component {
                 <Tooltip formatter={val => val.toString() + '%'} />
                 <Legend />
                 <Bar dataKey='Puntaje promedio' fill='#3498db' >
-                  <LabelList dataKey="Puntaje promedio" position="right" />
+                  <LabelList dataKey='Puntaje promedio' position='right' formatter={val => val + '%'} />
                 </Bar>
               </BarChart>
             </Content>
@@ -1474,7 +1470,7 @@ class SliderGraphics extends Component {
                   <Tooltip formatter={val => val.toString() + '%'} />
                   <Legend />
                   <Bar dataKey='Puntaje promedio' fill='#3498db' >
-                    <LabelList dataKey="Puntaje promedio" position="right" />
+                    <LabelList dataKey='Puntaje promedio' position='right' formatter={val => val + '%'} />
                   </Bar>
                 </BarChart>
                 <BarChart
@@ -1490,7 +1486,7 @@ class SliderGraphics extends Component {
                   <Tooltip formatter={val => val.toString() + '%'} />
                   <Legend />
                   <Bar dataKey='Puntaje promedio' fill='#3498db' >
-                    <LabelList dataKey="Puntaje promedio" position="right" />
+                    <LabelList dataKey='Puntaje promedio' position='right' formatter={val => val + '%'} />
                   </Bar>
                 </BarChart>
               </Row>
@@ -1508,7 +1504,7 @@ class SliderGraphics extends Component {
                   <Tooltip formatter={val => val.toString() + '%'} />
                   <Legend />
                   <Bar dataKey='Puntaje promedio' fill='#3498db' >
-                    <LabelList dataKey="Puntaje promedio" position="right" />
+                    <LabelList dataKey='Puntaje promedio' position='right' formatter={val => val + '%'} />
                   </Bar>
                 </BarChart>
                 <BarChart
@@ -1524,7 +1520,7 @@ class SliderGraphics extends Component {
                   <Tooltip formatter={val => val.toString() + '%'} />
                   <Legend />
                   <Bar dataKey='Puntaje promedio' fill='#3498db' >
-                    <LabelList dataKey="Puntaje promedio" position="right" />
+                    <LabelList dataKey='Puntaje promedio' position='right' formatter={val => val + '%'} />
                   </Bar>
                 </BarChart>
               </Row>
@@ -1581,15 +1577,14 @@ class SliderGraphics extends Component {
                 <Tooltip />
                 <Legend />
                 <Bar dataKey='Calificacion' fill='#3498db' >
-                  <LabelList dataKey="Calificacion" position="inside" />
+                  <LabelList dataKey='Calificacion' position='inside' />
                 </Bar>
               </BarChart>
             </Content>
           </SliderContainer>
           <SliderContainer>
-
             <Content>
-              {/* GRAFICA 19 */}
+              {/* GRAFICA 2 */}
               <View>
                 <ContainerUp isMore click={this.state.View.click}>
                   <TextUp style={{textAlign: 'justify'}}>Las 500 empresas más importantes en México son las que determinan el estándar anticorrupción dentro de sus sectores y, con ello, tienen la capacidad de inducir cambios en su cadena de produción, así como en las prácticas de sus socios y comerciales, proveedores y distribuidores...<Vmore onClick={this.clickView} click={this.state.View.click}>Ver más</Vmore></TextUp>
@@ -1613,6 +1608,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1 style={{fontWeight: 600, margin: 10}}>Sector mejor calificados. Las 191 empresas con 50 puntos o más</h1>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
@@ -1625,11 +1621,11 @@ class SliderGraphics extends Component {
                 <CartesianGrid strokeDasharray='3 3' />
                 <Tooltip formatter={val => val.toString() + '%'} />
                 <Legend />
-                <Bar dataKey='500 empresas' fill='#3498db' >
-                  <LabelList dataKey="500 empresas" position="right" />
+                <Bar dataKey='500 empresas' fill='#3498db' barSize={30}>
+                  <LabelList dataKey='500 empresas' position='right' formatter={value => value + '%'} />
                 </Bar>
-                <Bar dataKey='191 Empresas mejor calificadas (50 ptos. o más)' fill='#FF5722' >
-                  <LabelList dataKey="191 Empresas mejor calificadas (50 ptos. o más)" position="right" />
+                <Bar dataKey='191 Empresas mejor calificadas (50 ptos. o más)' fill='#FF5722' barSize={30}>
+                  <LabelList dataKey='191 Empresas mejor calificadas (50 ptos. o más)' position='right' formatter={value => value + '%'}/>
                 </Bar>
               </BarChart>
             </Content>
