@@ -755,6 +755,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
+              <h1 style={{fontWeight: 600, margin:15}}>Distribución de las 500 empresas más grandes en México por puntuación en IC500</h1>
               <ComposedChart width={(window.innerWidth <= 500) ? 500 : (window.innerWidth >= 1000) ? 1000 : sizeWidth} height={(window.innerWidth <= 500) ? 450 : sizeHeight} data={charts['01']}>
                 <Legend style={{marginTop: 20}} verticalAlign='bottom' />
                 <XAxis dataKey='name' label={{ value: 'Calificación', angle: 0, position: 'bottom' }} />
