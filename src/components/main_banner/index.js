@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import {LogoLink} from '../'
 
 const Wrapper = styled.section`
   background-image: url('assets/img/bg_home.jpg');
@@ -107,17 +106,17 @@ const MainBanner = (props) => {
       <Hr />
       <RowSponsors center>
         <Figure>
-          <a href='https://contralacorrupcion.mx/' target='_blank'>
+          <a href='https://contralacorrupcion.mx/' target='_blank' rel='noopener noreferrer'>
             <Image src='assets/img/mcci_logo.png' alt='' />
           </a>
         </Figure>
         <Figure>
-          <a href='http://expansion.mx/' target='_blank'>
+          <a href='http://expansion.mx/' target='_blank' rel='noopener noreferrer'>
             <Image src='assets/img/logo_expansion.jpg' alt='' />
           </a>
         </Figure>
         <Figure>
-          <a href='https://www.tm.org.mx/' target='_blank'>
+          <a href='https://www.tm.org.mx/' target='_blank' rel='noopener noreferrer'>
             <Image src='assets/img/transparencia_mexicana.png' alt='' />
           </a>
         </Figure>

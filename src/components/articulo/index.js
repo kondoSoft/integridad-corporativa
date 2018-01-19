@@ -147,15 +147,15 @@ const ArticleTitle = styled.a`
       color: #F24437;
     }
 `
-const Events = styled.a`
-    width: 90%;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: darkred;
-`
+// const Events = styled.a`
+//     width: 90%;
+//     height: 80px;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     background-color: darkred;
+// `
 const EventsTitle = styled.p`
     width: 100%;
     font-size: 16px;

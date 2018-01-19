@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import styled from 'styled-components'
 import Slider from 'react-slick'
 import {
-  Title,
   View,
   Vless,
   Vmore,
@@ -13,7 +12,8 @@ import {
   SliderPrev,
   SliderNext,
   Row,
-  CustomTooltip
+  ChartTitle,
+  // CustomTooltip
 } from '../../components'
 import {
   BarChart,
@@ -61,9 +61,8 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5
   const x = cx + radius * Math.cos(-midAngle * RADIAN)
   const y = cy + radius * Math.sin(-midAngle * RADIAN)
-
   return (
-    <text x={x} y={y} fill='white' textAnchor={x > cx ? 'start' : 'end'} dominantBaseline='central'>
+    <text x={x} y={y} fill='white' textAnchor={x > cx ? 'start' : 'end'} dominantBaseline='central' className='label-items'>
       {`${(percent * 100).toFixed(0)}%`}
     </text>
   )
@@ -259,7 +258,7 @@ class SliderGraphics extends Component {
         ],
         '06': [
           {name: 'Información no disponible', value: 40, fill: '#9E9E9E'},
-          {name: 'Empleados', value: 28, fill: '#3498db'},
+          {name: 'Únicamente empleados', value: 28, fill: '#3498db'},
           {name: 'Empleados y Directivos', value: 32, fill: '#3F51B5'}
         ],
         '07': [
@@ -489,106 +488,106 @@ class SliderGraphics extends Component {
             '500 empresas': 1.2 },
           { name: 'Cemento y materiales',
             '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
-            '500 empresas': 1.2 },
-          { name: 'Electricidad',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
-            '500 empresas': undefined },
-          { name: 'Petróleo y gas',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
-            '500 empresas': undefined },
-          { name: 'Electrónica',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
-            '500 empresas': undefined },
-          { name: 'Equipo eléctrico ',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
-            '500 empresas': undefined },
-          { name: 'Computación y servicios',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
-            '500 empresas': undefined },
-          { name: 'Afore',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
-            '500 empresas': undefined },
-          { name: 'Comercio Autoservicio',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
-            '500 empresas': undefined },
-          { name: 'Armadora',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Siderurgia y metalurgia',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Cuidado personal',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Desarrolladora de vivienda',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Tecnología diversificada',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Productos cerámicos',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Servicios aeroportuarios',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Logística y transporte',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Servicios profesionales',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Electrónica de consumo',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Tabaco',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Juegos y sorteos',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Papel y cartón',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Restaurantes',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Aeroespacial',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 1,
-            '500 empresas': undefined },
-          { name: 'Comercio departamental',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Infraestructura de Transportes',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Materiales para la construcción',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Confitería y chocolates',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Comercio de medicamentos',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Servicios educativos',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Entretenimiento',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Vidrio y envases',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Aerolíneas',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Servicios inmobiliarios',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined },
-          { name: 'Hotelería y turismo',
-            '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
-            '500 empresas': undefined }
+            '500 empresas': 1.2 }
+          // { name: 'Electricidad',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
+          //   '500 empresas': undefined },
+          // { name: 'Petróleo y gas',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 2.1,
+          //   '500 empresas': undefined },
+          // { name: 'Electrónica',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+          //   '500 empresas': undefined },
+          // { name: 'Equipo eléctrico ',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+          //   '500 empresas': undefined },
+          // { name: 'Computación y servicios',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+          //   '500 empresas': undefined },
+          // { name: 'Afore',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+          //   '500 empresas': undefined },
+          // { name: 'Comercio Autoservicio',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1.6,
+          //   '500 empresas': undefined },
+          // { name: 'Armadora',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Siderurgia y metalurgia',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Cuidado personal',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Desarrolladora de vivienda',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Tecnología diversificada',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Productos cerámicos',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Servicios aeroportuarios',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Logística y transporte',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Servicios profesionales',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Electrónica de consumo',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Tabaco',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Juegos y sorteos',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Papel y cartón',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Restaurantes',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Aeroespacial',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 1,
+          //   '500 empresas': undefined },
+          // { name: 'Comercio departamental',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Infraestructura de Transportes',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Materiales para la construcción',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Confitería y chocolates',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Comercio de medicamentos',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Servicios educativos',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Entretenimiento',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Vidrio y envases',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Aerolíneas',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Servicios inmobiliarios',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined },
+          // { name: 'Hotelería y turismo',
+          //   '191 Empresas mejor calificadas (50 ptos. o más)': 0.5,
+          //   '500 empresas': undefined }
         ]
       },
       chartsSize: {
@@ -755,7 +754,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style={{fontWeight: 600, margin:15}}>Distribución de las 500 empresas más grandes en México por puntuación en IC500</h1>
+              <ChartTitle>Distribución de las 500 empresas más grandes en México por puntuación en IC500</ChartTitle>
               <ComposedChart width={(window.innerWidth <= 500) ? 500 : (window.innerWidth >= 1000) ? 1000 : sizeWidth} height={(window.innerWidth <= 500) ? 450 : sizeHeight} data={charts['01']}>
                 <Legend style={{marginTop: 20}} verticalAlign='bottom' />
                 <XAxis dataKey='name' label={{ value: 'Calificación', angle: 0, position: 'bottom' }} />
@@ -919,7 +918,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style={{fontWeight: 600, margin:15}}>Puntajes por sector.</h1>
+              <ChartTitle>Puntajes por sector</ChartTitle>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1300}
@@ -927,13 +926,13 @@ class SliderGraphics extends Component {
                 margin={{top: 5, right: 30, left: 20, bottom: 5}}
                 layout='vertical'
               >
-                <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} tickFormatter={val => val.toString() + '%'} />
+                <XAxis type='number' ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} tickCount={11} domain={[0, 100]} />
                 <YAxis type='category' dataKey='name' width={200} />
                 <CartesianGrid strokeDasharray='3 3' />
-                <Tooltip formatter={val => val.toString() + '%'} />
+                <Tooltip />
                 <Legend />
                 <Bar dataKey='Puntaje promedio' fill='#FF5722'>
-                  <LabelList dataKey='Puntaje promedio' position='right' formatter={value => value + '%'} />
+                  <LabelList dataKey='Puntaje promedio' position='right' />
                 </Bar>
               </BarChart>
             </Content>
@@ -958,7 +957,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style={{fontWeight: 500}}>De acuerdo con su portal de , la empresa cuenta con...</h1>
+              <ChartTitle>De acuerdo con información pública, la empresa cuenta con:</ChartTitle>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
@@ -1008,7 +1007,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style={{fontWeight: 500}}>La empresa en su pagina web</h1>
+              <ChartTitle>La empresa publica en su página web</ChartTitle>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
@@ -1017,7 +1016,7 @@ class SliderGraphics extends Component {
               >
                 <XAxis type='number' ticks={[0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500]} tickCoun={11} dominio={[0, 500]} tickFormatter={val => val} />
                 <YAxis type='category' dataKey='name' width={200} />
-                <Tooltip />
+                <Tooltip formatter={val => val + ' Empresas'} />
                 <Legend />
                 <Bar dataKey='Sí publica' fill='#4CAF50' stackId='a' barSize={40} >
                   <LabelList dataKey='Sí publica' position='inside' />
@@ -1034,7 +1033,7 @@ class SliderGraphics extends Component {
           <SliderContainer>
             <Content>
               <View isMore>
-                <ContainerUp  isMore click>
+                <ContainerUp isMore click>
                   <TextUp style={{textAlign: 'justify'}}>Los directivos marcan la pauta para sus empleados, socios, proveedores y clientes; por eso es esencial que respalden de manera activa las políticas anticorrupción o de integridad...<Vmore onClick={this.clickView} click={this.state.View.click}>Ver más</Vmore></TextUp>
                 </ContainerUp>
                 <ContainerDown click>
@@ -1049,11 +1048,11 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style = {{fontWeight: 500}}>De acuerdo a la información publica</h1>
+              <ChartTitle>De acuerdo con información pública:<br />¿Los líderes o directivos de la empres respaldan los documentos en que se establece la política anticorrupción o de integridad?</ChartTitle>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
-                <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label={renderCustomizedLabel} labelLine={false}/>
-                {/* <Tooltip content={<CustomTooltip Label='Empresas'/>}/> */}
-                <Tooltip/>
+                <Pie data={charts['05']} cx='50%' cy='50%' outerRadius={150} label={renderCustomizedLabel} labelLine={false} />
+                {/*<Tooltip content={<CustomTooltip Label='Empresas'/>}/>*/}
+                <Tooltip />
                 <Legend />
               </PieChart>
             </Content>
@@ -1087,10 +1086,10 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style = {{fontWeight: 500}}>Empleados y directivos están sujetos a la política de anticorrupción o de integridad, o al código de conducta?</h1>
+              <ChartTitle>¿Empleados y directivos están sujetos a la política de anticorrupción o de integridad, o al código de conducta?</ChartTitle>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['06']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
-                <Tooltip/>
+                <Tooltip />
                 <Legend />
               </PieChart>
             </Content>
@@ -1114,7 +1113,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style = {{fontWeight: 500}}>Los agentes (quienes actúan en representación de laempresa) están sujeto a la política anticorrupción o de integridad, o al código de conducta?</h1>
+              <ChartTitle>Los agentes (quienes actúan en representación de la empresa), ¿están sujeto a la política anticorrupción o de integridad, o al código de conducta?</ChartTitle>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['07']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1123,7 +1122,6 @@ class SliderGraphics extends Component {
             </Content>
           </SliderContainer>
           <SliderContainer>
-
             <Content>
               {/* Grafica 9 */}
               <View isMore>
@@ -1144,7 +1142,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style = {{fontWeight: 500}}>Existe una ploítica anticorrupción o de integridad exclusivamente para los socios comerciales(proveedores, contratistas, socios) de la empresa?</h1>
+              <ChartTitle>Existe una política anticorrupción o de integridad exclusivamente para los socios comerciales (proveedores, contratistas, socios) de la empresa?</ChartTitle>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['08']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1172,18 +1170,21 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>De acuerdo a la información publica...</h1>
-              <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
+              <ChartTitle>De acuerdo a la información publica...</ChartTitle>
+              <Row noWrap>
+                <ChartTitle>¿Existe una definición de conflicto de interés?</ChartTitle>
+                <ChartTitle width={'45%'}>¿Existen otras definiciones de actos de corrupción (ej. soborno, pago facilitador, tráfico de influencias)?</ChartTitle>
+              </Row>
+              <PieChart width={(window.innerWidth <= 500) ? 500 : (window.innerWidth >= 1000) ? 1000 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['09'].left} cx='25%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} />
-                <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} legendType='none'/>
+                <Pie data={charts['09'].right} cx='75%' cy='50%' outerRadius={120} label={renderCustomizedLabel} labelLine={false} legendType='none' />
                 <Tooltip />
                 {/* <Legend/> */}
-                <Legend/>
+                <Legend />
               </PieChart>
             </Content>
           </SliderContainer>
           <SliderContainer>
-
             <Content>
               {/* Grafica 11 */}
               <View isMore>
@@ -1201,7 +1202,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>Existe un programa de capacitación o un entrenamiento anticorrupción</h1>
+              <ChartTitle>¿Existe un programa de capacitación o un entrenamiento anticorrupción?</ChartTitle>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['10']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1230,7 +1231,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>Quiénes participan del entrenamiento anticorrupcion</h1>
+              <ChartTitle>Quiénes participan del entrenamiento anticorrupcion</ChartTitle>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['11']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1268,7 +1269,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>De acuerdo con la información pública...</h1>
+              <ChartTitle>De acuerdo con la información pública...</ChartTitle>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
@@ -1341,7 +1342,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>Número de click que se necesitaron para llegar a a la información requerida </h1>
+              <ChartTitle>Número de click que se necesitaron para llegar a a la información requerida </ChartTitle>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['13']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1378,7 +1379,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>¿La información se encontró en un sitio para México y en español?</h1>
+              <ChartTitle>¿La información se encontró en un sitio para México y en español?</ChartTitle>
               <PieChart width={(window.innerWidth <= 500) ? 500 : sizeWidth} height={(window.innerWidth <= 500) ? 400 : sizeHeight}>
                 <Pie data={charts['14']} cx='50%' cy='50%' outerRadius={200} label={renderCustomizedLabel} labelLine={false} />
                 <Tooltip />
@@ -1413,7 +1414,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>Puntajes por país</h1>
+              <ChartTitle>Puntajes por país</ChartTitle>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}
@@ -1433,7 +1434,6 @@ class SliderGraphics extends Component {
             </Content>
           </SliderContainer>
           <SliderContainer>
-
             <Content>
               {/* GRAFICA 17 */}
               <View>
@@ -1456,7 +1456,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>Puntajes por país</h1>
+              <ChartTitle>Puntajes por país</ChartTitle>
               <Row noWrap={window.innerWidth > 1024}>
                 <BarChart
                   width={regionChartWidth}
@@ -1564,7 +1564,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1>Puntajes empresas de gobierno</h1>
+              <ChartTitle>Puntajes empresas de gobierno</ChartTitle>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : sizeHeight}
@@ -1609,7 +1609,7 @@ class SliderGraphics extends Component {
                   </TextDown>
                 </ContainerDown>
               </View>
-              <h1 style={{fontWeight: 600, margin: 10}}>Sector mejor calificados. Las 191 empresas con 50 puntos o más</h1>
+              <ChartTitle style={{fontWeight: 600, margin: 10}}>Sector mejor calificados. Las 191 empresas con 50 puntos o más</ChartTitle>
               <BarChart
                 width={(window.innerWidth <= 500) ? 500 : sizeWidth}
                 height={(window.innerWidth <= 500) ? 400 : (window.innerWidth <= 968) ? (window.innerWidth <= 768) ? chartsSize.barSmal.height : chartsSize.barMedium.height : 1200}

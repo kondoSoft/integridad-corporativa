@@ -53,6 +53,9 @@ import {
 import {
   EventList
 } from './eventos'
+
+import ChartTitle from './chart-title'
+
 export {
   NavigationBar,
   MainBanner,
@@ -88,9 +91,6 @@ export {
   MiddleBanner,
   ContactForm,
   View,
-  // Box,
-  // BoxTitle,
-  // BoxDescription,
   Articles,
   RankingInfo,
   StudyInfo,
@@ -113,5 +113,6 @@ export {
   TextDown,
   ContainerUp,
   ContainerDown,
-  CustomTooltip
+  CustomTooltip,
+  ChartTitle
 }

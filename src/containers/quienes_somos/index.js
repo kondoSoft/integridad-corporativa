@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-    NavigationBar,
     SectionBanner,
     Main,
     Footer,

@@ -1,12 +1,10 @@
 import React,{Component} from 'react'
 import styled from 'styled-components'
 
-const MainContainer = styled.div`
-  flex: 1;
-`
 const LabelContainer = styled.div`
   flex: 1;
   background-color: #fff;
+  padding: 50px;
 `
 
 class CustomTooltip extends Component{

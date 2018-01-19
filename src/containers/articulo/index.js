@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import React, { Component } from 'react'
 import {
     SectionBanner,
@@ -9,7 +8,6 @@ import {
     News,
     Articles
 } from '../../components'
-import {dataArrayArticulo} from '../../data'
 import {httpRequest} from '../../helpers'
 
 const ENDPOINT = '165.227.53.250'
@@ -35,14 +33,13 @@ export default class Article extends Component {
     httpRequest(newsOptions)
     .then(res => {
       if (res) {
-         try {
+        try {
           const json = JSON.parse(res)
 
           this.setState({
             news: json
           })
-        }
-        catch (err){
+        } catch (err) {
           console.log(err)
           return err
         }
@@ -52,8 +49,6 @@ export default class Article extends Component {
   }
   render () {
     const {news, data} = this.state
-    const slug = this.props.match.params.articulo
-    const art = dataArrayArticulo.filter(articulo => articulo.slug === slug)
     return (
       <div style={{overflow: 'hidden'}}>
         <header>

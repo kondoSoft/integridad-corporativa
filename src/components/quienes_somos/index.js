@@ -4,7 +4,6 @@ import {
   Row,
   Col
 } from '../index'
-import {LogoLink} from '../'
 
 export const MainSection = styled.div`
   flex: 1;
@@ -193,7 +192,7 @@ export const MiddleBanner = props => (
     </Row>
     <Row small padding='0px 100px' margin='100px 0px'>
       <Col width='50%' isImage >
-        <a href='https://contralacorrupcion.mx/' target='_blank'>
+        <a href='https://contralacorrupcion.mx/' target='_blank' rel='noopener noreferrer'>
           <Image src='assets/img/mcci.png' width='80%' />
         </a>
       </Col>
@@ -211,7 +210,7 @@ export const MiddleBanner = props => (
     </Row>
     <Row small padding='0px 100px' margin='50px 0px' invert>
       <Col width='50%' isImage>
-        <a href='https://www.tm.org.mx/' target='_blank'>
+        <a href='https://www.tm.org.mx/' target='_blank' rel='noopener noreferrer'>
           <Image src='assets/img/quienessomos_tranparencia.jpg' width='80%' />
         </a>
       </Col>
@@ -232,7 +231,7 @@ export const MiddleBanner = props => (
     </Row>
     <Row small padding='0px 100px' margin='50px 0px'>
       <Col width='50%' isImage>
-        <a href='http://expansion.mx/' target='_blank'>
+        <a href='http://expansion.mx/' target='_blank' rel='noopener noreferrer'>
           <Image src='assets/img/logo_expansion.jpg' width='60%' />
         </a>
       </Col>

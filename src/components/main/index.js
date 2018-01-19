@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Slider from 'react-slick'
 import React from 'react'
 import {
     Accordion,
@@ -127,17 +126,17 @@ const SourceBook = styled.p`
       }
     }}
 `
-const SourceLink = styled.a`
-    font-size: 14px;
-    color: #ED4630;
-    padding-left: 25px;
-    width: 90%;
-    text-decoration: none;
-    transition: 0.3s;
-    &:hover{
-      color: #000;
-    }
-`
+// const SourceLink = styled.a`
+//     font-size: 14px;
+//     color: #ED4630;
+//     padding-left: 25px;
+//     width: 90%;
+//     text-decoration: none;
+//     transition: 0.3s;
+//     &:hover{
+//       color: #000;
+//     }
+// `
 export const SourceBox = styled.div`
     width: 100%;
     border-top: 2px solid lightgrey;

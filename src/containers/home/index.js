@@ -8,48 +8,23 @@ import {
   CollapseBox,
   Col,
   Section,
-  Subtitle,
   Footer,
   Dialog,
-  SliderPrev,
-  SliderNext,
   GoToTop,
   TabsShowBy,
   GraphicDescription,
   Disclaimer,
   NewsWall,
-  CustomizedAxisTick,
-  View,
-  Vless,
-  Vmore,
-  TextUp,
-  TextDown,
-  ContainerUp,
-  ContainerDown
+  CustomizedAxisTick
 } from '../../components'
-import './styles.css'
 import {
   BarChart,
   XAxis,
   YAxis,
   Bar
 } from 'recharts'
-import Slider from 'react-slick'
 import SliderGraphics from '../slider'
 import './styles.css'
-
-const RADIAN = Math.PI / 180
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
-  const radius = innerRadius + (outerRadius - innerRadius) * 0.5
-  const x = cx + radius * Math.cos(-midAngle * RADIAN)
-  const y = cy + radius * Math.sin(-midAngle * RADIAN)
-
-  return (
-    <text x={x} y={y} fill='white' textAnchor={x > cx ? 'start' : 'end'} dominantBaseline='central'>
-      {`${(percent * 100).toFixed(0)}%`}
-    </text>
-  )
-}
 
 class Home extends Component {
   constructor (props) {
@@ -175,17 +150,7 @@ class Home extends Component {
       goTo,
       dataNewsWall,
       isPlaying,
-      charts,
-      chartsSize
     } = this.state
-    var settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-      // initialSlide: 12
-    }
     return (
       <div style={{overflow: 'hidden'}}>
         <header>

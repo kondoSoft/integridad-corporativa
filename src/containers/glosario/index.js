@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-    MainBanner,
     SectionBanner,
     Main,
     Route,
@@ -11,7 +10,6 @@ import {
     News,
     Container
 } from '../../components'
-import {data, dataSources} from '../../data'
 import {httpRequest} from '../../helpers'
 const ENDPOINT = '165.227.53.250'
 
@@ -70,7 +68,6 @@ export default class Glossary extends Component {
       console.log('res > ', res);
       if (typeof res === 'string') {
         try {
-          var json = JSON.parse(res)
           this.setState({
             glossary: JSON.parse(res)
           })

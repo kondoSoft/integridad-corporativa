@@ -1,23 +1,14 @@
 import React, {Component} from 'react'
 import {
-    MainBanner,
     SectionBanner,
     Main,
     Route,
-    Edition,
-    Topic,
     Footer,
-    Sources,
     Container,
-    Box,
-    BoxTitle,
-    BoxDescription,
     News as NewsSideBar,
-    Articles,
     NewsContainer,
     NewsWall
 } from '../../components'
-import {dataArrayArticulo} from '../../data'
 import {httpRequest} from '../../helpers'
 
 const ENDPOINT = '165.227.53.250'
